@@ -76,11 +76,19 @@ const Annuaire = ({user, firebase}) =>{
                     <Tabs defaultActiveKey="Ajouter un contact" id="annuaire">
                             <Tab eventKey="Répertoire" title="Répertoire" style={{overflow: "auto"}}>
                                 {info.map(flow =>(
-                                    <div key={flow.id} style={{padding: "2%"}}>
-                                        <h5 className="bold">{flow.name}</h5>
-                                        <p><i>Numéro de portable : {flow.mobile}</i> 
-                                        <br /><i>Numéro de fixe : {flow.fix}</i> 
-                                        </p><hr />
+                                    <div style={{
+                                        display: "flex",
+                                        flexFlow: "row wrap",
+                                        justifyContent: "space-between",
+                                        alignItems: "center"
+                                    }}
+                                    key={flow.markup}>
+                                        <div style={{padding: "2%", width: "50%"}}>
+                                            <h5 className="bold">{flow.name}</h5>
+                                            <p><i>Mobile : {flow.mobile}</i> 
+                                            <br /><i>Fixe : {flow.fix}</i></p>
+                                        </div>
+                                            <Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "bookPhone", document: flow.id})}>Supprimer</Button>
                                     </div>
                                 ))}
                             </Tab>

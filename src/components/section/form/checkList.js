@@ -39,7 +39,7 @@ const CheckList = ({user, firebase}) =>{
                 <Tab.Container defaultActiveKey="matin">
                 <Row>
                     <Col sm={2}>
-                    <Nav variant="pills" className="flex-column" id="shift">
+                    <Nav variant="pills" className="flex-column">
                         <Nav.Item>
                         <Nav.Link eventKey="matin">Matin</Nav.Link>
                         </Nav.Item>

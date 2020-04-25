@@ -44,7 +44,7 @@ const CheckListTable = ({user, firebase, shift}) => {
 
     return (
         <div>
-            <h5 className="text-center bg-dark text-light">Check-list du {shift}</h5>
+            <h5 className="text-center bg-dark text-light">Check list - {shift}</h5>
             <Table striped bordered hover size="sm">
                 <tbody>
                     {info.map(flow =>(
