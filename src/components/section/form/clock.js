@@ -6,7 +6,7 @@ const Clock = ({user, firebase}) =>{
 
     const [list, setList] = useState(false)
     const [info, setInfo] = useState([])
-    const [formValue, setFormValue] = useState({chambre: "", client: "", heure: ""})
+    const [formValue, setFormValue] = useState({chambre: "", client: "", heure: "", date: ""})
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
@@ -22,13 +22,14 @@ const Clock = ({user, firebase}) =>{
     const handleSubmit = event => {
         event.preventDefault()
         setFormValue("")
-        let day = new Date().getDay()
-        let month = new Date().getMonth()
+        let day = new Date().getDate()
+        let month = new Date().getMonth() + 1
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addClock({author: user.username, chambre: formValue.chambre, client: formValue.client, markup: marker, date: time, heure: formValue.heure}).then(handleClose)
+        firebase.addClock({author: user.username, chambre: formValue.chambre, day: formValue.date, client: formValue.client, markup: marker, date: time, heure: formValue.heure}).then(handleClose)
     }
+
 
     useEffect(() => {
         const abortController = new AbortController()
@@ -88,7 +89,7 @@ const Clock = ({user, firebase}) =>{
                                 <Form.Row>
                                     <Form.Group controlId="description">
                                     <Form.Label>Nom du client</Form.Label>
-                                    <Form.Control type="text" placeholder="ex: Jane Doe" style={{width: "35vw"}} value={formValue.client} name="client" onChange={handleChange} />
+                                    <Form.Control type="text" placeholder="ex: Jane Doe" style={{width: "20vw"}} value={formValue.client} name="client" onChange={handleChange} />
                                     </Form.Group>
                                 </Form.Row>
                                 <Form.Row>
@@ -97,6 +98,12 @@ const Clock = ({user, firebase}) =>{
                                     <Form.Control type="text" placeholder="ex: 409" style={{width: "20vw"}} value={formValue.chambre} name="chambre" onChange={handleChange} />
                                     </Form.Group>
                                 </Form.Row>
+                                <Form.Row>
+                                        <Form.Group controlId="description">
+                                        <Form.Label>Date de réveil</Form.Label>
+                                        <Form.Control type="text" placeholder="ex: 16/04/2020" style={{width: "20vw"}} value={formValue.date} name="date" onChange={handleChange} />
+                                        </Form.Group>
+                                    </Form.Row>
                                 <Form.Row>
                                     <Form.Group controlId="description">
                                     <Form.Label>Heure de réveil</Form.Label>
@@ -112,6 +119,7 @@ const Clock = ({user, firebase}) =>{
                                 <th>#</th>
                                 <th>Client</th>
                                 <th>Chambre</th>
+                                <th>Jour</th>
                                 <th>Heure</th>
                                 <th>Date</th>
                                 <th>Collaborateur</th>
@@ -124,6 +132,7 @@ const Clock = ({user, firebase}) =>{
                                     <td></td>
                                     <td>{flow.client}</td>
                                     <td>{flow.chambre}</td>
+                                    <td>{flow.day}</td>
                                     <td>{flow.heure}</td>
                                     <td>{flow.date}</td>
                                     <td>{flow.author}</td>

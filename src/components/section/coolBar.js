@@ -3,13 +3,19 @@ import Annuaire from './form/annuaire'
 import CheckList from './form/checkList'
 import RedPhone from '../../svg/support.svg'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { navigate } from 'gatsby'
 import '../css/memo.css'
 import { FirebaseContext } from '../../Firebase'
+
 
 
 const CoolBar = () => {
 
     const { user, firebase } = useContext(FirebaseContext)
+
+    const handleMove = (event) => {
+        return navigate("redPhone")
+   }
 
     return (
         <div style={{

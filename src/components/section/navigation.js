@@ -1,14 +1,19 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Navbar } from 'react-bootstrap'
 import Connection from '../../images/connection.png'
 import { FirebaseContext } from '../../Firebase'
 import { navigate } from 'gatsby'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { OverlayTrigger, Tooltip, Modal, Button } from 'react-bootstrap'
 
 
 const Navigation = () =>{
 
+    const [list, setList] = useState(false)
     const {firebase, user} = useContext(FirebaseContext)
+
+    const handleClose = () => setList(false)
+    const handleShow = () => setList(true)
+
     const handleLogout = () =>{
         firebase.logout().then(()=>navigate('/'))
     }
@@ -51,10 +56,20 @@ const Navigation = () =>{
                     <img src={Connection} alt="connect" style={{
                         width: "10%",
                         cursor: "pointer",
-                        marginLeft: "1vw"}} onClick={handleLogout} />
+                        marginLeft: "1vw"}} onClick={handleShow} />
                     </OverlayTrigger>
                 </div>
             </Navbar>
+        <Modal show={list} onHide={handleClose}>
+            <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-sm">
+            Voulez-vous quitter l'application ?
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Button variant="danger" onClick={handleLogout}>Quitter</Button>
+        </Modal.Body>
+      </Modal>
         </div>
     )
 }

@@ -141,12 +141,13 @@ class Firebase {
     })
   }
 
-  async addClock({author, date, client, chambre, markup, heure}){
+  async addClock({author, date, client, chambre, markup, heure, day}){
     return this.db.collection('clock').add({
       author: author,
       date: date,
       client: client,
       chambre: chambre,
+      day: day,
       markup: markup,
       heure: heure
     }).then(function(docRef){

@@ -22,8 +22,8 @@ const Caisse = ({user, firebase}) =>{
       const handleSubmit = event => {
         event.preventDefault()
         setFormValue("")
-        let day = new Date().getDay()
-        let month = new Date().getMonth()
+        let day = new Date().getDate()
+        let month = new Date().getMonth() + 1
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()

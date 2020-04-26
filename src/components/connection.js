@@ -1,14 +1,13 @@
 import React, { useState, useContext } from 'react'
-import { Jumbotron } from 'react-bootstrap'
+import { Jumbotron, Modal } from 'react-bootstrap'
 import { FirebaseContext } from '../Firebase'
 import Register from '../components/section/form/register'
 
 const Connection = () =>{
 
+  const [list, setList] = useState(false)
   const [formValue, setFormValue] = useState ({email: "", password: ""})
-  const [popup, setPopup] = useState("")
   
-
   const { firebase } = useContext(FirebaseContext)
      
       const handleChange = (event) =>{
@@ -30,11 +29,8 @@ const Connection = () =>{
         })
       }   
 
-      const handleShowRegister = () =>{
-        setPopup(<Register hide={()=>setPopup('')} />)
-      }
-
-
+    const handleShow = () => setList(true)
+    const handleClose = () => setList(false)
     
     return (
         <div style={{
@@ -74,15 +70,22 @@ const Connection = () =>{
             <div id="warning" style={{color: 'red'}}></div>
 
             <button className="btn btn-info btn-block my-4" type="submit">Connecter</button>
-            <p style={{textAlign: "center", cursor: 'pointer'}} onClick={handleShowRegister}>S'inscrire ?</p>
+            <p style={{textAlign: "center", cursor: 'pointer'}} onClick={handleShow}>S'inscrire ?</p>
             </form>
-            <div style={{
-                maxHeight: "38vh",
-                overflow: "auto",
-                marginBottom: "2vh"
-                }}>
-              {popup}
-            </div>
+            <Modal show={list}
+                size="md"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                onHide={handleClose}
+                >
+              <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                Formulaire d'inscription
+                </Modal.Title>
+            </Modal.Header>
+            {!!firebase && 
+            <Register firebase={firebase} hide={handleClose} />}
+             </Modal>
         </div>
     )
 }
