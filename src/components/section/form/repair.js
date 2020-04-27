@@ -87,6 +87,12 @@ const Repair = ({user, firebase}) =>{
                                 }}>
                                     <Form.Row>
                                         <Form.Group controlId="description">
+                                        <Form.Label>Nom du client</Form.Label>
+                                        <Form.Control type="text" placeholder="ex: Jane Doe" style={{width: "35vw"}} value={formValue.client} name="client" onChange={handleChange} />
+                                        </Form.Group>
+                                    </Form.Row>
+                                    <Form.Row>
+                                        <Form.Group controlId="description">
                                         <Form.Label>Numéro de chambre</Form.Label>
                                         <Form.Control type="text" placeholder="ex: 409" style={{width: "35vw"}} value={formValue.chambre} name="chambre" onChange={handleChange} />
                                         </Form.Group>
@@ -94,7 +100,7 @@ const Repair = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Quel type de problème ?</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "40vw"}} value={formValue.type} name="type" onChange={handleChange}>
+                                        <Form.Control as="select" custom style={{width: "35vw"}} value={formValue.type} name="type" onChange={handleChange}>
                                             <option>Peinture</option>
                                             <option>Plomberie</option>
                                             <option>Electricité</option>

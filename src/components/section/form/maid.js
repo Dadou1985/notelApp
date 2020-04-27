@@ -83,8 +83,14 @@ const Maid = ({user, firebase}) =>{
                                     flexFlow: "row wrap",
                                     justifyContent: "space-around",
                                     padding: "5%",
-                                    textAlign: "center"
+                                    textAlign: "center",
                                 }}>
+                                    <Form.Row>
+                                        <Form.Group controlId="description">
+                                        <Form.Label>Nom du client</Form.Label>
+                                        <Form.Control type="text" placeholder="ex: Jane Doe" style={{width: "35vw"}} value={formValue.client} name="client" onChange={handleChange} />
+                                        </Form.Group>
+                                    </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="description">
                                         <Form.Label>Depuis la chambre...</Form.Label>
@@ -127,7 +133,8 @@ const Maid = ({user, firebase}) =>{
                                 </div>
                             </Tab>
                             <Tab eventKey="Liste des délogemnts" title="Liste des délogemnts">
-                            <Table striped bordered hover size="sm" className="text-center">
+                            <Table striped bordered hover size="sm" className="text-center"  style={{overflowX: "auto",
+                                    maxWidth: "90vw"}}>
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
                                     <th>#</th>
