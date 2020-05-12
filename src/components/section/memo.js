@@ -28,7 +28,7 @@ const Memo =()=>{
     const handleSubmit = (event) => {
         console.log(event)
         const markUp = Date.now()
-        firebase.addSticker({title: formValue.title, text: formValue.text, author: user.username, marker: markUp})
+        firebase.addSticker({title: formValue.title, text: formValue.text, author: user.username, markup: markUp})
         setVisible(false)
         setFormValue({title: "", text: ""})
       }

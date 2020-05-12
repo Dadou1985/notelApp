@@ -88,7 +88,7 @@ const Annuaire = ({user, firebase}) =>{
                                             <p><i>Mobile : {flow.mobile}</i> 
                                             <br /><i>Fixe : {flow.fix}</i></p>
                                         </div>
-                                            <Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "bookPhone", document: flow.id})}>Supprimer</Button>
+                                            <Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "contact", document: flow.id})}>Supprimer</Button>
                                     </div>
                                 ))}
                             </Tab>
@@ -109,13 +109,13 @@ const Annuaire = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="description">
                                         <Form.Label>Numéro de mobile</Form.Label>
-                                        <Form.Control type="text" placeholder="ex: 0656872674" style={{width: "25vw"}} value={formValue.mobile} name="mobile" onChange={handleChange} />
+                                        <Form.Control type="text" placeholder="ex: 0656872674" style={{width: "20vw"}} value={formValue.mobile} name="mobile" onChange={handleChange} />
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="description">
                                         <Form.Label>Numéro de fixe</Form.Label>
-                                        <Form.Control type="text" placeholder="ex: 0130987654" style={{width: "25vw"}} value={formValue.fix} name="fix" onChange={handleChange} />
+                                        <Form.Control type="text" placeholder="ex: 0130987654" style={{width: "20vw"}} value={formValue.fix} name="fix" onChange={handleChange} />
                                         </Form.Group>
                                     </Form.Row>
                                 </div>

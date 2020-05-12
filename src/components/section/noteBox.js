@@ -30,11 +30,12 @@ const NoteBox = ({firebase}) => {
         <div>
             {messages.map(message =>(
                 <MessageLoaded
-                key={message.notemark}
+                key={message.markup}
                 author={message.author}
                 text={message.text}
-                hour={message.date}
+                hour={message.hour}
                 markup={message.id}
+                date={message.date}
                 blueprint={message.ref}
                 />
             ))}

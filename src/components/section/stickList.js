@@ -36,7 +36,7 @@ const StickList = ({user, firebase}) => {
         }}>
             {postIt.map(stick =>(
                 <PostIt
-                key={stick.marker}
+                key={stick.markup}
                 author={stick.author}
                 text={stick.text}
                 title={stick.title}

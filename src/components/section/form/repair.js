@@ -6,7 +6,7 @@ const Repair = ({user, firebase}) =>{
 
     const [list, setList] = useState(false)
     const [info, setInfo] = useState([])
-    const [formValue, setFormValue] = useState({chambre: "", client: "", details: "", type: ""})
+    const [formValue, setFormValue] = useState({room: "", client: "", details: "", type: ""})
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
@@ -22,12 +22,12 @@ const Repair = ({user, firebase}) =>{
       const handleSubmit = event => {
         event.preventDefault()
         setFormValue("")
-        let day = new Date().getDay()
-        let month = new Date().getMonth()
+        let day = new Date().getDate()
+        let month = new Date().getMonth() + 1
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addMaintenance({author: user.username, chambre: formValue.chambre, client: formValue.client, markup: marker, date: time, type: formValue.type, details: formValue.details}).then(handleClose)
+        firebase.addMaintenance({author: user.username, room: formValue.room, client: formValue.client, markup: marker, date: time, type: formValue.type, details: formValue.details}).then(handleClose)
     }
 
     useEffect(() => {
@@ -94,7 +94,7 @@ const Repair = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="description">
                                         <Form.Label>Numéro de chambre</Form.Label>
-                                        <Form.Control type="text" placeholder="ex: 409" style={{width: "35vw"}} value={formValue.chambre} name="chambre" onChange={handleChange} />
+                                        <Form.Control type="text" placeholder="ex: 409" style={{width: "35vw"}} value={formValue.room} name="room" onChange={handleChange} />
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
@@ -135,7 +135,7 @@ const Repair = ({user, firebase}) =>{
                                         <tr key={flow.id}>
                                         <td></td>
                                         <td>{flow.client}</td>
-                                        <td>{flow.chambre}</td>
+                                        <td>{flow.room}</td>
                                         <td>{flow.type}</td>
                                         <td>{flow.details}</td>
                                         <td>{flow.date}</td>

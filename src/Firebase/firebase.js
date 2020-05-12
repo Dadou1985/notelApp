@@ -14,7 +14,7 @@ class Firebase {
   }
 
   async getUserProfile({userId}){
-    return this.db.collection('publicUsers').where('userId', '==', userId).get();
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('publicUsers').where('userId', '==', userId).get();
   }
   
   getUserId(){
@@ -23,7 +23,7 @@ class Firebase {
 
   async register({email, password, username}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
-    return this.db.collection("publicUsers").doc(username).set({
+    return this.db.collection("mercureMaurepas").doc("H9781").collection("publicUsers").doc(username).set({
       userId: newUser.user.uid
     });
   }
@@ -39,33 +39,33 @@ class Firebase {
 
 
   messageOnAir(){
-    return this.db.collection('message').orderBy("notemark", "desc")
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('message').orderBy("markup", "desc")
   }
 
   stickerOnAir({userId}){
-    return this.db.collection('stickers').where("author", "==", userId)
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('stickers').where("author", "==", userId)
   }
 
   toolOnAir({collection}){
-    return this.db.collection(collection).orderBy("markup", "asc")
+    return this.db.collection("mercureMaurepas").doc("H9781").collection(collection).orderBy("markup", "asc")
   }
 
   safeOnAir(){
-    return this.db.collection('safe').orderBy("markup", "asc")
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('safe').orderBy("markup", "asc")
   }
 
   contactOnAir(){
-    return this.db.collection('bookPhone').orderBy("name")
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('contact').orderBy("name")
   }
 
   listOnAir({collection}){
-    return this.db.collection("checkList").doc("H2syEqycxDFMR78r9wHD").collection(collection).orderBy("markup", "asc")
+    return this.db.collection("mercureMaurepas").doc("H9781").collection("checkList").doc("H2syEqycxDFMR78r9wHD").collection(collection).orderBy("markup", "asc")
   }
 
 
 
   async deleteDocument({collection, document}) {
-    return this.db.collection(collection).doc(document).delete().then(function() {
+    return this.db.collection("mercureMaurepas").doc("H9781").collection(collection).doc(document).delete().then(function() {
       console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.log(error);
@@ -73,7 +73,7 @@ class Firebase {
   }
 
   async deleteTask({collection, document}) {
-    return this.db.collection("checkList").doc("H2syEqycxDFMR78r9wHD").collection(collection).doc(document).delete().then(function() {
+    return this.db.collection("mercureMaurepas").doc("H9781").collection("checkList").doc("H2syEqycxDFMR78r9wHD").collection(collection).doc(document).delete().then(function() {
       console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.log(error);
@@ -82,12 +82,13 @@ class Firebase {
 
 
 
-  async addMessage({author, text, hour, mark, ref}){
-    return this.db.collection('message').add({
+  async addMessage({author, text, hour, markup, ref, date}){
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('message').add({
       author: author,
       text: text,
-      date: hour,
-      notemark: mark,
+      hour: hour,
+      date: date,
+      markup: markup,
       ref: ref
     }).then(function(docRef){
       console.log(docRef.id)
@@ -96,12 +97,12 @@ class Firebase {
     })
   }
 
-  async addSticker({title, text, author, marker}){
-    return this.db.collection('stickers').add({
+  async addSticker({title, text, author, markup}){
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('stickers').add({
       title: title,
       text: text,
       author: author,
-      marker: marker
+      markup: markup
     }).then(function(docRef){
       console.log(docRef.id)
     }).catch(function(error) {
@@ -109,13 +110,13 @@ class Firebase {
     })
   }
 
-  async addLostFound({author, date, description, details, lieu, markup, type}){
-    return this.db.collection('lostNfound').add({
+  async addLostFound({author, date, description, details, place, markup, type}){
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('lostNfound').add({
       author: author,
       date: date,
       description: description,
       details: details,
-      lieu: lieu,
+      place: place,
       markup: markup,
       type: type
     }).then(function(docRef){
@@ -125,15 +126,17 @@ class Firebase {
     })
   }
 
-  async addCab({author, date, client, chambre, destination, markup, heure}){
-    return this.db.collection('cab').add({
+  async addCab({author, date, client, room, passenger, model, destination, markup, hour}){
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('cab').add({
       author: author,
       date: date,
       destination: destination,
       client: client,
-      chambre: chambre,
+      room: room,
+      passenger: passenger,
+      model, model,
       markup: markup,
-      heure: heure
+      hour: hour
     }).then(function(docRef){
       console.log(docRef.id)
     }).catch(function(error) {
@@ -141,15 +144,15 @@ class Firebase {
     })
   }
 
-  async addClock({author, date, client, chambre, markup, heure, day}){
-    return this.db.collection('clock').add({
+  async addClock({author, date, client, room, markup, hour, day}){
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('clock').add({
       author: author,
       date: date,
       client: client,
-      chambre: chambre,
+      room: room,
       day: day,
       markup: markup,
-      heure: heure
+      hour: hour
     }).then(function(docRef){
       console.log(docRef.id)
     }).catch(function(error) {
@@ -157,16 +160,16 @@ class Firebase {
     })
   }
 
-  async addMaid({author, date, client, from, to, motive, state, markup, details}){
-    return this.db.collection('maid').add({
+  async addMaid({author, date, client, fromRoom, toRoom, reason, state, markup, details}){
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('maid').add({
       author: author,
       date: date,
       details: details,
       client: client,
-      from: from,
+      fromRoom: fromRoom,
       markup: markup,
-      to: to,
-      motive: motive,
+      toRoom: toRoom,
+      reason: reason,
       state, state
     }).then(function(docRef){
       console.log(docRef.id)
@@ -175,13 +178,13 @@ class Firebase {
     })
   }
 
-  async addMaintenance({author, date, client, chambre, details, markup, type}){
-    return this.db.collection('maintenance').add({
+  async addMaintenance({author, date, client, room, details, markup, type}){
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('maintenance').add({
       author: author,
       date: date,
       details: details,
       client: client,
-      chambre: chambre,
+      room: room,
       markup: markup,
       type: type
     }).then(function(docRef){
@@ -191,11 +194,11 @@ class Firebase {
     })
   }
 
-  async addSafe({collaborateur, date, montant, shift, markup}){
-    return this.db.collection('safe').add({
-      collaborateur: collaborateur,
+  async addSafe({author, date, amount, shift, markup}){
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('safe').add({
+      author: author,
       date: date,
-      montant: montant,
+      amount: amount,
       shift: shift,
       markup: markup
     }).then(function(docRef){
@@ -206,7 +209,7 @@ class Firebase {
   }
 
   async addContact({name, mobile, fix, markup}){
-    return this.db.collection('bookPhone').add({
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('contact').add({
       name: name,
       mobile: mobile,
       fix: fix,
@@ -219,7 +222,7 @@ class Firebase {
   }
 
   async addTask({collection, task, markup}){
-    return this.db.collection('checkList').doc("H2syEqycxDFMR78r9wHD").collection(collection).add({
+    return this.db.collection("mercureMaurepas").doc("H9781").collection('checkList').doc("H2syEqycxDFMR78r9wHD").collection(collection).add({
       task: task,
       markup: markup
     }).then(function(docRef){

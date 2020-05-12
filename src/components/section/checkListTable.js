@@ -45,6 +45,19 @@ const CheckListTable = ({user, firebase, shift}) => {
     return (
         <div>
             <h5 className="text-center bg-dark text-light">Check list - {shift}</h5>
+            <InputGroup className="mb-3">
+                <FormControl
+                placeholder="Ajouter une tâche"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+                value={formValue.task}
+                name="task"
+                onChange={handleChange}
+                />
+                <InputGroup.Append>
+                <Button variant="outline-success" onClick={handleSubmit}>Valider</Button>
+                </InputGroup.Append>
+            </InputGroup>
             <Table striped bordered hover size="sm">
                 <tbody>
                     {info.map(flow =>(
@@ -64,19 +77,6 @@ const CheckListTable = ({user, firebase, shift}) => {
                     ))}
                 </tbody>
             </Table>
-            <InputGroup className="mb-3">
-                <FormControl
-                placeholder="Ajouter une tâche"
-                aria-label="Recipient's username"
-                aria-describedby="basic-addon2"
-                value={formValue.task}
-                name="task"
-                onChange={handleChange}
-                />
-                <InputGroup.Append>
-                <Button variant="outline-success" onClick={handleSubmit}>Valider</Button>
-                </InputGroup.Append>
-            </InputGroup>
         </div>
     )
 }

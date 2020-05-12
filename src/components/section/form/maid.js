@@ -6,7 +6,7 @@ const Maid = ({user, firebase}) =>{
 
     const [list, setList] = useState(false)
     const [info, setInfo] = useState([])
-    const [formValue, setFormValue] = useState({client: "", details: "", initiale: "", finale: "", motif: "", etat: ""})
+    const [formValue, setFormValue] = useState({client: "", details: "", fromRoom: "", toRoom: "", reason: "", state: ""})
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
@@ -27,7 +27,7 @@ const Maid = ({user, firebase}) =>{
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addMaid({author: user.username, from: formValue.initiale, client: formValue.client, markup: marker, date: time, to: formValue.finale, motive: formValue.motif, details: formValue.details, state: formValue.etat}).then(handleClose)
+        firebase.addMaid({author: user.username, fromRoom: formValue.fromRoom, client: formValue.client, markup: marker, date: time, toRoom: formValue.toRoom, reason: formValue.reason, details: formValue.details, state: formValue.state}).then(handleClose)
     }
 
     useEffect(() => {
@@ -94,19 +94,19 @@ const Maid = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="description">
                                         <Form.Label>Depuis la chambre...</Form.Label>
-                                        <Form.Control type="text" placeholder="ex: 310" style={{width: "20vw"}} value={formValue.initiale} name="initiale" onChange={handleChange} />
+                                        <Form.Control type="text" placeholder="ex: 310" style={{width: "20vw"}} value={formValue.fromRoom} name="fromRoom" onChange={handleChange} />
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="description">
                                         <Form.Label>...vers la chambre</Form.Label>
-                                        <Form.Control type="text" placeholder="ex: 409" style={{width: "20vw"}} value={formValue.finale} name="finale" onChange={handleChange} />
+                                        <Form.Control type="text" placeholder="ex: 409" style={{width: "20vw"}} value={formValue.toRoom} name="toRoom" onChange={handleChange} />
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Pour quel motif ?</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.motif} name="motif" onChange={handleChange}>
+                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.reason} name="reason" onChange={handleChange}>
                                             <option>Peinture</option>
                                             <option>Plomberie</option>
                                             <option>Electricité</option>
@@ -118,7 +118,7 @@ const Maid = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Etat de la chambre</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.etat} name="etat" onChange={handleChange}>
+                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.state} name="state" onChange={handleChange}>
                                             <option>Sale</option>
                                             <option>Propre</option>
                                         </Form.Control>
@@ -154,9 +154,9 @@ const Maid = ({user, firebase}) =>{
                                         <tr key={flow.id}>
                                         <td></td>
                                         <td>{flow.client}</td>
-                                        <td>{flow.from}</td>
-                                        <td>{flow.to}</td>
-                                        <td>{flow.motive}</td>
+                                        <td>{flow.fromRoom}</td>
+                                        <td>{flow.toRoom}</td>
+                                        <td>{flow.reason}</td>
                                         <td>{flow.state}</td>
                                         <td>{flow.details}</td>
                                         <td>{flow.date}</td>

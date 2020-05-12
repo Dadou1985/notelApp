@@ -15,11 +15,16 @@ const Messenger = () =>{
     const handleSubmit = (event) =>{
         event.preventDefault()
         setNote("")
+        let day = new Date().getDate()
+        let month = new Date().getMonth() + 1
+        let calendar = [null, "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+        let year = new Date().getFullYear()
         let hours = new Date().getHours() + "h"
         let minutes = new Date().getMinutes()
         let time = hours + minutes
+        let date = day + " " + calendar[month] + " " + year
         let marker = Date.now()
-        firebase.addMessage({author: user.username, text: note, hour: time, mark: marker, ref: user.uid})
+        firebase.addMessage({author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})
     }
 
     const handleSlide = () => {

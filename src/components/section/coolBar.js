@@ -35,7 +35,7 @@ const CoolBar = () => {
                 Red Phone
               </Tooltip>
             }>
-                <img src={RedPhone} className="icon" id="phone" alt="red_phone" />
+                <img src={RedPhone} className="icon" id="phone" alt="red_phone" onClick={handleMove} />
             </OverlayTrigger>
         </div>
     )

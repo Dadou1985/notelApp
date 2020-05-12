@@ -4,7 +4,7 @@ import {Button} from 'reactstrap'
 import { FirebaseContext } from '../../Firebase'
 
 
-  const MessageLoaded = ({author, text, hour, markup, blueprint}) =>{
+  const MessageLoaded = ({author, text, hour, markup, blueprint, date}) =>{
 
     const [username, setUsername] = useState(null)
     const { user, firebase } = useContext(FirebaseContext)
@@ -38,7 +38,7 @@ import { FirebaseContext } from '../../Firebase'
                   {text}
                   </Card.Text>
               </Card.Body>
-              <Card.Footer className="bg-light blockquote-footer text-right">noté à {hour} </Card.Footer>
+              <Card.Footer className="bg-light blockquote-footer text-right">noté le {date} à {hour} </Card.Footer>
           </Card>
           )
           }else{
@@ -54,7 +54,7 @@ import { FirebaseContext } from '../../Firebase'
                       {text}
                       </Card.Text>
                   </Card.Body>
-                  <Card.Footer className="bg-light blockquote-footer text-right">notée à {hour} </Card.Footer>
+                  <Card.Footer className="bg-light blockquote-footer text-right">notée le {date} à {hour} </Card.Footer>
               </Card>
               )
     }

@@ -6,7 +6,7 @@ const Lost = ({user, firebase}) =>{
 
     const [list, setList] = useState(false)
     const [info, setInfo] = useState([])
-    const [formValue, setFormValue] = useState({type: "", lieu: "", details: "", description: ""})
+    const [formValue, setFormValue] = useState({type: "", place: "", details: "", description: ""})
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
@@ -27,7 +27,7 @@ const Lost = ({user, firebase}) =>{
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addLostFound({author: user.username, date: time, type: formValue.type, markup: marker, lieu: formValue.lieu, details: formValue.details, description: formValue.description}).then(handleClose)
+        firebase.addLostFound({author: user.username, date: time, type: formValue.type, markup: marker, place: formValue.place, details: formValue.details, description: formValue.description}).then(handleClose)
     }
 
     useEffect(() => {
@@ -100,7 +100,7 @@ const Lost = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Lieu ?</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.lieu} name="lieu" onChange={handleChange}>
+                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.place} name="place" onChange={handleChange}>
                                             <option>Hall</option>
                                             <option>Restaurant</option>
                                             <option>Toilettes</option>
@@ -144,7 +144,7 @@ const Lost = ({user, firebase}) =>{
                                         <td>{flow.type}</td>
                                         <td>{flow.description}</td>
                                         <td>{flow.date}</td>
-                                        <td>{flow.lieu}</td>
+                                        <td>{flow.place}</td>
                                         <td>{flow.details}</td>
                                         <td>{flow.author}</td>
                                         <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "lostNfound", document: flow.id})}>Supprimer</Button></td>

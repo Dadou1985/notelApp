@@ -6,7 +6,7 @@ const Clock = ({user, firebase}) =>{
 
     const [list, setList] = useState(false)
     const [info, setInfo] = useState([])
-    const [formValue, setFormValue] = useState({chambre: "", client: "", heure: "", date: ""})
+    const [formValue, setFormValue] = useState({room: "", client: "", hour: "", date: ""})
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
@@ -27,7 +27,7 @@ const Clock = ({user, firebase}) =>{
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addClock({author: user.username, chambre: formValue.chambre, day: formValue.date, client: formValue.client, markup: marker, date: time, heure: formValue.heure}).then(handleClose)
+        firebase.addClock({author: user.username, room: formValue.room, day: formValue.date, client: formValue.client, markup: marker, date: time, hour: formValue.hour}).then(handleClose)
     }
 
 
@@ -95,7 +95,7 @@ const Clock = ({user, firebase}) =>{
                                 <Form.Row>
                                     <Form.Group controlId="description">
                                     <Form.Label>Numéro de chambre</Form.Label>
-                                    <Form.Control type="text" placeholder="ex: 409" style={{width: "20vw"}} value={formValue.chambre} name="chambre" onChange={handleChange} />
+                                    <Form.Control type="text" placeholder="ex: 409" style={{width: "20vw"}} value={formValue.room} name="room" onChange={handleChange} />
                                     </Form.Group>
                                 </Form.Row>
                                 <Form.Row>
@@ -107,7 +107,7 @@ const Clock = ({user, firebase}) =>{
                                 <Form.Row>
                                     <Form.Group controlId="description">
                                     <Form.Label>Heure de réveil</Form.Label>
-                                    <Form.Control type="text" placeholder="ex: 08h30" style={{width: "20vw"}} value={formValue.heure} name="heure" onChange={handleChange} />
+                                    <Form.Control type="text" placeholder="ex: 08h30" style={{width: "20vw"}} value={formValue.hour} name="hour" onChange={handleChange} />
                                     </Form.Group>
                                 </Form.Row>
                             </div>
@@ -131,9 +131,9 @@ const Clock = ({user, firebase}) =>{
                                     <tr key={flow.id}>
                                     <td></td>
                                     <td>{flow.client}</td>
-                                    <td>{flow.chambre}</td>
+                                    <td>{flow.room}</td>
                                     <td>{flow.day}</td>
-                                    <td>{flow.heure}</td>
+                                    <td>{flow.hour}</td>
                                     <td>{flow.date}</td>
                                     <td>{flow.author}</td>
                                     <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "clock", document: flow.id})}>Supprimer</Button></td>

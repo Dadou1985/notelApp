@@ -29,7 +29,7 @@ const Caisse = ({user, firebase}) =>{
         let marker = Date.now()
         let caisse = document.getElementById("montant").value
         handleReset()
-        firebase.addSafe({collaborateur: user.username, montant: caisse, date: time, markup: marker, shift: formValue.shift}).then(handleClose)
+        firebase.addSafe({author: user.username, amount: caisse, date: time, markup: marker, shift: formValue.shift}).then(handleClose)
     }
 
     const change = (a, b, c) => {
@@ -314,8 +314,8 @@ const Caisse = ({user, firebase}) =>{
                                     {info.map(flow =>(
                                         <tr key={flow.id}>
                                         <td></td>
-                                        <td>{flow.collaborateur}</td>
-                                        <td>{flow.montant}</td>
+                                        <td>{flow.author}</td>
+                                        <td>{flow.amount}</td>
                                         <td>{flow.shift}</td>
                                         <td>{flow.date}</td>
                                         <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "safe", document: flow.id})}>Supprimer</Button></td>
