@@ -16,8 +16,8 @@ const Messenger = () =>{
         event.preventDefault()
         setNote("")
         let day = new Date().getDate()
-        let month = new Date().getMonth() + 1
-        let calendar = [null, "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+        let month = new Date().getMonth()
+        let calendar = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
         let year = new Date().getFullYear()
         let hours = new Date().getHours() + "h"
         let minutes = new Date().getMinutes()
