@@ -18,6 +18,8 @@ const Navigation = () =>{
         firebase.logout().then(()=>navigate('/'))
     }
 
+    const handleMove = () => navigate('/singlePage')
+
     return(
         <div  className="shadow-sm bg-white">
             <Navbar bg="light" expand="lg" style={{
@@ -30,8 +32,10 @@ const Navigation = () =>{
                     fontSize: "1.5em",
                     marginLeft: "5%",
                     textDecoration: "none",
-                    color: "black"
-                    }}>Notel</Navbar.Brand>
+                    color: "black",
+                    cursor: "pointer"
+                    }}
+                    onClick={handleMove}>Notel</Navbar.Brand>
                     <div style={{
                         display: "flex",
                         flexFlow: "row",

@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
-import {Form} from 'react-bootstrap'
+import {Form, FormControl, InputGroup} from 'react-bootstrap'
 import HotelMap from '../components/section/map'
+
 
 const RedPhone = () => {
 
@@ -20,7 +21,7 @@ const RedPhone = () => {
           right: "0px",
           top: "8%"
         }}> 
-        <h5 className="text-center"><b>Red Phone</b> - <small>Dashboard</small></h5><hr/>
+        <h5 className="text-center" style={{marginBottom: "5%"}}><b>Red Phone</b> - <small>Dashboard</small></h5>
         <h6 className="text-center"><b>Filtrer les recherches d'hôtels par :</b></h6>
         <div style={{
           display: "flex",
@@ -60,7 +61,8 @@ const RedPhone = () => {
           flexFlow: "column",
           justifyContent: "space-around",
           width: "100%",
-          padding: "1%"
+          padding: "1%", 
+          marginBottom: "5%"
         }}>
           <h6 className="text-center">Overbooking Inbox</h6>
           <div style={{
@@ -76,6 +78,20 @@ const RedPhone = () => {
         }}>
 
           </div>
+        </div>
+        <div style={{
+          display:"flex",
+          flexFlow: "row",
+          justifyContent: "center",
+          height: "4vh"
+        }}>
+          <b>Nombre de chambres restantes :</b>
+          <InputGroup className="mb-3" style={{width: "3vw", height: "4vh", marginLeft: "2%"}}>
+            <FormControl style={{width: "3vw", height: "4vh"}}
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </InputGroup>
         </div>
       </div>
     </Layout>

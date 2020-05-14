@@ -14,7 +14,7 @@ class Firebase {
   }
 
   async getUserProfile({userId}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('publicUsers').where('userId', '==', userId).get();
+    return this.db.collection("hotels").doc("H9781").collection('publicUsers').where('userId', '==', userId).get();
   }
   
   getUserId(){
@@ -23,7 +23,7 @@ class Firebase {
 
   async register({email, password, username}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
-    return this.db.collection("mercureMaurepas").doc("H9781").collection("publicUsers").doc(username).set({
+    return this.db.collection("hotels").doc("H9781").collection("publicUsers").doc(username).set({
       userId: newUser.user.uid
     });
   }
@@ -39,33 +39,37 @@ class Firebase {
 
 
   messageOnAir(){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('message').orderBy("markup", "desc")
+    return this.db.collection("hotels").doc("H9781").collection('message').orderBy("markup", "desc")
   }
 
   stickerOnAir({userId}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('stickers').where("author", "==", userId)
+    return this.db.collection("hotels").doc("H9781").collection('stickers').where("author", "==", userId)
   }
 
   toolOnAir({collection}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection(collection).orderBy("markup", "asc")
+    return this.db.collection("hotels").doc("H9781").collection(collection).orderBy("markup", "asc")
   }
 
   safeOnAir(){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('safe').orderBy("markup", "asc")
+    return this.db.collection("hotels").doc("H9781").collection('safe').orderBy("markup", "asc")
   }
 
   contactOnAir(){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('contact').orderBy("name")
+    return this.db.collection("hotels").doc("H9781").collection('contact').orderBy("name")
   }
 
   listOnAir({collection}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection("checkList").doc("H2syEqycxDFMR78r9wHD").collection(collection).orderBy("markup", "asc")
+    return this.db.collection("hotels").doc("H9781").collection("checkList").doc("hSM4fJ0M53FGej8NniMW").collection(collection).orderBy("markup", "asc")
+  }
+
+  phoneOnAir(){
+    return this.db.collection("hotels").where("roomAvailable", ">", 0)
   }
 
 
 
   async deleteDocument({collection, document}) {
-    return this.db.collection("mercureMaurepas").doc("H9781").collection(collection).doc(document).delete().then(function() {
+    return this.db.collection("hotels").doc("H9781").collection(collection).doc(document).delete().then(function() {
       console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.log(error);
@@ -73,7 +77,7 @@ class Firebase {
   }
 
   async deleteTask({collection, document}) {
-    return this.db.collection("mercureMaurepas").doc("H9781").collection("checkList").doc("H2syEqycxDFMR78r9wHD").collection(collection).doc(document).delete().then(function() {
+    return this.db.collection("hotels").doc("H9781").collection("checkList").doc("hSM4fJ0M53FGej8NniMW").collection(collection).doc(document).delete().then(function() {
       console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.log(error);
@@ -83,7 +87,7 @@ class Firebase {
 
 
   async addMessage({author, text, hour, markup, ref, date}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('message').add({
+    return this.db.collection("hotels").doc("H9781").collection('message').add({
       author: author,
       text: text,
       hour: hour,
@@ -98,7 +102,7 @@ class Firebase {
   }
 
   async addSticker({title, text, author, markup}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('stickers').add({
+    return this.db.collection("hotels").doc("H9781").collection('stickers').add({
       title: title,
       text: text,
       author: author,
@@ -111,7 +115,7 @@ class Firebase {
   }
 
   async addLostFound({author, date, description, details, place, markup, type}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('lostNfound').add({
+    return this.db.collection("hotels").doc("H9781").collection('lostNfound').add({
       author: author,
       date: date,
       description: description,
@@ -126,14 +130,14 @@ class Firebase {
     })
   }
 
-  async addCab({author, date, client, room, passenger, model, destination, markup, hour}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('cab').add({
+  async addCab({author, date, client, room, pax, model, destination, markup, hour}){
+    return this.db.collection("hotels").doc("H9781").collection('cab').add({
       author: author,
       date: date,
       destination: destination,
       client: client,
       room: room,
-      passenger: passenger,
+      pax: pax,
       model, model,
       markup: markup,
       hour: hour
@@ -145,7 +149,7 @@ class Firebase {
   }
 
   async addClock({author, date, client, room, markup, hour, day}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('clock').add({
+    return this.db.collection("hotels").doc("H9781").collection('clock').add({
       author: author,
       date: date,
       client: client,
@@ -161,7 +165,7 @@ class Firebase {
   }
 
   async addMaid({author, date, client, fromRoom, toRoom, reason, state, markup, details}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('maid').add({
+    return this.db.collection("hotels").doc("H9781").collection('maid').add({
       author: author,
       date: date,
       details: details,
@@ -179,7 +183,7 @@ class Firebase {
   }
 
   async addMaintenance({author, date, client, room, details, markup, type}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('maintenance').add({
+    return this.db.collection("hotels").doc("H9781").collection('maintenance').add({
       author: author,
       date: date,
       details: details,
@@ -195,7 +199,7 @@ class Firebase {
   }
 
   async addSafe({author, date, amount, shift, markup}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('safe').add({
+    return this.db.collection("hotels").doc("H9781").collection('safe').add({
       author: author,
       date: date,
       amount: amount,
@@ -209,7 +213,7 @@ class Firebase {
   }
 
   async addContact({name, mobile, fix, markup}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('contact').add({
+    return this.db.collection("hotels").doc("H9781").collection('contact').add({
       name: name,
       mobile: mobile,
       fix: fix,
@@ -222,7 +226,7 @@ class Firebase {
   }
 
   async addTask({collection, task, markup}){
-    return this.db.collection("mercureMaurepas").doc("H9781").collection('checkList').doc("H2syEqycxDFMR78r9wHD").collection(collection).add({
+    return this.db.collection("hotels").doc("H9781").collection('checkList').doc("hSM4fJ0M53FGej8NniMW").collection(collection).add({
       task: task,
       markup: markup
     }).then(function(docRef){

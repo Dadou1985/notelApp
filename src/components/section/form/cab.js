@@ -24,7 +24,7 @@ const Cab = ({user, firebase}) =>{
         event.preventDefault()
         setFormValue("")
         let marker = Date.now()
-        firebase.addCab({author: user.username, room: formValue.room, client: formValue.client, markup: marker, date: formValue.date, hour: formValue.hour, destination: formValue.destination, passenger: formValue.passenger, model: formValue.model}).then(handleClose)
+        firebase.addCab({author: user.username, room: formValue.room, client: formValue.client, markup: marker, date: formValue.date, hour: formValue.hour, destination: formValue.destination, pax: formValue.passenger, model: formValue.model}).then(handleClose)
     }
 
     useEffect(() => {
@@ -150,7 +150,7 @@ const Cab = ({user, firebase}) =>{
                                         <td>{flow.room}</td>
                                         <td>{flow.date}</td>
                                         <td>{flow.hour}</td>
-                                        <td>{flow.passenger}</td>
+                                        <td>{flow.pax}</td>
                                         <td>{flow.model}</td>
                                         <td>{flow.destination}</td>
                                         <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "cab", document: flow.id})}>Supprimer</Button></td>

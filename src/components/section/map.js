@@ -1,15 +1,65 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import {GoogleMap, withScriptjs, withGoogleMap, Marker} from 'react-google-maps'
-import * as hotelData from '../../../hotel_idf.json'
+import { FirebaseContext } from '../../Firebase'
+import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
+
+
 
 function Map() {
+
+    const { user, firebase } = useContext(FirebaseContext)
+
+
+    const [list, setList] = useState(false)
+    const [info, setInfo] = useState([])
+
+    const handleClose = () => setList(false)
+    const handleShow = () => setList(true)
+
+    useEffect(() => {
+        const abortController = new AbortController()
+        const signal = abortController.signal
+        firebase.phoneOnAir({collection: "hotels", signal : signal}).onSnapshot(function(snapshot) {
+                    const snapInfo = []
+                  snapshot.forEach(function(doc) {          
+                    snapInfo.push({
+                        id: doc.id,
+                        ...doc.data()
+                      })        
+                    });
+                    console.log(snapInfo)
+                    setInfo(snapInfo)
+                });
+                return () => {
+                    abortController.abort()
+                }
+     },[])
+
     return (
-        <GoogleMap defaultZoom={12} defaultCenter={{ lat: 48.866667, lng: 2.333333 }}>
-            
-        </GoogleMap>
+        <>
+
+            {info.map(phone => (
+                <GoogleMap defaultZoom={12} defaultCenter={{ lat: 48.866667, lng: 2.333333 }}>
+                
+                <OverlayTrigger
+                    placement="top"
+                    overlay={
+                    <Tooltip id="title">
+                       {phone.hotelName} 
+                    </Tooltip>
+                    }>
+                    <Marker 
+                    key={phone.id}
+                    position={{ lat: phone.lat, lng: phone.lng }} />            
+                </OverlayTrigger>
+
+                
+            </GoogleMap>
+            ))}
+        </>
     )
 }
-console.log(hotelData[0].fields)
+
 const WrappedMap = withScriptjs(withGoogleMap(Map))
 
 export default function HotelMap() {
