@@ -3,7 +3,7 @@ import Board from '../../images/tableau.jpg'
 import { FirebaseContext } from '../../Firebase'
 import StickList from './stickList'
 import PostIt from '../../svg/paper.svg'
-import { Button, Modal, OverlayTrigger, Tooltip, Alert } from 'react-bootstrap'
+import { Button, Modal, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import CoolBar from './coolBar'
 import '../css/memo.css'
 

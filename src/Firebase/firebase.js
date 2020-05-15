@@ -46,6 +46,10 @@ class Firebase {
     return this.db.collection("hotels").doc("H9781").collection('stickers').where("author", "==", userId)
   }
 
+  overbookingOnAir(){
+    return this.db.collection("hotels").doc("H9781").collection('redPhone')
+  }
+
   toolOnAir({collection}){
     return this.db.collection("hotels").doc("H9781").collection(collection).orderBy("markup", "asc")
   }
@@ -240,8 +244,8 @@ class Firebase {
     })
   }
 
-  async addRedPhone({doc, collection, hotelName, client, pax, totalRoom, totalNight, pec, markup}){
-    return this.db.collection("hotels").doc(doc).collection(collection).add({
+  async addRedPhone({doc, hotelName, client, pax, totalRoom, totalNight, pec, markup}){
+    return this.db.collection("hotels").doc(doc).collection("redPhone").add({
       hotelName: hotelName,
       client: client,
       pax: pax,

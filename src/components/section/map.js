@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-google-maps'
 import { FirebaseContext } from '../../Firebase'
-import { Form, Button, FormRow, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
+import { Form, Button, FormRow } from 'react-bootstrap'
 
 
 
@@ -9,13 +9,9 @@ function Map() {
 
     const { user, firebase } = useContext(FirebaseContext)
 
-    const [list, setList] = useState(false)
     const [info, setInfo] = useState([])
     const [selectedHotel, setselectedHotel] = useState(null)
-    const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", pec: false})
-
-    const handleClose = () => setList(false)
-    const handleShow = () => setList(true)
+    const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", pec: ""})
 
     const handleChange = (event) =>{
         event.persist()
@@ -24,13 +20,6 @@ function Map() {
           [event.target.name]: event.target.value
         }))
       }
-
-      const handleSubmit = event => {
-        event.preventDefault()
-        setformValue("")
-        let marker = Date.now()
-        firebase.addClock({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, pec: formValue.pec, pax: formValue.pax}).then(handleClose)
-    }
 
     useEffect(() => {
         const abortController = new AbortController()
@@ -80,72 +69,67 @@ function Map() {
                             <h5>{selectedHotel.hotelName}</h5>
                             <small>{selectedHotel.address}, {selectedHotel.city}</small>
                             <h6 className="text-success">{selectedHotel.roomAvailable} chambre(s) restante(s)</h6>
-                            <Button variant="success">Déloger</Button>
+                            <a href="#" onClick={() => {
+                                document.getElementById("overbookingForm").style.display = "flex"
+                            }}>Remplir un formulare de délogement</a>
+                            <div id="overbookingForm" style={{
+                                display: "none",
+                                flexFlow: "row wrap",
+                                justifyContent: "space-around",
+                                padding: "5%", 
+                                textAlign: "center"
+                                }}>
+                                    <Form.Row>
+                                        <Form.Group controlId="description">
+                                        <Form.Label>Nom de votre établissement</Form.Label>
+                                        <Form.Control type="text" placeholder="ex: Hôtel des 4 moulins" size="sm" style={{width: "17vw"}} value={formValue.hotelName} name="hotelName" onChange={handleChange} />
+                                        </Form.Group>
+                                    </Form.Row>
+                                        <Form.Row>
+                                        <Form.Group controlId="description">
+                                        <Form.Label>Nom du client</Form.Label>
+                                        <Form.Control type="text" placeholder="ex: Jane Doe" size="sm" style={{width: "17vw"}} value={formValue.client} name="client" onChange={handleChange} />
+                                    </Form.Group>
+                                    </Form.Row>
+                                    <Form.Row>
+                                        <Form.Group controlId="description">
+                                        <Form.Label>Nombre de nuits</Form.Label>
+                                        <Form.Control type="number" style={{width: "12vw"}}  size="sm" value={formValue.totalNight} name="totalNight" onChange={handleChange} />
+                                        </Form.Group>
+                                        </Form.Row>
+                                    <Form.Row>
+                                        <Form.Group controlId="description">
+                                        <Form.Label>Nombre de chambres</Form.Label>
+                                        <Form.Control type="number" style={{width: "12vw"}} size="sm" value={formValue.totalRoom} name="totalRoom" onChange={handleChange} />
+                                        </Form.Group>
+                                    </Form.Row>
+                                    <Form.Row>
+                                        <Form.Group controlId="description">
+                                        <Form.Label>Nombre de personnes</Form.Label>
+                                        <Form.Control type="number" style={{width: "12vw"}} size="sm" value={formValue.pax} name="pax" onChange={handleChange} />
+                                        </Form.Group>
+                                    </Form.Row>
+                                    <Form.Row>
+                                        <Form.Group controlId="exampleForm.SelectCustom">
+                                        <Form.Label>P.E.C</Form.Label>
+                                        <Form.Control as="select" custom style={{width: "10vw"}} size="sm" value={formValue.pec} name="pec" onChange={handleChange}>
+                                            <option>Non</option>
+                                            <option>Oui</option>
+                                        </Form.Control>
+                                    </Form.Group>
+                                    </Form.Row>
+                                    <Button variant="success" style={{width: "100%"}} size="sm" onClick={(event) => {
+                                        event.preventDefault()
+                                        setformValue("")
+                                        let marker = Date.now()
+                                        firebase.addRedPhone({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, pec: formValue.pec, pax: formValue.pax, doc: selectedHotel.id})
+                                        setselectedHotel(null)
+                                    }}>Déloger</Button>
+                                </div>
                         </div>
                     </InfoWindow>                   
                     </>
                 )}
-                
-                {/*<Modal show={list}
-                    size="lg"
-                    aria-labelledby="contained-modal-title-vcenter"
-                    centered
-                    onHide={handleClose}
-                    >
-                    <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title-vcenter">
-                            Délogement Client
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <div style={{
-                                    display: "flex",
-                                    flexFlow: "row wrap",
-                                    justifyContent: "space-around",
-                                    padding: "5%", 
-                                    textAlign: "center"
-                                }}>
-                                <Form.Row>
-                                    <Form.Group controlId="description">
-                                    <Form.Label>Nom de votre établissement</Form.Label>
-                                    <Form.Control type="text" placeholder="ex: Hôtel des 4 moulins" style={{width: "20vw"}} value={formValue.hotelName} name="hotelName" onChange={handleChange} />
-                                    </Form.Group>
-                                </Form.Row>
-                                <Form.Row>
-                                    <Form.Group controlId="description">
-                                    <Form.Label>Nom du client</Form.Label>
-                                    <Form.Control type="text" placeholder="ex: Jane Doe" style={{width: "20vw"}} value={formValue.client} name="client" onChange={handleChange} />
-                                    </Form.Group>
-                                </Form.Row>
-                                <Form.Row>
-                                        <Form.Group controlId="description">
-                                        <Form.Label>Nombre de nuits</Form.Label>
-                                        <Form.Control type="text" placeholder="ex: 1" style={{width: "20vw"}} value={formValue.totalNight} name="totalNight" onChange={handleChange} />
-                                        </Form.Group>
-                                    </Form.Row>
-                                <Form.Row>
-                                    <Form.Group controlId="description">
-                                    <Form.Label>Nombre de chambres</Form.Label>
-                                    <Form.Control type="text" placeholder="ex: 1" style={{width: "20vw"}} value={formValue.totalRoom} name="totalRoom" onChange={handleChange} />
-                                    </Form.Group>
-                                </Form.Row>
-                                <Form.Row>
-                                    <Form.Group controlId="description">
-                                    <Form.Label>Nombre de personnes</Form.Label>
-                                    <Form.Control type="text" placeholder="ex: 2" style={{width: "20vw"}} value={formValue.pax} name="pax" onChange={handleChange} />
-                                    </Form.Group>
-                                </Form.Row>
-                                <FormRow>
-                                    <Form.Group controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="Réservation prise en charge" value={formValue.pec} name="pec" onChange={handleChange} />
-                                    </Form.Group>
-                                </FormRow>
-                            </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="outline-success" onClick={handleSubmit}>Enregistrer</Button>
-                    </Modal.Footer>
-                </Modal>*/}
                 </GoogleMap>
             ))}
         </>

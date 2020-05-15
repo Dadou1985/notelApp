@@ -27,17 +27,18 @@ const RoomAvailable = () => {
             flexFlow: "row",
             justifyContent: "space-around",
             height: "6vh",
-            alignItems: "center"
+            alignItems: "center",
+            marginTop: "2%"
           }}>
             <b>Nombre de chambres restantes :</b>
-              <FormControl style={{width: "4vw", height: "6vh"}}
+              <FormControl style={{width: "4vw", height: "5vh"}}
                 type="number"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
                 value={formValue.room}
                 name="room"
                 onChange={handleChange}/>
-              <Button variant="success" onClick={handleSubmit}>Actualiser</Button>
+              <Button variant="success" onClick={handleSubmit} size="sm">Actualiser</Button>
           </div>
     )
 }
