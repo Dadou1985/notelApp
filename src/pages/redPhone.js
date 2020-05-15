@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
-import {Form, FormControl, InputGroup} from 'react-bootstrap'
+import {Form, FormControl, Button} from 'react-bootstrap'
 import HotelMap from '../components/section/map'
+import RoomAvailable from '../components/section/form/roomAvailable'
 
 
 const RedPhone = () => {
@@ -62,7 +63,7 @@ const RedPhone = () => {
           justifyContent: "space-around",
           width: "100%",
           padding: "1%", 
-          marginBottom: "5%"
+          marginBottom: "3%"
         }}>
           <h6 className="text-center">Overbooking Inbox</h6>
           <div style={{
@@ -79,20 +80,7 @@ const RedPhone = () => {
 
           </div>
         </div>
-        <div style={{
-          display:"flex",
-          flexFlow: "row",
-          justifyContent: "center",
-          height: "4vh"
-        }}>
-          <b>Nombre de chambres restantes :</b>
-          <InputGroup className="mb-3" style={{width: "3vw", height: "4vh", marginLeft: "2%"}}>
-            <FormControl style={{width: "3vw", height: "4vh"}}
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-          </InputGroup>
-        </div>
+        <RoomAvailable />
       </div>
     </Layout>
   )

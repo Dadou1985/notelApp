@@ -63,7 +63,11 @@ class Firebase {
   }
 
   phoneOnAir(){
-    return this.db.collection("hotels").where("roomAvailable", ">", 0)
+    return this.db.collection("hotels").where("roomAvailable", ">", "0")
+  }
+
+  hotelOnAir(){
+    return this.db.collection("hotels")
   }
 
 
@@ -233,6 +237,31 @@ class Firebase {
       console.log(docRef.id)
     }).catch(function(error) {
       console.error(error)
+    })
+  }
+
+  async addRedPhone({doc, collection, hotelName, client, pax, totalRoom, totalNight, pec, markup}){
+    return this.db.collection("hotels").doc(doc).collection(collection).add({
+      hotelName: hotelName,
+      client: client,
+      pax: pax,
+      totalRoom: totalRoom,
+      totalNight: totalNight,
+      pec: pec,
+      markup: markup
+    }).then(function(docRef){
+      console.log(docRef.id)
+    }).catch(function(error) {
+      console.error(error)
+    })
+  }
+
+  async updateRoomAvailable({room}){
+    return this.db.collection("hotels").doc("H9781").update({
+      roomAvailable: room
+    })
+    .then(function() {
+      console.log("Document successfully updated!");
     })
   }
 
