@@ -1,9 +1,9 @@
 import React, {useState, useEffect } from 'react'
 import OverbookingForm from './overbookingForm'
 
-const Overbooking = ({user, firebase}) => {
+const Overbooking = ({firebase}) => {
 
-    const [overbooking, setoverbooking] = useState([])
+    const [info, setInfo] = useState([])
 
     useEffect(() => {
         let unsubscribe
@@ -17,7 +17,7 @@ const Overbooking = ({user, firebase}) => {
                       })        
                     })
                     console.log(snapStick)
-                    setoverbooking(snapStick)
+                    setInfo(snapStick)
                 });
                 return () => {
                     if(unsubscribe){
@@ -26,24 +26,25 @@ const Overbooking = ({user, firebase}) => {
                 }
            
      },[])
-    return (
+    
+     return (
         <div style={{
             display: "flex",
             flexFlow: "row wrap",
             minHeight:"10vh",
             maxHeight: "40vh",
-            justifyContent: "space-between"
+            justifyContent: "start"
         }}>
-            {overbooking.map(stick =>(
+            {info.map(stick =>(
                 <OverbookingForm
-                key={stick.id}
+                key={stick.markup}
                 hotel={stick.hotelName}
                 client={stick.client}
                 room={stick.totalRoom}
                 night={stick.totalNight}
                 pec={stick.pec}
                 pax={stick.pax}
-                markup={stick.markup}
+                markup={stick.id}
                 />
             ))}
         </div>

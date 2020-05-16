@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
-import {FirebaseContext} from '../../Firebase'
 import Overbooking from './overbooking'
+import Stick from '../../svg/support.svg'
+import {FirebaseContext} from '../../Firebase'
+
 
 
 const OverbookingBox = () => {
 
-    const [user, firebase] = useContext(FirebaseContext)
+    const {user, firebase} = useContext(FirebaseContext)
 
     return (
         <div style={{
@@ -16,20 +18,18 @@ const OverbookingBox = () => {
             padding: "1%", 
             marginBottom: "3%"
           }}>
-            <h6 className="text-center">Overbooking Inbox</h6>
+            <h6 className="text-center">Overbooking Board</h6>
             <div style={{
             display: "flex",
-            flexFlow: "row wrap",
-            justifyContent: "start",
             width: "100%",
             height: "35vh",
             padding: "1%",
-            border: "1px solid white",
             borderRadius: "2%",
             filter: "drop-shadow(4px 4px 5px black)",
-            padding: "3%"
+            padding: "3%",
+            backgroundColor: "white"
           }}>
-              {!!firebase &&
+              {!!firebase && 
               <Overbooking firebase={firebase} />}
             </div>
         </div>

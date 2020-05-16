@@ -112,9 +112,9 @@ function Map() {
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>P.E.C</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "10vw"}} size="sm" value={formValue.pec} name="pec" onChange={handleChange}>
-                                            <option>Non</option>
-                                            <option>Oui</option>
+                                        <Form.Control as="select" custom style={{width: "10vw"}} size="sm" defaultValue="Non" value={formValue.pec} name="pec" onChange={handleChange}>
+                                            <option value="non" selected>Non</option>
+                                            <option value="oui">Oui</option>
                                         </Form.Control>
                                     </Form.Group>
                                     </Form.Row>

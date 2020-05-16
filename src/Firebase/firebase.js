@@ -47,7 +47,7 @@ class Firebase {
   }
 
   overbookingOnAir(){
-    return this.db.collection("hotels").doc("H9781").collection('redPhone')
+    return this.db.collection("hotels").doc("H9781").collection('redPhone').orderBy("markup", "asc")
   }
 
   toolOnAir({collection}){

@@ -34,12 +34,16 @@ const OverbookingForm = ({hotel, client, markup, night, room, pax, pec}) => {
       overlay={
         <Tooltip id="intitulé">
           <h5>{hotel}</h5>
-          <h6>{room} {night}</h6>
+          <h6>{room} chambre(s)</h6>
+          <h6>{night} nuit(s)</h6>
         </Tooltip>
       }>
         <img src={Stick} alt="stick" className="stick" onClick={showSticker} style={{
-              width: "100%",
-              height: "100%"
+              width: "90%",
+              height: "70%",
+              backgroundColor: "red",
+              borderRadius: "25%",
+              border: "red 5px solid"
           }} />
       </OverlayTrigger>
 
@@ -48,34 +52,28 @@ const OverbookingForm = ({hotel, client, markup, night, room, pax, pec}) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">{hotel}</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter" className="text-center">{hotel}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div style={{
           display: "flex",
           flexFlow: "column",
-          justifyContent: "center",
+          justifyContent: "start",
           textAlign: "center"
         }}>
-          <h6>{client}</h6>
-          <div style={{
-          display: "flex",
-          flexFlow: "row",
-          justifyContent: "space-around"
-        }}>
-            {room}
-            {night}
-            {pax}
-          </div>
-          {pec}
+          <h6>Nom du client : {client}</h6><br/>
+          <p>Nombre de Chambre(s) : {room}</p>
+          <p>Nombre de nuit(s) : {night}</p>
+          <p>Pax : {pax}</p>
+          Prise en charge : {pec}
         </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="outline-danger" onClick={removeSticker}>
-            Accepter
+            Refuser
           </Button>
           <Button variant="success" onClick={handleClose}>
-            Refuser
+            Accepter
           </Button>
         </Modal.Footer>
       </Modal>
