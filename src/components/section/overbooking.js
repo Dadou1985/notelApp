@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import OverbookingForm from './overbookingForm'
 
-const Overbooking = ({firebase}) => {
+const Overbooking = ({user, firebase}) => {
 
     const [info, setInfo] = useState([])
 

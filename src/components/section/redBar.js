@@ -1,10 +1,7 @@
 import React, { useContext } from 'react'
-import Bed from '../../svg/rest.svg'
-import RedPhone from '../../svg/support.svg'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
-import '../css/memo.css'
 import { FirebaseContext } from '../../Firebase'
-
+import RoomAvailable from './form/roomAvailable'
+import IncomingBooking from './form/redPhoneIncoming'
 
 
 const RedBar = () => {
@@ -14,23 +11,12 @@ const RedBar = () => {
     return (
         <div style={{
             display: "flex",
-            justifyContent: "center",
-            position: "absolute",
-            bottom: "15vh"
+            flexFlow: "row",
+            justifyContent: "space-around",
         }}>
-            {!!firebase && !!user &&
-            <CheckList firebase={firebase} user={user} />}
-            {!!firebase && !!user &&
-            <Annuaire firebase={firebase} user={user} />}
-            <OverlayTrigger
-            placement="top"
-            overlay={
-              <Tooltip id="title">
-                Vos chambres restantes
-              </Tooltip>
-            }>
-                <img src={Bed} className="icon" id="phone" alt="bed" />
-            </OverlayTrigger>
+            {!!firebase &&
+                <IncomingBooking firebase={firebase} />}
+            <RoomAvailable />
         </div>
     )
 }

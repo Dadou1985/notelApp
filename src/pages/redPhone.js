@@ -2,12 +2,11 @@ import React from "react"
 import Layout from "../components/layout"
 import {Form} from 'react-bootstrap'
 import HotelMap from '../components/section/map'
-import RoomAvailable from '../components/section/form/roomAvailable'
+import RedBar from '../components/section/redBar'
 import OverbookingBox from '../components/section/overbookingBox'
 
 
 const RedPhone = () => {
-
 
   return(
     <Layout>
@@ -62,7 +61,7 @@ const RedPhone = () => {
             </Form.Row>
           </div>
           <OverbookingBox />
-          <RoomAvailable />
+          <RedBar />
         </div>
       </div>
     </Layout>

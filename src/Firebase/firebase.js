@@ -21,10 +21,11 @@ class Firebase {
     return this.auth.currentUser
   }
 
-  async register({email, password, username}) {
+  async register({email, password, username, refHotel}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
     return this.db.collection("hotels").doc("H9781").collection("publicUsers").doc(username).set({
-      userId: newUser.user.uid
+      userId: newUser.user.uid,
+      userHotel: refHotel
     });
   }
 
@@ -260,9 +261,10 @@ class Firebase {
     })
   }
 
-  async updateRoomAvailable({room}){
+  async updateRoomAvailable({room, rac}){
     return this.db.collection("hotels").doc("H9781").update({
-      roomAvailable: room
+      roomAvailable: room,
+      rac: rac
     })
     .then(function() {
       console.log("Document successfully updated!");

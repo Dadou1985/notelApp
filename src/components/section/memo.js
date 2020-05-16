@@ -42,7 +42,8 @@ const Memo =()=>{
         
             <div style={{ 
                 width: "40vw",
-                height: "80vh",
+                minHeight: "20vh",
+                maxHeight: "80vh",
                 backgroundImage: `url(${Board})`,
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",

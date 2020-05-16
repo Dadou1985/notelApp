@@ -19,7 +19,7 @@ const Register = ({firebase, hide}) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         if (formValue.password === formValue.confPassword){
-            firebase.register({username: formValue.username, email: formValue.email, password: formValue.password}).then(()=>navigate("singlePage")).catch(error=>{
+            firebase.register({username: formValue.username, email: formValue.email, password: formValue.password, refHotel: formValue.refHotel}).then(()=>navigate("singlePage")).catch(error=>{
                 if(error.message){
                     setErrorMessage(error.message)
                 }else{}
