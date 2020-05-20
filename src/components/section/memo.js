@@ -77,7 +77,7 @@ const Memo =()=>{
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                     >
-                    <Modal.Header>
+                    <Modal.Header className="bg-success">
                         <Modal.Title id="contained-modal-title-vcenter">
                         <input value={formValue.title} name="title" type="text" placeholder="Donner un titre au mémo..." onChange={handleChange} style={{
                             width: "53vw",

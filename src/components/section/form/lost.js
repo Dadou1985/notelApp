@@ -69,7 +69,7 @@ const Lost = ({user, firebase}) =>{
                     centered
                     onHide={handleClose}
                     >
-                    <Modal.Header closeButton>
+                    <Modal.Header closeButton className="bg-light">
                         <Modal.Title id="contained-modal-title-vcenter">
                         Objets trouvés
                         </Modal.Title>

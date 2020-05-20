@@ -12,11 +12,11 @@ const RedBar = () => {
         <div style={{
             display: "flex",
             flexFlow: "row",
-            justifyContent: "space-around",
+            justifyContent: "center",
         }}>
+            <RoomAvailable />
             {!!firebase &&
                 <IncomingBooking firebase={firebase} />}
-            <RoomAvailable />
         </div>
     )
 }

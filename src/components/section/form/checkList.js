@@ -29,7 +29,7 @@ const CheckList = ({user, firebase}) =>{
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 onHide={handleClose}>
-            <Modal.Header closeButton>
+            <Modal.Header closeButton className="bg-light">
                 <Modal.Title id="contained-modal-title-vcenter">
                 Check-List
                 </Modal.Title>

@@ -45,7 +45,7 @@ const RoomAvailable = () => {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 onHide={handleClose}>
-            <Modal.Header closeButton>
+            <Modal.Header closeButton className="bg-light">
                 <Modal.Title id="contained-modal-title-vcenter">
                 Gestion des chambre(s) restante(s) et du RACK
                 </Modal.Title>
@@ -59,18 +59,26 @@ const RoomAvailable = () => {
                   textAlign: "center",
                   padding: "2%"
               }}>
-              <div>
+              <div style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}>
                 <b>Nombre de chambres restantes :</b>
-                <FormControl style={{width: "4vw", height: "5vh"}}
+                <FormControl style={{width: "4vw", height: "5vh", marginLeft: "1%"}}
                   type="number"
                   aria-describedby="basic-addon1"
                   value={formValue.room}
                   name="room"
                   onChange={handleChange}/>
               </div>
-              <div>
+              <div style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}>
               <b>Montant du Rack :</b>
-              <FormControl style={{width: "4vw", height: "5vh"}}
+              <FormControl style={{width: "4vw", height: "5vh", marginLeft: "1%"}}
                   type="text"
                   aria-describedby="basic-addon1"
                   value={formValue.rac}

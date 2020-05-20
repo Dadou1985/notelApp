@@ -51,7 +51,7 @@ const OverbookingForm = ({hotel, client, markup, night, room, pax, pec}) => {
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="bg-light">
           <Modal.Title id="contained-modal-title-vcenter" className="text-center">{hotel}</Modal.Title>
         </Modal.Header>
         <Modal.Body>

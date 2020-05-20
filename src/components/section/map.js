@@ -11,7 +11,7 @@ function Map() {
 
     const [info, setInfo] = useState([])
     const [selectedHotel, setselectedHotel] = useState(null)
-    const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", pec: ""})
+    const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", pec: "", refHotel: ""})
 
     const handleChange = (event) =>{
         event.persist()
@@ -68,6 +68,7 @@ function Map() {
                         }}>
                             <h5>{selectedHotel.hotelName}</h5>
                             <small>{selectedHotel.address}, {selectedHotel.city}</small>
+                            <b>Rack : {selectedHotel.rac}€</b>
                             <h6 className="text-success">{selectedHotel.roomAvailable} chambre(s) restante(s)</h6>
                             <a href="#" onClick={() => {
                                 document.getElementById("overbookingForm").style.display = "flex"
@@ -118,11 +119,17 @@ function Map() {
                                         </Form.Control>
                                     </Form.Group>
                                     </Form.Row>
+                                    <Form.Row>
+                                        <Form.Group controlId="description">
+                                        <Form.Label>Référence de l'Hotel</Form.Label>
+                                        <Form.Control type="text" style={{width: "12vw"}} size="sm" value={formValue.refHotel} name="refHotel" onChange={handleChange} />
+                                        </Form.Group>
+                                    </Form.Row>
                                     <Button variant="success" style={{width: "100%"}} size="sm" onClick={(event) => {
                                         event.preventDefault()
                                         setformValue("")
                                         let marker = Date.now()
-                                        firebase.addRedPhone({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, pec: formValue.pec, pax: formValue.pax, doc: selectedHotel.id})
+                                        firebase.addRedPhone({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, pec: formValue.pec, pax: formValue.pax, refHotel: formValue.refHotel, doc: selectedHotel.id})
                                         setselectedHotel(null)
                                     }}>Déloger</Button>
                                 </div>

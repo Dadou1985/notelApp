@@ -28,6 +28,7 @@
     "react-dom": "^16.13.0",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.1",
+    "react-map-gl": "^5.2.5",
     "reactstrap": "^8.4.1"
   },
   "devDependencies": {

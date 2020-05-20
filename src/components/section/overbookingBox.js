@@ -3,10 +3,9 @@ import Overbooking from './overbooking'
 import {FirebaseContext} from '../../Firebase'
 
 
-
 const OverbookingBox = () => {
 
-    const {user, firebase} = useContext(FirebaseContext)
+    const {firebase} = useContext(FirebaseContext)
 
     return (
         <div style={{
@@ -21,17 +20,17 @@ const OverbookingBox = () => {
             <div style={{
             display: "flex",
             width: "100%",
-            minHeight: "10vh",
-            maxHeight: "35vh",
-            overflow: "auto",
+            flexFlow: "row wrap",
+            justifyContent: "center",
+            height: "35vh",
             padding: "1%",
             borderRadius: "2%",
             filter: "drop-shadow(4px 4px 5px black)",
             padding: "3%",
             backgroundColor: "white"
           }}>
-              {!!firebase && user &&
-              <Overbooking firebase={firebase} user={user} />}
+              {!!firebase &&
+              <Overbooking firebase={firebase} />}
             </div>
         </div>
     )

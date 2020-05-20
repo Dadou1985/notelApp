@@ -16,9 +16,13 @@ class Firebase {
   async getUserProfile({userId}){
     return this.db.collection("hotels").doc("H9781").collection('publicUsers').where('userId', '==', userId).get();
   }
-  
+
   getUserId(){
     return this.auth.currentUser
+  }
+  
+  async redPhoneFilter({filter}){
+    return this.deleteDocument.collection("hotels").orderBy(filter)
   }
 
   async register({email, password, username, refHotel}) {
@@ -74,6 +78,7 @@ class Firebase {
   hotelOnAir(){
     return this.db.collection("hotels")
   }
+
 
 
 
@@ -245,7 +250,7 @@ class Firebase {
     })
   }
 
-  async addRedPhone({doc, hotelName, client, pax, totalRoom, totalNight, pec, markup}){
+  async addRedPhone({doc, hotelName, client, pax, totalRoom, totalNight, pec, refHotel, markup}){
     return this.db.collection("hotels").doc(doc).collection("redPhone").add({
       hotelName: hotelName,
       client: client,
@@ -253,6 +258,7 @@ class Firebase {
       totalRoom: totalRoom,
       totalNight: totalNight,
       pec: pec,
+      refHotel: refHotel,
       markup: markup
     }).then(function(docRef){
       console.log(docRef.id)
@@ -260,6 +266,8 @@ class Firebase {
       console.error(error)
     })
   }
+
+  
 
   async updateRoomAvailable({room, rac}){
     return this.db.collection("hotels").doc("H9781").update({

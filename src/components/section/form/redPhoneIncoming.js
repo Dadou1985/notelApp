@@ -48,7 +48,7 @@ const IncomingBooking = ({firebase}) =>{
                     centered
                     onHide={handleClose}
                     >
-                    <Modal.Header closeButton>
+                    <Modal.Header closeButton className="bg-light">
                         <Modal.Title id="contained-modal-title-vcenter">
                         Délogements reçus
                         </Modal.Title>
@@ -58,12 +58,12 @@ const IncomingBooking = ({firebase}) =>{
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
                                     <th>#</th>
-                                    <th>Hotel initial</th>
-                                    <th>Nom du client</th>
-                                    <th>Nbre de chambre(s)</th>
-                                    <th>nbre de nuit(s)</th>
+                                    <th>Hotel</th>
+                                    <th>Client</th>
+                                    <th>Chambre(s)</th>
+                                    <th>Nuit(s)</th>
                                     <th>Pax</th>
-                                    <th>Montant initial</th>
+                                    <th>Montant</th>
                                     <th>PEC</th>
                                     <th className="bg-dark"></th>
                                     </tr>

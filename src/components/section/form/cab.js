@@ -64,7 +64,7 @@ const Cab = ({user, firebase}) =>{
                     centered
                     onHide={handleClose}
                     >
-                    <Modal.Header closeButton>
+                    <Modal.Header closeButton className="bg-light">
                         <Modal.Title id="contained-modal-title-vcenter">
                         Réservation de taxi
                         </Modal.Title>
