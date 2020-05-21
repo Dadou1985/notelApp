@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import Map, {Marker, Popup} from 'react-map-gl'
+import Map, {Marker} from 'react-map-gl'
 import OverbookingBox from './overbookingBox'
 import RedBar from './redBar'
-import {Form, Button, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {Form, Button, Modal, OverlayTrigger, Tooltip, Dropdown} from 'react-bootstrap'
 import * as Departement from '../../../zoneFrance/json/departments.json'
-import * as Places from '../../../listHotel.json'
+import MarkerImg from './markerImg'
 
 
 export default function DeepMap({user, firebase}) {
@@ -12,7 +12,13 @@ export default function DeepMap({user, firebase}) {
     const [info, setInfo] = useState([])
     const [selectedHotel, setselectedHotel] = useState(null)
     const [list, setList] = useState(false)
-    const [place, setPlace] = useState([])
+    const [field, setField] = useState("Region")
+    const [filter, setFilter] = useState("Ile-de-France")
+    const [geo, setGeo] = useState({geo: []})
+    const [star, setStar] = useState({star: []})
+    const [operator, setOperator] = useState("==")
+
+
 
 
     const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", pec: "", refHotel: ""})
@@ -28,7 +34,6 @@ export default function DeepMap({user, firebase}) {
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
 
-
     const [viewPort, setviewPort] = useState({
         latitude: 48.866667,
         longitude: 2.333333,
@@ -37,11 +42,31 @@ export default function DeepMap({user, firebase}) {
         zoom: 10
     })
 
+    const handleZone = () => {
+        const dept = document.getElementById("zone")
+        const deptValue = dept.options[dept.selectedIndex].text
+        setField("Departement")
+        setOperator("array-contains")
+        setFilter(deptValue)
+    }
+
+    const handleStars = () => {
+        const dept = document.getElementById("stars")
+        const deptValue = dept.options[dept.selectedIndex].text
+        setField("standing")
+        setOperator("array-contains")
+        setFilter(deptValue)
+    }
+
+
+    console.log(field)
+    console.log(filter)
+
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
         
-        firebase.phoneOnAir({signal : signal}).onSnapshot(function(snapshot) {
+        firebase.filterOnAir({field: field, operator: operator, filter: filter, signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -52,16 +77,11 @@ export default function DeepMap({user, firebase}) {
                     console.log(snapInfo)
                     setInfo(snapInfo)
                 });
+
                 return () => {
                     abortController.abort()
                     }
-     },[])
-
-     const handleZone = () => {
-         let dept = document.getElementById("zone").value
-         setInfo(firebase.firestore().collection("hotels").where("departement", "==", dept))
-     }
-
+     },[field, filter])
      
     return (
         <div
@@ -78,9 +98,9 @@ export default function DeepMap({user, firebase}) {
                 setviewPort(viewPort)
             }}
             >
-                {Places.map(hotel =>(
+                {info.map(hotel =>(
                     <Marker 
-                    key={hotel.courriel}
+                    key={hotel.id}
                     latitude={hotel.lat} 
                     longitude={hotel.lng}
                      > 
@@ -88,21 +108,21 @@ export default function DeepMap({user, firebase}) {
                         placement="top"
                         overlay={
                         <Tooltip id="title">
-                            <h5>{hotel.nom_commercial}</h5>
-                            <b>Rack : {info.rac}€</b>
-                            <h6 className="text-success">{info.roomAvailable} chambre(s) restante(s)</h6>
+                            <h5>{hotel.hotelName}</h5>
+                            <b>Rack : {hotel.rac}€</b>
+                            <h6 className="text-success">{hotel.roomAvailable} chambre(s) restante(s)</h6>
                         </Tooltip>
                         }>
-                            <button onClick={(event) => {
-                                event.preventDefault()
-                                setselectedHotel(hotel)
-                                handleShow()
-                            }}>
-                                <img src="/hostel.png" alt="hotel" />
+                            <button style={{background: "none", border: "none"}}
+                            onClick={(event) => {
+                                    event.preventDefault()
+                                    setselectedHotel(hotel)
+                                    handleShow()
+                                }}>
+                                <MarkerImg />
                             </button>
                      </OverlayTrigger>
-
-                     </Marker>
+                    </Marker>
                 ))}
                 
                 {selectedHotel ? (
@@ -115,7 +135,7 @@ export default function DeepMap({user, firebase}) {
                                 >
                                 <Modal.Header closeButton className="bg-light">
                                     <Modal.Title id="contained-modal-title-vcenter">
-                                    Délogement vers {selectedHotel.nom_commercial}
+                                    Délogement vers {selectedHotel.hotelName}
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
@@ -205,31 +225,41 @@ export default function DeepMap({user, firebase}) {
                     flexFlow: "row",
                     justifyContent: "space-around"}}>
                 <Form.Row>
-                <Form.Group controlId="exampleForm.SelectCustom">
-                <Form.Label className="text-center" style={{width: "12vw"}}>Département</Form.Label>
-                <Form.Control as="select" custom style={{width: "12vw", filter: "drop-shadow(2px 2px 5px black)"}} defaultValue="Paris">
+                <Form.Group style={{
+                    display: "flex",
+                    flexFlow: "column",
+                    alignItems: "center"
+                }}>
+                <Form.Label className="text-center" value={geo} style={{width: "12vw"}}>Département</Form.Label>
+                <select class="selectpicker" id="zone" style={{width: "14vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}}>
+                <option>Tous les départements</option>
                 {Departement.map(zone => (
                     <option 
-                    key={zone.id} 
-                    id="zone"
-                    onClick={handleZone}>
+                    key={zone.id}>
                         {zone.name}
                     </option>
                 ))}
-                </Form.Control>
+                </select>
+                <Button variant="dark" size="sm" style={{width: "7vw", marginTop: "5%"}} onClick={handleZone}>Filtrer</Button>
                 </Form.Group>
                     </Form.Row>
                     <Form.Row>
-                    <Form.Group controlId="exampleForm.SelectCustom">
+                    <Form.Group style={{
+                    display: "flex",
+                    flexFlow: "column",
+                    alignItems: "center"
+                }}>
                     <Form.Label className="text-center" style={{width: "12vw"}}>Etoiles</Form.Label>
-                    <Form.Control as="select" custom style={{width: "12vw", filter: "drop-shadow(2px 2px 5px black)"}}>
-                        <option>Toutes étoiles</option>
+                    <select id="stars" style={{width: "12vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}}>
+                        <option>Toutes les étoiles</option>
                         <option>1 étoile</option>
                         <option>2 étoiles</option>
                         <option>3 étoiles</option>
                         <option>4 étoiles</option>
                         <option>5 étoiles</option>
-                    </Form.Control>
+                    </select>
+
+                    <Button variant="dark" size="sm" style={{width: "7vw", marginTop: "5%"}} onClick={handleStars}>Filtrer</Button>
                     </Form.Group>
                 </Form.Row>
                 </div>

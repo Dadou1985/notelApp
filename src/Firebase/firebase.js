@@ -72,7 +72,11 @@ class Firebase {
   }
 
   phoneOnAir(){
-    return this.db.collection("hotels").where("roomAvailable", ">", "0")
+    return this.db.collection("hotels").where("roomAvailable", "<", "0")
+  }
+
+  filterOnAir({field, operator, filter}){
+    return this.db.collection("hotels").where(field, operator, filter)
   }
 
   hotelOnAir(){
