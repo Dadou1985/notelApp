@@ -1,22 +1,20 @@
-import React, { useContext } from 'react'
-import { FirebaseContext } from '../../Firebase'
+import React from 'react'
 import RoomAvailable from './form/roomAvailable'
-import IncomingBooking from './form/redPhoneIncoming'
+import Rack from './form/rack'
 
 
 const RedBar = () => {
-
-    const { user, firebase } = useContext(FirebaseContext)
 
     return (
         <div style={{
             display: "flex",
             flexFlow: "row",
             justifyContent: "center",
+            width: "30%",
+            marginLeft: "37%"
         }}>
             <RoomAvailable />
-            {!!firebase &&
-                <IncomingBooking firebase={firebase} />}
+            <Rack />
         </div>
     )
 }

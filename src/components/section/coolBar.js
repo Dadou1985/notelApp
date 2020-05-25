@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Annuaire from './form/annuaire'
 import CheckList from './form/checkList'
-import RedPhone from '../../svg/support.svg'
+import Overbooking from '../../svg/full.svg'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { navigate } from 'gatsby'
 import '../css/memo.css'
@@ -32,10 +32,10 @@ const CoolBar = () => {
             placement="bottom"
             overlay={
               <Tooltip id="title">
-                Red Phone
+                Overbooking
               </Tooltip>
             }>
-                <img src={RedPhone} className="icon" id="phone" alt="red_phone" onClick={handleMove} />
+                <img src={Overbooking} className="icon" id="phone" alt="red_phone" onClick={handleMove} />
             </OverlayTrigger>
         </div>
     )

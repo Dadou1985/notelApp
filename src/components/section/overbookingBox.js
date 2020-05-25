@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
-import Overbooking from './overbooking'
+import OverIn from './overbookIn'
+import OverOut from './overbookOut'
 import {FirebaseContext} from '../../Firebase'
+import {Tab, Tabs} from 'react-bootstrap'
 
 
 const OverbookingBox = () => {
@@ -16,22 +18,43 @@ const OverbookingBox = () => {
             padding: "1%", 
             marginBottom: "3%"
           }}>
-            <h6 className="text-center">Overbooking Board</h6>
-            <div style={{
-            display: "flex",
-            width: "100%",
-            flexFlow: "row wrap",
-            justifyContent: "center",
-            height: "35vh",
-            padding: "1%",
-            borderRadius: "2%",
-            filter: "drop-shadow(4px 4px 5px black)",
-            padding: "3%",
-            backgroundColor: "white"
-          }}>
-              {!!firebase &&
-              <Overbooking firebase={firebase} />}
-            </div>
+            <h6 className="text-center"><b>Overbooking Box</b></h6>
+            <Tabs defaultActiveKey="incoming" id="uncontrolled-tab-example" className="bg-light">
+                <Tab eventKey="incoming" title="Réception">
+                <div style={{
+                    display: "flex",
+                    width: "100%",
+                    flexFlow: "row wrap",
+                    justifyContent: "center",
+                    height: "30vh",
+                    padding: "1%",
+                    borderRadius: "2%",
+                    filter: "drop-shadow(4px 4px 5px black)",
+                    padding: "3%",
+                    backgroundColor: "white"
+                  }}>
+                  {!!firebase &&
+                  <OverIn firebase={firebase} />}
+                </div>
+                </Tab>
+                <Tab eventKey="outcoming" title="Emission">
+                <div style={{
+                    display: "flex",
+                    width: "100%",
+                    flexFlow: "row wrap",
+                    justifyContent: "center",
+                    height: "30vh",
+                    padding: "1%",
+                    borderRadius: "2%",
+                    filter: "drop-shadow(4px 4px 5px black)",
+                    padding: "3%",
+                    backgroundColor: "white"
+                  }}>
+                  {!!firebase &&
+                  <OverOut firebase={firebase} />}
+                </div>
+                </Tab>
+            </Tabs>
         </div>
     )
 }

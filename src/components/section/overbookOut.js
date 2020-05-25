@@ -1,14 +1,14 @@
 import React, {useState, useEffect } from 'react'
-import OverbookingForm from './overbookingForm'
+import OverbookOutForm from './overbookOutForm'
 
-const Overbooking = ({user, firebase}) => {
+const OverOut = ({user, firebase}) => {
 
     const [info, setInfo] = useState([])
 
     useEffect(() => {
         let unsubscribe
         
-                unsubscribe = firebase.overbookingOnAir().onSnapshot(function(snapshot) {
+                unsubscribe = firebase.overbookingOnAir({table: "overbookOut"}).onSnapshot(function(snapshot) {
                     const snapStick = []
                   snapshot.forEach(function(doc) {          
                     snapStick.push({
@@ -36,7 +36,7 @@ const Overbooking = ({user, firebase}) => {
             justifyContent: "start"
         }}>
             {info.map(stick =>(
-                <OverbookingForm
+                <OverbookOutForm
                 key={stick.markup}
                 hotel={stick.hotelName}
                 client={stick.client}
@@ -44,11 +44,14 @@ const Overbooking = ({user, firebase}) => {
                 night={stick.totalNight}
                 pec={stick.pec}
                 pax={stick.pax}
+                initialPrice={stick.initialPrice}
+                refHotel={stick.refHotel}
                 markup={stick.id}
+                status={stick.status}
                 />
             ))}
         </div>
     )
 }
 
-export default Overbooking
+export default OverOut

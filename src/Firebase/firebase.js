@@ -51,8 +51,8 @@ class Firebase {
     return this.db.collection("hotels").doc("H9781").collection('stickers').where("author", "==", userId)
   }
 
-  overbookingOnAir(){
-    return this.db.collection("hotels").doc("H9781").collection('redPhone').orderBy("markup", "asc")
+  overbookingOnAir({table}){
+    return this.db.collection("hotels").doc("H9781").collection('overbooking').doc("tables").collection(table).orderBy("markup", "asc")
   }
 
   toolOnAir({collection}){
@@ -88,6 +88,14 @@ class Firebase {
 
   async deleteDocument({collection, document}) {
     return this.db.collection("hotels").doc("H9781").collection(collection).doc(document).delete().then(function() {
+      console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.log(error);
+    });
+  }
+
+  async deleteOverbooking({collection, document}) {
+    return this.db.collection("hotels").doc("H9781").collection("overbooking").doc("tables").collection(collection).doc(document).delete().then(function() {
       console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.log(error);
@@ -254,13 +262,14 @@ class Firebase {
     })
   }
 
-  async addRedPhone({doc, hotelName, client, pax, totalRoom, totalNight, pec, refHotel, markup}){
-    return this.db.collection("hotels").doc(doc).collection("redPhone").add({
+  async addOverbookIn({doc, hotelName, client, pax, totalRoom, totalNight, pec, initialPrice, refHotel, markup}){
+    return this.db.collection("hotels").doc(doc).collection("overbooking").doc("tables").collection("overbookIn").add({
       hotelName: hotelName,
       client: client,
       pax: pax,
       totalRoom: totalRoom,
       totalNight: totalNight,
+      initialPrice: initialPrice,
       pec: pec,
       refHotel: refHotel,
       markup: markup
@@ -271,12 +280,48 @@ class Firebase {
     })
   }
 
+  async addOverbookOut({doc, hotelName, client, pax, totalRoom, totalNight, pec, initialPrice, refHotel, markup}){
+    return this.db.collection("hotels").doc(doc).collection("overbooking").doc("tables").collection("overbookOut").add({
+      hotelName: hotelName,
+      client: client,
+      pax: pax,
+      totalRoom: totalRoom,
+      totalNight: totalNight,
+      initialPrice: initialPrice,
+      pec: pec,
+      refHotel: refHotel,
+      markup: markup
+    }).then(function(docRef){
+      console.log(docRef.id)
+    }).catch(function(error) {
+      console.error(error)
+    })
+  }
+
+
   
 
-  async updateRoomAvailable({room, rac}){
+  async updateRoomAvailable({room}){
     return this.db.collection("hotels").doc("H9781").update({
-      roomAvailable: room,
+      roomAvailable: room
+    })
+    .then(function() {
+      console.log("Document successfully updated!");
+    })
+  }
+
+  async updateRack({rac}){
+    return this.db.collection("hotels").doc("H9781").update({
       rac: rac
+    })
+    .then(function() {
+      console.log("Document successfully updated!");
+    })
+  }
+
+  async updateOverbookingIn({doc, table, overbookingId, status}){
+    return this.db.collection("hotels").doc(doc).collection("overbooking").doc("tables").collection(table).doc(overbookingId).update({
+      status: status
     })
     .then(function() {
       console.log("Document successfully updated!");

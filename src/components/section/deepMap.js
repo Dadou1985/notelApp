@@ -21,7 +21,7 @@ export default function DeepMap({user, firebase}) {
 
 
 
-    const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", pec: "", refHotel: ""})
+    const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", initialPrice: "", pec: "", refHotel: ""})
 
     const handleChange = (event) =>{
         event.persist()
@@ -180,12 +180,19 @@ export default function DeepMap({user, firebase}) {
                                         </Form.Row>
                                         <Form.Row>
                                             <Form.Group controlId="exampleForm.SelectCustom">
+                                            <Form.Label>Montant du séjour</Form.Label>
+                                            <Form.Control type="text" style={{width: "10vw"}} size="sm" value={formValue.initialPrice} name="initialPrice" onChange={handleChange} />
+
+                                        </Form.Group>
+                                        <Form.Row>
+                                            <Form.Group controlId="exampleForm.SelectCustom">
                                             <Form.Label>P.E.C</Form.Label>
-                                            <Form.Control as="select" custom style={{width: "10vw"}} size="sm" defaultValue="Non" value={formValue.pec} name="pec" onChange={handleChange}>
+                                            <Form.Control as="select" custom style={{width: "10vw", marginLeft: "8vw"}} size="sm" defaultValue="Non" value={formValue.pec} name="pec" onChange={handleChange}>
                                                 <option value="non" selected>Non</option>
                                                 <option value="oui">Oui</option>
                                             </Form.Control>
                                         </Form.Group>
+                                        </Form.Row>
                                         </Form.Row>
                                         <Form.Row>
                                             <Form.Group controlId="description">
@@ -202,7 +209,8 @@ export default function DeepMap({user, firebase}) {
                                     event.preventDefault()
                                     setformValue("")
                                     let marker = Date.now()
-                                    firebase.addRedPhone({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, pec: formValue.pec, pax: formValue.pax, refHotel: formValue.refHotel, doc: selectedHotel.id})
+                                    firebase.addOverbookIn({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, initialPrice: formValue.initialPrice, pec: formValue.pec, pax: formValue.pax, refHotel: formValue.refHotel, doc: selectedHotel.id, status: false})
+                                    .then(firebase.addOverbookOut({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, initialPrice: formValue.initialPrice, pec: formValue.pec, pax: formValue.pax, refHotel: formValue.refHotel, doc: selectedHotel.id, status: false}))
                                     setselectedHotel(null)
                                 }}>Déloger</Button>
                                 </Modal.Footer>
@@ -218,7 +226,8 @@ export default function DeepMap({user, firebase}) {
                     marginTop: "2%",
                     marginBottom: "2%"
                   }}>
-                <h5 className="text-center" style={{marginBottom: "5%"}}><b>Red Phone</b> - <small>Dashboard</small></h5>
+                <h5 className="text-center" style={{marginBottom: "5%"}}><b>Overbooking</b></h5>
+                
                 <h6 className="text-center"><b>Filtrer les recherches d'hôtels par :</b></h6>
                 <div style={{
                     display: "flex",
@@ -231,7 +240,7 @@ export default function DeepMap({user, firebase}) {
                     alignItems: "center"
                 }}>
                 <Form.Label className="text-center" value={geo} style={{width: "12vw"}}>Département</Form.Label>
-                <select class="selectpicker" id="zone" style={{width: "14vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}}>
+                <select className="selectpicker" id="zone" style={{width: "14vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}}>
                 <option>Tous les départements</option>
                 {Departement.map(zone => (
                     <option 
@@ -249,7 +258,7 @@ export default function DeepMap({user, firebase}) {
                     flexFlow: "column",
                     alignItems: "center"
                 }}>
-                    <Form.Label className="text-center" style={{width: "12vw"}}>Etoiles</Form.Label>
+                    <Form.Label className="text-center" style={{width: "14vw"}}>Etoiles</Form.Label>
                     <select id="stars" style={{width: "12vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}}>
                         <option>Toutes les étoiles</option>
                         <option>1 étoile</option>
