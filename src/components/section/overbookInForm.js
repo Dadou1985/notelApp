@@ -15,7 +15,7 @@ const OverbookInForm = ({hotel, client, markup, night, room, pax, initialPrice, 
     
     const removeSticker = (event) => {
         console.log(event)
-        firebase.deleteDocument({collection: "overbookIn", document: markup})
+        firebase.deleteOverbooking({refHotel: refHotel, collection: "overbookIn", document: markup})
         setVisible(false)
       }
     
@@ -24,20 +24,34 @@ const OverbookInForm = ({hotel, client, markup, night, room, pax, initialPrice, 
         setVisible(false)
       }
 
-    const handleSwitch = (event) => {
+    const handleSwitchOn = (event) => {
       event.preventDefault()
-      firebase.updateOverbookingIn({doc: refHotel, table: "overbookIn", overbookingId: markup, status: true})
+      firebase.updateOverbooking({
+      doc: "H9781", 
+      table: "overbookIn", 
+      overbookingId: markup, 
+      status: "granted"})
+      .then(firebase.updateOverbooking({
+        doc: refHotel, 
+        table: "overbookOut", 
+        overbookingId: markup, 
+        status: "granted"}))
           
     }
 
-    const handleTransfert = (event) => {
+    const handleSwitchOff = (event) => {
       event.preventDefault()
-      firebase.addRedPhoneIncoming({doc: refHotel, hotelName: hotel, client: client, pax: pax, totalRoom: room, totalNight: night, initialPrice: initialPrice, pec: pec, markup: markup})
-      removeSticker()
+      firebase.updateOverbooking({
+        doc: refHotel, 
+        table: "overbookOut", 
+        overbookingId: markup, 
+        status: "refused"})
+        removeSticker()
+
     }
+
     
-    
-    if(status === true){
+    if(status === "granted"){
       return (
         <div style={{
             width: "12%",
@@ -144,10 +158,10 @@ const OverbookInForm = ({hotel, client, markup, night, room, pax, initialPrice, 
         </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-danger" onClick={removeSticker}>
+          <Button variant="outline-danger" onClick={handleSwitchOff}>
             Refuser
           </Button>
-          <Button variant="success" onClick={handleSwitch}>
+          <Button variant="success" onClick={handleSwitchOn}>
             Accepter
           </Button>
         </Modal.Footer>

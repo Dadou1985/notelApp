@@ -209,8 +209,33 @@ export default function DeepMap({user, firebase}) {
                                     event.preventDefault()
                                     setformValue("")
                                     let marker = Date.now()
-                                    firebase.addOverbookIn({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, initialPrice: formValue.initialPrice, pec: formValue.pec, pax: formValue.pax, refHotel: formValue.refHotel, doc: selectedHotel.id, status: false})
-                                    .then(firebase.addOverbookOut({hotelName: formValue.hotelName, totalRoom: formValue.totalRoom, totalNight: formValue.totalNight, client: formValue.client, markup: marker, initialPrice: formValue.initialPrice, pec: formValue.pec, pax: formValue.pax, refHotel: formValue.refHotel, doc: selectedHotel.id, status: false}))
+                                    let token = Date.now()
+                                    firebase.addOverbookIn({
+                                        hotelName: formValue.hotelName, 
+                                        totalRoom: formValue.totalRoom, 
+                                        totalNight: formValue.totalNight, 
+                                        client: formValue.client, 
+                                        markup: marker, 
+                                        token: token,
+                                        initialPrice: formValue.initialPrice, 
+                                        pec: formValue.pec, 
+                                        pax: formValue.pax, 
+                                        refHotel: formValue.refHotel, 
+                                        doc: selectedHotel.id, 
+                                        status: "en attente"})
+                                    firebase.addOverbookOut({
+                                        hotelName: formValue.hotelName, 
+                                        totalRoom: formValue.totalRoom, 
+                                        totalNight: formValue.totalNight, 
+                                        client: formValue.client, 
+                                        markup: marker, 
+                                        token: token,
+                                        initialPrice: formValue.initialPrice, 
+                                        pec: formValue.pec, 
+                                        pax: formValue.pax, 
+                                        refHotel: formValue.refHotel, 
+                                        doc: selectedHotel.id, 
+                                        status: "en attente"})
                                     setselectedHotel(null)
                                 }}>Déloger</Button>
                                 </Modal.Footer>

@@ -16,7 +16,7 @@ const OverbookOutForm = ({hotel, client, markup, night, room, pax, initialPrice,
     
     const removeSticker = (event) => {
         console.log(event)
-        firebase.deleteOverbooking({collection: "overbookOut", document: markup})
+        firebase.deleteOverbooking({refHotel: refHotel, collection: "overbookOut", document: markup})
         setVisible(false)
       }
     
@@ -24,19 +24,9 @@ const OverbookOutForm = ({hotel, client, markup, night, room, pax, initialPrice,
         console.log(event)
         setVisible(false)
       }
-
-    const handleSwitchOn = (event) => {
-      event.preventDefault()
-      firebase.updateOverbookingIn({doc: refHotel, table: "overbookOut", overbookingId: markup, status: true})     
-    }
-
-    const handleSwitchOff = (event) => {
-        event.preventDefault()
-        firebase.updateOverbookingIn({doc: refHotel, table: "overbookOut", overbookingId: markup, status: false})     
-      }
+      
     
-    
-    if(status === true){
+    if(status === "granted"){
       return (
         <div style={{
             width: "12%",
@@ -93,7 +83,7 @@ const OverbookOutForm = ({hotel, client, markup, night, room, pax, initialPrice,
         </Modal>
         </div>
       )
-    }else if(status === false) {
+    }else if(status === "refused") {
       return(
         <div style={{
           width: "12%",
@@ -200,12 +190,9 @@ const OverbookOutForm = ({hotel, client, markup, night, room, pax, initialPrice,
           </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="outline-danger" onClick={handleSwitchOff}>
-              Refuser
-            </Button>
-            <Button variant="success" onClick={handleSwitchOn}>
-              Accepter
-            </Button>
+          <Button variant="outline-danger" onClick={removeSticker}>
+            Retirer
+          </Button>
           </Modal.Footer>
         </Modal>
         </div>

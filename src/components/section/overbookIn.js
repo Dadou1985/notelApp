@@ -26,6 +26,7 @@ const OverIn = ({user, firebase}) => {
                 }
            
      },[])
+
     
      return (
         <div style={{
@@ -37,16 +38,16 @@ const OverIn = ({user, firebase}) => {
         }}>
             {info.map(stick =>(
                 <OverbookInForm
-                key={stick.markup}
+                key={stick.id}
                 hotel={stick.hotelName}
                 client={stick.client}
                 room={stick.totalRoom}
                 night={stick.totalNight}
                 pec={stick.pec}
                 pax={stick.pax}
+                markup={stick.token}
                 initialPrice={stick.initialPrice}
                 refHotel={stick.refHotel}
-                markup={stick.id}
                 status={stick.status}
                 />
             ))}
