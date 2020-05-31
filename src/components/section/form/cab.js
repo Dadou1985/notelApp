@@ -24,13 +24,13 @@ const Cab = ({user, firebase}) =>{
         event.preventDefault()
         setFormValue("")
         let marker = Date.now()
-        firebase.addCab({author: user.username, room: formValue.room, client: formValue.client, markup: marker, date: formValue.date, hour: formValue.hour, destination: formValue.destination, pax: formValue.passenger, model: formValue.model}).then(handleClose)
+        firebase.addCab({documentId: user.displayName, author: user.username, room: formValue.room, client: formValue.client, markup: marker, date: formValue.date, hour: formValue.hour, destination: formValue.destination, pax: formValue.passenger, model: formValue.model}).then(handleClose)
     }
 
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        firebase.toolOnAir({collection: "cab", signal : signal}).onSnapshot(function(snapshot) {
+        firebase.toolOnAir({documentId: user.displayName, collection: "cab", signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -153,7 +153,7 @@ const Cab = ({user, firebase}) =>{
                                         <td>{flow.pax}</td>
                                         <td>{flow.model}</td>
                                         <td>{flow.destination}</td>
-                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "cab", document: flow.id})}>Supprimer</Button></td>
+                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({documentId: user.displayName, collection: "cab", document: flow.id})}>Supprimer</Button></td>
                                     </tr>
                                     ))}
                                 </tbody>

@@ -8,7 +8,7 @@ const StickList = ({user, firebase}) => {
     useEffect(() => {
         let unsubscribe
         
-                unsubscribe = firebase.stickerOnAir({userId: user}).onSnapshot(function(snapshot) {
+                unsubscribe = firebase.stickerOnAir({documentId: user.displayName, userId: user.username}).onSnapshot(function(snapshot) {
                     const snapStick = []
                   snapshot.forEach(function(doc) {          
                     snapStick.push({

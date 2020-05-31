@@ -6,7 +6,7 @@ import Price from '../../../svg/price.svg'
 
 const Rack = () => {
 
-    const { firebase } = useContext(FirebaseContext)
+    const { user, firebase } = useContext(FirebaseContext)
     const [formValue, setFormValue] = useState({rac: ""})
     const [list, setList] = useState(false)
     
@@ -24,7 +24,7 @@ const Rack = () => {
 
       const handleSubmit = event => {
         event.preventDefault()
-        firebase.updateRack({rac: formValue.rac}).then(handleClose)
+        firebase.updateRack({documentId: user.displayName, rac: formValue.rac}).then(handleClose)
     }
 
     return (

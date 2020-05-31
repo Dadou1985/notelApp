@@ -31,10 +31,12 @@ class Firebase {
 
   async register({email, password, username, refHotel}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
-    return this.db.collection("publicUsers").doc(username).set({
-      userId: newUser.user.uid,
-      userHotel: refHotel
-    });
+    await this.db.collection("publicUsers").doc(username).set({
+      userId: newUser.user.uid
+    })
+    return this.auth.currentUser.updateProfile({
+      displayName: refHotel
+    })
   }
 
   async login({email, password}) {
@@ -48,39 +50,66 @@ class Firebase {
 
 
   messageOnAir({documentId}){
-    return this.db.collection("hotels").doc(`${documentId}`).collection('message').orderBy("markup", "desc")
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('message')
+    .orderBy("markup", "desc")
   }
 
-  stickerOnAir({userId}){
-    return this.db.collection("hotels").doc("H9781").collection('stickers').where("author", "==", userId)
+  stickerOnAir({documentId, userId}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('stickers')
+    .where("author", "==", userId)
   }
 
-  overbookingOnAir({table}){
-    return this.db.collection("hotels").doc("H9781").collection('overbooking').doc("tables").collection(table).orderBy("token", "asc")
+  overbookingOnAir({documentId, table}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('overbooking')
+    .doc("tables")
+    .collection(table)
+    .orderBy("token", "asc")
   }
 
-  toolOnAir({collection}){
-    return this.db.collection("hotels").doc("H9781").collection(collection).orderBy("markup", "asc")
+  toolOnAir({documentId, collection}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection(collection)
+    .orderBy("markup", "asc")
   }
 
-  safeOnAir(){
-    return this.db.collection("hotels").doc("H9781").collection('safe').orderBy("markup", "asc")
+  safeOnAir({documentId}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('safe')
+    .orderBy("markup", "asc")
   }
 
-  contactOnAir(){
-    return this.db.collection("hotels").doc("H9781").collection('contact').orderBy("name")
+  contactOnAir({documentId}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('contact')
+    .orderBy("name")
   }
 
-  listOnAir({collection}){
-    return this.db.collection("hotels").doc("H9781").collection("checkList").doc("hSM4fJ0M53FGej8NniMW").collection(collection).orderBy("markup", "asc")
+  listOnAir({documentId, collection}){
+    return this.db.collection("hotels")
+    .doc("H9781")
+    .collection("checkList")
+    .doc("lists")
+    .collection(collection)
+    .orderBy("markup", "asc")
   }
 
   phoneOnAir(){
-    return this.db.collection("hotels").where("roomAvailable", "<", "0")
+    return this.db.collection("hotels")
+    .where("roomAvailable", "<", "0")
   }
 
   filterOnAir({field, operator, filter}){
-    return this.db.collection("hotels").where(field, operator, filter)
+    return this.db.collection("hotels")
+    .where(field, operator, filter)
   }
 
   hotelOnAir(){
@@ -90,8 +119,13 @@ class Firebase {
 
 
 
-  async deleteDocument({collection, document}) {
-    return this.db.collection("hotels").doc("H9781").collection(collection).doc(document).delete().then(function() {
+  async deleteDocument({documentId, collection, document}) {
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection(collection)
+    .doc(document)
+    .delete()
+    .then(function() {
       console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.log(error);
@@ -99,15 +133,29 @@ class Firebase {
   }
 
   async deleteOverbooking({refHotel, collection, document}) {
-    return this.db.collection("hotels").doc(refHotel).collection("overbooking").doc("tables").collection(collection).doc(`${document}`).delete().then(function() {
+    return this.db.collection("hotels")
+    .doc(refHotel)
+    .collection("overbooking")
+    .doc("tables")
+    .collection(collection)
+    .doc(`${document}`)
+    .delete()
+    .then(function() {
       console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.log(error);
     });
   }
 
-  async deleteTask({collection, document}) {
-    return this.db.collection("hotels").doc("H9781").collection("checkList").doc("hSM4fJ0M53FGej8NniMW").collection(collection).doc(document).delete().then(function() {
+  async deleteTask({documentId, collection, document}) {
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection("checkList")
+    .doc("lists")
+    .collection(collection)
+    .doc(document)
+    .delete()
+    .then(function() {
       console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.log(error);
@@ -116,8 +164,11 @@ class Firebase {
 
 
 
-  async addMessage({author, text, hour, markup, ref, date}){
-    return this.db.collection("hotels").doc("H9781").collection('message').add({
+  async addMessage({documentId, author, text, hour, markup, ref, date}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('message')
+    .add({
       author: author,
       text: text,
       hour: hour,
@@ -131,8 +182,11 @@ class Firebase {
     })
   }
 
-  async addSticker({title, text, author, markup}){
-    return this.db.collection("hotels").doc("H9781").collection('stickers').add({
+  async addSticker({documentId, title, text, author, markup}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('stickers')
+    .add({
       title: title,
       text: text,
       author: author,
@@ -144,8 +198,11 @@ class Firebase {
     })
   }
 
-  async addLostFound({author, date, description, details, place, markup, type}){
-    return this.db.collection("hotels").doc("H9781").collection('lostNfound').add({
+  async addLostFound({documentId, author, date, description, details, place, markup, type}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('lostNfound')
+    .add({
       author: author,
       date: date,
       description: description,
@@ -160,8 +217,11 @@ class Firebase {
     })
   }
 
-  async addCab({author, date, client, room, pax, model, destination, markup, hour}){
-    return this.db.collection("hotels").doc("H9781").collection('cab').add({
+  async addCab({documentId, author, date, client, room, pax, model, destination, markup, hour}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('cab')
+    .add({
       author: author,
       date: date,
       destination: destination,
@@ -178,8 +238,11 @@ class Firebase {
     })
   }
 
-  async addClock({author, date, client, room, markup, hour, day}){
-    return this.db.collection("hotels").doc("H9781").collection('clock').add({
+  async addClock({documentId, author, date, client, room, markup, hour, day}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('clock')
+    .add({
       author: author,
       date: date,
       client: client,
@@ -194,8 +257,11 @@ class Firebase {
     })
   }
 
-  async addMaid({author, date, client, fromRoom, toRoom, reason, state, markup, details}){
-    return this.db.collection("hotels").doc("H9781").collection('maid').add({
+  async addMaid({documentId, author, date, client, fromRoom, toRoom, reason, state, markup, details}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('maid')
+    .add({
       author: author,
       date: date,
       details: details,
@@ -212,8 +278,11 @@ class Firebase {
     })
   }
 
-  async addMaintenance({author, date, client, room, details, markup, type}){
-    return this.db.collection("hotels").doc("H9781").collection('maintenance').add({
+  async addMaintenance({documentId, author, date, client, room, details, markup, type}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('maintenance')
+    .add({
       author: author,
       date: date,
       details: details,
@@ -228,8 +297,11 @@ class Firebase {
     })
   }
 
-  async addSafe({author, date, amount, shift, markup}){
-    return this.db.collection("hotels").doc("H9781").collection('safe').add({
+  async addSafe({documentId, author, date, amount, shift, markup}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('safe')
+    .add({
       author: author,
       date: date,
       amount: amount,
@@ -242,8 +314,11 @@ class Firebase {
     })
   }
 
-  async addContact({name, mobile, fix, markup}){
-    return this.db.collection("hotels").doc("H9781").collection('contact').add({
+  async addContact({documentId, name, mobile, fix, markup}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('contact')
+    .add({
       name: name,
       mobile: mobile,
       fix: fix,
@@ -255,8 +330,13 @@ class Firebase {
     })
   }
 
-  async addTask({collection, task, markup}){
-    return this.db.collection("hotels").doc("H9781").collection('checkList').doc("hSM4fJ0M53FGej8NniMW").collection(collection).add({
+  async addTask({documentId, collection, task, markup}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection('checkList')
+    .doc("hSM4fJ0M53FGej8NniMW")
+    .collection(collection)
+    .add({
       task: task,
       markup: markup
     }).then(function(docRef){
@@ -317,8 +397,10 @@ class Firebase {
 
   
 
-  async updateRoomAvailable({room}){
-    return this.db.collection("hotels").doc("H9781").update({
+  async updateRoomAvailable({documentId, room}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .update({
       roomAvailable: room
     })
     .then(function() {
@@ -326,8 +408,10 @@ class Firebase {
     })
   }
 
-  async updateRack({rac}){
-    return this.db.collection("hotels").doc("H9781").update({
+  async updateRack({documentId, rac}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .update({
       rac: rac
     })
     .then(function() {

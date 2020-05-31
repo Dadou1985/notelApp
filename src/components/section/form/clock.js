@@ -27,14 +27,14 @@ const Clock = ({user, firebase}) =>{
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addClock({author: user.username, room: formValue.room, day: formValue.date, client: formValue.client, markup: marker, date: time, hour: formValue.hour}).then(handleClose)
+        firebase.addClock({documentId: user.displayName, author: user.username, room: formValue.room, day: formValue.date, client: formValue.client, markup: marker, date: time, hour: formValue.hour}).then(handleClose)
     }
 
 
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        firebase.toolOnAir({signal : signal, collection: "clock"}).onSnapshot(function(snapshot) {
+        firebase.toolOnAir({documentId: user.displayName, signal : signal, collection: "clock"}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -136,7 +136,7 @@ const Clock = ({user, firebase}) =>{
                                     <td>{flow.hour}</td>
                                     <td>{flow.date}</td>
                                     <td>{flow.author}</td>
-                                    <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "clock", document: flow.id})}>Supprimer</Button></td>
+                                    <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({documentId: user.displayName, collection: "clock", document: flow.id})}>Supprimer</Button></td>
                                     </tr>
                                 ))}
                             </tbody>

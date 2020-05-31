@@ -7,7 +7,7 @@ import { FirebaseContext } from '../../Firebase'
 const OverbookInForm = ({hotel, client, markup, night, room, pax, initialPrice, pec, refHotel, status}) => {
 
     const [visible, setVisible] = useState(false)
-    const { firebase } = useContext(FirebaseContext)
+    const { user, firebase } = useContext(FirebaseContext)
 
     const showSticker = () => {
         setVisible(true)
@@ -27,7 +27,7 @@ const OverbookInForm = ({hotel, client, markup, night, room, pax, initialPrice, 
     const handleSwitchOn = (event) => {
       event.preventDefault()
       firebase.updateOverbooking({
-      doc: "H9781", 
+      doc: user.displayName, 
       table: "overbookIn", 
       overbookingId: markup, 
       status: "granted"})

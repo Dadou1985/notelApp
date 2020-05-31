@@ -7,7 +7,7 @@ import {Tab, Tabs} from 'react-bootstrap'
 
 const OverbookingBox = () => {
 
-    const {firebase} = useContext(FirebaseContext)
+    const {user, firebase} = useContext(FirebaseContext)
 
     return (
         <div style={{
@@ -33,8 +33,8 @@ const OverbookingBox = () => {
                     padding: "3%",
                     backgroundColor: "white"
                   }}>
-                  {!!firebase &&
-                  <OverIn firebase={firebase} />}
+                  {!!firebase && !!user &&
+                  <OverIn firebase={firebase} user={user} />}
                 </div>
                 </Tab>
                 <Tab eventKey="outcoming" title="Emission">
@@ -50,8 +50,8 @@ const OverbookingBox = () => {
                     padding: "3%",
                     backgroundColor: "white"
                   }}>
-                  {!!firebase &&
-                  <OverOut firebase={firebase} />}
+                  {!!firebase && !!user &&
+                  <OverOut firebase={firebase} user={user} />}
                 </div>
                 </Tab>
             </Tabs>

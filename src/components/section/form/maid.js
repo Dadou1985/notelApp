@@ -27,13 +27,13 @@ const Maid = ({user, firebase}) =>{
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addMaid({author: user.username, fromRoom: formValue.fromRoom, client: formValue.client, markup: marker, date: time, toRoom: formValue.toRoom, reason: formValue.reason, details: formValue.details, state: formValue.state}).then(handleClose)
+        firebase.addMaid({documentId: user.displayName, author: user.username, fromRoom: formValue.fromRoom, client: formValue.client, markup: marker, date: time, toRoom: formValue.toRoom, reason: formValue.reason, details: formValue.details, state: formValue.state}).then(handleClose)
     }
 
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        firebase.toolOnAir({collection: "maid", signal : signal}).onSnapshot(function(snapshot) {
+        firebase.toolOnAir({documentId: user.displayName, collection: "maid", signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -161,7 +161,7 @@ const Maid = ({user, firebase}) =>{
                                         <td>{flow.details}</td>
                                         <td>{flow.date}</td>
                                         <td>{flow.author}</td>
-                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "maid", document: flow.id})}>Supprimer</Button></td>
+                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({documentId: user.displayName, collection: "maid", document: flow.id})}>Supprimer</Button></td>
                                         </tr>
                                     ))}
                                 </tbody>

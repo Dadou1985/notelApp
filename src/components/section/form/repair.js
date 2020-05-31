@@ -27,14 +27,14 @@ const Repair = ({user, firebase}) =>{
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addMaintenance({author: user.username, room: formValue.room, client: formValue.client, markup: marker, date: time, type: formValue.type, details: formValue.details}).then(handleClose)
+        firebase.addMaintenance({documentId: user.displayName, author: user.username, room: formValue.room, client: formValue.client, markup: marker, date: time, type: formValue.type, details: formValue.details}).then(handleClose)
     }
 
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
 
-        firebase.toolOnAir({collection: "maintenance", signal : signal}).onSnapshot(function(snapshot) {
+        firebase.toolOnAir({documentId: user.displayName, collection: "maintenance", signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -140,7 +140,7 @@ const Repair = ({user, firebase}) =>{
                                         <td>{flow.details}</td>
                                         <td>{flow.date}</td>
                                         <td>{flow.author}</td>
-                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "maintenance", document: flow.id})}>Supprimer</Button></td>
+                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({documentId: user.displayName, collection: "maintenance", document: flow.id})}>Supprimer</Button></td>
                                         </tr>
                                     ))}
                                 </tbody>

@@ -7,7 +7,7 @@ import  '../css/post-it.css'
 const PostIt = ({title, text, markup}) => {
 
     const [visible, setVisible] = useState(false)
-    const { firebase } = useContext(FirebaseContext)
+    const { user, firebase } = useContext(FirebaseContext)
 
     const showSticker = () => {
         setVisible(true)
@@ -15,7 +15,7 @@ const PostIt = ({title, text, markup}) => {
     
     const removeSticker = (event) => {
         console.log(event)
-        firebase.deleteDocument({collection: "stickers", document: markup})
+        firebase.deleteDocument({documentId: user.displayName, collection: "stickers", document: markup})
         setVisible(false)
       }
     

@@ -24,7 +24,7 @@ const Messenger = () =>{
         let time = hours + minutes
         let date = day + " " + calendar[month] + " " + year
         let marker = Date.now()
-        firebase.addMessage({author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})
+        firebase.addMessage({documentId: user.displayName, author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})
     }
 
     

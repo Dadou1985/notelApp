@@ -6,7 +6,7 @@ import Bed from '../../../svg/bed.svg'
 
 const RoomAvailable = () => {
 
-    const { firebase } = useContext(FirebaseContext)
+    const { user, firebase } = useContext(FirebaseContext)
     const [formValue, setFormValue] = useState({room: ""})
     const [list, setList] = useState(false)
     
@@ -24,7 +24,7 @@ const RoomAvailable = () => {
 
       const handleSubmit = event => {
         event.preventDefault()
-        firebase.updateRoomAvailable({room: formValue.room}).then(handleClose)
+        firebase.updateRoomAvailable({documentId: user.displayName, room: formValue.room}).then(handleClose)
     }
 
     return (

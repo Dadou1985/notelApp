@@ -17,8 +17,8 @@ const Footer = () =>{
             left: "0px",
             backgroundColor: "lightgrey"
         }}>
-            {!!firebase &&
-            <Notifications firebase={firebase} />}
+            {!!firebase && !!user &&
+            <Notifications firebase={firebase} user={user} />}
         </div>
     )
 }

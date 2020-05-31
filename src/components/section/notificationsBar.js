@@ -6,7 +6,7 @@ import { FirebaseContext } from '../../Firebase'
 export default function NotificationsBar({message, markup}) {
 
     const [visible, setVisible] = useState(true)
-    const { firebase } = useContext(FirebaseContext)
+    const { user, firebase } = useContext(FirebaseContext)
 
     const showNotification = () => {
         setVisible(true)
@@ -14,7 +14,7 @@ export default function NotificationsBar({message, markup}) {
 
     const removeNotifications = (event) => {
     console.log(event)
-    firebase.deleteDocument({collection: "notifications", document: markup})
+    firebase.deleteDocument({documentId: user.displayName, collection: "notifications", document: markup})
     setVisible(false)
     }
 

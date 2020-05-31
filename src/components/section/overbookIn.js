@@ -8,7 +8,7 @@ const OverIn = ({user, firebase}) => {
     useEffect(() => {
         let unsubscribe
         
-                unsubscribe = firebase.overbookingOnAir({table: "overbookIn"}).onSnapshot(function(snapshot) {
+                unsubscribe = firebase.overbookingOnAir({documentId: user.displayName, table: "overbookIn"}).onSnapshot(function(snapshot) {
                     const snapStick = []
                   snapshot.forEach(function(doc) {          
                     snapStick.push({

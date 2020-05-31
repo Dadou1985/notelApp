@@ -83,7 +83,7 @@ const Connection = () =>{
                 Formulaire d'inscription
                 </Modal.Title>
             </Modal.Header>
-            {!!firebase && 
+            {!!firebase &&  
             <Register firebase={firebase} hide={handleClose} />}
              </Modal>
         </div>

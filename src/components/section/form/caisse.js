@@ -29,7 +29,7 @@ const Caisse = ({user, firebase}) =>{
         let marker = Date.now()
         let caisse = document.getElementById("montant").value
         handleReset()
-        firebase.addSafe({author: user.username, amount: caisse, date: time, markup: marker, shift: formValue.shift}).then(handleClose)
+        firebase.addSafe({documentId: user.displayName, author: user.username, amount: caisse, date: time, markup: marker, shift: formValue.shift}).then(handleClose)
     }
 
     const change = (a, b, c) => {
@@ -98,7 +98,7 @@ const Caisse = ({user, firebase}) =>{
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        firebase.safeOnAir({signal : signal}).onSnapshot(function(snapshot) {
+        firebase.safeOnAir({documentId: user.displayName, signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = [""]
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -318,7 +318,7 @@ const Caisse = ({user, firebase}) =>{
                                         <td>{flow.amount}</td>
                                         <td>{flow.shift}</td>
                                         <td>{flow.date}</td>
-                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "safe", document: flow.id})}>Supprimer</Button></td>
+                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({documentId: user.displayName, collection: "safe", document: flow.id})}>Supprimer</Button></td>
                                         </tr>
                                     ))}
                                 </tbody>

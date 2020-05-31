@@ -27,13 +27,13 @@ const Lost = ({user, firebase}) =>{
         let year = new Date().getFullYear()
         let time = day + "/" + month + "/" + year
         let marker = Date.now()
-        firebase.addLostFound({author: user.username, date: time, type: formValue.type, markup: marker, place: formValue.place, details: formValue.details, description: formValue.description}).then(handleClose)
+        firebase.addLostFound({documentId: user.displayName, author: user.username, date: time, type: formValue.type, markup: marker, place: formValue.place, details: formValue.details, description: formValue.description}).then(handleClose)
     }
 
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        firebase.toolOnAir({collection: "lostNfound", signal : signal}).onSnapshot(function(snapshot) {
+        firebase.toolOnAir({documentId: user.displayName, collection: "lostNfound", signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -147,7 +147,7 @@ const Lost = ({user, firebase}) =>{
                                         <td>{flow.place}</td>
                                         <td>{flow.details}</td>
                                         <td>{flow.author}</td>
-                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "lostNfound", document: flow.id})}>Supprimer</Button></td>
+                                        <td className="bg-dark"><Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({documentId: user.displayName, collection: "lostNfound", document: flow.id})}>Supprimer</Button></td>
                                         </tr>
                                     ))}
                                 </tbody>

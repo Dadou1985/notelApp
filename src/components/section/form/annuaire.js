@@ -23,14 +23,14 @@ const Annuaire = ({user, firebase}) =>{
     event.preventDefault()
     setFormValue("")
     let marker = Date.now()
-    firebase.addContact({name: formValue.name, mobile: formValue.mobile, fix: formValue.fix, markup: marker}).then(handleClose)
+    firebase.addContact({documentId: user.displayName, name: formValue.name, mobile: formValue.mobile, fix: formValue.fix, markup: marker}).then(handleClose)
     }
 
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
         
-        firebase.contactOnAir({signal : signal}).onSnapshot(function(snapshot) {
+        firebase.contactOnAir({documentId: user.displayName, signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -88,7 +88,7 @@ const Annuaire = ({user, firebase}) =>{
                                             <p><i>Mobile : {flow.mobile}</i> 
                                             <br /><i>Fixe : {flow.fix}</i></p>
                                         </div>
-                                            <Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({collection: "contact", document: flow.id})}>Supprimer</Button>
+                                            <Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteDocument({documentId: user.displayName, collection: "contact", document: flow.id})}>Supprimer</Button>
                                     </div>
                                 ))}
                             </Tab>

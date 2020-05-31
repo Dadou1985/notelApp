@@ -11,7 +11,7 @@ import { FirebaseContext } from '../../Firebase'
     const { user, firebase } = useContext(FirebaseContext)
     
     const handleRemove = () =>{
-        firebase.deleteDocument({collection: "message", document: markup})
+        firebase.deleteDocument({documentId: user.displayName, collection: "message", document: markup})
     }
 
     useEffect(() => {

@@ -8,7 +8,7 @@ export default function Notifications({user, firebase}) {
     useEffect(() => {
         let unsubscribe
         
-                unsubscribe = firebase.toolOnAir({collection: "notifications"}).onSnapshot(function(snapshot) {
+                unsubscribe = firebase.toolOnAir({documentId: user.displayName, collection: "notifications"}).onSnapshot(function(snapshot) {
                     const snapStick = []
                   snapshot.forEach(function(doc) {          
                     snapStick.push({

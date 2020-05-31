@@ -23,17 +23,17 @@ const ToolBar = () =>{
             borderRight: "1px solid lightgrey",
             justifyContent: "space-around",
             alignItems: "center"}}>
-            {!!firebase &&
+            {!!firebase && !!user &&
             <Lost firebase={firebase} user={user} />}
-            {!!firebase &&
+            {!!firebase && !!user &&
             <Cab firebase={firebase} user={user}  />}
-            {!!firebase &&
+            {!!firebase && !!user &&
             <Clock firebase={firebase} user={user} />}
-            {!!firebase &&
+            {!!firebase && !!user &&
             <Caisse firebase={firebase} user={user} />}
-            {!!firebase &&
+            {!!firebase && !!user &&
             <Maid firebase={firebase} user={user} />}
-            {!!firebase &&
+            {!!firebase && !!user &&
             <Repair firebase={firebase} user={user} />}
         </div>
     )

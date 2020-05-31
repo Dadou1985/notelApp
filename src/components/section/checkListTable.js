@@ -18,14 +18,14 @@ const CheckListTable = ({user, firebase, shift}) => {
         event.preventDefault()
         setFormValue("")
         let marker = Date.now()
-        firebase.addTask({collection: shift, task: formValue.task, markup: marker})
+        firebase.addTask({documentId: user.displayName, collection: shift, task: formValue.task, markup: marker})
     }
 
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
         
-        firebase.listOnAir({collection: shift, signal : signal}).onSnapshot(function(snapshot) {
+        firebase.listOnAir({documentId: user.displayName, collection: shift, signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -71,7 +71,7 @@ const CheckListTable = ({user, firebase, shift}) => {
                             {flow.task}
                         </td>
                         <td className="bg-light">
-                            <Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteTask({collection: shift, document: flow.id})}>Supprimer</Button>
+                            <Button variant="outline-danger" size="sm" onClick={()=>firebase.deleteTask({documentId: user.displayName, collection: shift, document: flow.id})}>Supprimer</Button>
                         </td>
                         </tr>
                     ))}
