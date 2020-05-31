@@ -1,11 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { Navbar } from 'react-bootstrap'
 import Connection from '../../images/connection.png'
-import Notification from '../../svg/bell.svg'
 import { FirebaseContext } from '../../Firebase'
 import { navigate } from 'gatsby'
 import { OverlayTrigger, Tooltip, Modal, Button } from 'react-bootstrap'
-import { Badge } from 'antd'
 
 
 const Navigation = () =>{
@@ -64,13 +62,6 @@ const Navigation = () =>{
                         cursor: "pointer",
                         marginLeft: "1vw"}} onClick={handleShow} />
                     </OverlayTrigger>
-                    
-                    <Badge>
-                        <img src={Notification} alt="connect" style={{
-                            width: "15%",
-                            cursor: "pointer",
-                            marginLeft: "1vw"}} onClick={handleShow} />
-                    </Badge>
                 </div>
             </Navbar>
         <Modal show={list} onHide={handleClose}>

@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FirebaseContext } from '../../Firebase'
+import Notifications from './notifications'
 
 const Footer = () =>{
+
+    const {user,firebase} = useContext(FirebaseContext)
 
     return(
         <div style={{
@@ -13,6 +17,8 @@ const Footer = () =>{
             left: "0px",
             backgroundColor: "lightgrey"
         }}>
+            {!!firebase &&
+            <Notifications firebase={firebase} />}
         </div>
     )
 }

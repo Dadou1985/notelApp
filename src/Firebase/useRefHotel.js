@@ -1,38 +1,25 @@
-import React, {useState, useEffect, useContext } from 'react'
-import MessageLoaded from './messageLoaded'
+import React, { useContext } from 'react'
+import { FirebaseContext } from '..Firebase'
 
-function useRefHotel() {
 
-    const [info, setInfo] = useState([])
+export default function RefHotel() {
 
-    useEffect(() => {
-        let unsubscribe
-        
-                unsubscribe = firebase.userOnAir().onSnapshot(function(snapshot) {
-                    const snapMessages = []
-                  snapshot.forEach(function(doc) {          
-                      snapMessages.push({
-                        id: doc.id,
-                        ...doc.data()
-                      })        
-                    });
-                    console.log(snapMessages)
-                    setInfo(snapMessages)
-                });
-                return () => {
-                    if(unsubscribe){
-                        unsubscribe()
-                    }
-                }
-           
-     },[])
-    return (
-        <div>
-            {info.map(message =>(
-                {}
-            ))}
-        </div>
-    )
+    const {firebase, user} = useContext(FirebaseContext)
+
+    const userRefHotel = firebase.getUserFields({documentId: user.username})
+     .get()
+     .then(function(doc) {
+          if (doc.exists) {
+            const refHotel = doc.data().userHotel
+            return refHotel
+          } else {
+              // doc.data() will be undefined in this case
+              console.log("No such document!");
+          }
+      }).catch(function(error) {
+          console.log("Error getting document:", error);
+      });;
+
+    console.log(userRefHotel)
+
 }
-
-export default useRefHotel

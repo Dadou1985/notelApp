@@ -1,14 +1,32 @@
 import React, {useState, useEffect, useContext } from 'react'
 import MessageLoaded from './messageLoaded'
 
-const NoteBox = ({firebase}) => {
+const NoteBox = ({user, firebase}) => {
 
     const [messages, setMessages] = useState([])
+    const [field, setfield] = useState()
+
+    const userRefHotel = firebase.getUserProfile({userId: user.uid})
+
+    userRefHotel.then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.data());
+            return setfield(doc.data().userHotel)
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+    console.log(field)
+
+    const dataHotel = "H9781"
 
     useEffect(() => {
         let unsubscribe
         
-                unsubscribe = firebase.messageOnAir().onSnapshot(function(snapshot) {
+                unsubscribe = firebase.messageOnAir({documentId: field}).onSnapshot(function(snapshot) {
                     const snapMessages = []
                   snapshot.forEach(function(doc) {          
                       snapMessages.push({
@@ -26,6 +44,7 @@ const NoteBox = ({firebase}) => {
                 }
            
      },[])
+
     return (
         <div>
             {messages.map(message =>(

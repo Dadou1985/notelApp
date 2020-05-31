@@ -14,7 +14,11 @@ class Firebase {
   }
 
   async getUserProfile({userId}){
-    return this.db.collection("hotels").doc("H9781").collection('publicUsers').where('userId', '==', userId).get();
+    return this.db.collection('publicUsers').where('userId', '==', userId).get();
+  }
+
+  getUserFields({documentId}){
+    return this.db.collection("publicUsers").doc(documentId)
   }
 
   getUserId(){
@@ -27,7 +31,7 @@ class Firebase {
 
   async register({email, password, username, refHotel}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
-    return this.db.collection("hotels").doc("H9781").collection("publicUsers").doc(username).set({
+    return this.db.collection("publicUsers").doc(username).set({
       userId: newUser.user.uid,
       userHotel: refHotel
     });
@@ -43,8 +47,8 @@ class Firebase {
 
 
 
-  messageOnAir(){
-    return this.db.collection("hotels").doc("H9781").collection('message').orderBy("markup", "desc")
+  messageOnAir({documentId}){
+    return this.db.collection("hotels").doc(`${documentId}`).collection('message').orderBy("markup", "desc")
   }
 
   stickerOnAir({userId}){
