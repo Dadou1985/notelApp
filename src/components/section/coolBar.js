@@ -13,8 +13,8 @@ const CoolBar = () => {
 
     const { user, firebase } = useContext(FirebaseContext)
 
-    const handleMove = (event) => {
-        return navigate("redPhone")
+    const handleMove = () => {
+        return navigate("/redPhone/")
    }
 
     return (

@@ -66,7 +66,7 @@ const Rack = () => {
               }}>
               <b>Montant du Rack :</b>
               <FormControl style={{width: "4vw", height: "5vh", marginLeft: "1%"}}
-                  type="text"
+                  type="number"
                   aria-describedby="basic-addon1"
                   value={formValue.rac}
                   name="rac"

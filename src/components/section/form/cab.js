@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
 import Taxi from '../../../svg/taxi.svg'
+import BootstrapInput from '../common/button/selectButton'
 
 
 const Cab = ({user, firebase}) =>{
@@ -11,6 +12,9 @@ const Cab = ({user, firebase}) =>{
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
+
+    const berline = "Berline"
+    const van = "Van"
 
     const handleChange = (event) =>{
         event.persist()
@@ -107,17 +111,14 @@ const Cab = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="description">
                                         <Form.Label>Nbre de passagers</Form.Label>
-                                        <Form.Control type="text" placeholder="2" style={{width: "20vw"}} value={formValue.passenger} name="passenger" onChange={handleChange} />
+                                        <Form.Control type="number" style={{width: "20vw"}} value={formValue.passenger} name="passenger" onChange={handleChange} />
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
-                                        <Form.Group controlId="exampleForm.SelectCustom">
+                                        <Form.Group controlId="description">
                                         <Form.Label>Type de véhicule</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.model} name="model" onChange={handleChange}>
-                                            <option>Berline</option>
-                                            <option>Van</option>
-                                        </Form.Control>
-                                    </Form.Group>
+                                        <BootstrapInput first={berline} second={van} value={formValue.model} name="model" onChange={handleChange} />
+                                        </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="description">

@@ -313,7 +313,7 @@ const Caisse = ({user, firebase}) =>{
                                 <tbody>
                                     {info.map(flow =>(
                                         <tr key={flow.id}>
-                                        <td></td>
+                                        <td>0</td>
                                         <td>{flow.author}</td>
                                         <td>{flow.amount}</td>
                                         <td>{flow.shift}</td>

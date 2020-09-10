@@ -1,6 +1,9 @@
 import React, {useState, useEffect } from 'react'
 import LostOnes from '../../../svg/lost-items.svg'
 import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
+import BootstrapInput from '../common/button/selectButton'
+
+
 
 const Lost = ({user, firebase}) =>{
 
@@ -10,6 +13,18 @@ const Lost = ({user, firebase}) =>{
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
+
+    const hitek = "Hi-tech"
+    const id = "Documents officiels"
+    const clothes = "Vêtements"
+    const others = "Autres"
+
+    const hall = "Hall"
+    const restaurant = "Restaurant"
+    const parking = "Parking"
+    const wc = "Toilettes"
+    const floors = "Etages"
+    const otherPlace = "Ailleurs"
 
     const handleChange = (event) =>{
         event.persist()
@@ -88,25 +103,23 @@ const Lost = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Quel type d'objet ?</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.type} name="type" onChange={handleChange}>
-                                            <option>Smartphone</option>
-                                            <option>Porte-feuille</option>
-                                            <option>Sac à main</option>
-                                            <option>Laptop</option>
-                                            <option>Clés de voiture</option>
-                                        </Form.Control>
-                                    </Form.Group>
+                                        <BootstrapInput 
+                                            first={hitek}
+                                            second={id}
+                                            third={clothes}
+                                            fourth={others} />
+                                        </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Lieu ?</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.place} name="place" onChange={handleChange}>
-                                            <option>Hall</option>
-                                            <option>Restaurant</option>
-                                            <option>Toilettes</option>
-                                            <option>Parking</option>
-                                            <option>Etages</option>
-                                        </Form.Control>
+                                        <BootstrapInput 
+                                            first={hall}
+                                            second={restaurant}
+                                            third={parking}
+                                            fourth={wc}
+                                            fifth={floors}
+                                            sixth={otherPlace} />
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>

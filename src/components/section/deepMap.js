@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react'
 import Map, {Marker} from 'react-map-gl'
 import OverbookingBox from './overbookingBox'
 import RedBar from './redBar'
-import {Form, Button, Modal, OverlayTrigger, Tooltip, Dropdown} from 'react-bootstrap'
-import * as Departement from '../../../zoneFrance/json/departments.json'
+import {Form, Button, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import MarkerImg from './markerImg'
+import BootstrapInput from './common/button/selectButton'
+
+
 
 
 export default function DeepMap({user, firebase}) {
@@ -18,7 +20,8 @@ export default function DeepMap({user, firebase}) {
     const [star, setStar] = useState({star: []})
     const [operator, setOperator] = useState("==")
 
-
+    const yes = "oui"
+    const no = "non"
 
 
     const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", initialPrice: "", pec: "", refHotel: ""})
@@ -119,7 +122,7 @@ export default function DeepMap({user, firebase}) {
                                     setselectedHotel(hotel)
                                     handleShow()
                                 }}>
-                                <MarkerImg />
+                                <MarkerImg room={hotel.roomAvailable} />
                             </button>
                      </OverlayTrigger>
                     </Marker>
@@ -181,23 +184,20 @@ export default function DeepMap({user, firebase}) {
                                         <Form.Row>
                                             <Form.Group controlId="exampleForm.SelectCustom">
                                             <Form.Label>Montant du séjour</Form.Label>
-                                            <Form.Control type="text" style={{width: "10vw"}} size="sm" value={formValue.initialPrice} name="initialPrice" onChange={handleChange} />
+                                            <Form.Control type="text" style={{width: "10vw", marginRight: "3vw"}} size="sm" value={formValue.initialPrice} name="initialPrice" onChange={handleChange} />
 
                                         </Form.Group>
-                                        <Form.Row>
+                                        {/*<Form.Row>
                                             <Form.Group controlId="exampleForm.SelectCustom">
                                             <Form.Label>P.E.C</Form.Label>
-                                            <Form.Control as="select" custom style={{width: "10vw", marginLeft: "8vw"}} size="sm" defaultValue="Non" value={formValue.pec} name="pec" onChange={handleChange}>
-                                                <option value="non" selected>Non</option>
-                                                <option value="oui">Oui</option>
-                                            </Form.Control>
+                                            <BootstrapInput style={{width: "2px"}} first={yes} second={no} value={formValue.pec} name="pec" onChange={handleChange} />
                                         </Form.Group>
                                         </Form.Row>
                                         </Form.Row>
-                                        <Form.Row>
+                                        <Form.Row>*/}
                                             <Form.Group controlId="description">
                                             <Form.Label>Référence de l'Hotel</Form.Label>
-                                            <Form.Control type="text" style={{width: "12vw"}} size="sm" value={formValue.refHotel} name="refHotel" onChange={handleChange} />
+                                            <Form.Control type="text" style={{width: "12vw", marginLeft: "3vw"}} size="sm" value={formValue.refHotel} name="refHotel" onChange={handleChange} />
                                             </Form.Group>
                                         </Form.Row>
                                     </div>
@@ -224,7 +224,7 @@ export default function DeepMap({user, firebase}) {
                                         doc: selectedHotel.id, 
                                         status: "en attente"})
                                     firebase.addOverbookOut({
-                                        hotelName: formValue.hotelName, 
+                                        hotelName: selectedHotel.hotelName, 
                                         totalRoom: formValue.totalRoom, 
                                         totalNight: formValue.totalNight, 
                                         client: formValue.client, 
@@ -234,7 +234,7 @@ export default function DeepMap({user, firebase}) {
                                         pec: formValue.pec, 
                                         pax: formValue.pax, 
                                         refHotel: formValue.refHotel, 
-                                        doc: selectedHotel.id, 
+                                        doc: user.displayName, 
                                         status: "en attente"})
                                     setselectedHotel(null)
                                 }}>Déloger</Button>
@@ -267,12 +267,13 @@ export default function DeepMap({user, firebase}) {
                 <Form.Label className="text-center" value={geo} style={{width: "12vw"}}>Département</Form.Label>
                 <select className="selectpicker" id="zone" style={{width: "14vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}}>
                 <option>Tous les départements</option>
-                {Departement.map(zone => (
-                    <option 
-                    key={zone.id}>
-                        {zone.name}
-                    </option>
-                ))}
+                <option>Paris</option>
+                <option>Hauts-de-Seine</option>
+                <option>Val d'Oise</option>
+                <option>Val de Marne</option>
+                <option>Seine St Denis</option>
+                <option>Seine et Marne</option>
+                <option>Yvelines</option>
                 </select>
                 <Button variant="dark" size="sm" style={{width: "7vw", marginTop: "5%"}} onClick={handleZone}>Filtrer</Button>
                 </Form.Group>

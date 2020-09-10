@@ -15,7 +15,7 @@ const OverbookInForm = ({hotel, client, markup, night, room, pax, initialPrice, 
     
     const removeSticker = (event) => {
         console.log(event)
-        firebase.deleteOverbooking({refHotel: refHotel, collection: "overbookIn", document: markup})
+        firebase.deleteOverbooking({refHotel: user.displayName, collection: "overbookIn", document: markup})
         setVisible(false)
       }
     

@@ -1,6 +1,10 @@
 import React, {useState, useEffect } from 'react'
 import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
 import HouseKeeping from '../../../svg/maid.svg'
+import BootstrapInput from '../common/button/selectButton'
+
+
+
 
 const Maid = ({user, firebase}) =>{
 
@@ -10,6 +14,15 @@ const Maid = ({user, firebase}) =>{
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
+
+    const paint = "Peinture"
+    const plumery = "Plomberie"
+    const electricity = "Electricité"
+    const housework = "Ménage"
+    const others = "Autres"
+
+    const clean = "Propre"
+    const dirty ="Sale"
 
     const handleChange = (event) =>{
         event.persist()
@@ -106,22 +119,20 @@ const Maid = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Pour quel motif ?</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.reason} name="reason" onChange={handleChange}>
-                                            <option>Peinture</option>
-                                            <option>Plomberie</option>
-                                            <option>Electricité</option>
-                                            <option>Ménage</option>
-                                            <option>Autres</option>
-                                        </Form.Control>
+                                        <BootstrapInput
+                                            first={paint}
+                                            second={plumery}
+                                            third={electricity}
+                                            fourth={housework}
+                                            fifth={others} />
                                     </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Etat de la chambre</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "20vw"}} value={formValue.state} name="state" onChange={handleChange}>
-                                            <option>Sale</option>
-                                            <option>Propre</option>
-                                        </Form.Control>
+                                        <BootstrapInput
+                                            first={clean}
+                                            second={dirty} />
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>

@@ -13,12 +13,16 @@ class Firebase {
     }
   }
 
-  async getUserProfile({userId}){
-    return this.db.collection('publicUsers').where('userId', '==', userId).get();
+  async getUserProfile({userId, refHotel}){
+    return this.db.collection('hotels').doc(refHotel).collection("Users").where('userId', '==', userId).get();
   }
 
   getUserFields({documentId}){
     return this.db.collection("publicUsers").doc(documentId)
+  }
+
+  getHotelFields({documentId}){
+    return this.db.collection("hotels").doc(documentId)
   }
 
   getUserId(){
@@ -31,8 +35,11 @@ class Firebase {
 
   async register({email, password, username, refHotel}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
-    await this.db.collection("publicUsers").doc(username).set({
-      userId: newUser.user.uid
+    await this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).set({
+      userId: newUser.user.uid,
+      mail: email,
+      password: password,
+      markup: Date.now()
     })
     return this.auth.currentUser.updateProfile({
       displayName: refHotel
@@ -95,7 +102,7 @@ class Firebase {
 
   listOnAir({documentId, collection}){
     return this.db.collection("hotels")
-    .doc("H9781")
+    .doc(`${documentId}`)
     .collection("checkList")
     .doc("lists")
     .collection(collection)
@@ -161,6 +168,20 @@ class Firebase {
         console.log(error);
     });
   }
+
+  async deleteUser({documentId, document}){
+    await this.db.collection('hotels')
+    .doc(`${documentId}`)
+    .collection("Users")
+    .doc(document)
+    .delete()
+    .then(function() {
+      console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.log(error);
+    });
+  }
+  
 
 
 
@@ -334,7 +355,7 @@ class Firebase {
     return this.db.collection("hotels")
     .doc(`${documentId}`)
     .collection('checkList')
-    .doc("hSM4fJ0M53FGej8NniMW")
+    .doc("lists")
     .collection(collection)
     .add({
       task: task,
@@ -395,7 +416,32 @@ class Firebase {
   }
 
 
-  
+  async updateUsers({userId, newEmail, newPassword, newDisplayName}){
+    return this.auth.updateUser(userId, {
+      email: newEmail,
+      password: newPassword,
+      displayName: newDisplayName
+    })
+      .then(function(userRecord) {
+        // See the UserRecord reference doc for the contents of userRecord.
+        console.log('Successfully updated user', userRecord.toJSON());
+      })
+      .catch(function(error) {
+        console.log('Error updating user:', error);
+      });
+     
+  }
+
+  async updateUserHotel({username, newHotel}){
+    return this.db.collection("publicUsers")
+    .doc(username)
+    .update({
+      hotel: newHotel
+    })
+    .then(function() {
+      console.log("Document successfully updated!");
+    })
+  }
 
   async updateRoomAvailable({documentId, room}){
     return this.db.collection("hotels")

@@ -1,6 +1,10 @@
 import React, {useState, useEffect } from 'react'
 import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
 import Maintenance from '../../../svg/repair.svg'
+import BootstrapInput from '../common/button/selectButton'
+
+
+
 
 const Repair = ({user, firebase}) =>{
 
@@ -10,6 +14,12 @@ const Repair = ({user, firebase}) =>{
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
+
+    const paint = "Peinture"
+    const plumery = "Plomberie"
+    const electricity = "Electricité"
+    const housework = "Ménage"
+    const others = "Autres"
 
     const handleChange = (event) =>{
         event.persist()
@@ -100,12 +110,12 @@ const Repair = ({user, firebase}) =>{
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
                                         <Form.Label>Quel type de problème ?</Form.Label>
-                                        <Form.Control as="select" custom style={{width: "35vw"}} value={formValue.type} name="type" onChange={handleChange}>
-                                            <option>Peinture</option>
-                                            <option>Plomberie</option>
-                                            <option>Electricité</option>
-                                            <option>Autres</option>
-                                        </Form.Control>
+                                        <BootstrapInput
+                                            first={paint}
+                                            second={plumery}
+                                            third={electricity}
+                                            fourth={housework}
+                                            fifth={others} />
                                     </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
