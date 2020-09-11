@@ -1,5 +1,6 @@
 import firebaseConfig from "./config";
 import { navigate } from 'gatsby'
+import { ConfigContext } from "antd/lib/config-provider";
 
 class Firebase {
   constructor(app) {
@@ -31,6 +32,24 @@ class Firebase {
   
   async redPhoneFilter({filter}){
     return this.deleteDocument.collection("hotels").orderBy(filter)
+  }
+
+  async register({email, password, username, refHotel}) {
+    //const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
+    const authId = this.getUserId()
+    const adminId = authId.uid
+    const newUser = this.functions.httpsCallabale('createUser')
+    newUser({email, password, refHotel})
+    await this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).set({
+      userId: adminId,
+      mail: email,
+      password: password,
+      markup: Date.now()
+    })
+    
+    return this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).set({
+      userId: newUser.user.uid
+    })
   }
 
   async register({email, password, username, refHotel}) {
