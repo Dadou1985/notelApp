@@ -4,7 +4,7 @@ import { FirebaseContext } from '../../Firebase'
 import { navigate } from 'gatsby'
 import { Navbar, OverlayTrigger, Tooltip, Modal, Button, Tab, Tabs, Form, formValue } from 'react-bootstrap'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
-import Register from './form/register'
+import AdminRegister from './form/adminRegister'
 import UserList from './form/userList'
 import '../css/navigation.css'
 
@@ -121,7 +121,7 @@ const Navigation = () =>{
                     <Tabs defaultActiveKey="Créer" id="uncontrolled-tab-example">
                             <Tab eventKey="Créer" title="Créer un utilisateur">
                                 {!!firebase&&
-                                <Register firebase={firebase} hide={handleCloseTab} />}     
+                                <AdminRegister firebase={firebase} hide={handleCloseTab} />}     
                             </Tab>
                             <Tab eventKey="Supprimer" title="Supprimer un utilisateur">
                                 {!!firebase && !!user &&

@@ -1,6 +1,5 @@
 import firebaseConfig from "./config";
 import { navigate } from 'gatsby'
-import { ConfigContext } from "antd/lib/config-provider";
 
 class Firebase {
   constructor(app) {
@@ -15,11 +14,11 @@ class Firebase {
   }
 
   async getUserProfile({userId, refHotel}){
-    return this.db.collection('hotels').doc(refHotel).collection("Users").where('userId', '==', userId).get();
+    return this.db.collection('hotels').doc(`${refHotel}`).collection("Users").where('userId', '==', userId).get();
   }
 
-  getUserFields({documentId}){
-    return this.db.collection("publicUsers").doc(documentId)
+  getUserFields({refHotel, username}){
+    return this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username)
   }
 
   getHotelFields({documentId}){
@@ -29,40 +28,37 @@ class Firebase {
   getUserId(){
     return this.auth.currentUser
   }
+
+  async deleteUserAuth(){
+    const userAuth = await this.auth.currentUser
+    return userAuth.delete().then(function() {
+      // User deleted.
+    }).catch(function(error) {
+      // An error happened.
+    });
+  }
   
   async redPhoneFilter({filter}){
     return this.deleteDocument.collection("hotels").orderBy(filter)
   }
 
-  async register({email, password, username, refHotel}) {
-    //const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
-    const authId = this.getUserId()
-    const adminId = authId.uid
-    const newUser = this.functions.httpsCallabale('createUser')
-    newUser({email, password, refHotel})
-    await this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).set({
-      userId: adminId,
-      mail: email,
-      password: password,
-      markup: Date.now()
-    })
-    
+  async adminRegister({username, refHotel}) {
+    //const currentUserProfile = await this.auth.currentUser
     return this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).set({
-      userId: newUser.user.uid
+      adminRegistration: true,
+      refHotel: refHotel,
+      markup: Date.now()
     })
   }
 
   async register({email, password, username, refHotel}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
-    await this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).set({
+    await this.auth.currentUser.updateProfile({displayName: refHotel})
+    return this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).update({    
       userId: newUser.user.uid,
       mail: email,
-      password: password,
-      markup: Date.now()
-    })
-    return this.auth.currentUser.updateProfile({
-      displayName: refHotel
-    })
+      password: password 
+    })    
   }
 
   async login({email, password}) {
