@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
 import Taxi from '../../../svg/taxi.svg'
-import BootstrapInput from '../common/button/selectButton'
+import CustomizedSelects from '../common/button/selectButton'
 
 
 const Cab = ({user, firebase}) =>{
@@ -116,8 +116,17 @@ const Cab = ({user, firebase}) =>{
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="description">
-                                        <Form.Label>Type de véhicule</Form.Label>
-                                        <BootstrapInput first={berline} second={van} value={formValue.model} name="model" onChange={handleChange} />
+                                        <Form.Label>Type de véhicule</Form.Label><br/>
+                                        <select class="selectpicker" value={formValue.model} name="model" onChange={handleChange} 
+                                        style={{width: "20vw", 
+                                        height: "6vh", 
+                                        border: "1px solid lightgrey", 
+                                        borderRadius: "3px",
+                                        backgroundColor: "white"}}>
+                                            <option></option>
+                                            <option>Berline</option>
+                                            <option>Van</option>
+                                        </select>
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>

@@ -34,11 +34,12 @@ const Caisse = ({user, firebase}) =>{
 
     const change = (a, b, c) => {
         let x = document.getElementById(a).value * b
-        return document.getElementById(c).value = x
+        const outputValue = document.getElementById(c).value = x
+        return outputValue.toFixed(2)
     }
 
     const total = () => {
-        return document.getElementById("total").innerHTML = Number(document.getElementById("bank").value) 
+        const total = document.getElementById("total").innerHTML = Number(document.getElementById("bank").value) 
         + Number(document.getElementById("bank2").value) 
         + Number(document.getElementById("bank3").value)
         + Number(document.getElementById("bank4").value)
@@ -61,10 +62,11 @@ const Caisse = ({user, firebase}) =>{
         + Number(document.getElementById("bank21").value)
         + Number(document.getElementById("bank22").value) 
         + Number(document.getElementById("bank23").value)
+        return total.toFixed(2)
     }
 
     const montant = () => {
-        return document.getElementById("montant").innerHTML = Number(document.getElementById("test").value) 
+        const total = document.getElementById("montant").innerHTML = Number(document.getElementById("test").value) 
         + Number(document.getElementById("test2").value) 
         + Number(document.getElementById("test3").value)
         + Number(document.getElementById("test4").value)
@@ -87,6 +89,7 @@ const Caisse = ({user, firebase}) =>{
         + Number(document.getElementById("test21").value)
         + Number(document.getElementById("test22").value) 
         + Number(document.getElementById("test23").value)
+        return total.toFixed(2)
     }
 
     const handleReset = () =>{
@@ -141,15 +144,22 @@ const Caisse = ({user, firebase}) =>{
                         width: "90%"
                     }}>
                         Caisse du Jour
-                        <Form.Control as="select" custom 
-                            style={{width: "10vw"}} 
-                            value={formValue.shift} 
-                            name="shift" 
-                            onChange={handleChange}>
-                                <option>shift : matin</option>
-                                <option>shift : soir</option>
-                                <option>shift : nuit</option>
-                            </Form.Control>
+                            <Form.Group controlId="exampleForm.SelectCustom">
+                                        <Form.Label style={{fontSize: "15px"}}>Shift</Form.Label>
+                                        <select class="selectpicker" value={formValue.shift} name="shift" onChange={handleChange} 
+                                        style={{width: "10vw", 
+                                        height: "6vh", 
+                                        border: "1px solid lightgrey", 
+                                        borderRadius: "3px",
+                                        backgroundColor: "white",
+                                        marginLeft: "1vw",
+                                        fontSize: "15px"}}>
+                                            <option></option>
+                                            <option>matin</option>
+                                            <option>soir</option>
+                                            <option>nuit</option>
+                                        </select>
+                                        </Form.Group>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>

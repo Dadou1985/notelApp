@@ -109,19 +109,26 @@ const Repair = ({user, firebase}) =>{
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
-                                        <Form.Label>Quel type de problème ?</Form.Label>
-                                        <BootstrapInput
-                                            first={paint}
-                                            second={plumery}
-                                            third={electricity}
-                                            fourth={housework}
-                                            fifth={others} />
+                                        <Form.Label>Quel type de problème ?</Form.Label><br/>
+                                        <select class="selectpicker" value={formValue.type} name="type" onChange={handleChange} 
+                                        style={{width: "35vw", 
+                                        height: "6vh", 
+                                        border: "1px solid lightgrey", 
+                                        borderRadius: "3px",
+                                        backgroundColor: "white"}}>
+                                            <option></option>
+                                            <option>Peinture</option>
+                                            <option>Plomberie</option>
+                                            <option>Electricité</option>
+                                            <option>Ménage</option>
+                                            <option>Autres</option>
+                                        </select>
                                     </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="details">
                                             <Form.Label>Plus de détails</Form.Label>
-                                            <Form.Control as="textarea" rows="3" style={{width: "48vw", maxHeight: "15vh"}} value={formValue.details} name="details" onChange={handleChange}  />
+                                            <Form.Control as="textarea" rows="3" style={{width: "35vw", maxHeight: "15vh"}} value={formValue.details} name="details" onChange={handleChange}  />
                                         </Form.Group>
                                     </Form.Row>
                                 </div>

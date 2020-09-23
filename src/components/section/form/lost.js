@@ -102,24 +102,38 @@ const Lost = ({user, firebase}) =>{
                                 }}>
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
-                                        <Form.Label>Quel type d'objet ?</Form.Label>
-                                        <BootstrapInput 
-                                            first={hitek}
-                                            second={id}
-                                            third={clothes}
-                                            fourth={others} />
+                                        <Form.Label>Quel type d'objet ?</Form.Label><br/>
+                                            <select class="selectpicker" value={formValue.type} name="type" onChange={handleChange} 
+                                            style={{width: "20vw", 
+                                            height: "6vh", 
+                                            border: "1px solid lightgrey", 
+                                            borderRadius: "3px",
+                                            backgroundColor: "white"}}>
+                                                <option></option>
+                                                <option>High Tech</option>
+                                                <option>Documents Officiels</option>
+                                                <option>Vêtements</option>
+                                                <option>Autres</option>
+                                            </select>
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
-                                        <Form.Label>Lieu ?</Form.Label>
-                                        <BootstrapInput 
-                                            first={hall}
-                                            second={restaurant}
-                                            third={parking}
-                                            fourth={wc}
-                                            fifth={floors}
-                                            sixth={otherPlace} />
+                                        <Form.Label>Lieu ?</Form.Label><br/>
+                                            <select class="selectpicker" value={formValue.place} name="place" onChange={handleChange} 
+                                            style={{width: "20vw", 
+                                            height: "6vh", 
+                                            border: "1px solid lightgrey", 
+                                            borderRadius: "3px",
+                                            backgroundColor: "white"}}>
+                                                <option></option>
+                                                <option>Hall</option>
+                                                <option>Restaurant</option>
+                                                <option>Parking</option>
+                                                <option>Toilettes</option>
+                                                <option>Etages</option>
+                                                <option>Autres</option>
+                                            </select>
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>

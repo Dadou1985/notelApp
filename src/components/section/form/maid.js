@@ -118,21 +118,35 @@ const Maid = ({user, firebase}) =>{
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
-                                        <Form.Label>Pour quel motif ?</Form.Label>
-                                        <BootstrapInput
-                                            first={paint}
-                                            second={plumery}
-                                            third={electricity}
-                                            fourth={housework}
-                                            fifth={others} />
+                                        <Form.Label>Pour quel motif ?</Form.Label><br/>
+                                        <select class="selectpicker" value={formValue.reason} name="reason" onChange={handleChange} 
+                                        style={{width: "20vw", 
+                                        height: "6vh", 
+                                        border: "1px solid lightgrey", 
+                                        borderRadius: "3px",
+                                        backgroundColor: "white"}}>
+                                            <option></option>
+                                            <option>Peinture</option>
+                                            <option>Plomberie</option>
+                                            <option>Electricité</option>
+                                            <option>Ménage</option>
+                                            <option>Autres</option>
+                                        </select>
                                     </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
                                         <Form.Group controlId="exampleForm.SelectCustom">
-                                        <Form.Label>Etat de la chambre</Form.Label>
-                                        <BootstrapInput
-                                            first={clean}
-                                            second={dirty} />
+                                        <Form.Label>Etat de la chambre</Form.Label><br/>
+                                        <select class="selectpicker" value={formValue.state} name="state" onChange={handleChange} 
+                                        style={{width: "20vw", 
+                                        height: "6vh", 
+                                        border: "1px solid lightgrey", 
+                                        borderRadius: "3px",
+                                        backgroundColor: "white"}}>
+                                            <option></option>
+                                            <option>Sale</option>
+                                            <option>Propre</option>
+                                        </select>
                                         </Form.Group>
                                     </Form.Row>
                                     <Form.Row>
