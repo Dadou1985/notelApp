@@ -1,6 +1,9 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect, useRef } from 'react'
 import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
 import Safe from '../../../svg/vault.svg'
+import { useReactToPrint } from 'react-to-print';
+
+
 
 const Caisse = ({user, firebase}) =>{
 
@@ -31,6 +34,11 @@ const Caisse = ({user, firebase}) =>{
         handleReset()
         firebase.addSafe({documentId: user.displayName, author: user.username, amount: caisse, date: time, markup: marker, shift: formValue.shift}).then(handleClose)
     }
+
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+    });
 
     const change = (a, b, c) => {
         let x = document.getElementById(a).value * b
@@ -93,9 +101,7 @@ const Caisse = ({user, firebase}) =>{
     }
 
     const handleReset = () =>{
-        document.getElementById("total").innerHTML = 0
-        document.getElementById("montant").innerHTML = 0
-        setFormValue("")
+        return document.getElementById("moneyBoxes").reset()
     }
 
     useEffect(() => {
@@ -137,6 +143,7 @@ const Caisse = ({user, firebase}) =>{
                     centered
                     onHide={handleClose}
                     >
+                        <form id="moneyBoxes"> 
                     <Modal.Header closeButton className="bg-light">
                         <Modal.Title id="contained-modal-title-vcenter" style={{
                         display: "flex",
@@ -163,7 +170,7 @@ const Caisse = ({user, firebase}) =>{
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                    
+                   
                     <Tabs defaultActiveKey="Caisse du shift" id="uncontrolled-tab-example">
                             <Tab eventKey="Caisse du shift" title="Caisse du shift">
                             <Table striped bordered hover variant="dark" size="sm" className="text-center">
@@ -309,7 +316,7 @@ const Caisse = ({user, firebase}) =>{
                                 </Table>
                             </Tab>
                             <Tab eventKey="Journal des caisses" title="Journal des caisses">
-                            <Table striped bordered hover size="sm" className="text-center">
+                            <Table striped bordered hover size="sm" className="text-center" ref={componentRef}>
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
                                     <th>#</th>
@@ -323,7 +330,7 @@ const Caisse = ({user, firebase}) =>{
                                 <tbody>
                                     {info.map(flow =>(
                                         <tr key={flow.id}>
-                                        <td>0</td>
+                                        <td id="count"></td>
                                         <td>{flow.author}</td>
                                         <td>{flow.amount}</td>
                                         <td>{flow.shift}</td>
@@ -339,8 +346,9 @@ const Caisse = ({user, firebase}) =>{
                     <Modal.Footer>
                         <Button variant="success" onClick={handleSubmit}>Enregistrer</Button>
                         <Button variant="outline-primary" onClick={handleReset} style={{width: "10vw"}}>Reset</Button>
-                        <Button variant="outline-info" style={{width: "10vw"}}>Imprimer</Button>
+                        <Button variant="outline-info" style={{width: "10vw"}} onClick={handlePrint}>Imprimer</Button>
                     </Modal.Footer>
+                    </form>
                 </Modal>
         </div>
     )

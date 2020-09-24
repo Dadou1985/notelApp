@@ -1,5 +1,6 @@
 import firebaseConfig from "./config";
 import { navigate } from 'gatsby'
+import moment from 'moment'
 
 class Firebase {
   constructor(app) {
@@ -72,9 +73,11 @@ class Firebase {
 
 
   messageOnAir({documentId}){
+    const date = Date.now()
     return this.db.collection("hotels")
     .doc(`${documentId}`)
     .collection('message')
+    .where("date", "<=", date)
     .orderBy("markup", "desc")
   }
 

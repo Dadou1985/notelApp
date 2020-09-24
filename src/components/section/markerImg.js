@@ -3,7 +3,7 @@ import Hotel from '../../svg/hostel.png'
 
 export default function MarkerImg({room}) {
 
-    if(room > 0) {
+    {if(room > 0) {
         return (
             <div>
                 <img src={Hotel} alt="hotel" style={{width: "40px"}} />
@@ -11,6 +11,6 @@ export default function MarkerImg({room}) {
         )
     }else {
          return (<div></div>)   
-    }
+    }}
     
 }

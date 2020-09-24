@@ -4,8 +4,6 @@ import OverbookingBox from './overbookingBox'
 import RedBar from './redBar'
 import {Form, Button, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import MarkerImg from './markerImg'
-import BootstrapInput from './common/button/selectButton'
-
 
 
 
@@ -17,7 +15,6 @@ export default function DeepMap({user, firebase}) {
     const [field, setField] = useState("Region")
     const [filter, setFilter] = useState("Ile-de-France")
     const [geo, setGeo] = useState({geo: []})
-    const [star, setStar] = useState({star: []})
     const [operator, setOperator] = useState("==")
 
     const yes = "oui"
@@ -185,16 +182,24 @@ export default function DeepMap({user, firebase}) {
                                             <Form.Group controlId="exampleForm.SelectCustom">
                                             <Form.Label>Montant du séjour</Form.Label>
                                             <Form.Control type="text" style={{width: "10vw", marginRight: "3vw"}} size="sm" value={formValue.initialPrice} name="initialPrice" onChange={handleChange} />
-
-                                        </Form.Group>
-                                        {/*<Form.Row>
+                                            </Form.Group>
+                                        </Form.Row>
+                                        <Form.Row>
                                             <Form.Group controlId="exampleForm.SelectCustom">
-                                            <Form.Label>P.E.C</Form.Label>
-                                            <BootstrapInput style={{width: "2px"}} first={yes} second={no} value={formValue.pec} name="pec" onChange={handleChange} />
-                                        </Form.Group>
+                                            <Form.Label>P.E.C</Form.Label><br/>
+                                            <select class="selectpicker" value={formValue.type} name="type" onChange={handleChange} 
+                                            style={{width: "10vw", 
+                                            height: "5vh", 
+                                            border: "1px solid lightgrey", 
+                                            borderRadius: "3px",
+                                            backgroundColor: "white"}}>
+                                                <option></option>
+                                                <option>oui</option>
+                                                <option>non</option>
+                                            </select>
+                                            </Form.Group>
                                         </Form.Row>
-                                        </Form.Row>
-                                        <Form.Row>*/}
+                                        <Form.Row>
                                             <Form.Group controlId="description">
                                             <Form.Label>Référence de l'Hotel</Form.Label>
                                             <Form.Control type="text" style={{width: "12vw", marginLeft: "3vw"}} size="sm" value={formValue.refHotel} name="refHotel" onChange={handleChange} />
