@@ -73,11 +73,11 @@ class Firebase {
 
 
   messageOnAir({documentId}){
-    const date = Date.now()
+    let date = Date.now()
     return this.db.collection("hotels")
     .doc(`${documentId}`)
     .collection('message')
-    .where("date", "<=", date)
+    .where("markup", "<=", date)
     .orderBy("markup", "desc")
   }
 

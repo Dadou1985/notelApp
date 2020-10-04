@@ -1,11 +1,15 @@
-import React, {useState, useContext, useEffect } from 'react'
+import React, {useState, useContext } from 'react'
 import { Button, Form, FormGroup, Input, CustomInput, Alert } from 'reactstrap'
 import { FirebaseContext } from '../../Firebase'
 import NoteBox from './noteBox'
+import moment from 'moment'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Messenger = () =>{
 
     const [note, setNote] = useState('')
+    const [startDate, setStartDate] = useState(new Date());
     const { user, firebase } = useContext(FirebaseContext)
     
     const handleChange = event =>{
@@ -15,15 +19,24 @@ const Messenger = () =>{
     const handleSubmit = (event) =>{
         event.preventDefault()
         setNote("")
-        let day = new Date().getDate()
-        let month = new Date().getMonth()
-        let calendar = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
-        let year = new Date().getFullYear()
         let hours = new Date().getHours() + "h"
         let minutes = new Date().getMinutes()
         let time = hours + minutes
-        let date = day + " " + calendar[month] + " " + year
-        let marker = Date.now()
+        let marker = startDate.getTime()
+
+        Date.prototype.yyyymmdd = function() {
+            let day = this.getDate()
+            let month = this.getMonth()
+            let calendar = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+            let year = this.getFullYear()
+
+            let date = day + " " + calendar[month] + " " + year
+            return date
+          };
+        let date = startDate.yyyymmdd()
+        if(startDate !== new Date()) {
+            setStartDate(new Date)
+        }else{}
         firebase.addMessage({documentId: user.displayName, author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})
     }
 
@@ -79,7 +92,23 @@ const Messenger = () =>{
                 }}>
                 <CustomInput type="file" id="exampleCustomFileBrowser" name="customFile" />
             </FormGroup>
-            <Button color="outline-success" block style={{height: "6vh"}}>Noter</Button>
+            <div style={{
+                display: "flex",
+                flexFlow: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                width: "100%"
+            }}>
+                <Button color="success" block style={{width: "70%", height: "6vh"}}>Noter</Button>
+                <DatePicker
+                selected={startDate}
+                value={startDate}
+                onChange={changedDate => setStartDate(changedDate)}
+                placeholderText="Date du jour"
+                locale="fr-FR"
+                dateFormat="d MMMM yyyy"
+                />
+            </div>
         </Form>
             </div>
         </div>

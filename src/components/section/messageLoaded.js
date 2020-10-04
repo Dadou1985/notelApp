@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {Card} from 'react-bootstrap'
 import {Button} from 'reactstrap'
-import moment from 'moment'
 import { FirebaseContext } from '../../Firebase'
 
 
@@ -13,6 +12,9 @@ import { FirebaseContext } from '../../Firebase'
     const handleRemove = () =>{
         firebase.deleteDocument({documentId: user.displayName, collection: "message", document: markup})
     }
+
+    const dateNote = date.toString()
+    console.log(date)
 
     useEffect(() => {
       const abortController = new AbortController()
