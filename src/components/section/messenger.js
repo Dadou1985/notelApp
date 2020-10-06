@@ -35,6 +35,8 @@ const Messenger = () =>{
           };
         let date = startDate.yyyymmdd()
         if(startDate !== new Date()) {
+            const notif = "Votre message a bien été enregistré !"
+            firebase.addNotification({documentId: user.displayName, notification: notif})
             setStartDate(new Date)
         }else{}
         firebase.addMessage({documentId: user.displayName, author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})

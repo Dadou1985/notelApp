@@ -433,6 +433,14 @@ class Firebase {
     })
   }
 
+  async addNotification({documentId, notification}){
+    return this.db.collection('hotels').doc(`${documentId}`).collection('notifications')
+    .add({
+      content: notification,
+      markup: Date.now()})
+    .then(doc => console.log('nouvelle notitfication'))
+  }
+
 
   async updateUsers({userId, newEmail, newPassword, newDisplayName}){
     return this.auth.updateUser(userId, {
