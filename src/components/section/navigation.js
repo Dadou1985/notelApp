@@ -6,6 +6,7 @@ import { Navbar, OverlayTrigger, Tooltip, Modal, Button, Tab, Tabs, Form, formVa
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 import AdminRegister from './form/adminRegister'
 import UserList from './form/userList'
+import FeedbackBox from './form/feedbackBox'
 import '../css/navigation.css'
 
 
@@ -26,8 +27,6 @@ const Navigation = () =>{
     }
 
     const handleMove = () => navigate('/singlePage')
-
-    console.log({user})
 
     return(
         <div  className="shadow-sm bg-white">
@@ -79,6 +78,8 @@ const Navigation = () =>{
                         cursor: "pointer",
                         marginRight: "1vw"}} onClick={handleShowTab} />
                     </OverlayTrigger>
+                    {!!firebase && !!user &&
+                    <FeedbackBox firebase={firebase} user={user} />}
                     <OverlayTrigger
                         placement="bottom"
                         overlay={
@@ -89,10 +90,11 @@ const Navigation = () =>{
                     <PowerSettingsNewIcon alt="connect" style={{
                         width: "10%",
                         cursor: "pointer",
-                        marginRight: "1vw"}} onClick={handleShow} />
+                        marginRight: "1vw",
+                        marginLeft: "1vw"}} onClick={handleShow} />
                     </OverlayTrigger>
                     {!!user && !!user.email &&
-                    <div>{user.username || user.email}</div>}
+                    <div style={{width:"30vw"}}>{user.username || user.email}</div>}
                 </div>
             </Navbar>
             <Modal show={list} onHide={handleClose}>

@@ -505,6 +505,25 @@ class Firebase {
     })
   }
 
+
+//Feedback Database
+
+async addFeedback({refHotel, author, text}){
+  return this.db.collection("feedbacks")
+  .add({
+    author: author,
+    refHotel: refHotel,
+    text: text,
+    markup: Date.now()
+  }).then(function(docRef){
+    console.log(docRef.id)
+  }).catch(function(error) {
+    console.error(error)
+  })
+}
+
+
+
 }
 
 

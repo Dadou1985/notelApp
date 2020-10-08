@@ -42,8 +42,6 @@ const Messenger = () =>{
         firebase.addMessage({documentId: user.displayName, author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})
     }
 
-    
-
     return(
         <div
          style={{
@@ -101,7 +99,7 @@ const Messenger = () =>{
                 alignItems: "center",
                 width: "100%"
             }}>
-                <Button color="success" block style={{width: "70%", height: "6vh"}}>Noter</Button>
+                <Button color="success" block style={{width: "70%", height: "6vh"}} id="noteButton">Noter</Button>
                 <DatePicker
                 selected={startDate}
                 value={startDate}
