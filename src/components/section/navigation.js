@@ -1,26 +1,21 @@
 import React, { useContext, useState } from 'react'
-import Connection from '../../images/connection.png'
 import { FirebaseContext } from '../../Firebase'
 import { navigate } from 'gatsby'
-import { Navbar, OverlayTrigger, Tooltip, Modal, Button, Tab, Tabs, Form, formValue } from 'react-bootstrap'
+import { Navbar, OverlayTrigger, Tooltip, Modal, Button } from 'react-bootstrap'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
-import AdminRegister from './form/adminRegister'
-import UserList from './form/userList'
+import AdminBoard from './form/adminBoard'
 import FeedbackBox from './form/feedbackBox'
+import Avatar from 'react-avatar';
 import '../css/navigation.css'
 
 
 const Navigation = () =>{
 
     const [list, setList] = useState(false)
-    const [tab, setTab] = useState(false)
     const {firebase, user} = useContext(FirebaseContext)
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
-
-    const handleCloseTab = () => setTab(false)
-    const handleShowTab = () => setTab(true)
 
     const handleLogout = () =>{
         firebase.logout().then(()=>navigate('/'))
@@ -29,7 +24,7 @@ const Navigation = () =>{
     const handleMove = () => navigate('/singlePage')
 
     return(
-        <div  className="shadow-sm bg-white">
+        <div className="shadow-sm bg-white">
             <Navbar bg="light" expand="lg" style={{
                     display: "flex",
                     justifyContent: "space-between",
@@ -65,19 +60,17 @@ const Navigation = () =>{
                     <div style={{
                         fontSize: "small"
                     }}>
+                    {!!user &&
+                    <Avatar 
+                    name={user.username}
+                    round={true}
+                    size="30"
+                    style={{marginRight: "1vw"}}
+                    color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+                     />}
                     </div>
-                    <OverlayTrigger
-                        placement="bottom"
-                        overlay={
-                          <Tooltip id="title">
-                            Administrateur
-                          </Tooltip>
-                        }>
-                    <img src={Connection} alt="connect" style={{
-                        width: "8%",
-                        cursor: "pointer",
-                        marginRight: "1vw"}} onClick={handleShowTab} />
-                    </OverlayTrigger>
+                    {!!firebase && !!user &&
+                    <AdminBoard firebase={firebase} user={user} />}
                     {!!firebase && !!user &&
                     <FeedbackBox firebase={firebase} user={user} />}
                     <OverlayTrigger
@@ -107,31 +100,7 @@ const Navigation = () =>{
                     <Button variant="danger" onClick={handleLogout}>Quitter</Button>
                 </Modal.Body>
             </Modal>
-            <Modal show={tab}
-                    size="lg"
-                    aria-labelledby="contained-modal-title-vcenter"
-                    centered
-                    onHide={handleCloseTab}
-                    >
-                    <Modal.Header closeButton className="bg-light">
-                        <Modal.Title id="contained-modal-title-vcenter">
-                        Interface Administrateur
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                    
-                    <Tabs defaultActiveKey="Créer" id="uncontrolled-tab-example">
-                            <Tab eventKey="Créer" title="Créer un utilisateur">
-                                {!!firebase&&
-                                <AdminRegister firebase={firebase} hide={handleCloseTab} />}     
-                            </Tab>
-                            <Tab eventKey="Supprimer" title="Supprimer un utilisateur">
-                                {!!firebase && !!user &&
-                                <UserList firebase={firebase} user={user} />}
-                            </Tab>
-                        </Tabs>
-                    </Modal.Body>
-                </Modal>
+            
         </div>
     )
 }

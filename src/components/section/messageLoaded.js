@@ -14,7 +14,6 @@ import { FirebaseContext } from '../../Firebase'
     }
 
     const dateNote = date.toString()
-    console.log(date)
 
     useEffect(() => {
       const abortController = new AbortController()

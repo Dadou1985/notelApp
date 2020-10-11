@@ -73,11 +73,11 @@ class Firebase {
 
 
   messageOnAir({documentId}){
-    let date = Date.now()
+    //let date = Date.now()
     return this.db.collection("hotels")
     .doc(`${documentId}`)
     .collection('message')
-    .where("markup", "<=", date)
+    //.where("date", "==", date)
     .orderBy("markup", "desc")
   }
 
@@ -141,6 +141,12 @@ class Firebase {
     return this.db.collection("hotels")
   }
 
+  adminOnAir({documentId, mail}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection("Users")
+    .where("mail", "==", mail)
+  }
 
 
 

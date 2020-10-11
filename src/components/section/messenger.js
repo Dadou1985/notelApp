@@ -16,29 +16,33 @@ const Messenger = () =>{
         setNote(event.currentTarget.value)
     }
 
+    let hours = new Date().getHours() + "h"
+    let minutes = new Date().getMinutes()
+    let time = hours + minutes
+
+    Date.prototype.yyyymmdd = function() {
+        let day = this.getDate()
+        let month = this.getMonth()
+        let calendar = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+        let year = this.getFullYear()
+
+        let date = day + " " + calendar[month] + " " + year
+        return date
+    };
+
+    let dayIn = new Date()
+    let today = dayIn.yyyymmdd()
+
     const handleSubmit = (event) =>{
         event.preventDefault()
         setNote("")
-        let hours = new Date().getHours() + "h"
-        let minutes = new Date().getMinutes()
-        let time = hours + minutes
-        let marker = startDate.getTime()
-
-        Date.prototype.yyyymmdd = function() {
-            let day = this.getDate()
-            let month = this.getMonth()
-            let calendar = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
-            let year = this.getFullYear()
-
-            let date = day + " " + calendar[month] + " " + year
-            return date
-          };
+        let marker = Date.now()
         let date = startDate.yyyymmdd()
-        if(startDate !== new Date()) {
+        {/*if(startDate !== today) {
             const notif = "Votre message a bien été enregistré !"
             firebase.addNotification({documentId: user.displayName, notification: notif})
             setStartDate(new Date)
-        }else{}
+        }else{}*/}
         firebase.addMessage({documentId: user.displayName, author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})
     }
 
