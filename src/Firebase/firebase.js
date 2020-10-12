@@ -15,11 +15,11 @@ class Firebase {
   }
 
   async getUserProfile({userId, refHotel}){
-    return this.db.collection('hotels').doc(`${refHotel}`).collection("Users").where('userId', '==', userId).get();
+    return this.db.collection('hotels').doc(`${refHotel}`).collection("users").where('userId', '==', userId).get();
   }
 
   getUserFields({refHotel, username}){
-    return this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username)
+    return this.db.collection("hotels").doc(`${refHotel}`).collection("users").doc(username)
   }
 
   getHotelFields({documentId}){
@@ -45,7 +45,7 @@ class Firebase {
 
   async adminRegister({username, refHotel}) {
     //const currentUserProfile = await this.auth.currentUser
-    return this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).set({
+    return this.db.collection("hotels").doc(`${refHotel}`).collection("users").doc(username).set({
       adminRegistration: true,
       refHotel: refHotel,
       markup: Date.now()
@@ -55,7 +55,7 @@ class Firebase {
   async register({email, password, username, refHotel}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
     await this.auth.currentUser.updateProfile({displayName: refHotel})
-    return this.db.collection("hotels").doc(`${refHotel}`).collection("Users").doc(username).update({    
+    return this.db.collection("hotels").doc(`${refHotel}`).collection("users").doc(username).update({    
       userId: newUser.user.uid,
       mail: email,
       password: password 
@@ -72,12 +72,11 @@ class Firebase {
 
 
 
-  messageOnAir({documentId}){
-    //let date = Date.now()
+  messageOnAir({documentId, date}){
     return this.db.collection("hotels")
     .doc(`${documentId}`)
     .collection('message')
-    //.where("date", "==", date)
+    .where("markup", "<", date)
     .orderBy("markup", "desc")
   }
 
@@ -144,7 +143,7 @@ class Firebase {
   adminOnAir({documentId, mail}){
     return this.db.collection("hotels")
     .doc(`${documentId}`)
-    .collection("Users")
+    .collection("users")
     .where("mail", "==", mail)
   }
 
@@ -196,7 +195,7 @@ class Firebase {
   async deleteUser({documentId, document}){
     await this.db.collection('hotels')
     .doc(`${documentId}`)
-    .collection("Users")
+    .collection("users")
     .doc(document)
     .delete()
     .then(function() {

@@ -4,7 +4,7 @@ import { FirebaseContext } from '../../Firebase'
 import NoteBox from './noteBox'
 import moment from 'moment'
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import "../css/messenger_datepicker.css"
 
 const Messenger = () =>{
 
@@ -36,14 +36,16 @@ const Messenger = () =>{
     const handleSubmit = (event) =>{
         event.preventDefault()
         setNote("")
-        let marker = Date.now()
+        let marker = startDate.getTime()
         let date = startDate.yyyymmdd()
-        {/*if(startDate !== today) {
-            const notif = "Votre message a bien été enregistré !"
+               
+        if(date !== today) {
+            const notif = "Votre message a bien été enregistré pour le " + date + " ."
             firebase.addNotification({documentId: user.displayName, notification: notif})
             setStartDate(new Date)
-        }else{}*/}
+        }
         firebase.addMessage({documentId: user.displayName, author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})
+
     }
 
     return(
@@ -83,19 +85,20 @@ const Messenger = () =>{
                 <Input type="textarea" name="text" id="message" placeholder="Ecrire une note..."  style={{
                     width: "100%",
                     minHeight: "10vh",
-                    maxHeight: "10vh"
+                    maxHeight: "10vh",
+                    resize: "none"
                 }} 
                 value={note}
                 onChange={handleChange} />
             </FormGroup>
-            <FormGroup  style={{
+            {/*<FormGroup  style={{
                     width: "100%",
                     marginBottom: "1%",
                     display: "flex",
                     justifyContent: "center"
                 }}>
                 <CustomInput type="file" id="exampleCustomFileBrowser" name="customFile" />
-            </FormGroup>
+            </FormGroup>*/}
             <div style={{
                 display: "flex",
                 flexFlow: "row",
@@ -105,6 +108,7 @@ const Messenger = () =>{
             }}>
                 <Button color="success" block style={{width: "70%", height: "6vh"}} id="noteButton">Noter</Button>
                 <DatePicker
+                classname="react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input"
                 selected={startDate}
                 value={startDate}
                 onChange={changedDate => setStartDate(changedDate)}

@@ -8,7 +8,7 @@ const UserList = ({user, firebase}) => {
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        firebase.toolOnAir({documentId: user.displayName, collection: "Users", signal : signal}).onSnapshot(function(snapshot) {
+        firebase.toolOnAir({documentId: user.displayName, collection: "users", signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({

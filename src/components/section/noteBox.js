@@ -4,11 +4,25 @@ import MessageLoaded from './messageLoaded'
 const NoteBox = ({user, firebase}) => {
 
     const [messages, setMessages] = useState([])
+    const [dayDate, setDayDate] = useState(new Date())
+
+    Date.prototype.standard = function() {
+        let day = this.getDate() + 1
+        let month = this.getMonth() + 1
+        let year = this.getFullYear()
+
+        let date = year + "-" + month + "-" + day
+        return date
+    };
+
+    let dateString = dayDate.standard()
+    let nextDay = Date.parse(dateString)
+    console.log(nextDay)
 
     useEffect(() => {
         let unsubscribe
         
-                unsubscribe = firebase.messageOnAir({documentId: user.displayName}).onSnapshot(function(snapshot) {
+                unsubscribe = firebase.messageOnAir({documentId: user.displayName, date: nextDay}).onSnapshot(function(snapshot) {
                     const snapMessages = []
                   snapshot.forEach(function(doc) {          
                       snapMessages.push({
