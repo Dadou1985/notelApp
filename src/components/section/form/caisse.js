@@ -9,7 +9,7 @@ const Caisse = ({user, firebase}) =>{
 
     const [list, setList] = useState(false)
     const [info, setInfo] = useState([""])
-    const [formValue, setFormValue] = useState({shift: ""})
+    const [formValue, setFormValue] = useState({shift: "matin"})
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
@@ -108,7 +108,7 @@ const Caisse = ({user, firebase}) =>{
         const abortController = new AbortController()
         const signal = abortController.signal
         firebase.safeOnAir({documentId: user.displayName, signal : signal}).onSnapshot(function(snapshot) {
-                    const snapInfo = [""]
+                    const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
                         id: doc.id,
@@ -161,7 +161,6 @@ const Caisse = ({user, firebase}) =>{
                                         backgroundColor: "white",
                                         marginLeft: "1vw",
                                         fontSize: "15px"}}>
-                                            <option></option>
                                             <option>matin</option>
                                             <option>soir</option>
                                             <option>nuit</option>
@@ -173,7 +172,7 @@ const Caisse = ({user, firebase}) =>{
                    
                     <Tabs defaultActiveKey="Caisse du shift" id="uncontrolled-tab-example">
                             <Tab eventKey="Caisse du shift" title="Caisse du shift">
-                            <Table striped bordered hover variant="dark" size="sm" className="text-center">
+                            <Table striped bordered hover variant="dark" size="sm" className="text-center" ref={componentRef}>
                                 <thead fixed="top">
                                     <tr>
                                     <th>Valeur</th>
@@ -316,10 +315,9 @@ const Caisse = ({user, firebase}) =>{
                                 </Table>
                             </Tab>
                             <Tab eventKey="Journal des caisses" title="Journal des caisses">
-                            <Table striped bordered hover size="sm" className="text-center" ref={componentRef}>
+                            <Table striped bordered hover size="sm" className="text-center">
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
-                                    <th>#</th>
                                     <th>Nom du collaborateur</th>
                                     <th>Montant</th>
                                     <th>Shift</th>
@@ -330,7 +328,6 @@ const Caisse = ({user, firebase}) =>{
                                 <tbody>
                                     {info.map(flow =>(
                                         <tr key={flow.id}>
-                                        <td id="count"></td>
                                         <td>{flow.author}</td>
                                         <td>{flow.amount}</td>
                                         <td>{flow.shift}</td>

@@ -161,7 +161,6 @@ const Maid = ({user, firebase}) =>{
                                     maxWidth: "90vw"}}>
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
-                                    <th>#</th>
                                     <th>client</th>
                                     <th>Ch. initiale</th>
                                     <th>Ch. finale</th>
@@ -176,7 +175,6 @@ const Maid = ({user, firebase}) =>{
                                 <tbody>
                                     {info.map(flow =>(
                                         <tr key={flow.id}>
-                                        <td></td>
                                         <td>{flow.client}</td>
                                         <td>{flow.fromRoom}</td>
                                         <td>{flow.toRoom}</td>

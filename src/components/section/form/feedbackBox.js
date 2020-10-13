@@ -17,6 +17,8 @@ const FeedbackBox = ({user, firebase}) =>{
       const handleSubmitFeedback = (event) => {
         event.preventDefault()
         setFeedback("")
+        const notif = "La Team Notel vous remercie pour votre contribution !"
+        firebase.addNotification({documentId: user.displayName, notification: notif})
         firebase.addFeedback({author: user.username, refHotel: user.displayName, text: feedback}).then(handleClose)
     }
 

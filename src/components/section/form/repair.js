@@ -137,7 +137,6 @@ const Repair = ({user, firebase}) =>{
                             <Table striped bordered hover size="sm" className="text-center">
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
-                                    <th>#</th>
                                     <th>client</th>
                                     <th>Chambre</th>
                                     <th>Catégorie</th>
@@ -150,7 +149,6 @@ const Repair = ({user, firebase}) =>{
                                 <tbody>
                                     {info.map(flow =>(
                                         <tr key={flow.id}>
-                                        <td></td>
                                         <td>{flow.client}</td>
                                         <td>{flow.room}</td>
                                         <td>{flow.type}</td>

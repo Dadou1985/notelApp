@@ -1,6 +1,5 @@
 import firebaseConfig from "./config";
 import { navigate } from 'gatsby'
-import moment from 'moment'
 
 class Firebase {
   constructor(app) {

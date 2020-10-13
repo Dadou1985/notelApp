@@ -116,7 +116,6 @@ const Clock = ({user, firebase}) =>{
                         <Table striped bordered hover size="sm" className="text-center">
                             <thead className="bg-dark text-center text-light">
                                 <tr>
-                                <th>#</th>
                                 <th>Client</th>
                                 <th>Chambre</th>
                                 <th>Jour</th>
@@ -129,7 +128,6 @@ const Clock = ({user, firebase}) =>{
                             <tbody>
                                 {info.map(flow =>(
                                     <tr key={flow.id}>
-                                    <td></td>
                                     <td>{flow.client}</td>
                                     <td>{flow.room}</td>
                                     <td>{flow.day}</td>

@@ -154,7 +154,6 @@ const Lost = ({user, firebase}) =>{
                             <Table striped bordered hover size="sm" className="text-center">
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
-                                    <th>#</th>
                                     <th>Type</th>
                                     <th>Description</th>
                                     <th>Date</th>
@@ -167,7 +166,6 @@ const Lost = ({user, firebase}) =>{
                                 <tbody>
                                     {info.map(flow =>(
                                         <tr key={flow.id}>
-                                        <td></td>
                                         <td>{flow.type}</td>
                                         <td>{flow.description}</td>
                                         <td>{flow.date}</td>
