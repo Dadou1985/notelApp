@@ -152,20 +152,21 @@ const Caisse = ({user, firebase}) =>{
                     }}>
                         Caisse du Jour
                             <Form.Group controlId="exampleForm.SelectCustom">
-                                        <Form.Label style={{fontSize: "15px"}}>Shift</Form.Label>
-                                        <select class="selectpicker" value={formValue.shift} name="shift" onChange={handleChange} 
-                                        style={{width: "10vw", 
-                                        height: "6vh", 
-                                        border: "1px solid lightgrey", 
-                                        borderRadius: "3px",
-                                        backgroundColor: "white",
-                                        marginLeft: "1vw",
-                                        fontSize: "15px"}}>
-                                            <option>matin</option>
-                                            <option>soir</option>
-                                            <option>nuit</option>
-                                        </select>
-                                        </Form.Group>
+                            <Form.Label style={{fontSize: "15px"}}>Shift</Form.Label>
+                            <select class="selectpicker" value={formValue.shift} name="shift" onChange={handleChange} 
+                            style={{width: "10vw", 
+                            height: "6vh", 
+                            border: "1px solid lightgrey", 
+                            borderRadius: "3px",
+                            backgroundColor: "white",
+                            marginLeft: "1vw",
+                            fontSize: "15px", 
+                            paddingLeft: "1vw"}}>
+                                <option>matin</option>
+                                <option>soir</option>
+                                <option>nuit</option>
+                            </select>
+                            </Form.Group>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>

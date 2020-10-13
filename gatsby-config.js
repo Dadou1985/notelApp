@@ -53,5 +53,24 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `source sans pro\:300,400,400i,700`,
+          `Rock Salt`,
+          `Swanky and Moo Moo`,
+          `League Script`,
+          `Miniver`,
+          `Sedgwick Ave Display`,
+          `Charmonman`,
+          `Ruthie`,
+          `Meie Script`,
+          `Dr Sugiyama`
+        ],
+        display: 'swap'
+      }
+    },
   ],
 }

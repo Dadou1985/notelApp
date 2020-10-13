@@ -40,7 +40,12 @@ const Connection = () =>{
             alignItems: "center"
         }}>
             <Jumbotron fluid className="bg-info">
-                 <h2>Notel</h2>
+                 <h2 style={{
+                   display: "flex",
+                   flexFlow: "column",
+                   justifyContent: "center",
+                   alignItems: "center"
+                 }}><p style={{fontFamily: "Charmonman", position: "absolute", top: "5vh"}}>Izi</p>Shift</h2>
             </Jumbotron>
             <form 
               method="post" 

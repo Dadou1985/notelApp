@@ -123,7 +123,8 @@ const Maid = ({user, firebase}) =>{
                                         height: "6vh", 
                                         border: "1px solid lightgrey", 
                                         borderRadius: "3px",
-                                        backgroundColor: "white"}}>
+                                        backgroundColor: "white", 
+                                        paddingLeft: "1vw"}}>
                                             <option></option>
                                             <option>Peinture</option>
                                             <option>Plomberie</option>
@@ -141,7 +142,8 @@ const Maid = ({user, firebase}) =>{
                                         height: "6vh", 
                                         border: "1px solid lightgrey", 
                                         borderRadius: "3px",
-                                        backgroundColor: "white"}}>
+                                        backgroundColor: "white", 
+                                        paddingLeft: "1vw"}}>
                                             <option></option>
                                             <option>Sale</option>
                                             <option>Propre</option>

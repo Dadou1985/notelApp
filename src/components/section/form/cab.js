@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
 import Taxi from '../../../svg/taxi.svg'
-import CustomizedSelects from '../common/button/selectButton'
+import DatePicker from "react-datepicker";
 
 
 const Cab = ({user, firebase}) =>{
@@ -122,7 +122,8 @@ const Cab = ({user, firebase}) =>{
                                         height: "6vh", 
                                         border: "1px solid lightgrey", 
                                         borderRadius: "3px",
-                                        backgroundColor: "white"}}>
+                                        backgroundColor: "white", 
+                                        paddingLeft: "1vw"}}>
                                             <option></option>
                                             <option>Berline</option>
                                             <option>Van</option>

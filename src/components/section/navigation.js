@@ -38,7 +38,7 @@ const Navigation = () =>{
                     color: "black",
                     cursor: "pointer"
                     }}
-                    onClick={handleMove}>Notel</Navbar.Brand>
+                    onClick={handleMove}><p style={{fontFamily: "Charmonman", position: "absolute", top: "1vh", left: "4vw"}}>Izi</p>Shift</Navbar.Brand>
                     {/*{!!user &&
                     <div style={{
                         display: "flex",

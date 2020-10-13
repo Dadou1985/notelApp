@@ -517,8 +517,10 @@ class Firebase {
 
 //Feedback Database
 
-async addFeedback({refHotel, author, text}){
+async addFeedback({refHotel, author, categorie, text}){
   return this.db.collection("feedbacks")
+  .doc("feedback")
+  .collection(categorie)
   .add({
     author: author,
     refHotel: refHotel,

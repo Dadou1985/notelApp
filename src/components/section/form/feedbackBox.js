@@ -5,21 +5,25 @@ import Feedback from '../../../svg/feedbackBox.svg'
 const FeedbackBox = ({user, firebase}) =>{
 
     const [list, setList] = useState(false)
-    const [feedback, setFeedback] = useState("")
+    const [formValue, setFormValue] = useState({categorie: "Améliorations", feedback: ""})
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
 
     const handleChange = (event) =>{
-        setFeedback(event.target.value)
+        event.persist()
+        setFormValue(currentValue =>({
+          ...currentValue,
+          [event.target.name]: event.target.value
+        }))
       }
 
       const handleSubmitFeedback = (event) => {
         event.preventDefault()
-        setFeedback("")
+        setFormValue({categorie: "Améliorations", feedback: ""})
         const notif = "La Team Notel vous remercie pour votre contribution !"
         firebase.addNotification({documentId: user.displayName, notification: notif})
-        firebase.addFeedback({author: user.username, refHotel: user.displayName, text: feedback}).then(handleClose)
+        firebase.addFeedback({author: user.username, refHotel: user.displayName, categorie: formValue.categorie, text: formValue.feedback}).then(handleClose)
     }
 
     return(
@@ -57,12 +61,27 @@ const FeedbackBox = ({user, firebase}) =>{
                         }}>
                             <Form.Row>
                                 <Form.Group controlId="description">
-                                <h4>Pour une meilleur expérience utilisateur</h4>
+                                <h4>Pour une meilleure expérience utilisateur</h4>
                                 </Form.Group>
                             </Form.Row>
                             <Form.Row>
+                                <Form.Group controlId="exampleForm.SelectCustom">
+                                <select class="selectpicker" value={formValue.categorie} name="categorie" onChange={handleChange} 
+                                    style={{width: "35vw", 
+                                    height: "6vh", 
+                                    border: "1px solid lightgrey", 
+                                    borderRadius: "3px",
+                                    backgroundColor: "white", 
+                                    paddingLeft: "1vw"}}>
+                                        <option>Améliorations</option>
+                                        <option>Suggestions</option>
+                                        <option>Impressions</option>
+                                    </select>
+                                </Form.Group>
+                                </Form.Row>
+                            <Form.Row>
                                 <Form.Group controlId="description">
-                                <Form.Control as="textarea" type="text" placeholder="Faites-nous un retour de votre expérience..." style={{width: "35vw", height: "30vh"}} value={feedback} name="feedback" onChange={handleChange} />
+                                <Form.Control as="textarea" type="text" placeholder="Faites-nous un retour de votre expérience..." style={{width: "35vw", height: "30vh", resize: "none"}} value={formValue.feedback} name="feedback" onChange={handleChange} />
                                 </Form.Group>
                             </Form.Row>
                         </div>

@@ -108,7 +108,7 @@ const Messenger = () =>{
             }}>
                 <Button color="success" block style={{width: "70%", height: "6vh"}} id="noteButton">Noter</Button>
                 <DatePicker
-                classname="react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input"
+                className="react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input"
                 selected={startDate}
                 value={startDate}
                 onChange={changedDate => setStartDate(changedDate)}

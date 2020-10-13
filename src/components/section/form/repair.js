@@ -1,7 +1,6 @@
 import React, {useState, useEffect } from 'react'
 import { Form, Button, Table, Tabs, Tab, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap'
 import Maintenance from '../../../svg/repair.svg'
-import BootstrapInput from '../common/button/selectButton'
 
 
 
@@ -115,7 +114,8 @@ const Repair = ({user, firebase}) =>{
                                         height: "6vh", 
                                         border: "1px solid lightgrey", 
                                         borderRadius: "3px",
-                                        backgroundColor: "white"}}>
+                                        backgroundColor: "white", 
+                                        paddingLeft: "1vw"}}>
                                             <option></option>
                                             <option>Peinture</option>
                                             <option>Plomberie</option>

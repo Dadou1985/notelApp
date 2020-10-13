@@ -65,10 +65,10 @@ const Register = ({firebase, hide}) => {
                     textAlign: "center"
                 }}>
                 <Form.Group controlId="formGroupName">
-                    <Form.Control style={{width: "20vw"}} value={formValue.username} name="username" type="text" placeholder="Entrer un nom" onChange={handleChange} required />
+                    <Form.Control style={{width: "20vw"}} value={formValue.username} name="username" type="text" placeholder="Entrer votre prénom et votre nom" onChange={handleChange} required />
                 </Form.Group>
                 <Form.Group controlId="formGroupEmail">
-                    <Form.Control style={{width: "20vw"}} value={formValue.email} name="email" type="email" placeholder="Entrer un email" onChange={handleChange} required />
+                    <Form.Control style={{width: "20vw"}} value={formValue.email} name="email" type="email" placeholder="Entrer un e-mail" onChange={handleChange} required />
                 </Form.Group>
                 <Form.Group controlId="formGroupPassword">
                     <Form.Control style={{width: "20vw"}} value={formValue.password} name="password" type="password" placeholder="Entrer un mot de passe" onChange={handleChange} required />
@@ -77,7 +77,7 @@ const Register = ({firebase, hide}) => {
                     <Form.Control style={{width: "20vw"}} value={formValue.confPassword} name="confPassword" type="password" placeholder="Confirmer le mot de passe" onChange={handleChange} required />
                 </Form.Group>
                 <Form.Group controlId="formGroupRefHotel">
-                    <Form.Control style={{width: "20vw"}} value={formValue.refHotel} name="refHotel" type="text" placeholder="Référence Hotel" onChange={handleChange} required />
+                    <Form.Control style={{width: "20vw"}} value={formValue.refHotel} name="refHotel" type="text" placeholder="Référence Hôtel" onChange={handleChange} required />
                 </Form.Group>
                 {!!errorMessage && <div id="wrongConf" style={{color: 'red', textAlign: 'center'}}>{errorMessage}</div>}
                 {!!messageError && <div id="uncompleteRegistration" style={{color: 'red', textAlign: 'center'}}>{messageError}</div>}
