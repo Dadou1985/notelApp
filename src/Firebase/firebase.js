@@ -18,7 +18,10 @@ class Firebase {
   }
 
   getUserFields({refHotel, username}){
-    return this.db.collection("hotels").doc(`${refHotel}`).collection("users").doc(username)
+    return this.db.collection("hotels")
+    .doc(`${refHotel}`)
+    .collection("users")
+    .doc(username)
   }
 
   getHotelFields({documentId}){
@@ -149,6 +152,13 @@ class Firebase {
     .doc(`${documentId}`)
     .collection("users")
     .where("mail", "==", mail)
+  }
+
+  adminRegisterOnAir({documentId}){
+    return this.db.collection("hotels")
+    .doc(`${documentId}`)
+    .collection("users")
+    .where("adminRegistration", "==", true)
   }
 
 

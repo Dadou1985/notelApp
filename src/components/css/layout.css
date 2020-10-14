@@ -466,5 +466,16 @@
 
 /*{border: 1px solid black;}*/
 
+.slideIn {
+    margin-left: 300px;
+    animation: note 5s ease-in 0 0 none none;
+}
 
-
+@keyframes note {
+     0% {
+        margin-left: 300px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
