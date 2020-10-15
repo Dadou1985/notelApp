@@ -158,12 +158,12 @@ const Maid = ({user, firebase}) =>{
                                     </Form.Row>
                                 </div>
                             </Tab>
-                            <Tab eventKey="Liste des délogemnts" title="Liste des délogemnts">
+                            <Tab eventKey="Liste des délogements" title="Liste des délogements">
                             <Table striped bordered hover size="sm" className="text-center"  style={{overflowX: "auto",
                                     maxWidth: "90vw"}}>
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
-                                    <th>client</th>
+                                    <th>Client</th>
                                     <th>Ch. initiale</th>
                                     <th>Ch. finale</th>
                                     <th>Motif</th>

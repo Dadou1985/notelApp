@@ -65,7 +65,7 @@ const Messenger = () =>{
             padding: "1%"
             }}>Note Book</h5>
             <div id="box" style={{
-                maxHeight: "45vh",
+                maxHeight: "85vh",
                 overflow: "auto",
                 marginBottom: "2vh"
                 }}>

@@ -5,7 +5,8 @@ import { Navbar, OverlayTrigger, Tooltip, Modal, Button } from 'react-bootstrap'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 import AdminBoard from './form/adminBoard'
 import FeedbackBox from './form/feedbackBox'
-import Avatar from 'react-avatar';
+import CallCenter from './CallCenter'
+import Avatar from 'react-avatar'
 import '../css/navigation.css'
 
 
@@ -52,7 +53,7 @@ const Navigation = () =>{
                     <div style={{
                         display: "flex",
                         flexFlow: "row",
-                        width: "25%",
+                        width: "35%",
                         height: "5vh",
                         justifyContent: "center",
                         alignItems: "center"
@@ -73,6 +74,7 @@ const Navigation = () =>{
                     <AdminBoard firebase={firebase} user={user} />}
                     {!!firebase && !!user &&
                     <FeedbackBox firebase={firebase} user={user} />}
+                    <CallCenter />
                     <OverlayTrigger
                         placement="bottom"
                         overlay={

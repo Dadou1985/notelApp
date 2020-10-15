@@ -44,7 +44,8 @@ const Connection = () =>{
                    display: "flex",
                    flexFlow: "column",
                    justifyContent: "center",
-                   alignItems: "center"
+                   alignItems: "center",
+                   fontWeight: "bolder"
                  }}><p style={{fontFamily: "Charmonman", position: "absolute", top: "5vh"}}>Izi</p>Shift</h2>
             </Jumbotron>
             <form 

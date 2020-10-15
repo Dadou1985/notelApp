@@ -137,7 +137,7 @@ const Repair = ({user, firebase}) =>{
                             <Table striped bordered hover size="sm" className="text-center">
                                 <thead className="bg-dark text-center text-light">
                                     <tr>
-                                    <th>client</th>
+                                    <th>Client</th>
                                     <th>Chambre</th>
                                     <th>Catégorie</th>
                                     <th>Détails</th>

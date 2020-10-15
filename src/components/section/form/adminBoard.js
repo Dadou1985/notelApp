@@ -41,9 +41,8 @@ const AdminBoard = ({user, firebase}) =>{
                         </Tooltip>
                     }>
                 <img src={Connection} alt="connect" style={{
-                    width: "95%",
-                    cursor: "pointer",
-                    marginRight: "1vw"}} onClick={handleShowTab} />
+                    width: "75%",
+                    cursor: "pointer"}} onClick={handleShowTab} />
                 </OverlayTrigger>
     
     

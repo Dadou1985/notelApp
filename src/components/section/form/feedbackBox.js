@@ -35,7 +35,7 @@ const FeedbackBox = ({user, firebase}) =>{
                 Feedback Box
               </Tooltip>
             }>
-                <img src={Feedback} className="icon" alt="contact" onClick={handleShow} style={{width: "2vw", marginLeft: "1vw"}} />
+                <img src={Feedback} className="icon" alt="contact" onClick={handleShow} style={{width: "2vw"}} />
             </OverlayTrigger>
 
 
