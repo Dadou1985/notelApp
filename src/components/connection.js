@@ -76,7 +76,7 @@ const Connection = () =>{
             <div id="warning" style={{color: 'red'}}></div>
 
             <button className="btn btn-info btn-block my-4" type="submit">Connecter</button>
-            <p style={{textAlign: "center", cursor: 'pointer'}} onClick={handleShow}>S'inscrire ?</p>
+            <p style={{textAlign: "center", cursor: 'pointer'}} onClick={handleShow}>Créer un compte</p>
             </form>
             <Modal show={list}
                 size="md"

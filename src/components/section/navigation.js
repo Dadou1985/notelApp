@@ -74,7 +74,6 @@ const Navigation = () =>{
                     <AdminBoard firebase={firebase} user={user} />}
                     {!!firebase && !!user &&
                     <FeedbackBox firebase={firebase} user={user} />}
-                    <CallCenter />
                     <OverlayTrigger
                         placement="bottom"
                         overlay={

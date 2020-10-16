@@ -20,7 +20,7 @@ const Register = ({firebase, hide}) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         setFormValue("")
-        const validationInfo = firebase.getUserFields({refHotel: formValue.refHotel, username: formValue.username})
+        {/*const validationInfo = firebase.getUserFields({refHotel: formValue.refHotel, username: formValue.username})
         .get()
         .then(function (doc) {
             if (doc.exists) {
@@ -33,14 +33,14 @@ const Register = ({firebase, hide}) => {
         }).catch(function(error) {
             console.log("Error getting document:", error);
         })
-        console.log(validationInfo)
-        if(validationInfo) {
+    console.log(validationInfo)*/}
+        //if(validationInfo) {
             if(formValue.password === formValue.confPassword){
-                firebase.register({username: formValue.username, email: formValue.email, password: formValue.password, refHotel: formValue.refHotel})
+                firebase.freeRegister({username: formValue.username, email: formValue.email, password: formValue.password, refHotel: formValue.refHotel})
                 .catch(error=>{
                     if(error.message){
                         setErrorMessage("Inscription invalide")
-                        return firebase.deleteUserAuth()
+                        //return firebase.deleteUserAuth()
                     }else{}
                 })
                 return hide()
@@ -48,9 +48,9 @@ const Register = ({firebase, hide}) => {
                 setFormValue({username: "",email: "", password: "", confPassword: "", refHotel: ""})
                 return setErrorMessage("Désolé, confirmation de mot de passe incorrecte !")
             }
-        }else{
-            setMessageError("Désolé, l'administrateur n'a pas encore validé votre inscription.")
-        }
+        //}else{
+            //setMessageError("Désolé, l'administrateur n'a pas encore validé votre inscription.")
+        //}
       }
 
     return (

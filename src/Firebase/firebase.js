@@ -69,6 +69,23 @@ class Firebase {
     .then(()=>navigate('/singlePage'))   
   }
 
+  async freeRegister({email, password, username, refHotel}) {
+    const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
+    await this.auth.currentUser.updateProfile({displayName: refHotel})
+    return this.db.collection("hotels")
+    .doc(`${refHotel}`)
+    .collection("users")
+    .doc(username)
+    .set({    
+      userId: newUser.user.uid,
+      mail: email,
+      password: password,
+      refHotel: refHotel,
+      markup: Date.now() 
+    }) 
+    .then(()=>navigate('/singlePage'))   
+  }
+
   async login({email, password}) {
     return this.auth.signInWithEmailAndPassword(email, password).then(()=>navigate('/singlePage'));
   }

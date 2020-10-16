@@ -10,7 +10,11 @@ export default function CallCenter() {
     const handleShow = () => setList(true)
 
     return (
-        <div>
+        <div style={{
+            display: "flex",
+            flexFlow: "row",
+            justifyContent: "center"
+        }}>
             <OverlayTrigger
                         placement="bottom"
                         overlay={
@@ -18,7 +22,7 @@ export default function CallCenter() {
                             Assistance Technique
                           </Tooltip>
                         }>
-                        <img src={Assistance} className="icon" alt="contact" onClick={handleShow} style={{width: "2vw", marginLeft: "1vw"}} />
+                        <img src={Assistance} className="icon" alt="contact" onClick={handleShow} style={{width: "35%"}} />
 
                     </OverlayTrigger>
 

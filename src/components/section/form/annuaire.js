@@ -48,7 +48,11 @@ const Annuaire = ({user, firebase}) =>{
      },[])
 
     return(
-        <div>
+        <div style={{
+            display: "flex",
+            flexFlow: "row",
+            justifyContent: "center"
+        }}>
             <OverlayTrigger
             placement="bottom"
             overlay={

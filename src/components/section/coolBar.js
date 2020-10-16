@@ -7,6 +7,8 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { navigate } from 'gatsby'
 import '../css/memo.css'
 import { FirebaseContext } from '../../Firebase'
+import CallCenter from './CallCenter'
+
 
 
 
@@ -21,15 +23,15 @@ const CoolBar = () => {
     return (
         <div style={{
             display: "flex",
-            justifyContent: "center",
             position: "absolute",
-            bottom: "15vh"
+            bottom: "15vh",
+            width:"37vw"
         }}>
             {!!firebase && !!user &&
             <CheckList firebase={firebase} user={user} />}
             {!!firebase && !!user &&
             <Annuaire firebase={firebase} user={user} />}
-            <OverlayTrigger
+            {/*<OverlayTrigger
             placement="bottom"
             overlay={
               <Tooltip id="title">
@@ -37,7 +39,8 @@ const CoolBar = () => {
               </Tooltip>
             }>
                 <img src={Overbooking} className="icon" id="phone" alt="red_phone" onClick={handleMove} />
-            </OverlayTrigger>
+        </OverlayTrigger>*/}
+            <CallCenter />
         </div>
     )
 }
