@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Notel`,
+    title: `IziShift`,
     description: `An optimized communication tool for hotel personal staff.`,
     author: `David Simba`,
+    url: `https://izishift.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

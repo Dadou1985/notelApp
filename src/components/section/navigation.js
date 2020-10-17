@@ -31,15 +31,8 @@ const Navigation = () =>{
                     justifyContent: "space-between",
                     height: "7vh"
                 }}>
-                <Navbar.Brand style={{
-                    fontWeight: "bolder",
-                    fontSize: "1.5em",
-                    marginLeft: "5%",
-                    textDecoration: "none",
-                    color: "black",
-                    cursor: "pointer"
-                    }}
-                    onClick={handleMove}><p style={{fontFamily: "Charmonman", position: "absolute", top: "1vh", left: "4vw"}}>Izi</p>Shift</Navbar.Brand>
+                <Navbar.Brand className="brand"
+                    onClick={handleMove}><p>Izi</p>Shift</Navbar.Brand>
                     {/*{!!user &&
                     <div style={{
                         display: "flex",
@@ -50,17 +43,8 @@ const Navigation = () =>{
                         fontWeight: "bolder",
                         fontSize: "XXL"
                     }}>{user.displayName}</div>}*/}
-                    <div style={{
-                        display: "flex",
-                        flexFlow: "row",
-                        width: "35%",
-                        height: "5vh",
-                        justifyContent: "center",
-                        alignItems: "center"
-                        }}>
-                    <div style={{
-                        fontSize: "small"
-                    }}>
+                    <div className="nav_container">
+                    <div className="icon_container">
                     {!!user &&
                     <Avatar 
                     name={user.username}
@@ -81,11 +65,7 @@ const Navigation = () =>{
                             Déconnection
                           </Tooltip>
                         }>
-                    <PowerSettingsNewIcon alt="connect" style={{
-                        width: "10%",
-                        cursor: "pointer",
-                        marginRight: "1vw",
-                        marginLeft: "1vw"}} onClick={handleShow} />
+                    <PowerSettingsNewIcon alt="connect" className="shuttDown_button" onClick={handleShow} />
                     </OverlayTrigger>
                     {!!user && !!user.email &&
                     <div style={{width:"30vw"}}>{user.username || user.email}</div>}

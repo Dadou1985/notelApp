@@ -33,20 +33,9 @@ const Connection = () =>{
     const handleClose = () => setList(false)
     
     return (
-        <div style={{
-            display: "flex",
-            flexFlow: "column",
-            justifyContent: "center",
-            alignItems: "center"
-        }}>
+        <div className="connection_container">
             <Jumbotron fluid className="bg-info">
-                 <h2 style={{
-                   display: "flex",
-                   flexFlow: "column",
-                   justifyContent: "center",
-                   alignItems: "center",
-                   fontWeight: "bolder"
-                 }}><p style={{fontFamily: "Charmonman", position: "absolute", top: "5vh"}}>Izi</p>Shift</h2>
+                 <h2 className="connection_title"><p>Izi</p>Shift</h2>
             </Jumbotron>
             <form 
               method="post" 
@@ -73,10 +62,10 @@ const Connection = () =>{
                 onChange={handleChange}
                 required />
 
-            <div id="warning" style={{color: 'red'}}></div>
+            <div id="warning"></div>
 
             <button className="btn btn-info btn-block my-4" type="submit">Connecter</button>
-            <p style={{textAlign: "center", cursor: 'pointer'}} onClick={handleShow}>Créer un compte</p>
+            <p className="create_account_link" onClick={handleShow}>Créer un compte</p>
             </form>
             <Modal show={list}
                 size="md"

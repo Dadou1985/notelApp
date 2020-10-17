@@ -2,6 +2,7 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Connection from '../components/connection'
 import {FirebaseContext, useAuth} from '../Firebase'
+import SEO from '../components/seo'
 
 const IndexPage = () => {
 
