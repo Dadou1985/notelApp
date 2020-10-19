@@ -40,20 +40,8 @@ const Memo =()=>{
 
     return(
         
-            <div style={{ 
-                width: "40vw",
-                minHeight: "20vh",
-                maxHeight: "80vh",
-                backgroundImage: `url(${Board})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                padding: "1%",
-                margin: "1%"
-            }}>
-                <h5 className="font-weight-bolder" style={{textAlign: "center",
-                width: "100%",
-                height: "7%", 
-                padding: "1%"}}>Memo Board</h5>
+            <div className="memo_container">
+               <h5 className="font-weight-bolder" className="memo_title">Memo Board</h5>
                 <hr/>
                 <OverlayTrigger
                         placement="right"
@@ -62,12 +50,7 @@ const Memo =()=>{
                             Créer un mémo
                           </Tooltip>
                         }>
-                <img src={PostIt} className="icon" alt="post-it" style={{
-                    width: "4%",
-                    position: "absolute",
-                    top: "10%",
-                    filter: "drop-shadow(10px)"
-                }}
+                <img src={PostIt} className="icon" alt="post-it" className="sticker_img"
                 onClick={showSticker} />
                 </OverlayTrigger>
                 {!!firebase && !!user &&
@@ -79,19 +62,13 @@ const Memo =()=>{
                     >
                     <Modal.Header className="bg-light">
                         <Modal.Title id="contained-modal-title-vcenter">
-                        <input value={formValue.title} name="title" type="text" placeholder="Donner un titre au mémo..." onChange={handleChange} style={{
-                            width: "53vw",
-                            border: "transparent"
-                        }} />
+                        <input value={formValue.title} name="title" type="text" placeholder="Donner un titre au mémo..." onChange={handleChange} 
+                        className="memo_modalTitle_input" />
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <textarea value={formValue.text} name="text" placeholder="Ecrire un mémo..." onChange={handleChange} style={{
-                            width: "53vw",
-                            minHeight: "10vh",
-                            maxHeight: "20vh",
-                            border: "transparent"
-                        }}></textarea>
+                        <textarea value={formValue.text} name="text" placeholder="Ecrire un mémo..." onChange={handleChange} 
+                        className="memo_modalBody_textarea"></textarea>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="outline-secondary" onClick={handleClose}>Fermer</Button>
