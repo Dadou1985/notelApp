@@ -7,6 +7,7 @@ import AdminBoard from './form/adminBoard'
 import FeedbackBox from './form/feedbackBox'
 import CallCenter from './CallCenter'
 import Avatar from 'react-avatar'
+import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 import '../css/navigation.css'
 
 
@@ -31,6 +32,7 @@ const Navigation = () =>{
                     justifyContent: "space-between",
                     height: "7vh"
                 }}>
+                   <MenuSharpIcon className="menu" /> 
                 <Navbar.Brand className="brand"
                     onClick={handleMove}><p>Izi</p>Shift</Navbar.Brand>
                     {/*{!!user &&
@@ -50,7 +52,6 @@ const Navigation = () =>{
                     name={user.username}
                     round={true}
                     size="30"
-                    style={{marginRight: "1vw"}}
                     color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
                      />}
                     </div>
@@ -65,10 +66,10 @@ const Navigation = () =>{
                             Déconnection
                           </Tooltip>
                         }>
-                    <PowerSettingsNewIcon alt="connect" className="shuttDown_button" onClick={handleShow} />
+                    <PowerSettingsNewIcon alt="connect" className="shuttDown_button nav_icons" onClick={handleShow} />
                     </OverlayTrigger>
                     {!!user && !!user.email &&
-                    <div style={{width:"30vw"}}>{user.username || user.email}</div>}
+                    <div className="username_title">{user.username || user.email}</div>}
                 </div>
             </Navbar>
             <Modal show={list} onHide={handleClose}>

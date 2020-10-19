@@ -32,7 +32,7 @@ const AdminBoard = ({user, firebase}) =>{
 
     if(adminStatus === true){
         return(
-            <div style={{width: "5vw"}}>
+            <div style={{width: "3vw"}}>
                 <OverlayTrigger
                     placement="bottom"
                     overlay={
@@ -40,9 +40,7 @@ const AdminBoard = ({user, firebase}) =>{
                         Administrateur
                         </Tooltip>
                     }>
-                <img src={Connection} alt="connect" style={{
-                    width: "2vw",
-                    cursor: "pointer"}} onClick={handleShowTab} />
+                <img src={Connection} alt="connect" className="nav_icons" onClick={handleShowTab} />
                 </OverlayTrigger>
     
     

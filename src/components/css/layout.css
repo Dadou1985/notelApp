@@ -512,9 +512,10 @@
 /*Navigation*/
 
 .brand {
+    position: absolute;
+    left: 8vw;
     font-weight: bolder;
     font-size: 1.5em;
-    margin-left: 5%;
     text-decoration: none;
     color: black;
     cursor: pointer;
@@ -524,7 +525,7 @@
     font-family: "Charmonman"; 
     position: absolute; 
     top: 1vh; 
-    left: 4vw;
+    left: -2vw;
 }
 
 .nav_container {
@@ -537,7 +538,8 @@
 }
 
 .icon_container {
-    font-size: small; 
+    font-size: small;
+    margin-right: 1%;
 }
 
 .shuttDown_button {
@@ -545,4 +547,44 @@
     cursor: pointer;
     margin-right: 1vw;
     margin-left: 1vw;
+}
+
+.username_title {
+    width:30vw;
+}
+
+.menu {
+    visibility: hidden;
+}
+
+.nav_icons {
+    width: 2vw;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .menu{
+        visibility: visible;
+    }
+
+    .brand {
+        left: 50vw;
+    }
+
+    .brand p {
+        left: -7vw;
+    }
+
+    .nav_icons {
+        visibility: hidden;
+    }
+
+    .username_title {
+        display: none;
+    }
+
+    .icon_container {
+        position: absolute;
+        right: 1vw;
+    }
 }
