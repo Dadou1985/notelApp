@@ -504,7 +504,14 @@
     }
 
     .connection_title p {
-        position: relative;
+        position: absolute;
+        top: 15vh;
+    }
+
+    #jumbo {
+        display: flex;
+        justify-content: flex-end;
+        height: 25vh;
     }
 }
 
@@ -720,7 +727,7 @@
     }
 
     .messenger_notebox {
-        height: 63vh;
+        height: 60vh;
     }
 
     #message {
@@ -738,3 +745,67 @@
     }
     
 }
+
+
+/*Message Load*/
+.user_Message {
+    max-width: 84%;
+    background-color: lightgrey;
+    font-size: small;
+    margin-left: 7vw;
+    margin-bottom: 2%;
+}
+
+.incomingMessage {
+    max-width: 84%;
+    background-color: lightgrey;
+    font-size: small;
+    margin-bottom: 2%;
+}
+
+.message_header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+}
+
+.userMessage_footer {
+    background-color: transparent;
+}
+
+.avatar_icon {
+    display: none
+}
+
+
+@media screen and (max-width: 480px) {
+    .message_header {
+        display: none;
+    }
+
+    .user_Message {
+        margin-left: 15vw;
+    }
+
+    #userMessage_footer {
+        background-color: green;
+        color: black;
+    }
+
+    #incomingMessage_footer {
+        background-color:lightskyblue;
+        color: black;
+    }
+
+    #oldMessage_footer {
+        background-color:lightgrey;
+        color: black;
+    }
+
+    .avatar_icon {
+        display: flex;
+        position: absolute;
+        left: 2vw;
+    }
+}
+

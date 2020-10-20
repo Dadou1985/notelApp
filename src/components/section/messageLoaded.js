@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {Card} from 'react-bootstrap'
 import {Button} from 'reactstrap'
+import Avatar from 'react-avatar'
 import { FirebaseContext } from '../../Firebase'
 
   const MessageLoaded = ({author, text, hour, markup, blueprint, date}) =>{
@@ -41,36 +42,40 @@ import { FirebaseContext } from '../../Firebase'
     if(blueprint === username){
       if(date === today){
         return(
-            <Card className="shadow"  style={{ 
-            maxWidth: "84%",
-            backgroundColor: "lightgrey",
-            fontSize: "small",
-            marginLeft: "7vw",
-            marginBottom: "2%"}}>
-            <Card.Header className="d-flex justify-content-between text-right bg-success font-weight-bolder">{author}<Button close onClick={handleRemove} /></Card.Header>
+            <Card className="shadow user_Message">
+            <Card.Header className="text-right bg-success message_header">{author}<Button close onClick={handleRemove} /></Card.Header>
             <Card.Body className="bg-light">
                 <Card.Text>
                 {text}
                 </Card.Text>
             </Card.Body>
-            <Card.Footer className="bg-light blockquote-footer text-right">noté le {date} à {hour} </Card.Footer>
+            <Card.Footer id="userMessage_footer" className="blockquote-footer text-right message_footer">
+              <Avatar 
+              className="avatar_icon"
+              name={user.username}
+              round={true}
+              size="15"
+              color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+                />noté le {date} à {hour} </Card.Footer>
         </Card>
         )
       }else{
         return(
-          <Card className="shadow" style={{ 
-            maxWidth: "84%",
-            backgroundColor: "lightgrey",
-            fontSize: "small",
-            marginLeft: "7vw",
-            marginBottom: "2%"}}>
-            <Card.Header className="d-flex justify-content-between text-right font-weight-bolder">{author}</Card.Header>
+          <Card className="shadow user_Message">
+            <Card.Header className="text-right message_header">{author}</Card.Header>
             <Card.Body className="bg-light">
                 <Card.Text>
                 {text}
                 </Card.Text>
             </Card.Body>
-            <Card.Footer className="bg-light blockquote-footer text-right">noté le {date} à {hour} </Card.Footer>
+            <Card.Footer id="oldMessage_footer" className="bg-light blockquote-footer text-right">
+              <Avatar 
+              className="avatar_icon"
+              name={user.username}
+              round={true}
+              size="15"
+              color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+                />noté le {date} à {hour} </Card.Footer>
         </Card>
         )
       }
@@ -78,34 +83,40 @@ import { FirebaseContext } from '../../Firebase'
           }else{
             if(date === today){
               return(
-                <Card className="shadow" style={{ 
-                  maxWidth: "84%",
-                  backgroundColor: "lightgrey",
-                  fontSize: "small",
-                  marginBottom: "2%"}}>
-                  <Card.Header className="font-weight-bolder" style={{backgroundColor: "mediumturquoise"}}>{author}</Card.Header>
+                <Card className="shadow incomingMessage">
+                  <Card.Header className="message_header" style={{backgroundColor: "mediumturquoise"}}>{author}</Card.Header>
                   <Card.Body className="bg-light">
                       <Card.Text>
                       {text}
                       </Card.Text>
                   </Card.Body>
-                  <Card.Footer className="bg-light blockquote-footer text-right">notée le {date} à {hour} </Card.Footer>
+                  <Card.Footer id="incomingMessage_footer" className="bg-light blockquote-footer text-right">
+                    <Avatar 
+                    className="avatar_icon"
+                    name={user.username}
+                    round={true}
+                    size="15"
+                    color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+                      />notée le {date} à {hour} </Card.Footer>
               </Card>
               )
             }else{
               return(
-                <Card className="shadow" style={{ 
-                  maxWidth: "84%",
-                  backgroundColor: "lightgrey",
-                  fontSize: "small",
-                  marginBottom: "2%"}}>
-                  <Card.Header className="font-weight-bolder">{author}</Card.Header>
+                <Card className="shadow incomingMessage">
+                  <Card.Header className="message_header">{author}</Card.Header>
                   <Card.Body className="bg-light">
                       <Card.Text>
                       {text}
                       </Card.Text>
                   </Card.Body>
-                  <Card.Footer className="bg-light blockquote-footer text-right">notée le {date} à {hour} </Card.Footer>
+                  <Card.Footer id="oldMessage_footer" className="bg-light blockquote-footer text-right">
+                  <Avatar 
+                  className="avatar_icon"
+                  name={user.username}
+                  round={true}
+                  size="15"
+                  color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+                    />notée le {date} à {hour} </Card.Footer>
               </Card>
               )
             }

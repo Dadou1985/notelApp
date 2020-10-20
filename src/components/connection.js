@@ -34,7 +34,7 @@ const Connection = () =>{
     
     return (
         <div className="connection_container">
-            <Jumbotron fluid className="bg-info">
+            <Jumbotron id="jumbo" fluid className="bg-info">
                  <h2 className="connection_title"><p>Izi</p>Shift</h2>
             </Jumbotron>
             <form 
