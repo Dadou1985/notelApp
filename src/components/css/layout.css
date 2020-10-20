@@ -634,3 +634,107 @@
         display: none;
     }
 }
+
+
+/*Toolbar*/
+
+.toolbar_container {
+    display: flex;
+    flex-flow: column;
+    width: 7%;
+    height: 82vh;
+    margin: 1%;
+    border-right: 1px solid lightgrey;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    .toolbar_container {
+        display: none;
+    }
+}
+
+
+/*Messanger*/
+
+.messenger_container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding: 1%;
+    height: 100%;
+    width: 52%;
+}
+
+.messenger_title {
+    text-align: center;
+    border-radius: 3%;
+    background-color: lightgrey;
+    height: 3%; 
+    padding: 1%;
+}
+
+.messenger_notebox {
+    max-height: 85vh;
+    overflow: auto;
+    margin-bottom: 2vh;
+}
+
+.messenger_form {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.messenger_form_input_container {
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+#message {
+    width: 100%;
+    height: 10vh;
+    max-height: 10vh;
+    resize: none;
+    margin-bottom: 2vh;
+}
+
+.messenger_form_footer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#noteButton {
+    width: 70%; 
+    height: 6vh;
+}
+
+
+@media screen and (max-width: 480px) {
+    .messenger_container {
+        width: 100vw;
+    }
+
+    .messenger_notebox {
+        height: 63vh;
+    }
+
+    #message {
+        width: 98vw;
+        height: 6vh;
+        margin-bottom: 0vh;
+    }
+
+    #calendar {
+        display: none;
+    }
+
+    #noteButton {
+        width: 98vw;
+    }
+    
+}

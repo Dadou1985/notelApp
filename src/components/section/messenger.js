@@ -4,6 +4,7 @@ import { FirebaseContext } from '../../Firebase'
 import NoteBox from './noteBox'
 import moment from 'moment'
 import DatePicker from "react-datepicker";
+import SendIcon from '@material-ui/icons/Send';
 import "../css/messenger_datepicker.css"
 
 const Messenger = () =>{
@@ -50,44 +51,17 @@ const Messenger = () =>{
 
     return(
         <div
-         style={{
-            display: "flex",
-            flexFlow: "column",
-            justifyContent: "space-around",
-            padding: "1%",
-            height: "100%",
-            width: "52%"
-        }}>
-            <h5 className="font-weight-bolder" style={{textAlign: "center",
-            borderRadius: "3%",
-            backgroundColor: "lightgrey",
-            height: "3%", 
-            padding: "1%"
-            }}>Note Book</h5>
-            <div id="box" style={{
-                maxHeight: "85vh",
-                overflow: "auto",
-                marginBottom: "2vh"
-                }}>
+         className="messenger_container">
+            <h5 className="font-weight-bolder messenger_title">Note Book</h5>
+            <div id="box" className="messenger_notebox">
                     {!!firebase && !!user &&
                     <NoteBox firebase={firebase} user={user} />}
             </div>
             <div>
-            <Form inline style={{
-            display: "flex",
-            flexFlow: "column",
-            alignItems: "flex-start"}}
+            <Form inline className="messenger_form"
             onSubmit={handleSubmit}>
-            <FormGroup  style={{
-                    width: "100%",
-                    marginBottom: "1%"
-                }}> 
-                <Input type="textarea" name="text" id="message" placeholder="Ecrire une note..."  style={{
-                    width: "100%",
-                    minHeight: "10vh",
-                    maxHeight: "10vh",
-                    resize: "none"
-                }} 
+            <FormGroup  className="messenger_form_input_container"> 
+                <Input type="textarea" name="text" id="message" placeholder="Ecrire une note..."  
                 value={note}
                 onChange={handleChange} />
             </FormGroup>
@@ -99,15 +73,10 @@ const Messenger = () =>{
                 }}>
                 <CustomInput type="file" id="exampleCustomFileBrowser" name="customFile" />
             </FormGroup>*/}
-            <div style={{
-                display: "flex",
-                flexFlow: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                width: "100%"
-            }}>
-                <Button color="success" block style={{width: "70%", height: "6vh"}} id="noteButton">Noter</Button>
+            <div className="messenger_form_footer">
+                <Button color="success" block id="noteButton">Noter</Button>
                 <DatePicker
+                id="calendar"
                 className="react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input"
                 selected={startDate}
                 value={startDate}

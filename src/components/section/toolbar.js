@@ -14,15 +14,7 @@ const ToolBar = () =>{
     const { user, firebase } = useContext(FirebaseContext)
 
     return(
-        <div style={{
-            display: "flex",
-            flexFlow: "column",
-            width: "7%",
-            height: "82vh",
-            margin: "1%",
-            borderRight: "1px solid lightgrey",
-            justifyContent: "space-around",
-            alignItems: "center"}}>
+        <div className="toolbar_container">
             {!!firebase && !!user &&
             <Lost firebase={firebase} user={user} />}
             {!!firebase && !!user &&
