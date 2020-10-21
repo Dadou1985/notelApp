@@ -569,6 +569,18 @@
     cursor: pointer;
 }
 
+.drawer {
+    display: none;
+}
+
+.drawer_list {
+    width: 250;
+}
+
+.drawer_fullList{
+    width: auto;
+}
+
 @media screen and (max-width: 480px) {
     .menu{
         visibility: visible;

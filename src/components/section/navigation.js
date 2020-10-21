@@ -7,7 +7,8 @@ import AdminBoard from './form/adminBoard'
 import FeedbackBox from './form/feedbackBox'
 import CallCenter from './CallCenter'
 import Avatar from 'react-avatar'
-import MenuSharpIcon from '@material-ui/icons/MenuSharp';
+import MenuSharpIcon from '@material-ui/icons/MenuSharp'
+import Drawer from './common/drawer'
 import '../css/navigation.css'
 
 
@@ -32,7 +33,8 @@ const Navigation = () =>{
                     justifyContent: "space-between",
                     height: "7vh"
                 }}>
-                   <MenuSharpIcon className="menu" /> 
+                {!!firebase && !!user &&
+                <Drawer className="drawer" firebase={firebase} user={user} />}
                 <Navbar.Brand className="brand"
                     onClick={handleMove}><p>Izi</p>Shift</Navbar.Brand>
                     {/*{!!user &&

@@ -3,8 +3,8 @@ import { Button, Form, FormGroup, Input, CustomInput, Alert } from 'reactstrap'
 import { FirebaseContext } from '../../Firebase'
 import NoteBox from './noteBox'
 import moment from 'moment'
-import DatePicker from "react-datepicker";
-import SendIcon from '@material-ui/icons/Send';
+import DatePicker from "react-datepicker"
+import SendIcon from '@material-ui/icons/Send'
 import "../css/messenger_datepicker.css"
 
 const Messenger = () =>{
