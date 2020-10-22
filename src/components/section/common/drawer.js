@@ -3,18 +3,16 @@ import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuSharpIcon from '@material-ui/icons/MenuSharp'
-import Lost from '../form/lost'
-import Cab from '../form/cab'
-import Clock from '../form/clock'
-import Maid from '../form/maid'
-import Repair from '../form/repair'
-import Caisse from '../form/caisse'
+import Lost from '../../../svg/lost-items.svg'
+import Cab from '../../../svg/taxi.svg'
+import Clock from '../../../svg/timer.svg'
+import Maid from '../../../svg/maid.svg'
+import Repair from '../../../svg/repair.svg'
+import PhoneBook from '../../../svg/contacts.svg'
+import CheckList from '../../../svg/todoList.svg'
+import CallCenter from '../../../svg/call-center.svg'
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 import { navigate } from 'gatsby'
 
 
@@ -30,6 +28,10 @@ export default function TemporaryDrawer({firebase, user}) {
     setState({ ...state, [anchor]: open });
   };
 
+  const handleLogout = () =>{
+    firebase.logout().then(()=>navigate('/'))
+}
+
   const list = (anchor) => (
     <div
       className="drawer_listlist drawer_fullList"
@@ -37,28 +39,27 @@ export default function TemporaryDrawer({firebase, user}) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-        <h2>Menu</h2>
-      <List>
-          <ListItem button>
-            <ListItemIcon>
-            <MailIcon onClick={()=>{navigate("/")}} />
-            </ListItemIcon>
-          </ListItem>
+        <h2 className="drawer_title">Menu</h2>
+      <List className="drawer_listIcons">
+        <img src={Lost} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("./phoneLost")}} />
+        <img src={Cab} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
+        <img src={Clock} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
+        <img src={Maid} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
+        <img src={Repair} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
       </List>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <List className="drawer_listIcons2">
+        <img src={PhoneBook} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
+        <img src={CheckList} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
+        <img src={CallCenter} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
       </List>
+      <Divider />
+      <PowerSettingsNewIcon id="drawer_icons2" onClick={handleLogout} />
     </div>
   );
 
   return (
-    <div>
+    <div className="drawer">
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <MenuSharpIcon onClick={toggleDrawer(anchor, true)} />

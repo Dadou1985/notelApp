@@ -464,7 +464,7 @@
 
 /* ---------- LET'S CODE NOW !!! ------- */
 
-/*{border: 1px solid black;}*/
+*{border: 1px solid black;}
 
 /*Connection*/
 
@@ -511,7 +511,7 @@
     #jumbo {
         display: flex;
         justify-content: flex-end;
-        height: 25vh;
+        height: 20vh;
     }
 }
 
@@ -570,15 +570,48 @@
 }
 
 .drawer {
-    display: none;
+    visibility: hidden;
 }
 
 .drawer_list {
     width: 250;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .drawer_fullList{
-    width: auto;
+    width: 25vw;
+}
+
+.drawer_title {
+    text-align: center;
+}
+
+.drawer_listIcons {
+    display: flex;
+    flex-flow: column;
+    height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.drawer_listIcons2 {
+    display: flex;
+    flex-flow: column;
+    height: 30vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.drawer_icons {
+    width: 10vw;
+}
+
+#drawer_icons2 {
+    font-size: 15vw;
+    width: 100%;
 }
 
 @media screen and (max-width: 480px) {
@@ -605,6 +638,10 @@
     .icon_container {
         position: absolute;
         right: 1vw;
+    }
+
+    .drawer {
+        visibility: visible;
     }
 }
 
@@ -695,7 +732,7 @@
 }
 
 .messenger_notebox {
-    max-height: 85vh;
+    max-height: 55vh;
     overflow: auto;
     margin-bottom: 2vh;
 }
@@ -739,7 +776,7 @@
     }
 
     .messenger_notebox {
-        height: 60vh;
+        height: 55vh;
     }
 
     #message {
