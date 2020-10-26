@@ -72,7 +72,7 @@ const PhoneLost = () =>{
                       <Form.Control as="textarea" rows="3" name="details" value={formValue.details} onChange={handleChange}  />
                   </Form.Group>
               </Form.Row>
-              <Button variant="outline-success" className="phone_submitButton" onClick={handleSubmit}>Enregistrer</Button>
+              <Button variant="success" className="phone_submitButton" onClick={handleSubmit}>Enregistrer</Button>
           </div>
     )
 }

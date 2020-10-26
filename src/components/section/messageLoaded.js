@@ -52,9 +52,9 @@ import { FirebaseContext } from '../../Firebase'
             <Card.Footer id="userMessage_footer" className="blockquote-footer text-right message_footer">
               <Avatar 
               className="avatar_icon"
-              name={user.username}
+              name={author}
               round={true}
-              size="15"
+              size="25"
               color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
                 />noté le {date} à {hour} </Card.Footer>
         </Card>
@@ -71,9 +71,9 @@ import { FirebaseContext } from '../../Firebase'
             <Card.Footer id="oldMessage_footer" className="bg-light blockquote-footer text-right">
               <Avatar 
               className="avatar_icon"
-              name={user.username}
+              name={author}
               round={true}
-              size="15"
+              size="25"
               color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
                 />noté le {date} à {hour} </Card.Footer>
         </Card>
@@ -93,9 +93,9 @@ import { FirebaseContext } from '../../Firebase'
                   <Card.Footer id="incomingMessage_footer" className="bg-light blockquote-footer text-right">
                     <Avatar 
                     className="avatar_icon"
-                    name={user.username}
+                    name={author}
                     round={true}
-                    size="15"
+                    size="25"
                     color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
                       />notée le {date} à {hour} </Card.Footer>
               </Card>
@@ -112,9 +112,9 @@ import { FirebaseContext } from '../../Firebase'
                   <Card.Footer id="oldMessage_footer" className="bg-light blockquote-footer text-right">
                   <Avatar 
                   className="avatar_icon"
-                  name={user.username}
+                  name={author}
                   round={true}
-                  size="15"
+                  size="25"
                   color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
                     />notée le {date} à {hour} </Card.Footer>
               </Card>

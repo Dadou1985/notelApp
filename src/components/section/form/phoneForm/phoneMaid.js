@@ -77,7 +77,7 @@ const PhoneMaid = ({user, firebase}) =>{
                         <Form.Control as="textarea" rows="3" value={formValue.details} name="details" onChange={handleChange}  />
                     </Form.Group>
                 </Form.Row>
-                <Button variant="outline-success" className="phone_submitButton" onClick={handleSubmit}>Enregistrer</Button>
+                <Button variant="success" className="phone_submitButton" onClick={handleSubmit}>Enregistrer</Button>
             </div>
                             
     )

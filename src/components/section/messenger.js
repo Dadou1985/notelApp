@@ -61,7 +61,7 @@ const Messenger = () =>{
             <Form inline className="messenger_form"
             onSubmit={handleSubmit}>
             <FormGroup  className="messenger_form_input_container"> 
-                <Input type="textarea" name="text" id="message" placeholder="Ecrire une note..."  
+                <Input type="textarea" name="text" placeholder="Ecrire une note..."  
                 value={note}
                 onChange={handleChange} />
             </FormGroup>

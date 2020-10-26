@@ -34,11 +34,12 @@ const Connection = () =>{
     
     return (
         <div className="connection_container">
-            <Jumbotron id="jumbo" fluid className="bg-info">
-                 <h2 className="connection_title"><p>Izi</p>Shift</h2>
-            </Jumbotron>
+            <div id="jumbo" fluid className="bg-info">
+            <h2 className="connection_title_firstWord">Izi</h2>
+                 <h2 className="connection_title">Shift</h2>
+            </div>
             <form 
-              method="post" 
+              method="post"
               className="text-center border border-light p-5"
               onSubmit={handleSubmit}>
 

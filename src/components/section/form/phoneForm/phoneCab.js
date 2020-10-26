@@ -75,7 +75,7 @@ const PhoneCab = () =>{
                 <Form.Control type="text" placeholder="ex: Jane Doe" value={formValue.destination} name="destination" onChange={handleChange} />
                 </Form.Group>
             </Form.Row>
-            <Button variant="outline-success" className="phone_submitButton" onClick={handleSubmit}>Enregistrer</Button>
+            <Button variant="success" className="phone_submitButton" onClick={handleSubmit}>Enregistrer</Button>
         </div>
                             
     )

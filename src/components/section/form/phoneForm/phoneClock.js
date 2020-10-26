@@ -52,7 +52,7 @@ const PhoneClock = ({user, firebase}) =>{
             <Form.Control type="text" placeholder="ex: 08h30" value={formValue.hour} name="hour" onChange={handleChange} />
             </Form.Group>
         </Form.Row>
-        <Button variant="outline-success" className="phone_submitButton" onClick={handleSubmit}>Enregistrer</Button>
+        <Button variant="success" className="phone_submitButton" onClick={handleSubmit}>Enregistrer</Button>
     </div>
     )
 }

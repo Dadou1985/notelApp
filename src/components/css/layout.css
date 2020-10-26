@@ -473,20 +473,26 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.connection_title {
+#jumbo {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    height: 30vh;
+    position: relative;
+    top: 0px;
+}
+
+.connection_title {
     font-weight: bolder;
 }
 
-.connection_title p {
+.connection_title_firstWord {
     font-family: "Charmonman";
-    position: absolute; 
-    top: 5vh;
+    position: relative; 
 }
 
 #warning {
@@ -501,17 +507,6 @@
 @media screen and (max-width: 480px) {
     .connection_container {
         height: 99vh;
-    }
-
-    .connection_title p {
-        position: absolute;
-        top: 15vh;
-    }
-
-    #jumbo {
-        display: flex;
-        justify-content: flex-end;
-        height: 20vh;
     }
 }
 
@@ -776,16 +771,21 @@
     }
 
     .messenger_notebox {
-        height: 70vh;
-        max-height: 80vh;
+        height: 60vh;
+        max-height: 60vh;
         margin-bottom: 0vh;
     }
 
-    #message {
+    .messenger_input_note {
         width: 98vw;
         height: 6vh;
         margin-bottom: 0vh;
+        margin-top: 2vh;
+    }
+
+    .messenger_form_input_container {
         margin-top: 1vh;
+        position: sticky;
     }
 
     #calendar {
@@ -794,6 +794,7 @@
 
     #noteButton {
         width: 98vw;
+        margin-bottom: 1vh;
     }
     
 }
@@ -858,6 +859,7 @@
         display: flex;
         position: absolute;
         left: 2vw;
+        bottom: 5%;
     }
 }
 
