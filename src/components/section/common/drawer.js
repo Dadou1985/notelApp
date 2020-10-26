@@ -41,11 +41,11 @@ export default function TemporaryDrawer({firebase, user}) {
     >
         <h2 className="drawer_title">Menu</h2>
       <List className="drawer_listIcons">
-        <img src={Lost} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("./phoneLost")}} />
-        <img src={Cab} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
-        <img src={Clock} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
-        <img src={Maid} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
-        <img src={Repair} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
+        <img src={Lost} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/lostAndFound")}} />
+        <img src={Cab} alt="Cab" className="drawer_icons" onClick={()=>{navigate("/cab")}} />
+        <img src={Clock} alt="Clock" className="drawer_icons" onClick={()=>{navigate("/clock")}} />
+        <img src={Maid} alt="Maid" className="drawer_icons" onClick={()=>{navigate("/maid")}} />
+        <img src={Repair} alt="epair" className="drawer_icons" onClick={()=>{navigate("/repair")}} />
       </List>
       <Divider />
       <List className="drawer_listIcons2">

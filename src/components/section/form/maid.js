@@ -14,15 +14,6 @@ const Maid = ({user, firebase}) =>{
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
 
-    const paint = "Peinture"
-    const plumery = "Plomberie"
-    const electricity = "Electricité"
-    const housework = "Ménage"
-    const others = "Autres"
-
-    const clean = "Propre"
-    const dirty ="Sale"
-
     const handleChange = (event) =>{
         event.persist()
         setFormValue(currentValue =>({
