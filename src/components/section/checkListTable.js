@@ -4,6 +4,7 @@ import { Button, Table, Form, InputGroup, FormControl } from 'react-bootstrap'
 const CheckListTable = ({user, firebase, shift}) => {
 
     const [info, setInfo] = useState([])
+    const [isChecked, setIsChecked] = useState(false)
     const [formValue, setFormValue] = useState({task: ""})
 
     const handleChange = (event) =>{
@@ -13,6 +14,10 @@ const CheckListTable = ({user, firebase, shift}) => {
           [event.target.name]: event.target.value
         }))
       }
+
+    const handleIsChecked = () => {
+        setIsChecked(!isChecked)
+    }
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -44,7 +49,8 @@ const CheckListTable = ({user, firebase, shift}) => {
 
     return (
         <div>
-            <h5 className="text-center bg-dark text-light">Check list - {shift}</h5>
+            <h5 className="checkList_title bg-dark">Check list - {shift}</h5>
+            <Button variant="outline-info" className="checkList_allSelected_button" block onClick={handleIsChecked}>Tout sélectionner</Button>
             <InputGroup className="mb-3">
                 <FormControl
                 placeholder="Ajouter une tâche"
@@ -64,10 +70,10 @@ const CheckListTable = ({user, firebase, shift}) => {
                         <tr key={flow.id}>
                         <td>
                             <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" />
+                                <Form.Check type="checkbox" checked={isChecked} />
                             </Form.Group> 
                         </td>
-                        <td style={{width: "80%"}}>
+                        <td className="checkList_input">
                             {flow.task}
                         </td>
                         <td className="bg-light">

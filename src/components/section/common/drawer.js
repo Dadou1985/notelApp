@@ -49,8 +49,7 @@ export default function TemporaryDrawer({firebase, user}) {
       </List>
       <Divider />
       <List className="drawer_listIcons2">
-        <img src={PhoneBook} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
-        <img src={CheckList} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
+        <img src={CheckList} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/checkList")}} />
         <img src={CallCenter} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
       </List>
       <Divider />

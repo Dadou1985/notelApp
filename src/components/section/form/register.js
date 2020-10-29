@@ -56,31 +56,24 @@ const Register = ({firebase, hide}) => {
     return (
         <div>
             <Modal.Body>
-            <div style={{
-                    display: "flex",
-                    flexFlow: "column wrap",
-                    justifyContent: "space-around",
-                    alignItems: "center",
-                    padding: "5%",
-                    textAlign: "center"
-                }}>
-                <Form.Group controlId="formGroupName">
-                    <Form.Control style={{width: "20vw"}} value={formValue.username} name="username" type="text" placeholder="Entrer votre prénom et votre nom" onChange={handleChange} required />
+            <div className="register_modal_container">
+                <Form.Group controlId="formGroupName" className="register_input">
+                    <Form.Control value={formValue.username} name="username" type="text" placeholder="Entrer votre prénom et votre nom" onChange={handleChange} required />
                 </Form.Group>
-                <Form.Group controlId="formGroupEmail">
-                    <Form.Control style={{width: "20vw"}} value={formValue.email} name="email" type="email" placeholder="Entrer un e-mail" onChange={handleChange} required />
+                <Form.Group controlId="formGroupEmail" className="register_input">
+                    <Form.Control value={formValue.email} name="email" type="email" placeholder="Entrer un e-mail" onChange={handleChange} required />
                 </Form.Group>
-                <Form.Group controlId="formGroupPassword">
-                    <Form.Control style={{width: "20vw"}} value={formValue.password} name="password" type="password" placeholder="Entrer un mot de passe" onChange={handleChange} required />
+                <Form.Group controlId="formGroupPassword" className="register_input">
+                    <Form.Control value={formValue.password} name="password" type="password" placeholder="Entrer un mot de passe" onChange={handleChange} required />
                 </Form.Group>
-                <Form.Group controlId="formGroupConfPassword">
-                    <Form.Control style={{width: "20vw"}} value={formValue.confPassword} name="confPassword" type="password" placeholder="Confirmer le mot de passe" onChange={handleChange} required />
+                <Form.Group controlId="formGroupConfPassword" className="register_input">
+                    <Form.Control value={formValue.confPassword} name="confPassword" type="password" placeholder="Confirmer le mot de passe" onChange={handleChange} required />
                 </Form.Group>
-                <Form.Group controlId="formGroupRefHotel">
-                    <Form.Control style={{width: "20vw"}} value={formValue.refHotel} name="refHotel" type="text" placeholder="Référence Hôtel" onChange={handleChange} required />
+                <Form.Group controlId="formGroupRefHotel" className="register_input">
+                    <Form.Control value={formValue.refHotel} name="refHotel" type="text" placeholder="Référence Hôtel" onChange={handleChange} required />
                 </Form.Group>
-                {!!errorMessage && <div id="wrongConf" style={{color: 'red', textAlign: 'center'}}>{errorMessage}</div>}
-                {!!messageError && <div id="uncompleteRegistration" style={{color: 'red', textAlign: 'center'}}>{messageError}</div>}
+                {!!errorMessage && <div id="wrongConf">{errorMessage}</div>}
+                {!!messageError && <div id="uncompleteRegistration">{messageError}</div>}
             </div>
             </Modal.Body>
             <Modal.Footer>

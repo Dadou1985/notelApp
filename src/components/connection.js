@@ -43,7 +43,7 @@ const Connection = () =>{
               className="text-center border border-light p-5"
               onSubmit={handleSubmit}>
 
-            <p className="h4 mb-4">Identifiez-vous</p>
+            <p className="h4 mb-4">Connectez-vous</p>
 
             <input 
                 value={formValue.email}
