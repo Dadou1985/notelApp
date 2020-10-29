@@ -9,11 +9,12 @@ import Cab from '../../../svg/taxi.svg'
 import Clock from '../../../svg/timer.svg'
 import Maid from '../../../svg/maid.svg'
 import Repair from '../../../svg/repair.svg'
-import PhoneBook from '../../../svg/contacts.svg'
 import CheckList from '../../../svg/todoList.svg'
 import CallCenter from '../../../svg/call-center.svg'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 import { navigate } from 'gatsby'
+import Notifications from '../notifications'
+
 
 
 
@@ -30,6 +31,10 @@ export default function TemporaryDrawer({firebase, user}) {
 
   const handleLogout = () =>{
     firebase.logout().then(()=>navigate('/'))
+}
+
+const handleCallCenter = () => {
+  return firebase.addNotification({documentId: user.displayName, notification: "Nos équipes vous assistent au : 06.59.87.28.84"})
 }
 
   const list = (anchor) => (
@@ -49,8 +54,8 @@ export default function TemporaryDrawer({firebase, user}) {
       </List>
       <Divider />
       <List className="drawer_listIcons2">
-        <img src={CheckList} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/checkList")}} />
-        <img src={CallCenter} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/")}} />
+        <img src={CheckList} alt="Checklist" className="drawer_icons" onClick={()=>{navigate("/checkList")}} />
+        <img src={CallCenter} alt="Lost and found" className="drawer_icons" onClick={handleCallCenter} />
       </List>
       <Divider />
       <PowerSettingsNewIcon id="drawer_icons2" onClick={handleLogout} />
@@ -67,6 +72,8 @@ export default function TemporaryDrawer({firebase, user}) {
           </Drawer>
         </React.Fragment>
       ))}
+      {!!firebase && !!user &&
+            <Notifications firebase={firebase} user={user} />}
     </div>
   );
 }
