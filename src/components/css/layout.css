@@ -578,8 +578,12 @@
 }
 
 .icon_container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
     font-size: small;
     margin-right: 1%;
+    width: 30%;
 }
 
 .shuttDown_button {
@@ -590,7 +594,8 @@
 }
 
 .username_title {
-    width:30vw;
+    width:40%;
+    text-align: center;
 }
 
 .menu {
@@ -862,6 +867,7 @@
 
 .userMessage_footer {
     background-color: transparent;
+    display: none;
 }
 
 .avatar_icon {

@@ -39,7 +39,8 @@ const PostIt = ({title, text, markup}) => {
       }>
         <img src={Stick} alt="stick" className="stick" onClick={showSticker} style={{
               width: "100%",
-              height: "100%"
+              height: "100%",
+              fill: "red"
           }} />
       </OverlayTrigger>
       <Modal show={visible} onClick={handleClose}

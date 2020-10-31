@@ -32,7 +32,7 @@ const AdminBoard = ({user, firebase}) =>{
 
     if(adminStatus === true){
         return(
-            <div style={{width: "3vw"}}>
+            <div>
                 <OverlayTrigger
                     placement="bottom"
                     overlay={

@@ -7,7 +7,7 @@ const NoteBox = ({user, firebase}) => {
     const [dayDate, setDayDate] = useState(new Date())
 
     Date.prototype.standard = function() {
-        let day = this.getDate() + 1
+        let day = this.getDate() - 1
         let month = this.getMonth() + 1
         let year = this.getFullYear()
 
@@ -16,7 +16,7 @@ const NoteBox = ({user, firebase}) => {
     };
 
     let dateString = dayDate.standard()
-    let nextDay = Date.parse(dateString)
+    let nextDay = Date.parse(dayDate) + 123274000
     console.log(nextDay)
 
     useEffect(() => {

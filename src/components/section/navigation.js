@@ -9,6 +9,7 @@ import CallCenter from './CallCenter'
 import Avatar from 'react-avatar'
 import MenuSharpIcon from '@material-ui/icons/MenuSharp'
 import Drawer from './common/drawer'
+import Fom from '../../svg/fom.svg'
 import '../css/navigation.css'
 
 
@@ -56,11 +57,22 @@ const Navigation = () =>{
                     size="30"
                     color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
                      />}
-                    </div>
                     {!!firebase && !!user &&
                     <AdminBoard firebase={firebase} user={user} />}
                     {!!firebase && !!user &&
                     <FeedbackBox firebase={firebase} user={user} />}
+                    </div>
+                    <OverlayTrigger
+                        placement="bottom"
+                        overlay={
+                          <Tooltip id="title">
+                            Changer d'espace
+                          </Tooltip>
+                        }>
+                    <img src={Fom} alt="Fom" style={{width: "7%", marginLeft: "1vw", marginRight: "1vw"}} onClick={()=>navigate('/yinYanPage')} />
+                    </OverlayTrigger>
+                    {!!user && !!user.email &&
+                    <div className="username_title">{user.username || user.email}</div>}
                     <OverlayTrigger
                         placement="bottom"
                         overlay={
@@ -70,8 +82,6 @@ const Navigation = () =>{
                         }>
                     <PowerSettingsNewIcon alt="connect" className="shuttDown_button nav_icons" onClick={handleShow} />
                     </OverlayTrigger>
-                    {!!user && !!user.email &&
-                    <div className="username_title">{user.username || user.email}</div>}
                 </div>
             </Navbar>
             <Modal show={list} onHide={handleClose}>

@@ -66,7 +66,7 @@ class Firebase {
       mail: email,
       password: password 
     }) 
-    .then(()=>navigate('/singlePage'))   
+    .then(()=>navigate('/yinYanPage'))   
   }
 
   async freeRegister({email, password, username, refHotel}) {
@@ -83,11 +83,11 @@ class Firebase {
       refHotel: refHotel,
       markup: Date.now() 
     }) 
-    .then(()=>navigate('/singlePage'))   
+    .then(()=>navigate('/yinYanPage'))   
   }
 
   async login({email, password}) {
-    return this.auth.signInWithEmailAndPassword(email, password).then(()=>navigate('/singlePage'));
+    return this.auth.signInWithEmailAndPassword(email, password).then(()=>navigate('/yinYanPage'));
   }
 
   async logout() {

@@ -41,14 +41,14 @@ export default function CallCenter() {
             
                     <div style={{
                             display: "flex",
-                            flexFlow: "row wrap",
+                            flexFlow: "column",
                             justifyContent: "space-around",
                             padding: "5%",
                             textAlign: "center"
                         }}>
-                        <h2>Nos équipes vous assistent au :<br/>
-                            <p><bold>06.59.87.28.84</bold></p>
-                        </h2>
+                        <p>Nos équipes vous assistent au :</p>
+                            <p>06.59.87.28.84</p>
+                        
                         </div>
                     </Modal.Body>
                 </Modal>
