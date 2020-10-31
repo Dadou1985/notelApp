@@ -40,6 +40,7 @@ const StickList = ({user, firebase}) => {
                 author={stick.author}
                 text={stick.text}
                 title={stick.title}
+                assignee={stick.assignee}
                 markup={stick.id}
                 />
             ))}

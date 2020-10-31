@@ -712,8 +712,9 @@
 }
 
 .memo_modalTitle_input {
-    width: 53vw;
+    width: 35vw;
     border: transparent;
+    margin-right: 1vw;
 }
 
 .memo_modalBody_textarea {
@@ -1005,3 +1006,7 @@
     justify-content: center;
     padding: 10px;
 }
+
+
+/*Dilema.js*/
+

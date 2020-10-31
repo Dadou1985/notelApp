@@ -257,7 +257,7 @@ class Firebase {
     })
   }
 
-  async addSticker({documentId, title, text, author, markup}){
+  async addSticker({documentId, title, text, author, assignee, markup}){
     return this.db.collection("hotels")
     .doc(`${documentId}`)
     .collection('stickers')
@@ -265,6 +265,7 @@ class Firebase {
       title: title,
       text: text,
       author: author,
+      assignee: assignee,
       markup: markup
     }).then(function(docRef){
       console.log(docRef.id)
