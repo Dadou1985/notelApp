@@ -764,7 +764,7 @@
 
 .messenger_title {
     text-align: center;
-    border-radius: 3%;
+    border-radius: 1%;
     background-color: lightgrey;
     height: 3%; 
     padding: 1%;
@@ -1010,3 +1010,230 @@
 
 /*Dilema.js*/
 
+/*DarkNavigation.js*/
+
+.darkBrand {
+    position: absolute;
+    left: 8vw;
+    font-weight: bolder;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: orange;
+    cursor: pointer;
+}
+
+.darkBrand p {
+    font-family: "Charmonman"; 
+    position: absolute; 
+    top: 1vh; 
+    left: -2vw;
+}
+
+.dark_nav_container {
+    display: flex;
+    flex-flow: row;
+    width: 35%;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark_icon_container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    font-size: small;
+    margin-right: 1%;
+    width: 30%;
+}
+
+.shuttDown_button {
+    width: 10%;
+    cursor: pointer;
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+.username_title {
+    width:40%;
+    text-align: center;
+}
+
+.menu {
+    visibility: hidden;
+}
+
+.nav_icons {
+    width: 2vw;
+    cursor: pointer;
+}
+
+.drawer {
+    visibility: hidden;
+}
+
+.drawer_list {
+    width: 250;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.drawer_fullList{
+    width: 25vw;
+}
+
+.drawer_title {
+    text-align: center;
+}
+
+.drawer_listIcons {
+    display: flex;
+    flex-flow: column;
+    height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.drawer_listIcons2 {
+    display: flex;
+    flex-flow: column;
+    height: 30vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.drawer_icons {
+    width: 8vw;
+}
+
+#drawer_icons2 {
+    font-size: 12vw;
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    .menu{
+        visibility: visible;
+    }
+
+    .brand {
+        left: 50vw;
+    }
+
+    .brand p {
+        left: -7vw;
+    }
+
+    .nav_icons {
+        visibility: hidden;
+    }
+
+    .username_title {
+        display: none;
+    }
+
+    .icon_container {
+        position: absolute;
+        right: 1vw;
+    }
+
+    .drawer {
+        visibility: visible;
+    }
+}
+
+
+/*DarkMessenger.js*/
+
+/*Messenger*/
+
+.dark_messenger_container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding: 1%;
+    height: 100%;
+    width: 90%;
+}
+
+.dark_messenger_title {
+    text-align: center;
+    border-radius: 1%;
+    background-color: rgb(36, 35, 35);
+    padding: 1%;
+}
+
+.dark_messenger_notebox {
+    max-height: 55vh;
+    overflow: auto;
+    margin-bottom: 2vh;
+    background-color: rgb(36, 35, 35);
+    padding: 1%;
+}
+
+.dark_messenger_form {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.dark_messenger_form_input_container {
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+#dark_message {
+    width: 100%;
+    height: 10vh;
+    max-height: 10vh;
+    resize: none;
+    margin-bottom: 2vh;
+    background-color: rgb(71, 70, 70);
+
+}
+
+.dark_messenger_form_footer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#dark_noteButton {
+    width: 100%; 
+    height: 6vh;
+}
+
+
+@media screen and (max-width: 480px) {
+    .dark_messenger_container {
+        width: 100vw;
+    }
+
+    .dark_messenger_notebox {
+        height: 60vh;
+        max-height: 60vh;
+        margin-bottom: 0vh;
+    }
+
+    .dark_messenger_input_note {
+        width: 98vw;
+        height: 6vh;
+        margin-bottom: 0vh;
+        margin-top: 2vh;
+    }
+
+    .dark_messenger_form_input_container {
+        margin-top: 1vh;
+        position: sticky;
+    }
+
+    #dark_noteButton {
+        width: 98vw;
+        margin-bottom: 1vh;
+    }
+    
+}

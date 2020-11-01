@@ -42,6 +42,7 @@ export default function Dilema() {
                     cursor: "pointer"
                     }}
                     onClick={()=>navigate('/singlePage')}>
+                <h2>IziShift</h2>
                 <h4>Hello, Karen !</h4>
                 <img src={Fom} alt="Fom" style={{width: "10vw"}} />
                 </div>
@@ -69,8 +70,10 @@ export default function Dilema() {
                     filter: "drop-shadow(-5px 5px 5px)",
                     color: "gray",
                     cursor: "pointer"
-                }}>
-                    <h4 style={{color: "red"}}>Hell no, Karen !</h4>
+                }}
+                onClick={()=>navigate('/izilife')}>
+                    <h2>IziLife</h2>
+                    <h4 style={{color: "orange"}}>Hell no, Karen !</h4>
                     <img src={Fom} alt="Fom" style={{width: "10vw", filter: "invert()"}} />
                 </div>
             </div>
