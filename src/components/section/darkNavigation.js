@@ -5,9 +5,7 @@ import { Navbar, OverlayTrigger, Tooltip, Modal, Button } from 'react-bootstrap'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 import AdminBoard from './form/adminBoard'
 import FeedbackBox from './form/feedbackBox'
-import CallCenter from './CallCenter'
 import Avatar from 'react-avatar'
-import MenuSharpIcon from '@material-ui/icons/MenuSharp'
 import Drawer from './common/drawer'
 import Fom from '../../svg/fom.svg'
 import '../css/navigation.css'
@@ -21,6 +19,10 @@ const DarkNavigation = () =>{
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
 
+    const handleIsConnected = (userId) => {
+        firebase.userIsConnected({username: userId})
+    }
+    
     const handleLogout = () =>{
         firebase.logout().then(()=>navigate('/'))
     }

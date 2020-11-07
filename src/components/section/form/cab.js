@@ -13,9 +13,6 @@ const Cab = ({user, firebase}) =>{
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
 
-    const berline = "Berline"
-    const van = "Van"
-
     const handleChange = (event) =>{
         event.persist()
         setFormValue(currentValue =>({

@@ -9,7 +9,7 @@ import React, { Fragment, useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Footer from "./section/footer"
+import DarkFooter from "./section/darkFooter"
 import DarkNavigation from './section/darkNavigation'
 import "./css/layout.css"
 import {FirebaseContext, useAuth} from '../Firebase'
@@ -19,16 +19,8 @@ import {useSpring, animated, config} from 'react-spring'
 const DarkLayout = ({ children }) => {
 
   const { user, firebase, loading } = useAuth()
-  const [count, setCount] = useState(0)
-  const props = useSpring(
-    {filter: "invert(0%)", 
-    from: {filter: "invert(0%)"}, 
-    to: {filter : "invert(100%)"},
-    config: {duration: 30000}
-  })
 
   return (
-    <animated.div id="perception">
     <FirebaseContext.Provider value={{ user, firebase, loading }}>
       <DarkNavigation />
       <div
@@ -39,9 +31,8 @@ const DarkLayout = ({ children }) => {
           color: "white"}}>
         <main>{children}</main>  
       </div>
-      <Footer />
+      <DarkFooter />
     </FirebaseContext.Provider>
-  </animated.div>  
   )
 }
 

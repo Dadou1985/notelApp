@@ -13,15 +13,14 @@ class Firebase {
     }
   }
 
+
   async getUserProfile({userId, refHotel}){
     return this.db.collection('hotels').doc(`${refHotel}`).collection("users").where('userId', '==', userId).get();
   }
 
-  getUserFields({refHotel, username}){
-    return this.db.collection("hotels")
-    .doc(`${refHotel}`)
-    .collection("users")
-    .doc(username)
+  getIziUserFields({username}){
+    return this.db.collection("iziUsers")
+    .doc(`${username}`)
   }
 
   getHotelFields({documentId}){
@@ -72,7 +71,7 @@ class Firebase {
   async freeRegister({email, password, username, refHotel}) {
     const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
     await this.auth.currentUser.updateProfile({displayName: refHotel})
-    return this.db.collection("hotels")
+    await this.db.collection("hotels")
     .doc(`${refHotel}`)
     .collection("users")
     .doc(username)
@@ -83,6 +82,18 @@ class Firebase {
       refHotel: refHotel,
       markup: Date.now() 
     }) 
+    return this.db.collection("iziUsers")
+    .doc(username)
+    .set({
+      userId: newUser.user.uid,
+      refHotel: refHotel,
+      tips: 10,
+      hotelName: "Bates Motel",
+      category: "Garde de Nuit",
+      casquette: "Réceptionniste",
+      mood: "IziLife",
+      markup: Date.now()
+    })
     .then(()=>navigate('/yinYanPage'))   
   }
 
@@ -176,6 +187,11 @@ class Firebase {
     .doc(`${documentId}`)
     .collection("users")
     .where("adminRegistration", "==", true)
+  }
+
+  iziUserOnAir({username}){
+    return this.db.collection("iziUsers")
+    .doc(username)
   }
 
 
@@ -558,6 +574,19 @@ async addFeedback({refHotel, author, categorie, text}){
     console.log(docRef.id)
   }).catch(function(error) {
     console.error(error)
+  })
+}
+
+
+//IziUsers
+
+async updateIziProfile({username, job, level, mood}){
+  return this.db.collection("iziUsers")
+  .doc(username)
+  .update({
+    job: job,
+    category: level,
+    mood: mood
   })
 }
 

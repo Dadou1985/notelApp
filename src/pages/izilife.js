@@ -2,9 +2,8 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import DarkLayout from "../components/darkLayout"
-import ToolBar from "../components/section/toolbar"
+import DarkProfil from "../components/section/darkProfil"
 import DarkMessenger from '../components/section/darkMessenger'
-import Memo from '../components/section/memo'
 
 const IziLife = () => (
   <DarkLayout>
@@ -14,6 +13,7 @@ const IziLife = () => (
       color: "white"
   }}>
       <DarkMessenger />
+      <DarkProfil />
     </div>
   </DarkLayout>
 )

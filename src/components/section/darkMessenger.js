@@ -56,14 +56,16 @@ const DarkMessenger = () =>{
         <div style={{
             display: "flex",
             flexFlow: "row",
-            width: "55vw"
+            width: "70%",
+            height: "90vh"
         }}>
             <div style={{
                 display: "flex",
                 flexFlow: "column",
                 justifyContent: "space-around",
                 alignItems: "center",
-                width: "10%"
+                width: "10%",
+                height: "93%"
             }}>
                 <OverlayTrigger
                         placement="bottom"
@@ -72,7 +74,7 @@ const DarkMessenger = () =>{
                             CommunIzi
                           </Tooltip>
                         }>
-                        <img src={Community} alt="Community" className="nav_icons" />
+                        <img src={Community} alt="Community" className="dark_nav_icons" />
                     </OverlayTrigger>
                     <OverlayTrigger
                         placement="bottom"
@@ -81,7 +83,7 @@ const DarkMessenger = () =>{
                             Karen Stories
                           </Tooltip>
                         }>
-                        <img src={Karen} alt="Community" className="nav_icons" />
+                        <img src={Karen} alt="Community" className="dark_nav_icons" />
                     </OverlayTrigger>
                     <OverlayTrigger
                         placement="bottom"
@@ -90,7 +92,7 @@ const DarkMessenger = () =>{
                             Mayday Stories
                           </Tooltip>
                         }>
-                        <img src={Mayday} alt="Community" className="nav_icons" />
+                        <img src={Mayday} alt="Community" className="dark_nav_icons" />
                     </OverlayTrigger>
                     <OverlayTrigger
                         placement="bottom"
@@ -99,7 +101,7 @@ const DarkMessenger = () =>{
                             Shift Advisor
                           </Tooltip>
                         }>
-                        <img src={ShiftAdvisor} alt="Community" className="nav_icons" />
+                        <img src={ShiftAdvisor} alt="Community" className="dark_nav_icons" />
                     </OverlayTrigger>
                     <OverlayTrigger
                         placement="bottom"
@@ -108,11 +110,10 @@ const DarkMessenger = () =>{
                             IziStore
                           </Tooltip>
                         }>
-                        <img src={IziStore} alt="Community" className="nav_icons" />
+                        <img src={IziStore} alt="Community" className="dark_nav_icons" />
                     </OverlayTrigger>
             </div>
-            <div
-         className="dark_messenger_container">
+            <div className="dark_messenger_container">
             <h5 className="font-weight-bolder dark_messenger_title">Note Book</h5>
             <div id="box" className="dark_messenger_notebox">
                     {!!firebase && !!user &&
