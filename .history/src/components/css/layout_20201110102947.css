@@ -1151,17 +1151,16 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: ;
     padding: 1%;
     height: 93%;
-    width: 90%;
+    width: 70%;
 }
 
 .dark_messenger_title {
     text-align: center;
     border-radius: 1%;
     padding: 1%;
-    width: 100%;
 }
 
 .dark_messenger_notebox {

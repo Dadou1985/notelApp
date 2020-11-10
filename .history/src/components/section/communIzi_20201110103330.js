@@ -31,7 +31,7 @@ export default function CommunIzi({firebase, user}) {
      },[])
 
     return (
-        <div style={{width: "75%"}}>
+        <div style={{width}}>
             <div id="box" className="dark_messenger_notebox">
                 {info.map(flow => (
                     <Message

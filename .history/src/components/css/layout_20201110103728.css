@@ -464,7 +464,7 @@
 
 /* ---------- LET'S CODE NOW !!! ------- */
 
-/*{border: 1px solid white;}*/
+*{border: 1px solid white;}
 
 /*Connection*/
 
@@ -1161,7 +1161,7 @@
     text-align: center;
     border-radius: 1%;
     padding: 1%;
-    width: 100%;
+    
 }
 
 .dark_messenger_notebox {

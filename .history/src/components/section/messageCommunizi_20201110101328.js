@@ -47,7 +47,7 @@ console.log(info)
             return (<div>
               <h6>{author}</h6>
               <p>{text}</p>
-              <i>écrit le {date} à {hour} </i>
+              <i>écrit le {date} à {hour} </q>
             </div>)
             
     

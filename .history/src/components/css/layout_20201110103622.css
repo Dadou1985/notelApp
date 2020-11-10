@@ -464,7 +464,7 @@
 
 /* ---------- LET'S CODE NOW !!! ------- */
 
-/*{border: 1px solid white;}*/
+*{border: 1px solid white;}
 
 /*Connection*/
 
@@ -1150,8 +1150,7 @@
 .dark_messenger_container {
     display: flex;
     flex-flow: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: flex-end;
     padding: 1%;
     height: 93%;
     width: 90%;
@@ -1161,7 +1160,6 @@
     text-align: center;
     border-radius: 1%;
     padding: 1%;
-    width: 100%;
 }
 
 .dark_messenger_notebox {

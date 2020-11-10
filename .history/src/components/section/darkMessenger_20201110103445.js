@@ -58,7 +58,7 @@ const DarkMessenger = () =>{
             flexFlow: "row",
             width: "70%",
             height: "90vh",
-            justifyContent: "space-between"
+            
         }}>
             <div style={{
                 display: "flex",

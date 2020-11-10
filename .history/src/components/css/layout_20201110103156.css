@@ -1151,7 +1151,6 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
-    align-items: center;
     padding: 1%;
     height: 93%;
     width: 90%;
@@ -1161,11 +1160,11 @@
     text-align: center;
     border-radius: 1%;
     padding: 1%;
-    width: 100%;
 }
 
 .dark_messenger_notebox {
     max-height: 55vh;
+    width: 60vw;
     overflow: auto;
     margin-bottom: 2vh;
     padding: 1%;
