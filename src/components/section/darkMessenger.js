@@ -72,7 +72,7 @@ const DarkMessenger = () =>{
                         placement="bottom"
                         overlay={
                           <Tooltip id="title">
-                            CommunIzi
+                            IziChat
                           </Tooltip>
                         }>
                         <img src={Community} alt="Communizy" className="dark_nav_icons" />
@@ -114,12 +114,12 @@ const DarkMessenger = () =>{
                         <img src={IziStore} alt="IziStore" className="dark_nav_icons" />
                     </OverlayTrigger>
           </div>
-          <div className="dark_messenger_container">
-            <h5 className="font-weight-bolder dark_messenger_title">CommunIzi</h5>
+          <div className="dark_messenger_container" id="communIzi">
+            <h5 className="font-weight-bolder dark_messenger_title">IziChat</h5>
             {!!firebase && !!user &&
             <CommunIzi firebase={firebase} user={user} />}
         </div>
-        <div className="dark_messenger_container" id="communIzi">
+        <div className="dark_messenger_container">
             <h5 className="font-weight-bolder dark_messenger_title">Karen Stories</h5>
             {!!firebase && !!user &&
             <KarenStories firebase={firebase} user={user} />}

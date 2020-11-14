@@ -80,7 +80,7 @@ import 'moment/locale/fr'
         <Divider />
         {img &&
         <span>
-            <img src={require(`../../svg/${img}`)} style={{width: "100%", backgroundSize: "cover"}} />
+            <img src={img} style={{width: "100%", backgroundSize: "cover"}} />
         </span>}
         <span style={{display: "flex", flexFlow: "row", alignItems: "center", justifyContent: "space-between", padding: "15px"}}>
         {info.map(doc => (
