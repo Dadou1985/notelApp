@@ -8,39 +8,23 @@ import moment from 'moment'
 import 'moment/locale/fr'
 import Arrow from '../../svg/arrowDown.svg'
 import Comment from '../../svg/comment.svg'
+import ToggleDisplay from 'react-toggle-display'
 
 
-  const KarenStory = ({author, story, img, date, tips, userRef, markup, storyRef}) =>{
+  const KarenStory = ({author, story, img, userRef, markup, storyRef}) =>{
     
     const [info, setInfo] = useState([])
     const [details, setDetails] = useState([])
+    const [show, setShow] = useState(false)
     const [comment, setComment] = useState("")
     const { user, firebase } = useContext(FirebaseContext)
-
-    Date.prototype.yyyymmdd = function() {
-      let day = this.getDate()
-      let month = this.getMonth()
-      let calendar = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
-      let year = this.getFullYear()
-
-      let date = day + " " + calendar[month] + " " + year
-      return date
-  };
 
   const handleChange = (event) =>{
     setComment(event.currentTarget.value)
 }   
 
   const handleShow = () => {
-      let comment = document.getElementById("comment")
-      let arrow = document.getElementById("arrow")
-      if (comment.style.display === "none") {
-        comment.style.display = "block"
-        arrow.style.transform = "rotate(0.5turn)"
-      }else{
-        comment.style.display = "none"
-        arrow.style.transform = "rotate(0turn)"
-    }
+      setShow(!show)
   }
 
   const handleSubmit = (event) => {
@@ -87,14 +71,8 @@ import Comment from '../../svg/comment.svg'
             }
  },[firebase, userRef])
 
- console.log(details)
-
-
   moment.locale("fr")
-  let dayIn = Date.now()
   let storyDate = moment(markup).startOf('hour').fromNow()
-  let commentDate = moment(details.markup).startOf('hour').fromNow()
-  console.log(storyDate)
 
   return (
     <div style={{
@@ -169,28 +147,31 @@ import Comment from '../../svg/comment.svg'
             <span>{details.length} commentaires</span>
             <img src={Arrow} alt="arrow" style={{width: "1vw", cursor: "pointer", filter: "invert(100%)"}} id="arrow" onClick={handleShow} />
         </div>
-        {details.map(flow => (
-        <div id="comment" style={{display: "none"}}>
-            <div style={{
-                display: "flex",
-                flexFlow: "row",
-                padding: "15px"
-            }}>
-                <span>
-                <Avatar 
-                    round={true}
-                    name={flow.author}
-                    size="30"
-                    color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
-                    style={{marginRight: "1vw"}}    />
-                </span>
-                <div className="comment">
-                    <span style={{marginBottom: "2%"}}>{flow.comment}</span>
-                    <span style={{color: "gray", fontSize: "85%", textAlign: "right"}}><i>{commentDate}</i></span>
-                </div>
+        <ToggleDisplay show={show}>
+            <div id="comment" defaultChecked={show}>
+                {details.map(flow => (
+                    <div style={{
+                        display: "flex",
+                        flexFlow: "row",
+                        padding: "15px"
+                    }}
+                    key={flow.id}>
+                        <span>
+                        <Avatar 
+                            round={true}
+                            name={flow.author}
+                            size="30"
+                            color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+                            style={{marginRight: "1vw"}}    />
+                        </span>
+                        <div className="comment">
+                            <span style={{marginBottom: "2%"}}>{flow.comment}</span>
+                            <span style={{color: "gray", fontSize: "85%", textAlign: "right"}}><i>{moment(flow.markup).startOf('hour').fromNow()}</i></span>
+                        </div>
+                    </div>
+                ))}
             </div>
-        </div>
-        ))}
+        </ToggleDisplay>
     </div>
   )
             

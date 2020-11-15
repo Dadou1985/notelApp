@@ -8,50 +8,13 @@ import ShiftAdvisor from '../../svg/hotel.svg'
 import IziStore from '../../svg/store.svg'
 import CommunIzi from "./communIzi"
 import KarenStories from './karenStories'
+import { navigate } from 'gatsby'
 
 
 const DarkMessenger = () =>{
 
-    const [note, setNote] = useState('')
-    const [startDate, setStartDate] = useState(new Date())
     const { user, firebase } = useContext(FirebaseContext)
     
-    const handleChange = event =>{
-        setNote(event.currentTarget.value)
-    }
-
-    let hours = new Date().getHours() + "h"
-    let minutes = new Date().getMinutes()
-    let time = hours + minutes
-
-    Date.prototype.yyyymmdd = function() {
-        let day = this.getDate()
-        let month = this.getMonth()
-        let calendar = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
-        let year = this.getFullYear()
-
-        let date = day + " " + calendar[month] + " " + year
-        return date
-    };
-
-    let dayIn = new Date()
-    let today = dayIn.yyyymmdd()
-
-    const handleSubmit = (event) =>{
-        event.preventDefault()
-        setNote("")
-        let marker = startDate.getTime()
-        let date = startDate.yyyymmdd()
-               
-        if(date !== today) {
-            const notif = "Votre message a bien été enregistré pour le " + date + " ."
-            firebase.addNotification({documentId: user.displayName, notification: notif})
-            setStartDate(new Date())
-        }
-        firebase.addMessage({documentId: user.displayName, author: user.username, text: note, hour: time, markup: marker, ref: user.uid, date: date})
-
-    }
-
     return(
         <div style={{
             display: "flex",
@@ -102,7 +65,7 @@ const DarkMessenger = () =>{
                             Shift Advisor
                           </Tooltip>
                         }>
-                        <img src={ShiftAdvisor} alt="ShiftAdvisor" className="dark_nav_icons" />
+                        <img src={ShiftAdvisor} alt="ShiftAdvisor" className="dark_nav_icons" onClick={()=>navigate('/shiftAdvisor')} />
                     </OverlayTrigger>
                     <OverlayTrigger
                         placement="bottom"

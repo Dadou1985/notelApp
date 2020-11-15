@@ -1198,7 +1198,7 @@ input[type=number] {
     margin-bottom: 3vh;
 }
 
-#dark_message {
+#dark_message_note {
     width: 90%;
     height: 6vh;
     max-height: 10vh;
@@ -1389,5 +1389,17 @@ input[type=number] {
 
 .comment_section {
     display: none;
+}
+
+
+/*karenStories*/
+
+#dark_message_story {
+    width: 90%;
+    height: 6vh;
+    max-height: 10vh;
+    resize: none;
+    margin-bottom: 2vh;
+
 }
 

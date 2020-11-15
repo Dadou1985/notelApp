@@ -77,7 +77,7 @@ export default function CommunIzi({firebase, user}) {
                     <Input type="textarea" name="text" placeholder="Ecrire une note..."  
                     value={note}
                     onChange={handleChange}
-                    id="dark_message" />
+                    id="dark_message_note" />
                 </FormGroup>
                 {/*<FormGroup  style={{
                         width: "100%",

@@ -4,6 +4,7 @@ import KarenStory from './karenStory'
 import UploadIcon from '../../svg/upload.svg'
 
 
+
 export default function KarenStories({firebase, user}) {
 
     const [info, setInfo] = useState([])
@@ -87,20 +88,17 @@ export default function KarenStories({firebase, user}) {
                     <Input name="text" placeholder="Ecrire une story..."  
                     value={note}
                     onChange={handleChange}
-                    id="dark_message" />
+                    id="dark_message_story" />
                     <input type="file" style={{
-                        width: "10%", 
+                        position: "absolute", 
+                        width: "4vw", 
                         height: "8vh", 
-                        color: "transparent", 
-                        border: "none", 
-                        background: "transparent", 
-                        zIndex: "2", 
+                        zIndex: "2",
+                        right: "31%",  
                         opacity: "0"}}
                         onChange={handleImgChange} />
                     <img src={UploadIcon} style={{
-                        position: "absolute", 
                         width: "4vw", 
-                        right: "31%", 
                         bottom: "17vh"}} alt="uploadIcon" />
                 </FormGroup>
                 <div className="dark_messenger_form_footer">

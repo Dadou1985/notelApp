@@ -57,6 +57,7 @@ export default function DarkProfilDetails({firebase, user}) {
                 height: "100%",
                 color: "lightgray",
                 padding: "3%",
+                zIndex: "2"
             }}>
                 <Avatar 
                     //src="https://besthqwallpapers.com/Uploads/7-5-2018/51482/thumb-super-mario-portrait-cartoon-character-plumber-3d.jpg"
