@@ -3,7 +3,7 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { FirebaseContext } from '../../Firebase'
 import Community from '../../svg/community.svg'
 import Karen from '../../svg/karen.svg'
-import Mayday from '../../svg/sos.svg'
+import Mask from '../../svg/mask.svg'
 import ShiftAdvisor from '../../svg/hotel.svg'
 import IziStore from '../../svg/store.svg'
 import CommunIzi from "./communIzi"
@@ -90,10 +90,10 @@ const DarkMessenger = () =>{
                         placement="bottom"
                         overlay={
                           <Tooltip id="title">
-                            Mayday Stories
+                            Guess who's<br/> guest
                           </Tooltip>
                         }>
-                        <img src={Mayday} alt="Mayday" className="dark_nav_icons" />
+                        <img src={Mask} alt="Mayday" className="dark_nav_icons" />
                     </OverlayTrigger>
                     <OverlayTrigger
                         placement="bottom"

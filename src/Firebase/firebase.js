@@ -211,6 +211,15 @@ class Firebase {
     .orderBy("markup", "desc")
   }
 
+  commentOnAir({storyId}){
+    return this.db.collection("IziLife")
+    .doc("FunSpace")
+    .collection("karenStories")
+    .doc(storyId)
+    .collection("comment")
+    .orderBy("markup", "asc")
+  }
+
 
 
   async deleteDocument({documentId, collection, document}) {
@@ -646,6 +655,24 @@ async updateTips({userId, tips}){
     tips: tips
   })
 }
+
+
+async addCommentKarenStories({storyId, author, comment, date}){
+  return this.db.collection("IziLife")
+  .doc("FunSpace")
+  .collection("karenStories")
+  .doc(storyId)
+  .collection("comment")
+  .add({
+    author: author,
+    comment: comment,
+    date: date,
+    markup: Date.now()
+  })
+}
+
+
+
 
 
 }

@@ -10,9 +10,8 @@ export default function KarenStories({firebase, user}) {
     const [note, setNote] = useState('')
     const [img, setImg] = useState(null)
     const [url, setUrl] = useState("")
-    const [startDate, setStartDate] = useState(new Date())
 
-    const handleChange = event =>{
+    const handleChange = (event) =>{
         setNote(event.currentTarget.value)
     }    
 
@@ -39,7 +38,7 @@ export default function KarenStories({firebase, user}) {
               .then(url => {
                 const uploadTask = () => {
                     setNote("")
-                    firebase.addKarenStory({ author: user.username, story: note, date: startDate, userId: user.uid, img: url })
+                    firebase.addKarenStory({ author: user.username, story: note, date: new Date(), userId: user.uid, img: url })
                 }
                   return setUrl(url, uploadTask())})
           }
@@ -70,6 +69,7 @@ export default function KarenStories({firebase, user}) {
             <div id="box" className="dark_messenger_notebox">
                 {info.map(flow => (
                     <KarenStory
+                    storyRef={flow.id}
                     author={flow.author}
                     img={flow.img}
                     story={flow.story}
@@ -101,16 +101,8 @@ export default function KarenStories({firebase, user}) {
                         position: "absolute", 
                         width: "4vw", 
                         right: "31%", 
-                        bottom: "17%"}} alt="uploadIcon" />
+                        bottom: "17vh"}} alt="uploadIcon" />
                 </FormGroup>
-                {/*<FormGroup  style={{
-                        width: "100%",
-                        marginBottom: "1%",
-                        display: "flex",
-                        justifyContent: "center"
-                    }}>
-                    <CustomInput type="file" id="exampleCustomFileBrowser" name="customFile" />
-                </FormGroup>*/}
                 <div className="dark_messenger_form_footer">
                     <Button color="primary" block id="dark_noteButton">Noter</Button>
                 </div>

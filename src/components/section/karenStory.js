@@ -6,12 +6,15 @@ import Divider from '@material-ui/core/Divider'
 import Tips from '../../svg/coin.svg'
 import moment from 'moment'
 import 'moment/locale/fr'
+import Arrow from '../../svg/arrowDown.svg'
+import Comment from '../../svg/comment.svg'
 
 
-  const KarenStory = ({author, story, img, date, tips, userRef, markup}) =>{
+  const KarenStory = ({author, story, img, date, tips, userRef, markup, storyRef}) =>{
     
     const [info, setInfo] = useState([])
-    //const dateNote = date.toString()
+    const [details, setDetails] = useState([])
+    const [comment, setComment] = useState("")
     const { user, firebase } = useContext(FirebaseContext)
 
     Date.prototype.yyyymmdd = function() {
@@ -23,6 +26,47 @@ import 'moment/locale/fr'
       let date = day + " " + calendar[month] + " " + year
       return date
   };
+
+  const handleChange = (event) =>{
+    setComment(event.currentTarget.value)
+}   
+
+  const handleShow = () => {
+      let comment = document.getElementById("comment")
+      let arrow = document.getElementById("arrow")
+      if (comment.style.display === "none") {
+        comment.style.display = "block"
+        arrow.style.transform = "rotate(0.5turn)"
+      }else{
+        comment.style.display = "none"
+        arrow.style.transform = "rotate(0turn)"
+    }
+  }
+
+  const handleSubmit = (event) => {
+      event.preventDefault()
+      setComment("")
+      firebase.addCommentKarenStories({storyId: storyRef, author: user.username, comment: comment, date: new Date()})
+  }
+
+  useEffect(() => {
+    const abortController = new AbortController()
+    const signal = abortController.signal
+    firebase.commentOnAir({storyId: storyRef, signal : signal}).onSnapshot(function(snapshot) {
+                const snapInfo = []
+              snapshot.forEach(function(doc) {          
+                snapInfo.push({
+                    id: doc.id,
+                    ...doc.data()
+                  })        
+                });
+                console.log(snapInfo)
+                setDetails(snapInfo)
+            });
+            return () => {
+                abortController.abort()
+            }
+ },[firebase, userRef])
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -43,9 +87,13 @@ import 'moment/locale/fr'
             }
  },[firebase, userRef])
 
+ console.log(details)
+
+
   moment.locale("fr")
   let dayIn = Date.now()
   let storyDate = moment(markup).startOf('hour').fromNow()
+  let commentDate = moment(details.markup).startOf('hour').fromNow()
   console.log(storyDate)
 
   return (
@@ -75,9 +123,9 @@ import 'moment/locale/fr'
             </span>
             {storyDate}
         </span>
-        <Divider />
+        <Divider style={{height: "1vh"}} />
         <span style={{padding: "15px"}}>{story}</span>
-        <Divider />
+        <Divider style={{height: "1vh"}} />
         {img &&
         <span>
             <img src={img} style={{width: "100%", backgroundSize: "cover"}} />
@@ -94,11 +142,55 @@ import 'moment/locale/fr'
                 }} />
                 <span id="tipsCount">{doc.tips} tips</span>
             </span>))}
-            <span>commentaires</span>
         </span>
-        <span style={{padding: "15px"}}>
-            <Input style={{borderRadius: "15px", backgroundColor: "rgb(67, 66, 66)", border: "none", color: "white"}} placeholder="Ecrire un commentaire..." />
-        </span>
+        <div style={{
+            display: "flex",
+            flexFlow: "row",
+            padding: "15px"}}>
+            <Input style={{
+                width: "95%", 
+                borderRadius: "15px", 
+                backgroundColor: "rgb(67, 66, 66)", 
+                border: "none", 
+                color: "white", 
+                marginRight: "1vw"}} 
+                placeholder="Ecrire un commentaire..." 
+                onChange={handleChange}
+                value={comment} />
+            <img src={Comment} alt="comment" style={{width: "2vw", cursor: "pointer", filter: "invert(100%)"}} onClick={handleSubmit} />
+        </div>
+        <Divider style={{height: "1vh"}} />
+        <div style={{
+            display: "flex",
+            flexFlow: "row",
+            justifyContent: "space-between",
+            padding: "15px"
+        }}>
+            <span>{details.length} commentaires</span>
+            <img src={Arrow} alt="arrow" style={{width: "1vw", cursor: "pointer", filter: "invert(100%)"}} id="arrow" onClick={handleShow} />
+        </div>
+        {details.map(flow => (
+        <div id="comment" style={{display: "none"}}>
+            <div style={{
+                display: "flex",
+                flexFlow: "row",
+                padding: "15px"
+            }}>
+                <span>
+                <Avatar 
+                    round={true}
+                    name={flow.author}
+                    size="30"
+                    color={'#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+                    style={{marginRight: "1vw"}}    />
+                </span>
+                <div className="comment">
+                    <span style={{marginBottom: "2%"}}>{flow.comment}</span>
+                    <span style={{color: "gray", fontSize: "85%", textAlign: "right"}}><i>{commentDate}</i></span>
+                </div>
+            </div>
+        </div>
+        ))}
     </div>
   )
             

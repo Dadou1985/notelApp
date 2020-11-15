@@ -1374,3 +1374,20 @@ input[type=number] {
     padding: 15px;
 }
 
+
+/*karenStory*/
+
+.comment {
+    display: flex;
+    flex-flow: column;
+    width: fit-content;
+    max-width: 80%;
+    border-radius: 15px;
+    background-color: rgb(67, 66, 66);
+    padding: 1%;
+}
+
+.comment_section {
+    display: none;
+}
+
