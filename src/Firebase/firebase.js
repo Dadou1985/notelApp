@@ -1,5 +1,6 @@
 import firebaseConfig from "./config";
 import { navigate } from 'gatsby'
+import { doc } from "prettier";
 
 class Firebase {
   constructor(app) {
@@ -671,9 +672,33 @@ async addCommentKarenStories({storyId, author, comment, date}){
   })
 }
 
+async addCommentOnHotel({hotelId, commentTitle, status, bestOf, bullShift, team, management, customer, wage}){
+  await this.db.collection("IziLife")
+  .doc("FunSpace")
+  .collection("shiftAdvisor")
+  .doc(hotelId)
+  .collection("rating")
+  .add({
+    team: team,
+    management: management,
+    customer: customer,
+    wage: wage,
+    markup: Date.now()
+  })
 
-
-
+  return this.db.collection("IziLife")
+  .doc("FunSpace")
+  .collection("shiftAdvisor")
+  .doc(hotelId)
+  .collection("comment")
+  .add({
+    commentTitle: commentTitle,
+    status: status,
+    bestOf: bestOf,
+    bullShift: bullShift,
+    markup: Date.now()
+  })
+}
 
 }
 

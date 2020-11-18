@@ -6,3 +6,11 @@
 
 // Implement the Gatsby API “onCreatePage”. This is
 // called after every page is created.
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: "empty",
+      module: "empty",
+    },
+  })
+}

@@ -1,11 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Map, {Marker} from 'react-map-gl'
-import OverbookingBox from './overbookingBox'
-import RedBar from './redBar'
 import {Form, Button, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import MarkerImg from './markerImgAdvisor'
 import * as hotelData from '../../../hotel.json'
-import Like from '../../svg/stars.svg'
 import Team from '../../svg/team.svg'
 import Management from '../../svg/management.svg'
 import Customer from '../../svg/customer.svg'
@@ -14,6 +11,10 @@ import Divider from '@material-ui/core/Divider'
 import Arrow from '../../svg/arrowDown.svg'
 import ToggleDisplay from 'react-toggle-display'
 import Close from '../../svg/close.svg'
+import Rating from '@material-ui/lab/Rating'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
+import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined';
 
 
 export default function DeepMap2({user, firebase}) {
@@ -34,7 +35,7 @@ export default function DeepMap2({user, firebase}) {
     const no = "non"
 
 
-    const [formValue, setformValue] = useState({hotelName: "", client: "", pax: "", totalNight: "", totalRoom: "", initialPrice: "", pec: "", refHotel: ""})
+    const [formValue, setformValue] = useState({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
 
     const handleChange = (event) =>{
         event.persist()
@@ -100,7 +101,6 @@ export default function DeepMap2({user, firebase}) {
         setFilter(deptValue)
     }
 
-
     console.log(field)
     console.log(filter)
 
@@ -125,11 +125,8 @@ export default function DeepMap2({user, firebase}) {
                     }
      },[field, filter, operator])
 
-     
-
      console.log(hotelData)
 
-     
     return (
         <div
         style={{
@@ -156,9 +153,16 @@ export default function DeepMap2({user, firebase}) {
                         overlay={
                         <Tooltip id="title">
                             <h5 style={{padding: "5%"}}>{hotel.properties.nom_commercial}</h5>
-                            <span style={{color: "green"}}>
-                               <b>4</b> <img src={Like} alt="like" style={{width: "10%", background: "green", marginLeft: "1px"}} />
-                            </span>
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                                <Typography component="legend"></Typography>
+                                <Rating
+                                name="management"
+                                value={formValue.management}
+                                precision={0.5}
+                                icon={<SentimentSatisfiedAltIcon fontSize="inherit" />}
+                                readOnly
+                                />
+                            </Box>   
                         </Tooltip>
                         }>
                             <button style={{background: "none", border: "none"}}
@@ -299,7 +303,8 @@ export default function DeepMap2({user, firebase}) {
                                             flexFlow: "column",
                                             padding: "2%", 
                                             backgroundColor: "rgb(33, 35, 39)",
-                                            borderRadius: "15px"
+                                            borderRadius: "15px",
+                                            marginBottom: "5vh"
                                         }}
                                         defaultChecked={comment}>
                                         <div>
@@ -324,81 +329,116 @@ export default function DeepMap2({user, firebase}) {
                             <Modal show={list}
                                 size="lg"
                                 aria-labelledby="contained-modal-title-vcenter"
-                                centered
-                                onHide={handleClose}
-                                >
+                                tpp
+                                onHide={handleClose}>
                                 <Modal.Header closeButton className="bg-light">
-                                    <Modal.Title id="contained-modal-title-vcenter">
-                                    Délogement vers {selectedHotel.hotelName}
+                                    <Modal.Title id="contained-modal-title-vcenter" style={{textAlign: "center"}}>
+                                    {selectedHotel.properties.nom_commercial}
                                     </Modal.Title>
                                 </Modal.Header>
-                                <Modal.Body>
-                                
+                                <Modal.Body style={{height: "65vh", overflow: "auto"}}>
+                                <div style={{textAlign: "center"}}><h4 style={{marginTop: "2vh"}}>Faites-nous part de votre expérience</h4></div>
                                 <div id="overbookingForm" style={{
                                     display: "flex",
                                     flexFlow: "row wrap",
                                     width: "100%",
                                     justifyContent: "space-around",
-                                    padding: "5%", 
-                                    textAlign: "center"
+                                    alignItems: "flex-start",
+                                    padding: "2%", 
                                     }}>
-                                        <Form.Row>
-                                            <Form.Group controlId="description">
-                                            <Form.Label>Nom de votre établissement</Form.Label>
-                                            <Form.Control type="text" placeholder="ex: Hôtel des 4 moulins" size="sm" style={{width: "22vw"}} value={formValue.hotelName} name="hotelName" onChange={handleChange} />
-                                            </Form.Group>
-                                        </Form.Row>
-                                            <Form.Row>
-                                            <Form.Group controlId="description">
-                                            <Form.Label>Nom du client</Form.Label>
-                                            <Form.Control type="text" placeholder="ex: Jane Doe" size="sm" style={{width: "22vw"}} value={formValue.client} name="client" onChange={handleChange} />
-                                        </Form.Group>
-                                        </Form.Row>
-                                        <Form.Row>
-                                            <Form.Group controlId="description">
-                                            <Form.Label>Nombre de nuits</Form.Label>
-                                            <Form.Control type="number" style={{width: "12vw"}}  size="sm" value={formValue.totalNight} name="totalNight" onChange={handleChange} />
+                                        <div>
+                                            <Form.Row style={{width: "25%"}}>
+                                                <Form.Group controlId="description">
+                                                <Form.Label>Teamwork</Form.Label>
+                                                <Box component="fieldset" mb={3} borderColor="transparent">
+                                                    <Typography component="legend"></Typography>
+                                                    <Rating
+                                                    name="team"
+                                                    value={formValue.team}
+                                                    onChange={handleChange}
+                                                    precision={0.5}
+                                                    />
+                                                </Box>
                                             </Form.Group>
                                             </Form.Row>
-                                        <Form.Row>
-                                            <Form.Group controlId="description">
-                                            <Form.Label>Nombre de chambres</Form.Label>
-                                            <Form.Control type="number" style={{width: "12vw", marginRight: "5vw", marginLeft: "5vw"}} size="sm" value={formValue.totalRoom} name="totalRoom" onChange={handleChange} />
+                                            <Form.Row style={{width: "25%"}}>
+                                                <Form.Group controlId="description">
+                                                <Form.Label>Management</Form.Label>
+                                                <Box component="fieldset" mb={3} borderColor="transparent">
+                                                    <Typography component="legend"></Typography>
+                                                    <Rating
+                                                    name="management"
+                                                    value={formValue.management}
+                                                    onChange={handleChange}
+                                                    precision={0.5}
+                                                    />
+                                                </Box>                                        
                                             </Form.Group>
-                                        </Form.Row>
-                                        <Form.Row>
-                                            <Form.Group controlId="description">
-                                            <Form.Label>Nombre de personnes</Form.Label>
-                                            <Form.Control type="number" style={{width: "12vw"}} size="sm" value={formValue.pax} name="pax" onChange={handleChange} />
+                                            </Form.Row>
+                                            <Form.Row style={{width: "25%"}}>
+                                                <Form.Group controlId="description">
+                                                <Form.Label>Clientèle</Form.Label>
+                                                <Box component="fieldset" mb={3} borderColor="transparent">
+                                                    <Typography component="legend"></Typography>
+                                                    <Rating
+                                                    name="customer"
+                                                    value={formValue.customer}
+                                                    onChange={handleChange}
+                                                    precision={0.5}
+                                                    />
+                                                </Box>                                            
                                             </Form.Group>
-                                        </Form.Row>
-                                        <Form.Row>
-                                            <Form.Group controlId="exampleForm.SelectCustom">
-                                            <Form.Label>Montant du séjour</Form.Label>
-                                            <Form.Control type="text" style={{width: "10vw", marginRight: "3vw"}} size="sm" value={formValue.initialPrice} name="initialPrice" onChange={handleChange} />
+                                            </Form.Row>
+                                            <Form.Row style={{width: "25%"}}>
+                                                <Form.Group controlId="description">
+                                                <Form.Label>Salaire</Form.Label>
+                                                <Box component="fieldset" mb={3} borderColor="transparent">
+                                                    <Typography component="legend"></Typography>
+                                                    <Rating
+                                                    name="wage"
+                                                    value={formValue.wage}
+                                                    onChange={handleChange}
+                                                    precision={0.5}
+                                                    />
+                                                </Box>                                            
                                             </Form.Group>
-                                        </Form.Row>
-                                        <Form.Row>
-                                            <Form.Group controlId="exampleForm.SelectCustom">
-                                            <Form.Label>P.E.C</Form.Label><br/>
-                                            <select class="selectpicker" value={formValue.type} name="type" onChange={handleChange} 
-                                            style={{width: "10vw", 
-                                            height: "5vh", 
-                                            border: "1px solid lightgrey", 
-                                            borderRadius: "3px",
-                                            backgroundColor: "white"}}>
-                                                <option></option>
-                                                <option>oui</option>
-                                                <option>non</option>
-                                            </select>
-                                            </Form.Group>
-                                        </Form.Row>
-                                        <Form.Row>
-                                            <Form.Group controlId="description">
-                                            <Form.Label>Référence de l'Hotel</Form.Label>
-                                            <Form.Control type="text" style={{width: "12vw", marginLeft: "3vw"}} size="sm" value={formValue.refHotel} name="refHotel" onChange={handleChange} />
-                                            </Form.Group>
-                                        </Form.Row>
+                                            </Form.Row>
+                                        </div>
+                                        <div>
+                                            <Form.Row>
+                                                <Form.Group controlId="description" style={{width: "100%"}}>
+                                                    <Form.Label>Résumez votre expérience en une phrase</Form.Label>
+                                                    <Form.Control type="text" size="sm" style={{width: "100%"}} value={formValue.commentTitle} name="commentTitle" onChange={handleChange} />
+                                                </Form.Group>
+                                            </Form.Row>
+                                            <Form.Row>
+                                                <Form.Group controlId="exampleForm.SelectCustom" style={{width: "100%"}}>
+                                                    <Form.Label>Quel est votre statut actuel vis-à-vis de l'établissement ?</Form.Label><br/>
+                                                    <select class="selectpicker" value={formValue.status} name="status" onChange={handleChange} 
+                                                    style={{width: "100%", 
+                                                    height: "5vh", 
+                                                    border: "1px solid lightgrey", 
+                                                    borderRadius: "3px",
+                                                    backgroundColor: "white"}}>
+                                                        <option></option>
+                                                        <option>employé actuel</option>
+                                                        <option>ancien employé</option>
+                                                    </select>
+                                                </Form.Group>
+                                            </Form.Row>
+                                            <Form.Row>
+                                                <Form.Group controlId="description" style={{width: "100%"}}>
+                                                    <Form.Label>Faites-nous un <i>Best of</i> des meilleurs moments</Form.Label>
+                                                    <Form.Control as="textarea" type="text" size="sm" style={{width: "100%", resize: "none"}} value={formValue.bestOf} name="bestOf" onChange={handleChange} />
+                                                </Form.Group>
+                                            </Form.Row>
+                                            <Form.Row>
+                                                <Form.Group controlId="description" style={{width: "100%"}}>
+                                                    <Form.Label>Faites-nous un <i>Best of</i> des moments <i>BullShift</i></Form.Label>
+                                                    <Form.Control as="textarea" type="text" size="sm" style={{width: "100%", resize: "none"}} value={formValue.bullShift} name="bullShift" onChange={handleChange} />
+                                                </Form.Group>
+                                            </Form.Row>
+                                        </div>
                                     </div>
                                 </Modal.Body>
                                 <Modal.Footer>
@@ -406,10 +446,19 @@ export default function DeepMap2({user, firebase}) {
                                 style={{width: "20%"}} 
                                 onClick={(event) => {
                                     event.preventDefault()
-                                    setformValue("")
-                                    
+                                    setformValue({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
+                                    firebase.addCommentOnHotel({
+                                        hotelId: "testHotelCommentRegistration", 
+                                        commentTitle: formValue.commentTitle,
+                                        status: formValue.status,
+                                        bestOf: formValue.bestOf,
+                                        bullShift: formValue.bullShift,
+                                        team: formValue.team,
+                                        management: formValue.management,
+                                        customer: formValue.customer,
+                                        wage: formValue.wage})
                                     setselectedHotel(null)
-                                }}>Déloger</Button>
+                                }}>Envoyer</Button>
                                 </Modal.Footer>
                             </Modal>                    
                 </>) : null}
