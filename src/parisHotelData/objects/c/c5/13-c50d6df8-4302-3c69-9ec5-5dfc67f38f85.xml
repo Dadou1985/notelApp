@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/c50d6df8-4302-3c69-9ec5-5dfc67f38f85">
+		<dc:identifier>4789270</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#RentalAccommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#SelfCateringAccommodation" />
+		<rdfs:comment xml:lang="en">Bright, fully renovated studios with beautiful views over the rooftops and forest of Saint Germain.
+Spacious bathroom, ample storage space, and mezzanine.</rdfs:comment>
+		<rdfs:comment xml:lang="es">Estudios completamente amueblados y renovados, muy luminosos, con magníficas vistas a los tejados y al bosque de Saint Germain.
+Amplio cuarto de baño, numerosos armarios y una disposición entreplanta.</rdfs:comment>
+		<rdfs:comment xml:lang="nl">Geheel gerenoveerde en gemeubileerde studio's, licht en met een prachtig zicht op de daken en het bos van Saint Germain.
+Ruime badkamer, veel opbergruimte en mezzanine.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Komplett renovierte, möblierte Einzimmerwohnungen, lichtdurchflutet mit einer wunderschönen Aussicht über die Dächer und den Wald von Saint Germain.
+Geräumiges Badezimmer, großer Stauraum und ein Mezzanin.</rdfs:comment>
+		<rdfs:comment xml:lang="fr">Studios meublés entièrement refaits à neuf, très lumineux avec une vue magnifique sur les toits et la forêt de Saint Germain.
+Salle de bain spacieuse, nombreux rangement et mezzanine.</rdfs:comment>
+		<rdfs:comment xml:lang="zh">重新装修的配家具一室公寓，室内采光非常好，光线明亮，可欣赏到屋顶和圣日耳曼森林的壮丽风景。
+浴室宽敞，配有多个收理空间和夹层楼。</rdfs:comment>
+		<rdfs:label xml:lang="en">2 furnished studios - Mr &amp; Mrs Pons-Broutin</rdfs:label>
+		<rdfs:label xml:lang="nl">2 gemeubileerde studio's - M. et Mme Pons-Broutin</rdfs:label>
+		<rdfs:label xml:lang="de">2 möblierte Einzimmerwohnungen - Monsieur und Madame Pons-Broutin</rdfs:label>
+		<rdfs:label xml:lang="fr">2 meublés studios- M. et Mme Pons-Broutin</rdfs:label>
+		<rdfs:label xml:lang="zh">2间配家具一室公寓 - Pons-Broutin先生和夫人</rdfs:label>
+		<rdfs:label xml:lang="es">Dos estudios amueblados: M. y Mme Pons-Broutin</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/229aa19f-0873-303c-9907-e661942c13d4">
+				<schema:email>carolinepons78@gmail.com</schema:email>
+				<schema:telephone>+33 1 30 61 24 73</schema:telephone>
+				<schema:telephone>+33 6 60 25 28 63</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d4dfdd1b-051d-3c37-9540-6a13ae6ae642">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="en">Bright, fully renovated studios with beautiful views over the rooftops and forest of Saint Germain.
+Spacious bathroom, ample storage space, and mezzanine.</shortDescription>
+				<shortDescription xml:lang="es">Estudios completamente amueblados y renovados, muy luminosos, con magníficas vistas a los tejados y al bosque de Saint Germain.
+Amplio cuarto de baño, numerosos armarios y una disposición entreplanta.</shortDescription>
+				<shortDescription xml:lang="nl">Geheel gerenoveerde en gemeubileerde studio's, licht en met een prachtig zicht op de daken en het bos van Saint Germain.
+Ruime badkamer, veel opbergruimte en mezzanine.</shortDescription>
+				<shortDescription xml:lang="de">Komplett renovierte, möblierte Einzimmerwohnungen, lichtdurchflutet mit einer wunderschönen Aussicht über die Dächer und den Wald von Saint Germain.
+Geräumiges Badezimmer, großer Stauraum und ein Mezzanin.</shortDescription>
+				<shortDescription xml:lang="fr">Studios meublés entièrement refaits à neuf, très lumineux avec une vue magnifique sur les toits et la forêt de Saint Germain.
+Salle de bain spacieuse, nombreux rangement et mezzanine.</shortDescription>
+				<shortDescription xml:lang="zh">重新装修的配家具一室公寓，室内采光非常好，光线明亮，可欣赏到屋顶和圣日耳曼森林的壮丽风景。
+浴室宽敞，配有多个收理空间和夹层楼。</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1d1cc1d5-5c00-3d94-8d8a-06ccfa9c3f72">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/e0de8840-60ab-36dd-8dfd-fea4c15e13d5">
+						<schema:addressLocality>Saint-Germain-en-Laye</schema:addressLocality>
+						<schema:postalCode>78100</schema:postalCode>
+						<schema:streetAddress>39 rue de la République</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#78551">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Saint-Germain-en-Laye</rdfs:label>
+								<rdfs:label xml:lang="fr">Saint-Germain-en-Laye</rdfs:label>
+								<insee>78551</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1178">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Yvelines</rdfs:label>
+										<rdfs:label xml:lang="fr">Yvelines</rdfs:label>
+										<insee>78</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/19c1a60a-5dd9-305d-b530-e65b4c7c40d1">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.899771</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.088567</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f1035fdf-0eab-3576-a553-37256f1705a0">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Renseignements horaire auprès du propriétaire</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-16T06:35:21.226Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

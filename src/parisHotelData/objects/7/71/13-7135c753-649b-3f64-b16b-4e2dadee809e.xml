@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/7135c753-649b-3f64-b16b-4e2dadee809e">
+		<dc:identifier>4731227</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/FoodEstablishment" />
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="http://schema.org/Restaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#FoodEstablishment" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelRestaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Restaurant" />
+		<rdfs:comment xml:lang="fr">En quête d'un hôtel alliant modernité et savoir-faire pour vos séminaires ? Envie d'une situation en plein centre-ville pour vos loisirs ? Notre hôtel multiplie les atouts pour satisfaire toutes vos demandes</rdfs:comment>
+		<rdfs:label xml:lang="fr">Mercure</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/26f75ce8-c58d-33bd-a772-9fb5a66ef93a">
+				<schema:email>afaucomprez@yvelines.fr</schema:email>
+				<schema:email>cmarcq@ext.yvelines.fr</schema:email>
+				<schema:email>ebasset@yvelines.fr</schema:email>
+				<schema:email>jherault@yvelines.fr</schema:email>
+				<schema:email>jraibaud@yvelines.fr</schema:email>
+				<schema:legalName>Conseil Départemental des Yvelines</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/97b668e3-6276-3529-8486-f98c467492fd">
+				<schema:email>h1983@accor.com</schema:email>
+				<schema:telephone>+33 1 39 30 18 00</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.accorhotels.com/fr/hotel-1983-hotel-mercure-saint-quentin-en-yvelines-centre/index.shtml</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/0c11f7d4-7bba-3e18-a667-0989f4216530">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">En quête d'un hôtel alliant modernité et savoir-faire pour vos séminaires ? Envie d'une situation en plein centre-ville pour vos loisirs ? Notre hôtel multiplie les atouts pour satisfaire toutes vos demandes</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7b73c97a-6a14-3687-b5c2-950cbee10be1">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3837ea67-9c6c-3383-948f-6a1243c583a9">
+						<schema:addressLocality>Montigny-le-Bretonneux</schema:addressLocality>
+						<schema:postalCode>78180</schema:postalCode>
+						<schema:streetAddress>9 place Choiseul</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#78423">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Montigny-le-Bretonneux</rdfs:label>
+								<rdfs:label xml:lang="fr">Montigny-le-Bretonneux</rdfs:label>
+								<insee>78423</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1178">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Yvelines</rdfs:label>
+										<rdfs:label xml:lang="fr">Yvelines</rdfs:label>
+										<insee>78</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3e1301ec-e715-3b0c-85c7-03f2e348ee9c">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.785698</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.045473</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/26f75ce8-c58d-33bd-a772-9fb5a66ef93a">
+				<schema:email>afaucomprez@yvelines.fr</schema:email>
+				<schema:email>cmarcq@ext.yvelines.fr</schema:email>
+				<schema:email>ebasset@yvelines.fr</schema:email>
+				<schema:email>jherault@yvelines.fr</schema:email>
+				<schema:email>jraibaud@yvelines.fr</schema:email>
+				<schema:legalName>Conseil Départemental des Yvelines</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-06-08</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-16T06:35:19.928Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

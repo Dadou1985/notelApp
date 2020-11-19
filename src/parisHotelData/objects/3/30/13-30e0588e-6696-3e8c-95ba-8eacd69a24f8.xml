@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/30e0588e-6696-3e8c-95ba-8eacd69a24f8">
+		<dc:identifier>4795721</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="fr">Au sein du magnifique parc de l’Abbaye des Vaux de Cernay situé en Vallée de Chevreuse, l'Hôtel de la Ferme des Vallées est un lieu enchanteur où il fait bon se ressourcer. 
+Cet établissement de charme fera le bonheur de tous ses visiteurs.</rdfs:comment>
+		<rdfs:label xml:lang="fr">La Ferme des Vallées</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3c3bfffe-9b25-3175-837e-ff1a8460b7f9">
+				<schema:email>s.bertoncini@rt78.fr</schema:email>
+				<schema:legalName>Rambouillet Territoires</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/77461d80-758c-39e5-94b8-ffc1a09bf5e2">
+				<schema:email>vallees@leshotelsparticuliers.com</schema:email>
+				<schema:telephone>+33 1 30 46 32 42</schema:telephone>
+				<schema:telephone>+33 6 08 46 31 44</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.lafermedesvallees.com/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/624951fa-82ba-3faa-afcb-d51835968882">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Au sein du magnifique parc de l’Abbaye des Vaux de Cernay situé en Vallée de Chevreuse, l'Hôtel de la Ferme des Vallées est un lieu enchanteur où il fait bon se ressourcer. 
+Cet établissement de charme fera le bonheur de tous ses visiteurs.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/9662da0a-753b-35da-9237-3fa615766272">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/70cdb105-5f5c-3598-8ffa-6cce084f635c">
+						<schema:addressLocality>Cernay-la-Ville</schema:addressLocality>
+						<schema:postalCode>78720</schema:postalCode>
+						<schema:streetAddress>Domaine des Vaux de Cernay</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#78128">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Cernay-la-Ville</rdfs:label>
+								<rdfs:label xml:lang="fr">Cernay-la-Ville</rdfs:label>
+								<insee>78128</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1178">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Yvelines</rdfs:label>
+										<rdfs:label xml:lang="fr">Yvelines</rdfs:label>
+										<insee>78</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d16d3818-9c49-32d6-b20a-e058af7d8595">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.68413</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.936166</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3c3bfffe-9b25-3175-837e-ff1a8460b7f9">
+				<schema:email>s.bertoncini@rt78.fr</schema:email>
+				<schema:legalName>Rambouillet Territoires</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-09</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-16T06:35:20.492Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d325e0b8-293a-397b-ad7a-eb90e2f4069e">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/0784cfbf-43ce-3e61-b4fa-502fae310778">
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">135</schema:maxPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f41df8e6-063a-354a-a76d-6c32a500cacf">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-31</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-01</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

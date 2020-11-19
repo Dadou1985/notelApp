@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/ee451831-5163-3e3e-8834-91cc96e0d90b">
+		<dc:identifier>5238223</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="fr">Idéalement situé à proximité du Château de Vincennes, du Parc Floral et à 50m du métro, l'Hôtel Daumesnil-Vincennes vous offre un service tout confort dans un cadre chaleureux.</rdfs:comment>
+		<rdfs:label xml:lang="fr">Hôtel Daumesnil-Vincennes</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/b2ad6ec5-6a94-305c-ad60-0decf03916ec">
+				<schema:email>cabarnou@vincennes.fr</schema:email>
+				<schema:email>imeffre@vincennes.fr</schema:email>
+				<schema:email>sdossantos@vincennes.fr</schema:email>
+				<schema:legalName>Office de Tourisme de Vincennes</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/ff0fcd4d-51b6-3760-9164-31738e83176a">
+				<schema:email>info@hotel-daumesnil.com</schema:email>
+				<schema:telephone>+33 1 48 08 44 10</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.hotel-daumesnil.com/fr</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/96da9758-756a-3247-9334-c3cd9f3c159b">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Idéalement situé à proximité du Château de Vincennes, du Parc Floral et à 50m du métro, l'Hôtel Daumesnil-Vincennes vous offre un service tout confort dans un cadre chaleureux.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/0bde61ec-195b-3e8d-9148-30edba59e4b7">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7ac5c567-0d08-3d8e-92fa-a9c1b689c9db">
+						<schema:addressLocality>Vincennes</schema:addressLocality>
+						<schema:postalCode>94300</schema:postalCode>
+						<schema:streetAddress>50 avenue de Paris</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#94080">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Vincennes</rdfs:label>
+								<rdfs:label xml:lang="fr">Vincennes</rdfs:label>
+								<insee>94080</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1194">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Val-de-Marne</rdfs:label>
+										<rdfs:label xml:lang="fr">Val-de-Marne</rdfs:label>
+										<insee>94</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/c9a36b4f-b6cd-324b-880e-76ddde21f7fc">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.845307</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.432638</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/b2ad6ec5-6a94-305c-ad60-0decf03916ec">
+				<schema:email>cabarnou@vincennes.fr</schema:email>
+				<schema:email>imeffre@vincennes.fr</schema:email>
+				<schema:email>sdossantos@vincennes.fr</schema:email>
+				<schema:legalName>Office de Tourisme de Vincennes</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-12</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-17T07:23:11.296Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/e23f0df6-f03f-376f-a0b3-73c505a6d3d4">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/4a9dad91-ad95-3c4a-9d01-68d900e79d48">
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">270</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">280</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">290</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">300</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">350</schema:maxPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f41df8e6-063a-354a-a76d-6c32a500cacf">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-31</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-01</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

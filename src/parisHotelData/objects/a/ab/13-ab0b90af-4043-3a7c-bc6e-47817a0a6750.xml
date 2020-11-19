@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/ab0b90af-4043-3a7c-bc6e-47817a0a6750">
+		<dc:identifier>4882490</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/FoodEstablishment" />
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="http://schema.org/Restaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#FoodEstablishment" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelRestaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Restaurant" />
+		<rdfs:comment xml:lang="fr">La nouvelle chambre du Campanile Sannois s’inscrit dans l’air du temps. Il ne vous reste plus qu’à venir la découvrir et passer la plus confortable des nuits grâce à notre literie haut de gamme.</rdfs:comment>
+		<rdfs:comment xml:lang="en">The new room of the Bell tower Sannois joins fashionable. You do not have more than to come to discover her  and to spend the most comfortable of the nights thanks to our bedding top of the range.</rdfs:comment>
+		<rdfs:label xml:lang="fr">Campanile Sannois Ermont</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/aa0b8462-fabd-38e9-af18-3d610c4012ba">
+				<schema:email>info@valdoise-tourisme.com</schema:email>
+				<schema:email>j.guirand@valdoise-tourisme.com</schema:email>
+				<schema:email>m.bachelery@valdoise-tourisme.com</schema:email>
+				<schema:legalName>Val d'Oise Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8f97861c-271c-3d39-9ede-0c1f685c37fd">
+				<schema:email>ermont.sannois@campanile.fr</schema:email>
+				<schema:telephone>+33 1 34 13 79 57</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.campanile-sannois-ermont.fr/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/4c6ab0e4-0f86-3847-a5f5-6c2f15034579">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">La nouvelle chambre du Campanile Sannois s’inscrit dans l’air du temps. Il ne vous reste plus qu’à venir la découvrir et passer la plus confortable des nuits grâce à notre literie haut de gamme.</shortDescription>
+				<shortDescription xml:lang="en">The new room of the Bell tower Sannois joins fashionable. You do not have more than to come to discover her  and to spend the most comfortable of the nights thanks to our bedding top of the range.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/31ccc394-e868-338c-ae33-276d91c6f05f">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/e35f114d-670a-30a8-9796-36b24ecebbfc">
+						<schema:addressLocality>Sannois</schema:addressLocality>
+						<schema:postalCode>95110</schema:postalCode>
+						<schema:streetAddress>Campanile Sannois-Ermont Rue des Loges</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#95582">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Sannois</rdfs:label>
+								<rdfs:label xml:lang="fr">Sannois</rdfs:label>
+								<insee>95582</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1195">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Val-d'Oise</rdfs:label>
+										<rdfs:label xml:lang="fr">Val-d'Oise</rdfs:label>
+										<insee>95</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/70800fd7-d050-3739-a3de-6de02d4859f5">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.982789</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.2426</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/666bb1ed-183f-39a3-be4a-a3c6dad42c76">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Du lundi au Vendredi de 6h30 à 23h
+Le weekend de 7h à 23h.
+Le restaurant est ouvert du lundi au vendredi de 19h à 22h. Des plateaux repas peuvent être servis jusqu'à 23h.
+Le restaurant est fermé tous les midis mais propose des solutions alternatives.
+Du lundi au vendredi : petit-déjeuner servi entre 6h30 et 10h.
+Weekend et jours fériés : petit-déjeuner servi entre 7h et 10h.</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/aa0b8462-fabd-38e9-af18-3d610c4012ba">
+				<schema:email>info@valdoise-tourisme.com</schema:email>
+				<schema:email>j.guirand@valdoise-tourisme.com</schema:email>
+				<schema:email>m.bachelery@valdoise-tourisme.com</schema:email>
+				<schema:legalName>Val d'Oise Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-02</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-23T06:27:02.823Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

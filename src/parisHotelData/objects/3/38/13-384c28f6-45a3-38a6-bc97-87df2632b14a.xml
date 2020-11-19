@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/384c28f6-45a3-38a6-bc97-87df2632b14a">
+		<dc:identifier>5612701</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#CollectiveAccommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HolidayResort" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="fr">Situé sur les Terrasses de l'Arche, à proximité directe de l'Université Paris Nanterre, Residhome Nanterre la Défense vous propose des chambres et des services de qualité pour votre séjour à Nanterre.</rdfs:comment>
+		<rdfs:label xml:lang="fr">Residhome Nanterre La Défense</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/6c70c6a5-52d7-31f7-a2ca-5e8f7dc66bec">
+				<schema:email>info@ot-nanterre.fr</schema:email>
+				<schema:legalName>Office de Tourisme de Nanterre</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8930f8e5-c0c4-3865-9e30-af733a66e25c">
+				<schema:telephone>+33 1 47 25 81 81</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.residhome.com/residence-hoteliere-aparthotel-nanterre-249.html</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7ee8aa95-f7d7-38fa-9add-efa274d7087a">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Situé sur les Terrasses de l'Arche, à proximité directe de l'Université Paris Nanterre, Residhome Nanterre la Défense vous propose des chambres et des services de qualité pour votre séjour à Nanterre.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/c40977d6-091c-39d4-b16d-f9c1c6d5f53a">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/e58ec7a2-d95f-3377-b4af-07444a8ed275">
+						<schema:addressLocality>Nanterre</schema:addressLocality>
+						<schema:postalCode>92000</schema:postalCode>
+						<schema:streetAddress>521, boulevard des Provinces Françaises</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#92050">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Nanterre</rdfs:label>
+								<rdfs:label xml:lang="fr">Nanterre</rdfs:label>
+								<insee>92050</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1192">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Hauts-de-Seine</rdfs:label>
+										<rdfs:label xml:lang="fr">Hauts-de-Seine</rdfs:label>
+										<insee>92</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/0065d2ad-2ba6-3355-9f2a-ffefa60042ee">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.900957</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.216655</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/6c70c6a5-52d7-31f7-a2ca-5e8f7dc66bec">
+				<schema:email>info@ot-nanterre.fr</schema:email>
+				<schema:legalName>Office de Tourisme de Nanterre</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-30</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-17T07:23:11.406Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/a2e68c35-393f-3e50-b7ec-8016058d5f7f">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/28235780-e4fc-3605-94b2-76edc24f537d">
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</schema:maxPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f41df8e6-063a-354a-a76d-6c32a500cacf">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-31</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-01</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

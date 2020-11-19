@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/bfd284c1-bc6d-3c73-a2e9-8342f3e91445">
+		<dc:identifier>4638143</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/FoodEstablishment" />
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="http://schema.org/Restaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#FoodEstablishment" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelRestaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Restaurant" />
+		<rdfs:comment xml:lang="fr">A 15 minutes de Paris, Les Etangs de Corot, hôtel 4 étoiles, sont un hameau de calme et de verdure.</rdfs:comment>
+		<rdfs:label xml:lang="en">Hôtel Les Etangs de Corot</rdfs:label>
+		<rdfs:label xml:lang="fr">Hôtel Les Etangs de Corot</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/04a64595-ce28-374a-bdf9-5a8ddb0f2402">
+				<schema:email>bgeigle@visitparisregion.com</schema:email>
+				<schema:email>hcaldo@visitparisregion.com</schema:email>
+				<schema:email>mtanaskovic@visitparisregion.com</schema:email>
+				<schema:legalName>Comité Régional du Tourisme Paris - Ile-de-France</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/eac4c184-4554-3ef3-84b3-61fdc8837e3a">
+				<schema:email>contact@etangs-corot.com</schema:email>
+				<schema:email>reservations@etangs-corot.com</schema:email>
+				<schema:telephone>+33 1 41 15 37 00</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.etangs-corot.com/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/9eec9d5b-74af-38b5-a101-26a84b237f91">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">A 15 minutes de Paris, Les Etangs de Corot, hôtel 4 étoiles, sont un hameau de calme et de verdure.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1878cc05-f6e1-3e05-8c02-ab16b77379fe">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/138b4965-41f5-319d-b2ec-c3369ad032fe">
+						<schema:addressLocality>Ville-d'Avray</schema:addressLocality>
+						<schema:postalCode>92410</schema:postalCode>
+						<schema:streetAddress>55 rue de Versailles</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#92077">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Ville-d'Avray</rdfs:label>
+								<rdfs:label xml:lang="fr">Ville-d'Avray</rdfs:label>
+								<insee>92077</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1192">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Hauts-de-Seine</rdfs:label>
+										<rdfs:label xml:lang="fr">Hauts-de-Seine</rdfs:label>
+										<insee>92</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/901a596a-02d7-3fed-8aa3-7be0846c55b9">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.82195</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.183115</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/0e5719f2-158e-3bad-a034-0a2bf0fa09c7">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Le Spa Caudalie des Etangs de Corot est ouvert tous les jours, de 10h à 19h. 
+
+Le jacuzzi est accessible jusque 21h30 tous les jours.</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/04a64595-ce28-374a-bdf9-5a8ddb0f2402">
+				<schema:email>bgeigle@visitparisregion.com</schema:email>
+				<schema:email>hcaldo@visitparisregion.com</schema:email>
+				<schema:email>mtanaskovic@visitparisregion.com</schema:email>
+				<schema:legalName>Comité Régional du Tourisme Paris - Ile-de-France</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-15</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-17T07:23:10.863Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/de423de6-7f6f-3656-8eba-d580310ffdc8">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/a05739d6-2f07-3313-b7b3-2c48d7c1919d">
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">162</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">270</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/e2071e54-f221-3eee-b918-b069435ae041">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-12-31</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-01-01</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

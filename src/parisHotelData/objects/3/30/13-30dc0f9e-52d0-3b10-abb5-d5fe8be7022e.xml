@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/30dc0f9e-52d0-3b10-abb5-d5fe8be7022e">
+		<dc:identifier>679719</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="fr">Aux portes de Paris, un hotel idéal pour un séjour en famille ou professionnel, à  petit prix...</rdfs:comment>
+		<rdfs:comment xml:lang="en">Close to Paris, an ideal hotel for a family or professional, at low prices ...</rdfs:comment>
+		<rdfs:comment xml:lang="es">Un hotel ideal para una estancia en familia o de negocios a un precio reducido y situado a las puertas de París...</rdfs:comment>
+		<rdfs:label xml:lang="fr">Ibis Budget Porte D'Aubervilliers</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/4ebecf3f-9437-391b-8d76-51197b84c02f">
+				<schema:email>c.feral@plainecommunetourisme.com</schema:email>
+				<schema:email>commercial@plainecommunetourisme.com</schema:email>
+				<schema:email>jt.charbonnier@plainecommunetourisme.com</schema:email>
+				<schema:legalName>Office de Tourisme Plaine commune grand Paris</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/72678edf-7be1-3718-885e-0a15dc82c925">
+				<schema:email>h3491@accor.com</schema:email>
+				<schema:telephone>+33 892 68 32 61</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.ibisbudget.com/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/70a64c9e-3294-3a4d-bbd4-35b9b03e04bc">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Aux portes de Paris, un hotel idéal pour un séjour en famille ou professionnel, à  petit prix...</shortDescription>
+				<shortDescription xml:lang="en">Close to Paris, an ideal hotel for a family or professional, at low prices ...</shortDescription>
+				<shortDescription xml:lang="es">Un hotel ideal para una estancia en familia o de negocios a un precio reducido y situado a las puertas de París...</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/ba62629c-b6af-3454-b26b-21fb46a9dc01">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/9a655854-bedd-3270-8028-768101c6325e">
+						<schema:addressLocality>Aubervilliers</schema:addressLocality>
+						<schema:postalCode>93300</schema:postalCode>
+						<schema:streetAddress>53-61 rue de la Commune de Paris</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#93001">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Aubervilliers</rdfs:label>
+								<rdfs:label xml:lang="fr">Aubervilliers</rdfs:label>
+								<insee>93001</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1193">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Seine-Saint-Denis</rdfs:label>
+										<rdfs:label xml:lang="fr">Seine-Saint-Denis</rdfs:label>
+										<insee>93</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/cdee55c9-f2bf-39f7-9f75-b137ee28fa54">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.910386</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.380348</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/4ebecf3f-9437-391b-8d76-51197b84c02f">
+				<schema:email>c.feral@plainecommunetourisme.com</schema:email>
+				<schema:email>commercial@plainecommunetourisme.com</schema:email>
+				<schema:email>jt.charbonnier@plainecommunetourisme.com</schema:email>
+				<schema:legalName>Office de Tourisme Plaine commune grand Paris</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-28</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-17T07:23:11.356Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/06df3705-795b-391f-9500-fd5f1e5f741a">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/24937c3a-5487-34fc-866d-d0378fe99e62">
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71</schema:maxPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">58</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.15</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/5a4a0801-a84b-3a80-84a3-015f16c03544">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-12-31</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-01-01</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

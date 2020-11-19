@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/1e1d3b7b-d3a2-37f6-96e8-9f780f9e57bf">
+		<dc:identifier>4799668</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="de">Die Direktorin des "Ibis Budget Bezons Rives de Seine", Madame Laurence Pereira, heißt Sie herzlich willkommen!</rdfs:comment>
+		<rdfs:comment xml:lang="es">Doña Laurence PEREIRA, responsable de la dirección del Ibis Budget Bezons Rives de Seine, os da la bienvenida.</rdfs:comment>
+		<rdfs:comment xml:lang="zh">Ibis Budget Bezons Rives de Seine酒店总监Laurence PEREIRA夫人竭诚欢迎您的光临。</rdfs:comment>
+		<rdfs:comment xml:lang="nl">Mme Laurence PEREIRA, directrice van het Ibis-hotel Budget Bezons Rives de Seine, heet u van harte welkom.</rdfs:comment>
+		<rdfs:comment xml:lang="fr">Mme Laurence PEREIRA, en charge de la direction de l'ibis budget Bezons Rives de Seine, vous souhaite la bienvenue.</rdfs:comment>
+		<rdfs:comment xml:lang="en">Mme Laurence PEREIRA, manager of the Ibis Budget Bezons Rives de Seine, wishes you welcome.</rdfs:comment>
+		<rdfs:label xml:lang="de">Hotel "Ibis Budget Bezons Rives de Seine"</rdfs:label>
+		<rdfs:label xml:lang="en">Ibis Budget Bezons Rives de Seine</rdfs:label>
+		<rdfs:label xml:lang="zh">Ibis Budget Bezons Rives de Seine酒店</rdfs:label>
+		<rdfs:label xml:lang="es"> Ibis Budget Bezons Rives de Seine</rdfs:label>
+		<rdfs:label xml:lang="fr"> Ibis Budget Bezons Rives de Seine</rdfs:label>
+		<rdfs:label xml:lang="nl"> Ibis Budget Bezons Rives de Seine</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/060500d7-733f-3928-8ce1-aa79b0114106">
+				<schema:email>h9699@accor.com</schema:email>
+				<schema:telephone>+33 892 70 74 15</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.ibis.com/fr/hotel-9699-ibis-budget-bezons-rives-de-seine/index.shtml</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/12cc2be5-04ff-3829-a4ba-eac6f1eb4cf7">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="de">Die Direktorin des "Ibis Budget Bezons Rives de Seine", Madame Laurence Pereira, heißt Sie herzlich willkommen!</shortDescription>
+				<shortDescription xml:lang="es">Doña Laurence PEREIRA, responsable de la dirección del Ibis Budget Bezons Rives de Seine, os da la bienvenida.</shortDescription>
+				<shortDescription xml:lang="zh">Ibis Budget Bezons Rives de Seine酒店总监Laurence PEREIRA夫人竭诚欢迎您的光临。</shortDescription>
+				<shortDescription xml:lang="nl">Mme Laurence PEREIRA, directrice van het Ibis-hotel Budget Bezons Rives de Seine, heet u van harte welkom.</shortDescription>
+				<shortDescription xml:lang="fr">Mme Laurence PEREIRA, en charge de la direction de l'ibis budget Bezons Rives de Seine, vous souhaite la bienvenue.</shortDescription>
+				<shortDescription xml:lang="en">Mme Laurence PEREIRA, manager of the Ibis Budget Bezons Rives de Seine, wishes you welcome.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/25627ff4-5238-31ba-a025-5fdd301401e8">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/238cab4d-b208-35e6-b141-d3ff9d95217c">
+						<schema:addressLocality>Bezons</schema:addressLocality>
+						<schema:postalCode>95870</schema:postalCode>
+						<schema:streetAddress>219 rue Michel Carre</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#95063">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Bezons</rdfs:label>
+								<rdfs:label xml:lang="fr">Bezons</rdfs:label>
+								<insee>95063</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1195">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Val-d'Oise</rdfs:label>
+										<rdfs:label xml:lang="fr">Val-d'Oise</rdfs:label>
+										<insee>95</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/6c7c16f0-f357-3566-a22d-0c0c72bbf9a4">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.927378</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.228218</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/b9df07d3-96a9-3614-86f2-8da5cf2a31bd">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Check-in: 12:00. 
+Check-out: 12:00.</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-07-01</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-23T06:27:02.866Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

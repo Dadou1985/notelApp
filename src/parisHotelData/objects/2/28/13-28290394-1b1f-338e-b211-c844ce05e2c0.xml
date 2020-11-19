@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/28290394-1b1f-338e-b211-c844ce05e2c0">
+		<dc:identifier>725211</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Camping" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#CampingAndCaravanning" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="fr">Idéalement situé en bordure de la rivière et à 200 mètres du village médiéval de Grez-sur-Loing, ses monuments et ses commerces...</rdfs:comment>
+		<rdfs:comment xml:lang="en">Ideally located on the banks of the river and 200 meters from the medieval village of Grez-sur-Loing with its sites and shops...</rdfs:comment>
+		<rdfs:label xml:lang="de">Les Prés</rdfs:label>
+		<rdfs:label xml:lang="en">Les Prés</rdfs:label>
+		<rdfs:label xml:lang="es">Les Prés</rdfs:label>
+		<rdfs:label xml:lang="fr">Les Prés</rdfs:label>
+		<rdfs:label xml:lang="it">Les Prés</rdfs:label>
+		<rdfs:label xml:lang="nl">Les Prés</rdfs:label>
+		<rdfs:label xml:lang="ru">Les Prés</rdfs:label>
+		<rdfs:label xml:lang="zh">Les Prés</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/5b7bcd7f-36ca-3e77-83e6-a53caf8d2ee9">
+				<schema:email>info@tourisme-paysdenemours.fr</schema:email>
+				<schema:email>marielaure.boucher@tourisme-paysdenemours.fr</schema:email>
+				<schema:email>otnemours@gmail.com</schema:email>
+				<schema:legalName>Office de Tourisme du Pays de Nemours</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1db24fc4-b534-39bf-bdaf-152c6f98730e">
+				<schema:legalName>Seine et Marne Attractivité - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/611d91f2-9f91-3104-ae8b-8f78c6e7923a">
+				<schema:email>contact@aquadis-loisirs.com</schema:email>
+				<schema:telephone>+33 1 64 45 72 75</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.aquadis-loisirs.com/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/fc7a1270-901a-384e-a4ea-eb0ed57b0184">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Idéalement situé en bordure de la rivière et à 200 mètres du village médiéval de Grez-sur-Loing, ses monuments et ses commerces...</shortDescription>
+				<shortDescription xml:lang="en">Ideally located on the banks of the river and 200 meters from the medieval village of Grez-sur-Loing with its sites and shops...</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/06cc98bc-7861-3e69-81fd-c34128f780cb">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/16e7adda-743b-3ec0-afc2-a69900cd79d0">
+						<schema:addressLocality>Grez-sur-Loing</schema:addressLocality>
+						<schema:postalCode>77880</schema:postalCode>
+						<schema:streetAddress>1 chemin rural des prés</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#77216">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Grez-sur-Loing</rdfs:label>
+								<rdfs:label xml:lang="fr">Grez-sur-Loing</rdfs:label>
+								<insee>77216</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1177">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Seine-et-Marne</rdfs:label>
+										<rdfs:label xml:lang="fr">Seine-et-Marne</rdfs:label>
+										<insee>77</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/49e1f42c-9301-39a2-b6f5-b87314f909d4">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.316868</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.697809</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/0d44c4f2-563b-36ad-b96b-6f6cf4de1ecb">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-14T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-08T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Réception : 9h-12h et 14h-19h</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/5b7bcd7f-36ca-3e77-83e6-a53caf8d2ee9">
+				<schema:email>info@tourisme-paysdenemours.fr</schema:email>
+				<schema:email>marielaure.boucher@tourisme-paysdenemours.fr</schema:email>
+				<schema:email>otnemours@gmail.com</schema:email>
+				<schema:legalName>Office de Tourisme du Pays de Nemours</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-04</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-16T06:35:21.127Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7a40996f-6b18-3754-921a-b0fbcb514554">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/4a44c086-f6e2-3b89-98d7-d36a7296aaf4">
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.6</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/c158ebb2-49ce-372f-8cac-7dd8b9dd2353">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-08</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-14</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

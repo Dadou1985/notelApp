@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/8941dc0d-c9ef-3501-bf32-9117c358ccb3">
+		<dc:identifier>5314538</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#RentalAccommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#SelfCateringAccommodation" />
+		<rdfs:comment xml:lang="fr">Gite pouvant accueillir de 1 à 4 personnes, situé sur le parcours de la Véloscénie. Idéal pour faire une halte à la limite de l’Ile de France ou pour démarrer votre voyage en laissant la voiture sur le parking. Possibilité de plateau repas.</rdfs:comment>
+		<rdfs:label xml:lang="fr">Gîte "Les Petits Princes"</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/26f75ce8-c58d-33bd-a772-9fb5a66ef93a">
+				<schema:email>afaucomprez@yvelines.fr</schema:email>
+				<schema:email>cmarcq@ext.yvelines.fr</schema:email>
+				<schema:email>ebasset@yvelines.fr</schema:email>
+				<schema:email>jherault@yvelines.fr</schema:email>
+				<schema:email>jraibaud@yvelines.fr</schema:email>
+				<schema:legalName>Conseil Départemental des Yvelines</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/ae121087-1d96-39cb-a8e6-39bcb3c16aba">
+				<schema:email>fleprince2@wanadoo.fr</schema:email>
+				<schema:telephone>+33 1 34 85 92 18</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.les-petits-princes-emance.fr/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/74e77c2d-2dac-3f7c-8b9d-c4186c056f1c">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Gite pouvant accueillir de 1 à 4 personnes, situé sur le parcours de la Véloscénie. Idéal pour faire une halte à la limite de l’Ile de France ou pour démarrer votre voyage en laissant la voiture sur le parking. Possibilité de plateau repas.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<hasReview>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7b1a39ff-1286-3561-a06f-1aa9f98420cb">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Review" />
+				<hasReviewValue>
+					<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#LabelRating_AccueilVelo">
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#LabelRating" />
+						<rdfs:label xml:lang="en">Accueil Vélo</rdfs:label>
+						<rdfs:label xml:lang="fr">Accueil Vélo</rdfs:label>
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+					</rdf:Description>
+				</hasReviewValue>
+			</rdf:Description>
+		</hasReview>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/ca31525f-8531-3416-833e-60c8769e57e5">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d0d3df64-c632-3921-aac4-879b84998834">
+						<schema:addressLocality>Émancé</schema:addressLocality>
+						<schema:postalCode>78125</schema:postalCode>
+						<schema:streetAddress>22 bis rue des Bochets</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#78209">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Émancé</rdfs:label>
+								<rdfs:label xml:lang="fr">Émancé</rdfs:label>
+								<insee>78209</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1178">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Yvelines</rdfs:label>
+										<rdfs:label xml:lang="fr">Yvelines</rdfs:label>
+										<insee>78</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f0364c0a-224a-3c65-a73d-a2903955d1b7">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.595322</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.714042</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/26f75ce8-c58d-33bd-a772-9fb5a66ef93a">
+				<schema:email>afaucomprez@yvelines.fr</schema:email>
+				<schema:email>cmarcq@ext.yvelines.fr</schema:email>
+				<schema:email>ebasset@yvelines.fr</schema:email>
+				<schema:email>jherault@yvelines.fr</schema:email>
+				<schema:email>jraibaud@yvelines.fr</schema:email>
+				<schema:legalName>Conseil Départemental des Yvelines</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-23</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-17T07:23:11.273Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/b2544971-c867-3232-8b1c-723dddf48e43">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/9c8a01f1-9625-3eec-9bc4-aa182b32ebf6">
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">370</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/4fd38939-d84d-31a9-a152-cfc28cf82868">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-31</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-01</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

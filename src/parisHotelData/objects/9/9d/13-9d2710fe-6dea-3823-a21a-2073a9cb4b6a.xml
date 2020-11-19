@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/9d2710fe-6dea-3823-a21a-2073a9cb4b6a">
+		<dc:identifier>751299</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="fr">A proximité du Château de Versailles, l'hôtel situé dans une rue calme, vous accueille pour un séjour d'exception.</rdfs:comment>
+		<rdfs:comment xml:lang="es">Cerca del palacio de Versalles, el hotel le acoge en una calle tranquilla para un viaje de espectacular.</rdfs:comment>
+		<rdfs:comment xml:lang="en">Located in a quiet street just one minute away from the palace and its grounds, the hotel welcomes you for an outstanding stay.</rdfs:comment>
+		<rdfs:label xml:lang="fr">Le Versailles</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/16b751ab-9dac-39d8-87d5-b6f73370da99">
+				<schema:email>achangeux@ot-versailles.fr</schema:email>
+				<schema:email>ademond@ot-versailles.fr</schema:email>
+				<schema:email>amasson@ot-versailles.fr</schema:email>
+				<schema:email>cbenson@ot-versailles.fr</schema:email>
+				<schema:email>ccharpentier@ot-versailles.fr</schema:email>
+				<schema:email>mmangematin@ot-versailles.fr</schema:email>
+				<schema:email>qcognioul@ot-versailles.fr</schema:email>
+				<schema:legalName>Office de Tourisme de Versailles</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/defffbd8-da6c-304f-be37-918171a6cb08">
+				<schema:email>info@hotel-le-versailles.fr</schema:email>
+				<schema:telephone>+33 1 39 50 64 65</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.hotel-le-versailles.fr/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/ca5af597-7034-362b-af45-e8822f07baac">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">A proximité du Château de Versailles, l'hôtel situé dans une rue calme, vous accueille pour un séjour d'exception.</shortDescription>
+				<shortDescription xml:lang="es">Cerca del palacio de Versalles, el hotel le acoge en una calle tranquilla para un viaje de espectacular.</shortDescription>
+				<shortDescription xml:lang="en">Located in a quiet street just one minute away from the palace and its grounds, the hotel welcomes you for an outstanding stay.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<hasReview>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7b1a39ff-1286-3561-a06f-1aa9f98420cb">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Review" />
+				<hasReviewValue>
+					<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#LabelRating_AccueilVelo">
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#LabelRating" />
+						<rdfs:label xml:lang="en">Accueil Vélo</rdfs:label>
+						<rdfs:label xml:lang="fr">Accueil Vélo</rdfs:label>
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+					</rdf:Description>
+				</hasReviewValue>
+			</rdf:Description>
+		</hasReview>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/c571f17a-14f5-34b8-9bff-fba6fa45dfe9">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/a50e4c4f-1905-38bc-bbf9-41e3c1667648">
+						<schema:addressLocality>Versailles</schema:addressLocality>
+						<schema:postalCode>78000</schema:postalCode>
+						<schema:streetAddress>7 rue Sainte-Anne</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#78646">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Versailles</rdfs:label>
+								<rdfs:label xml:lang="fr">Versailles</rdfs:label>
+								<insee>78646</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1178">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Yvelines</rdfs:label>
+										<rdfs:label xml:lang="fr">Yvelines</rdfs:label>
+										<insee>78</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/e536b14d-3f27-3ec2-bb6d-106727962e04">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.805417</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.125538</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/16b751ab-9dac-39d8-87d5-b6f73370da99">
+				<schema:email>achangeux@ot-versailles.fr</schema:email>
+				<schema:email>ademond@ot-versailles.fr</schema:email>
+				<schema:email>amasson@ot-versailles.fr</schema:email>
+				<schema:email>cbenson@ot-versailles.fr</schema:email>
+				<schema:email>ccharpentier@ot-versailles.fr</schema:email>
+				<schema:email>mmangematin@ot-versailles.fr</schema:email>
+				<schema:email>qcognioul@ot-versailles.fr</schema:email>
+				<schema:legalName>Office de Tourisme de Versailles</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-27</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-17T07:23:11.123Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/0b72bf7e-b909-327b-8361-726f014bd9b5">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/95034447-7d46-3619-b1d9-9a66d7bdf8e7">
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">229</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">259</schema:maxPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">159</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">99</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7ca25d2e-16a2-378d-bc33-79d1cdf67c6a">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-12-31</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-01</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

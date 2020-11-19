@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/34968251-6756-37e7-a44f-adcbbae6ad54">
+		<dc:identifier>5134386</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#CollectiveAccommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#GroupLodging" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#StopOverOrGroupLodge" />
+		<rdfs:comment xml:lang="en">At the heart of the regional Natural reserve of French Vexin, in 30 minutes of Cergy-Pontoise ( 95 ) and Mantises ( 78 ), 100 meters away from the domain of gardens and castles of Villarceaux, the OEcocentre of the Sheepfold of Villarceaux.</rdfs:comment>
+		<rdfs:comment xml:lang="fr">Au coeur du Parc naturel régional du Vexin français, à 30 minutes de Cergy-Pontoise (95) et de Mantes (78), à 100 mètres du domaine des jardins et châteaux de Villarceaux, l'OEcocentre de la Bergerie de Villarceaux.</rdfs:comment>
+		<rdfs:label xml:lang="en">Gîte de groupe - LA MOINERIE "OECOCENTRE DE VILLARCEAUX" N°95014</rdfs:label>
+		<rdfs:label xml:lang="fr">Gîte de groupe - LA MOINERIE "OECOCENTRE DE VILLARCEAUX" N°95014</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/aa0b8462-fabd-38e9-af18-3d610c4012ba">
+				<schema:email>info@valdoise-tourisme.com</schema:email>
+				<schema:email>j.guirand@valdoise-tourisme.com</schema:email>
+				<schema:email>m.bachelery@valdoise-tourisme.com</schema:email>
+				<schema:legalName>Val d'Oise Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/a4c01d32-b1e8-3e86-af92-273abf381a38">
+				<schema:email>contact@bergerie-villarceaux.org</schema:email>
+				<schema:telephone>+33 1 34 67 08 80</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.bergerie-villarceaux.org/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/b8ff35dc-dbcf-3422-be48-4dc601c72470">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="en">At the heart of the regional Natural reserve of French Vexin, in 30 minutes of Cergy-Pontoise ( 95 ) and Mantises ( 78 ), 100 meters away from the domain of gardens and castles of Villarceaux, the OEcocentre of the Sheepfold of Villarceaux.</shortDescription>
+				<shortDescription xml:lang="fr">Au coeur du Parc naturel régional du Vexin français, à 30 minutes de Cergy-Pontoise (95) et de Mantes (78), à 100 mètres du domaine des jardins et châteaux de Villarceaux, l'OEcocentre de la Bergerie de Villarceaux.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<hasReview>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7b1a39ff-1286-3561-a06f-1aa9f98420cb">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Review" />
+				<hasReviewValue>
+					<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#LabelRating_AccueilVelo">
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#LabelRating" />
+						<rdfs:label xml:lang="en">Accueil Vélo</rdfs:label>
+						<rdfs:label xml:lang="fr">Accueil Vélo</rdfs:label>
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+					</rdf:Description>
+				</hasReviewValue>
+			</rdf:Description>
+		</hasReview>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/955e4594-d55c-3e96-b419-852ca94cfb50">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/867582e4-96f9-3d80-bee6-732cce7351c9">
+						<schema:addressLocality>Chaussy</schema:addressLocality>
+						<schema:postalCode>95710</schema:postalCode>
+						<schema:streetAddress>La Bergerie</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#95150">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Chaussy</rdfs:label>
+								<rdfs:label xml:lang="fr">Chaussy</rdfs:label>
+								<insee>95150</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1195">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Val-d'Oise</rdfs:label>
+										<rdfs:label xml:lang="fr">Val-d'Oise</rdfs:label>
+										<insee>95</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/799d7705-1bf9-327d-9014-29cfb1250518">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.117365</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.713863</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/aa0b8462-fabd-38e9-af18-3d610c4012ba">
+				<schema:email>info@valdoise-tourisme.com</schema:email>
+				<schema:email>j.guirand@valdoise-tourisme.com</schema:email>
+				<schema:email>m.bachelery@valdoise-tourisme.com</schema:email>
+				<schema:legalName>Val d'Oise Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-27</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-28T07:12:15.523Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

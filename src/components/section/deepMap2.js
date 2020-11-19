@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import Map, {Marker} from 'react-map-gl'
 import {Form, Button, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import MarkerImg from './markerImgAdvisor'
-import * as hotelData from '../../../hotel.json'
 import Team from '../../svg/team.svg'
 import Management from '../../svg/management.svg'
 import Customer from '../../svg/customer.svg'
@@ -14,7 +13,9 @@ import Close from '../../svg/close.svg'
 import Rating from '@material-ui/lab/Rating'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined';
+import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined'
+import axios from 'axios'
+import HotelRegistrator from './hotelRegitrator'
 
 
 export default function DeepMap2({user, firebase}) {
@@ -22,11 +23,11 @@ export default function DeepMap2({user, firebase}) {
     const [info, setInfo] = useState([])
     const [selectedHotel, setselectedHotel] = useState(null)
     const [list, setList] = useState(false)
-    const [field, setField] = useState("Region")
-    const [filter, setFilter] = useState("Ile-de-France")
+    const [region, setRegion] = useState("ILE-DE-FRANCE")
+    const [initialFilter, setInitialFilter] = useState("code_postal")
+    const [filter, setFilter] = useState("75015")
     const [geo, setGeo] = useState({geo: []})
     const [operator, setOperator] = useState("==")
-    const [openData, setOpenData] = useState([])
     const [show, setShow] = useState(false)
     const [details, setDetails] = useState(false)
     const [comment, setComment] = useState(false)
@@ -88,27 +89,24 @@ export default function DeepMap2({user, firebase}) {
     const handleZone = () => {
         const dept = document.getElementById("zone")
         const deptValue = dept.options[dept.selectedIndex].text
-        setField("Departement")
-        setOperator("array-contains")
+        setFilter("code_postal")
         setFilter(deptValue)
     }
 
     const handleStars = () => {
         const dept = document.getElementById("stars")
         const deptValue = dept.options[dept.selectedIndex].text
-        setField("standing")
-        setOperator("array-contains")
-        setFilter(deptValue)
+        setRegion("standing")
+        setRegion(deptValue)
     }
 
-    console.log(field)
     console.log(filter)
 
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
         
-        firebase.filterOnAir({field: field, operator: operator, filter: filter, signal : signal}).onSnapshot(function(snapshot) {
+        firebase.hotelDataOnAir({region: region, initialFilter: initialFilter, filter: filter, signal : signal}).onSnapshot(function(snapshot) {
                     const snapInfo = []
                   snapshot.forEach(function(doc) {          
                     snapInfo.push({
@@ -123,9 +121,9 @@ export default function DeepMap2({user, firebase}) {
                 return () => {
                     abortController.abort()
                     }
-     },[field, filter, operator])
+     },[region, filter, initialFilter])
 
-     console.log(hotelData)
+     console.log(info)
 
     return (
         <div
@@ -142,17 +140,17 @@ export default function DeepMap2({user, firebase}) {
                 setviewPort(viewPort)
             }}
             >
-                {hotelData.map((hotel, key) =>(
+                {info.map((hotel, key) =>(
                     <Marker 
                     key={key}
-                    latitude={hotel.geometry.coordinates[1]} 
-                    longitude={hotel.geometry.coordinates[0]}
+                    latitude={hotel.lat} 
+                    longitude={hotel.lng}
                      > 
                      <OverlayTrigger
                         placement="top"
                         overlay={
                         <Tooltip id="title">
-                            <h5 style={{padding: "5%"}}>{hotel.properties.nom_commercial}</h5>
+                            <h5 style={{padding: "5%"}}>{hotel.hotelName}</h5>
                             <Box component="fieldset" mb={3} borderColor="transparent">
                                 <Typography component="legend"></Typography>
                                 <Rating
@@ -203,8 +201,8 @@ export default function DeepMap2({user, firebase}) {
                                     marginBottom: "4vh"
                                 }}>
                                     <div style={{diplay: "flex", flexFlow: "row"}}>
-                                        <h3>{selectedHotel.properties.nom_commercial}</h3>
-                                        <span>Etablissement {selectedHotel.properties.classement}</span>
+                                        <h3>{selectedHotel.hotelName}</h3>
+                                        <span>Etablissement {selectedHotel.classement[0]}</span>
                                         <img src={Arrow} alt="arrow" style={{width: "1vw", cursor: "pointer", filter: "invert(100%)", marginLeft: "1vw", transform: "rotate(0turn)"}} id="arrowTop" onClick={handleShowDetails} />
                                     </div>
                                     <img src={Close}  alt="" style={{width:"2vw", filter: "invert(100%)", cursor: "pointer"}} onClick={handleShowWindowDetails} />
@@ -218,12 +216,11 @@ export default function DeepMap2({user, firebase}) {
                                     }}
                                     defaultChecked={show}>
                                         <Divider style={{height: "1vh", marginBottom: "4vh"}} />
-                                        <span><b style={{color: "gray"}}>Adresse: </b> {selectedHotel.properties.adresse}, {selectedHotel.properties.code_postal} {selectedHotel.properties.commune}</span>
-                                        <span><b style={{color: "gray"}}>Nombre de chambres: </b> {selectedHotel.properties.nombre_de_chambres}</span> 
-                                        <span><b style={{color: "gray"}}>Type d'établissement: </b>{selectedHotel.properties.typologie_etablissement}</span>
-                                        <span><b style={{color: "gray"}}>Téléphone: </b>0{selectedHotel.properties.telephone}</span> 
-                                        <span><b style={{color: "gray"}}>Courriel: </b>{selectedHotel.properties.courriel}</span>
-                                        <span><b style={{color: "gray"}}>Portail web: </b>{selectedHotel.properties.site_internet}</span>
+                                        <span><b style={{color: "gray"}}>Adresse: </b> {selectedHotel.adresse}, {selectedHotel.code_postal} {selectedHotel.city}</span>
+                                        <span><b style={{color: "gray"}}>Nombre de chambres: </b> {selectedHotel.room}</span> 
+                                        <span><b style={{color: "gray"}}>Téléphone: </b>{selectedHotel.phone}</span> 
+                                        <span><b style={{color: "gray"}}>Courriel: </b>{selectedHotel.mail}</span>
+                                        <span><b style={{color: "gray"}}>Portail web: </b>{selectedHotel.website}</span>
                                     </div>
                             </ToggleDisplay>
                                 <Divider style={{height: "1vh", marginBottom: "4vh"}} />
@@ -333,7 +330,7 @@ export default function DeepMap2({user, firebase}) {
                                 onHide={handleClose}>
                                 <Modal.Header closeButton className="bg-light">
                                     <Modal.Title id="contained-modal-title-vcenter" style={{textAlign: "center"}}>
-                                    {selectedHotel.properties.nom_commercial}
+                                    {selectedHotel.hotelName}
                                     </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body style={{height: "65vh", overflow: "auto"}}>
@@ -448,7 +445,7 @@ export default function DeepMap2({user, firebase}) {
                                     event.preventDefault()
                                     setformValue({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
                                     firebase.addCommentOnHotel({
-                                        hotelId: "testHotelCommentRegistration", 
+                                        hotelId: selectedHotel.id, 
                                         commentTitle: formValue.commentTitle,
                                         status: formValue.status,
                                         bestOf: formValue.bestOf,
@@ -472,7 +469,7 @@ export default function DeepMap2({user, firebase}) {
                     marginTop: "2%",
                     marginBottom: "2%"
                   }}>
-                <h5 className="text-center" style={{marginBottom: "5%"}}><b>Shift Advisor</b></h5>
+                <h3 className="text-center" style={{marginBottom: "5%"}}><b>Shift Advisor</b></h3>
                 
                 <h6 className="text-center"><b>Filtrer les recherches d'hôtels par :</b></h6>
                 <div style={{
@@ -520,7 +517,9 @@ export default function DeepMap2({user, firebase}) {
                 </Form.Row>
                 </div>
             </div>
-            
+            {!!firebase &&
+            <HotelRegistrator firebase={firebase} />}
         </div>
     )
 }
+

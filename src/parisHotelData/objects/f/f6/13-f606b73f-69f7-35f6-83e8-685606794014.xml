@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/f606b73f-69f7-35f6-83e8-685606794014">
+		<dc:identifier>5135174</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="fr">C’est dans une ancienne poste intégralement restaurée que se dresse aujourd’hui ce petit hôtel de charme &amp; salon de thé, au cœur d’Auvers-Sur-Oise.</rdfs:comment>
+		<rdfs:comment xml:lang="en">Former post office restored in a charming hotel, located in the heart of Auvers-sur Oise. The hotel is composed of 8 air-conditioned rooms, breakfast elaborated of fresh and regional products. The hotel is 45min from Paris by car, 353in by train and 30min from the airport.</rdfs:comment>
+		<rdfs:label xml:lang="de">L’Hôtel des Iris</rdfs:label>
+		<rdfs:label xml:lang="en">L’Hôtel des Iris</rdfs:label>
+		<rdfs:label xml:lang="es">L’Hôtel des Iris</rdfs:label>
+		<rdfs:label xml:lang="fr">L’Hôtel des Iris</rdfs:label>
+		<rdfs:label xml:lang="it">L’Hôtel des Iris</rdfs:label>
+		<rdfs:label xml:lang="nl">L’Hôtel des Iris</rdfs:label>
+		<rdfs:label xml:lang="ru">L’Hôtel des Iris</rdfs:label>
+		<rdfs:label xml:lang="zh">L’Hôtel des Iris</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f8620388-f726-3426-b2cb-c4061b615618">
+				<schema:email>contact@tourisme-auverssuroise.fr</schema:email>
+				<schema:legalName>Office de tourisme d'Auvers-sur-Oise Sausseron Impressionnistes</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/88dfc916-3b7b-319f-a055-a39548287ed1">
+				<schema:email>hoteldesiris@gmail.com</schema:email>
+				<schema:telephone>+33 1 30 37 79 18</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.hoteldesiris.com/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6631107-754b-33fb-909a-6317e82fda23">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">C’est dans une ancienne poste intégralement restaurée que se dresse aujourd’hui ce petit hôtel de charme &amp; salon de thé, au cœur d’Auvers-Sur-Oise.</shortDescription>
+				<shortDescription xml:lang="en">Former post office restored in a charming hotel, located in the heart of Auvers-sur Oise. The hotel is composed of 8 air-conditioned rooms, breakfast elaborated of fresh and regional products. The hotel is 45min from Paris by car, 353in by train and 30min from the airport.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<hasReview>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/7b1a39ff-1286-3561-a06f-1aa9f98420cb">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Review" />
+				<hasReviewValue>
+					<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#LabelRating_AccueilVelo">
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#LabelRating" />
+						<rdfs:label xml:lang="en">Accueil Vélo</rdfs:label>
+						<rdfs:label xml:lang="fr">Accueil Vélo</rdfs:label>
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+					</rdf:Description>
+				</hasReviewValue>
+			</rdf:Description>
+		</hasReview>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/438d7b39-e0d3-33eb-adff-974554b91061">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/85e77359-e057-3d52-911c-0b9a301fa5b8">
+						<schema:addressLocality>Auvers-sur-Oise</schema:addressLocality>
+						<schema:postalCode>95430</schema:postalCode>
+						<schema:streetAddress>21 rue du Général de Gaulle</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#95039">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Auvers-sur-Oise</rdfs:label>
+								<rdfs:label xml:lang="fr">Auvers-sur-Oise</rdfs:label>
+								<insee>95039</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1195">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Val-d'Oise</rdfs:label>
+										<rdfs:label xml:lang="fr">Val-d'Oise</rdfs:label>
+										<insee>95</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3ddbef1e-4260-3d24-8474-2378f1a78c9d">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.070585</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.170731</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/eff78538-23e6-31bf-ba47-60e2fbb6d0cb">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Salon de thé ouvert tous les jours, de 7h30 à 12h00 et de 14h30 à 18h30</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f8620388-f726-3426-b2cb-c4061b615618">
+				<schema:email>contact@tourisme-auverssuroise.fr</schema:email>
+				<schema:legalName>Office de tourisme d'Auvers-sur-Oise Sausseron Impressionnistes</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-07-27</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-31T07:31:38.66Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

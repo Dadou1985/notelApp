@@ -700,6 +700,41 @@ async addCommentOnHotel({hotelId, commentTitle, status, bestOf, bullShift, team,
   })
 }
 
+
+async hotelRegistrator({hotelId, hotelName, classement, adresse, room, phone, mail, website, region, departement, code_postal, city, lat, lng}){
+  return this.db.collection("IziLife")
+  .doc("FunSpace")
+  .collection("shiftAdvisor")
+  .doc("hotel")
+  .collection(`${region}`)
+  .doc(`${hotelId}`)
+  .set({
+    hotelName: hotelName,
+    classement: [classement, "Toutes les étoiles"],
+    adresse: adresse,
+    room: room,
+    phone: phone,
+    mail: mail,
+    website: website,
+    region: region,
+    departement: [departement, "Tous les départements"],
+    code_postal: code_postal,
+    city: city,
+    lat: lat,
+    lng: lng,
+    markup: Date.now()
+  })
+}
+
+hotelDataOnAir({region, initialFilter, filter}){
+  return this.db.collection("IziLife")
+  .doc("FunSpace")
+  .collection("shiftAdvisor")
+  .doc("hotel")
+  .collection(region)
+  .where(initialFilter, "==", filter)
+}
+
 }
 
 

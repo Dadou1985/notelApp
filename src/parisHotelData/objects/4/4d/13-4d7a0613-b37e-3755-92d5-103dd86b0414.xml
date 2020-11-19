@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/4d7a0613-b37e-3755-92d5-103dd86b0414">
+		<dc:identifier>5134696</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:comment xml:lang="en">Located in the center of Enghien-les-Bains 15 km from Paris, the Hotel Marie Louise is a charming, quiet, peaceful whose warm and welcoming atmosphere you will enjoy your stay.</rdfs:comment>
+		<rdfs:comment xml:lang="fr">Situé dans le  centre ville d'Enghien-les-Bains à 15 km de Paris, l'Hôtel Marie Louise est un charmant établissement calme, paisible dont l'ambiance chaleureuse et accueillante vous permettra de passer un agréable séjour.</rdfs:comment>
+		<rdfs:label xml:lang="de">Hôtel Marie-Louise</rdfs:label>
+		<rdfs:label xml:lang="en">Hôtel Marie-Louise</rdfs:label>
+		<rdfs:label xml:lang="es">Hôtel Marie-Louise</rdfs:label>
+		<rdfs:label xml:lang="fr">Hôtel Marie-Louise</rdfs:label>
+		<rdfs:label xml:lang="it">Hôtel Marie-Louise</rdfs:label>
+		<rdfs:label xml:lang="nl">Hôtel Marie-Louise</rdfs:label>
+		<rdfs:label xml:lang="ru">Hôtel Marie-Louise</rdfs:label>
+		<rdfs:label xml:lang="zh">Hôtel Marie-Louise</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/aa0b8462-fabd-38e9-af18-3d610c4012ba">
+				<schema:email>info@valdoise-tourisme.com</schema:email>
+				<schema:email>j.guirand@valdoise-tourisme.com</schema:email>
+				<schema:email>m.bachelery@valdoise-tourisme.com</schema:email>
+				<schema:legalName>Val d'Oise Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f38f0d9e-58e4-3558-a023-47f43211fb7f">
+				<schema:email>reservation@hotel-marie-louise.fr</schema:email>
+				<schema:telephone>+33 1 39 64 82 21</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.hotel-marie-louise.fr/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3b03597e-6fc3-38ed-9f77-ae6bfc97836d">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="en">Located in the center of Enghien-les-Bains 15 km from Paris, the Hotel Marie Louise is a charming, quiet, peaceful whose warm and welcoming atmosphere you will enjoy your stay.</shortDescription>
+				<shortDescription xml:lang="fr">Situé dans le  centre ville d'Enghien-les-Bains à 15 km de Paris, l'Hôtel Marie Louise est un charmant établissement calme, paisible dont l'ambiance chaleureuse et accueillante vous permettra de passer un agréable séjour.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/4785d6aa-d829-3b6a-b3bc-0cd091d9803b">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/a9e85f26-0828-31a7-b6ac-2c34fe374f44">
+						<schema:addressLocality>Enghien-les-Bains</schema:addressLocality>
+						<schema:postalCode>95880</schema:postalCode>
+						<schema:streetAddress>49 rue de Malleville</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#95210">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Enghien-les-Bains</rdfs:label>
+								<rdfs:label xml:lang="fr">Enghien-les-Bains</rdfs:label>
+								<insee>95210</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1195">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Val-d'Oise</rdfs:label>
+										<rdfs:label xml:lang="fr">Val-d'Oise</rdfs:label>
+										<insee>95</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/b2100b5c-adde-3f52-a24e-40ef2536791f">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.9674</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.3054</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/aa0b8462-fabd-38e9-af18-3d610c4012ba">
+				<schema:email>info@valdoise-tourisme.com</schema:email>
+				<schema:email>j.guirand@valdoise-tourisme.com</schema:email>
+				<schema:email>m.bachelery@valdoise-tourisme.com</schema:email>
+				<schema:legalName>Val d'Oise Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-10</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-11T07:25:47.637Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

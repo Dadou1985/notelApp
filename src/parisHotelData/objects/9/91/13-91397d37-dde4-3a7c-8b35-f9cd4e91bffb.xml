@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/91397d37-dde4-3a7c-8b35-f9cd4e91bffb">
+		<dc:identifier>4790870</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#RentalAccommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#SelfCateringAccommodation" />
+		<rdfs:comment xml:lang="de">Diese lichtdurchflutete Wohnung auf der 3. Etage in einem ruhigen Gemeinschaftseigentum ist die ideale Unterkunft für Berufstätige oder Paare, die die Region und Paris erkunden wollen.</rdfs:comment>
+		<rdfs:comment xml:lang="nl">Dit appartement ligt op de 3e verdieping van een rustig flatgebouw en is heel licht. Ideaal voor zakenmensen of stellen die Parijs en de regio willen bezoeken.</rdfs:comment>
+		<rdfs:comment xml:lang="es">Este apartamento, situado en una tranquila copropiedad y ubicado en la tercera planta, es muy luminoso. Es ideal para hombres de negocios y parejas que quieran visitar la región y París.</rdfs:comment>
+		<rdfs:comment xml:lang="en">Located in a calm jointly-owned property, this very bright 3rd-floor flat is ideal for business travellers or for couples looking for a base from which to visit Paris and the region.</rdfs:comment>
+		<rdfs:comment xml:lang="fr">Situé dans une copropriété calme, cet appartement du 3ème étage est très lumineux. Idéal pour les hommes d'affaires et les couples désirant visiter la région et Paris.</rdfs:comment>
+		<rdfs:comment xml:lang="zh">本公寓位于一幢安静建筑的四层，采光非常好。非常适合商人或希望参观本地区和巴黎的情侣。</rdfs:comment>
+		<rdfs:label xml:lang="es">Apartamento tranquilo de dos piezas</rdfs:label>
+		<rdfs:label xml:lang="fr">Appartement 2 pièces calme</rdfs:label>
+		<rdfs:label xml:lang="en">Calm, two-roomed flat</rdfs:label>
+		<rdfs:label xml:lang="de">Ruhige Zweizimmerwohnung</rdfs:label>
+		<rdfs:label xml:lang="nl">Rustig 2-kamerappartement</rdfs:label>
+		<rdfs:label xml:lang="zh">安静的2室公寓</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1c33b27d-a443-36b5-8ea1-e8bdfb86da5d">
+				<schema:email>jj.queille@gmail.com</schema:email>
+				<schema:telephone>+33 6 42 08 85 45</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/76bcdc75-7a44-3d0f-be26-afeced517c07">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="de">Diese lichtdurchflutete Wohnung auf der 3. Etage in einem ruhigen Gemeinschaftseigentum ist die ideale Unterkunft für Berufstätige oder Paare, die die Region und Paris erkunden wollen.</shortDescription>
+				<shortDescription xml:lang="nl">Dit appartement ligt op de 3e verdieping van een rustig flatgebouw en is heel licht. Ideaal voor zakenmensen of stellen die Parijs en de regio willen bezoeken.</shortDescription>
+				<shortDescription xml:lang="es">Este apartamento, situado en una tranquila copropiedad y ubicado en la tercera planta, es muy luminoso. Es ideal para hombres de negocios y parejas que quieran visitar la región y París.</shortDescription>
+				<shortDescription xml:lang="en">Located in a calm jointly-owned property, this very bright 3rd-floor flat is ideal for business travellers or for couples looking for a base from which to visit Paris and the region.</shortDescription>
+				<shortDescription xml:lang="fr">Situé dans une copropriété calme, cet appartement du 3ème étage est très lumineux. Idéal pour les hommes d'affaires et les couples désirant visiter la région et Paris.</shortDescription>
+				<shortDescription xml:lang="zh">本公寓位于一幢安静建筑的四层，采光非常好。非常适合商人或希望参观本地区和巴黎的情侣。</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/137e87e6-75c5-39f1-945a-1d51484413e5">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/972c55cc-3c46-3888-9898-a8182f80d2f7">
+						<schema:addressLocality>Saint-Germain-en-Laye</schema:addressLocality>
+						<schema:postalCode>78100</schema:postalCode>
+						<schema:streetAddress>11 rue d'Ourches</schema:streetAddress>
+						<schema:streetAddress>Porte D, 3ème étage droite</schema:streetAddress>
+						<schema:streetAddress>Résidence Les Maréchaux</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#78551">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Saint-Germain-en-Laye</rdfs:label>
+								<rdfs:label xml:lang="fr">Saint-Germain-en-Laye</rdfs:label>
+								<insee>78551</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1178">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Yvelines</rdfs:label>
+										<rdfs:label xml:lang="fr">Yvelines</rdfs:label>
+										<insee>78</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/dbc03204-f5b2-3243-b1de-9c40cbf82772">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.898242</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.081737</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8cb348ae-1657-3763-97af-968b33b70881">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Disponibilités à voir avec le propriétaire.
+L'entrée dans les lieux se fait à partir de 15h, plus de renseignements horaires auprès du propriétaire.</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-13</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-16T06:35:20.476Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/fabfc3d2-efb1-3b81-ab48-7e1534b9051e">
+		<dc:identifier>5000227</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/BedAndBreakfast" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Guesthouse" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#RentalAccommodation" />
+		<rdfs:comment xml:lang="en">Come to "Chez Claudine &amp; Serge" to enjoy a relaxing experience of togetherness for a pleasant stay in Sartrouville.</rdfs:comment>
+		<rdfs:comment xml:lang="es">Entrad en la casa de huéspedes Chez Claudine et Serge para disfrutar de un momento de relajación, de buen ambiente y de una agradable estancia en Sartrouville.</rdfs:comment>
+		<rdfs:comment xml:lang="fr">Entrez "Chez Claudine et Serge" pour un instant de détente, de convivialité et un séjour agréable à Sartrouville.</rdfs:comment>
+		<rdfs:comment xml:lang="nl">Logeer bij Claudine en Serge voor ontspanning en gezelligheid en een aangenaam verblijf in Sartrouville.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Übernachten Sie bei "Chez Claudine et Serge", um sich zu entspannen und ein geselliges Miteinander sowie einen komfortablen Aufenthalt in Sartrouville zu erleben.</rdfs:comment>
+		<rdfs:comment xml:lang="zh">敬请入住“Chez Claudine et Serge”民宿客房，在Sartrouville放松片刻，度过愉快、友好的居住时光。</rdfs:comment>
+		<rdfs:label xml:lang="nl">B&amp;B - Chez Claudine et Serge</rdfs:label>
+		<rdfs:label xml:lang="es">Casa de huéspedes Chez Claudine et Serge</rdfs:label>
+		<rdfs:label xml:lang="fr">Chambre d'hôtes - Chez Claudine et Serge</rdfs:label>
+		<rdfs:label xml:lang="de">Gästezimmer - Chez Claudine und Serge</rdfs:label>
+		<rdfs:label xml:lang="en">Guestroom - Chez Claudine &amp; Serge</rdfs:label>
+		<rdfs:label xml:lang="zh">民宿客房 - Chez Claudine et Serge</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/4c36841b-fc03-3458-b151-5f892d077cc8">
+				<schema:email>cbauin@free.fr</schema:email>
+				<schema:telephone>+33 1 39 13 25 77</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/39af4234-93dd-3f99-a1fb-d67491d6f49f">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="en">Come to "Chez Claudine &amp; Serge" to enjoy a relaxing experience of togetherness for a pleasant stay in Sartrouville.</shortDescription>
+				<shortDescription xml:lang="es">Entrad en la casa de huéspedes Chez Claudine et Serge para disfrutar de un momento de relajación, de buen ambiente y de una agradable estancia en Sartrouville.</shortDescription>
+				<shortDescription xml:lang="fr">Entrez "Chez Claudine et Serge" pour un instant de détente, de convivialité et un séjour agréable à Sartrouville.</shortDescription>
+				<shortDescription xml:lang="nl">Logeer bij Claudine en Serge voor ontspanning en gezelligheid en een aangenaam verblijf in Sartrouville.</shortDescription>
+				<shortDescription xml:lang="de">Übernachten Sie bei "Chez Claudine et Serge", um sich zu entspannen und ein geselliges Miteinander sowie einen komfortablen Aufenthalt in Sartrouville zu erleben.</shortDescription>
+				<shortDescription xml:lang="zh">敬请入住“Chez Claudine et Serge”民宿客房，在Sartrouville放松片刻，度过愉快、友好的居住时光。</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/61362adf-79b0-30bc-a963-8ec12d10b1f0">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/50bce799-5245-3b80-aa85-63eea576ea55">
+						<schema:addressLocality>Sartrouville</schema:addressLocality>
+						<schema:postalCode>78500</schema:postalCode>
+						<schema:streetAddress>95 rue Louise Michel</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#78586">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Sartrouville</rdfs:label>
+								<rdfs:label xml:lang="fr">Sartrouville</rdfs:label>
+								<insee>78586</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1178">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Yvelines</rdfs:label>
+										<rdfs:label xml:lang="fr">Yvelines</rdfs:label>
+										<insee>78</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8b61197f-f5db-3ecb-adb1-e8819e57edd3">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.93656</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.164452</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/67f3efb2-af5d-36cb-ad15-080c4aec9d06">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Voir les dates de disponibilité directement avec le propriétaire.</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-30</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-16T06:35:20.996Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

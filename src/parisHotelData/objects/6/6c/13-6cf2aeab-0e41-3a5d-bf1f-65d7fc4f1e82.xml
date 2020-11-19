@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/6cf2aeab-0e41-3a5d-bf1f-65d7fc4f1e82">
+		<dc:identifier>724855</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/FoodEstablishment" />
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="http://schema.org/Restaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#FoodEstablishment" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelRestaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Restaurant" />
+		<rdfs:comment xml:lang="fr">Hôtel de charme au cœur de Fontainebleau, idéalement situé, face au château et au théâtre de Fontainebleau, l’hôtel le Richelieu est une ancienne annexe du château de Fontainebleau.</rdfs:comment>
+		<rdfs:comment xml:lang="en">Opposite the theater and at château Fontainebleau, the hotel has rooms all equipped with shower, bath, WC, satellite TV, telephone and paid parking proximité.Accès Wi-Fi. It has a restaurant Bacchus.
+
+Activities nearby:
+Climbing, golf, museum, hiking.</rdfs:comment>
+		<rdfs:label xml:lang="de">Hôtel Le Richelieu</rdfs:label>
+		<rdfs:label xml:lang="en">Hôtel Le Richelieu</rdfs:label>
+		<rdfs:label xml:lang="es">Hôtel Le Richelieu</rdfs:label>
+		<rdfs:label xml:lang="fr">Hôtel Le Richelieu</rdfs:label>
+		<rdfs:label xml:lang="it">Hôtel Le Richelieu</rdfs:label>
+		<rdfs:label xml:lang="nl">Hôtel Le Richelieu</rdfs:label>
+		<rdfs:label xml:lang="ru">Hôtel Le Richelieu</rdfs:label>
+		<rdfs:label xml:lang="zh">Hôtel Le Richelieu</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/e55a23a4-2359-3cac-bb33-81ef0b42c8bd">
+				<schema:email>christelle@fontainebleau-tourisme.com</schema:email>
+				<schema:email>conseil-sejour@barbizontourisme.fr</schema:email>
+				<schema:email>edwige.fontainebleau@gmail.com</schema:email>
+				<schema:email>emilie.fontainebleautourisme@gmail.com</schema:email>
+				<schema:email>laura.fontainebleautourisme@gmail.com</schema:email>
+				<schema:email>magali@fontainebleau-tourisme.com</schema:email>
+				<schema:email>stessier.fontainebleautourisme@gmail.com</schema:email>
+				<schema:legalName>Fontainebleau Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1db24fc4-b534-39bf-bdaf-152c6f98730e">
+				<schema:legalName>Seine et Marne Attractivité - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/758d9e05-6e0a-3fc0-aee4-5a7081bc3850">
+				<schema:email>richelieu@bhrservice.com</schema:email>
+				<schema:telephone>+33 1 64 22 26 46</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.richelieu-fontainebleau.com/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3b666264-b1d1-3846-bcfc-952a5708b02a">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Hôtel de charme au cœur de Fontainebleau, idéalement situé, face au château et au théâtre de Fontainebleau, l’hôtel le Richelieu est une ancienne annexe du château de Fontainebleau.</shortDescription>
+				<shortDescription xml:lang="en">Opposite the theater and at château Fontainebleau, the hotel has rooms all equipped with shower, bath, WC, satellite TV, telephone and paid parking proximité.Accès Wi-Fi. It has a restaurant Bacchus.
+
+Activities nearby:
+Climbing, golf, museum, hiking.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/63f818e3-88d2-3700-994b-11d0478abbd5">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d8368892-4640-3672-90b3-77f4dd23658e">
+						<schema:addressLocality>Fontainebleau</schema:addressLocality>
+						<schema:postalCode>77300</schema:postalCode>
+						<schema:streetAddress>4 rue Richelieu</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#77186">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Fontainebleau</rdfs:label>
+								<rdfs:label xml:lang="fr">Fontainebleau</rdfs:label>
+								<insee>77186</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1177">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Seine-et-Marne</rdfs:label>
+										<rdfs:label xml:lang="fr">Seine-et-Marne</rdfs:label>
+										<insee>77</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/5cee5f7a-1c8a-33ac-b622-1e0edf426190">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.403436</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.698183</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/e55a23a4-2359-3cac-bb33-81ef0b42c8bd">
+				<schema:email>christelle@fontainebleau-tourisme.com</schema:email>
+				<schema:email>conseil-sejour@barbizontourisme.fr</schema:email>
+				<schema:email>edwige.fontainebleau@gmail.com</schema:email>
+				<schema:email>emilie.fontainebleautourisme@gmail.com</schema:email>
+				<schema:email>laura.fontainebleautourisme@gmail.com</schema:email>
+				<schema:email>magali@fontainebleau-tourisme.com</schema:email>
+				<schema:email>stessier.fontainebleautourisme@gmail.com</schema:email>
+				<schema:legalName>Fontainebleau Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-30</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-17T07:23:11.083Z</lastUpdateDatatourisme>
+		<offers>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/96a8bb2c-2fa3-3fd5-98ba-ce433e561fb1">
+				<schema:priceSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/492ebfe1-becd-3d26-b0db-6db2f419d8ae">
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">140</schema:maxPrice>
+						<schema:maxPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">79</schema:maxPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">140</schema:minPrice>
+						<schema:minPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">79</schema:minPrice>
+						<schema:priceCurrency>EUR</schema:priceCurrency>
+						<rdf:type rdf:resource="http://schema.org/PriceSpecification" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PriceSpecification" />
+						<appliesOnPeriod>
+							<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f41df8e6-063a-354a-a76d-6c32a500cacf">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Period" />
+								<endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-31</endDate>
+								<startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-01</startDate>
+							</rdf:Description>
+						</appliesOnPeriod>
+					</rdf:Description>
+				</schema:priceSpecification>
+				<rdf:type rdf:resource="http://schema.org/Offer" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Offer" />
+			</rdf:Description>
+		</offers>
+	</rdf:Description>
+</rdf:RDF>

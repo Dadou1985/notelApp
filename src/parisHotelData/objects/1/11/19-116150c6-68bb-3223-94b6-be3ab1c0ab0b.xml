@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/19/116150c6-68bb-3223-94b6-be3ab1c0ab0b">
+		<dc:identifier>7441a59c-0a81-11e9-bec9-0050569a22ea</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#CollectiveAccommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HolidayResort" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdfs:label xml:lang="fr">Villa Daubenton</rdfs:label>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/73f9361b-7fdb-3a8c-8c11-182ef0152392">
+				<schema:email>opendata@parisinfo.com</schema:email>
+				<schema:legalName>Office de Tourisme de Paris</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.parisinfo.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/73f9361b-7fdb-3a8c-8c11-182ef0152392">
+				<schema:email>opendata@parisinfo.com</schema:email>
+				<schema:legalName>Office de Tourisme de Paris</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.parisinfo.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/936ece7d-e0d6-330b-a0cc-e4024582f18e">
+				<schema:email>contact@villa-daubenton.com</schema:email>
+				<schema:telephone>+33 1 55 43 25 50</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.villa-daubenton.com/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasReview>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/50877d43-0356-3f59-8645-d2679f975701">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Review" />
+				<hasReviewValue>
+					<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#ScaleRating_1etoile">
+						<schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</schema:ratingValue>
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#ScaleRating" />
+						<rdfs:label xml:lang="en">1 étoile</rdfs:label>
+						<rdfs:label xml:lang="fr">1 étoile</rdfs:label>
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#CampingAndCaravanning" />
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#ClubOrHolidayVillage" />
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HolidayCentre" />
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+						<isCompliantWith rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#SelfCateringAccommodation" />
+					</rdf:Description>
+				</hasReviewValue>
+			</rdf:Description>
+		</hasReview>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d2cf2144-0336-3380-91f4-f7b44aaf1fe2">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/bf5c2f8a-e024-3fdb-bdc9-ab03a64e3f66">
+						<schema:addressLocality>Paris</schema:addressLocality>
+						<schema:postalCode>75005</schema:postalCode>
+						<schema:streetAddress>34 rue de l'Arbalète</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#75056">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Paris</rdfs:label>
+								<rdfs:label xml:lang="fr">Paris</rdfs:label>
+								<insee>75056</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1175">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Paris</rdfs:label>
+										<rdfs:label xml:lang="fr">Paris</rdfs:label>
+										<insee>75</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/647561c5-ffcf-35a9-b036-5f83a7def659">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.8396088</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.3464868999999453</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-08-28</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-03T09:10:53.38Z</lastUpdateDatatourisme>
+		<reducedMobilityAccess rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</reducedMobilityAccess>
+	</rdf:Description>
+</rdf:RDF>

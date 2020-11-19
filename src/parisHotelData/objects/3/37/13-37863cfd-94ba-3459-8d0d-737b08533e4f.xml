@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/37863cfd-94ba-3459-8d0d-737b08533e4f">
+		<dc:identifier>4785677</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/FoodEstablishment" />
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="http://schema.org/Restaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#FoodEstablishment" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelRestaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Restaurant" />
+		<rdfs:comment xml:lang="fr">Autrefois Résidence du roi soleil, Louis XIV, Le Pavillon Henri IV vous accueille dans un cadre d’exception avec un panorama exceptionnel sur la Vallée de la Seine jusqu’à Paris depuis sa terrasse.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Das "Pavillon Henri IV", ehemals Residenz des Sonnenkönigs Louis XIV, empfängt Sie in einer außergewöhnlichen Umgebung mit einem einzigartigen Panorama auf das Seinetal bis nach Paris von der Terrasse aus.</rdfs:comment>
+		<rdfs:comment xml:lang="es">El Pavillon Henri, residencia en otra época del rey Sol, Luis XIV, os abre sus puertas en un entorno excepcional y un panorama sorprendente al valle del Sena hasta París desde su terraza.</rdfs:comment>
+		<rdfs:comment xml:lang="en">Former Residence of the Sun King, Louis XIV, Le Pavillon Henri IV is an outstanding venue with a terrace offering exceptional panoramic views over the Seine Valley as far as Paris.</rdfs:comment>
+		<rdfs:comment xml:lang="nl">Le Pavillon Henri IV was vroeger de residentie van de zonnekoning, Lodewijk XIV, en verwelkomt u in een geweldige omgeving met een prachtig uitzicht vanaf het terras op de vallei van de Seine, tot aan Parijs.</rdfs:comment>
+		<rdfs:comment xml:lang="zh">Pavillon Henri IV昔日曾是太阳王路易十四的宅邸，从这里的露台可以眺望塞纳河谷直至巴黎的壮美全景。如今，这家酒店在如此独特的秀美风光中欢迎您的到来。</rdfs:comment>
+		<rdfs:label xml:lang="de">4-Sterne-Hotel "Pavillon Henri IV"</rdfs:label>
+		<rdfs:label xml:lang="en">Hôtel Pavillon Henri IV****</rdfs:label>
+		<rdfs:label xml:lang="fr">Hôtel Pavillon Henri IV****</rdfs:label>
+		<rdfs:label xml:lang="zh">Hôtel Pavillon Henri IV（巴维农亨利四世酒店，四星级）</rdfs:label>
+		<rdfs:label xml:lang="es">Hotel Pavillon Henri IV****</rdfs:label>
+		<rdfs:label xml:lang="nl">Hotel Pavillon Henri IV****</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/1a1d9c0d-ada3-3038-ab1c-22263962ea3b">
+				<schema:legalName>Apidae Tourisme - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/5b68a175-b728-3e2e-9000-28735ff8b90b">
+				<schema:email>reservation@pavillonhenri4.fr</schema:email>
+				<schema:telephone>+33 1 39 10 15 15</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.pavillonhenri4.fr/fr/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/b292b1d3-dcbc-3818-9032-c103c49eb192">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Autrefois Résidence du roi soleil, Louis XIV, Le Pavillon Henri IV vous accueille dans un cadre d’exception avec un panorama exceptionnel sur la Vallée de la Seine jusqu’à Paris depuis sa terrasse.</shortDescription>
+				<shortDescription xml:lang="de">Das "Pavillon Henri IV", ehemals Residenz des Sonnenkönigs Louis XIV, empfängt Sie in einer außergewöhnlichen Umgebung mit einem einzigartigen Panorama auf das Seinetal bis nach Paris von der Terrasse aus.</shortDescription>
+				<shortDescription xml:lang="es">El Pavillon Henri, residencia en otra época del rey Sol, Luis XIV, os abre sus puertas en un entorno excepcional y un panorama sorprendente al valle del Sena hasta París desde su terraza.</shortDescription>
+				<shortDescription xml:lang="en">Former Residence of the Sun King, Louis XIV, Le Pavillon Henri IV is an outstanding venue with a terrace offering exceptional panoramic views over the Seine Valley as far as Paris.</shortDescription>
+				<shortDescription xml:lang="nl">Le Pavillon Henri IV was vroeger de residentie van de zonnekoning, Lodewijk XIV, en verwelkomt u in een geweldige omgeving met een prachtig uitzicht vanaf het terras op de vallei van de Seine, tot aan Parijs.</shortDescription>
+				<shortDescription xml:lang="zh">Pavillon Henri IV昔日曾是太阳王路易十四的宅邸，从这里的露台可以眺望塞纳河谷直至巴黎的壮美全景。如今，这家酒店在如此独特的秀美风光中欢迎您的到来。</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/5662c115-543e-332e-ae0c-cd1a4ee2c2e9">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d127671d-80da-37f5-bbda-4d943621f1bd">
+						<schema:addressLocality>Saint-Germain-en-Laye</schema:addressLocality>
+						<schema:postalCode>78100</schema:postalCode>
+						<schema:streetAddress>19 - 21 Rue Thiers</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#78551">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Saint-Germain-en-Laye</rdfs:label>
+								<rdfs:label xml:lang="fr">Saint-Germain-en-Laye</rdfs:label>
+								<insee>78551</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1178">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Yvelines</rdfs:label>
+										<rdfs:label xml:lang="fr">Yvelines</rdfs:label>
+										<insee>78</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/5b2cc78f-b321-3687-9eae-cef63901ad9a">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.897806</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.100891</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3cd71016-b116-3d4d-8bbf-75eed30bcfcc">
+						<schema:closes rdf:datatype="http://www.w3.org/2001/XMLSchema#time">23:00:00</schema:closes>
+						<schema:opens rdf:datatype="http://www.w3.org/2001/XMLSchema#time">09:00:00</schema:opens>
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Horaires à confirmer auprès de la réception</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/362a9c7e-147a-31ba-adb1-917301a0cfc7">
+				<schema:email>emilie.prai@saintgermainenlaye.fr</schema:email>
+				<schema:email>emilie.rochat@seine-saintgermain.fr</schema:email>
+				<schema:legalName>Office de Tourisme Intercommunal de Saint Germain Boucles de Seine</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-16T06:35:20.296Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

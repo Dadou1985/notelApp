@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/6065f0db-e60a-35d6-8751-3e4fcdde910a">
+		<dc:identifier>5134925</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/FoodEstablishment" />
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="http://schema.org/Restaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#FoodEstablishment" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelRestaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Restaurant" />
+		<rdfs:comment xml:lang="fr">Idéalement situé sur N184 à Eragny près de Cergy Pontoise, notre hôtel-restaurant familial et convivial vous séduira par son excellent rapport qualité prix et par la qualité de sa cuisine traditionnelle. Nous proposons 42 chambres rénovées 2017.</rdfs:comment>
+		<rdfs:comment xml:lang="en">Ideally located on the Ile N184 in the town near Eragny Cergy Pontoise, our Hotel Restaurant Friendly family impresses with its excellent value and quality of its traditional cuisine.</rdfs:comment>
+		<rdfs:label xml:lang="fr">Bleu France Eragny</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/a4e30e46-1576-3803-9b5f-5d1370842ebc">
+				<schema:email>accueil@ot-cergypontoise.fr</schema:email>
+				<schema:email>cherault@ot-cergypontoise.fr</schema:email>
+				<schema:email>cpagnoux@ot-cergypontoise.fr</schema:email>
+				<schema:email>cpratte@ot-cergypontoise.fr</schema:email>
+				<schema:email>mroux@ot-cergypontoise.fr</schema:email>
+				<schema:email>vvergneaux@ot-cergypontoise.fr</schema:email>
+				<schema:legalName>Office de Tourisme de Cergy-Pontoise - Porte du Vexin</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/3a90656a-5fec-3f4b-97bc-f527c4abacb1">
+				<schema:email>contact@hotel-bleu-france.com</schema:email>
+				<schema:telephone>+33 1 30 36 53 83</schema:telephone>
+				<schema:telephone>+33 1 30 37 86 00</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>http://www.hotel-bleu-france.com/</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8ac5b0d8-f67c-3f76-8523-707521fc508f">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Idéalement situé sur N184 à Eragny près de Cergy Pontoise, notre hôtel-restaurant familial et convivial vous séduira par son excellent rapport qualité prix et par la qualité de sa cuisine traditionnelle. Nous proposons 42 chambres rénovées 2017.</shortDescription>
+				<shortDescription xml:lang="en">Ideally located on the Ile N184 in the town near Eragny Cergy Pontoise, our Hotel Restaurant Friendly family impresses with its excellent value and quality of its traditional cuisine.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/65ddc10f-0364-36cb-aa9b-d20e71b58836">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d3221751-64de-359d-a6c6-183aa3f7f82f">
+						<schema:addressLocality>Éragny</schema:addressLocality>
+						<schema:postalCode>95610</schema:postalCode>
+						<schema:streetAddress>Rue des Pinsons</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#95218">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Éragny</rdfs:label>
+								<rdfs:label xml:lang="fr">Éragny</rdfs:label>
+								<insee>95218</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1195">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Val-d'Oise</rdfs:label>
+										<rdfs:label xml:lang="fr">Val-d'Oise</rdfs:label>
+										<insee>95</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a512005-193f-346d-9f82-ad277bc3cac1">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.019662</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.096757</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/27157105-d592-34b8-a8dd-38c5e2603018">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+						<additionalInformation xml:lang="fr">Accueil Hôtel : Semaine : de 6h30 à 23h00 - Samedi : de 9h00 à 22h00 - Dimanche et jour férié : de 9h00 à 13h00.</additionalInformation>
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/a4e30e46-1576-3803-9b5f-5d1370842ebc">
+				<schema:email>accueil@ot-cergypontoise.fr</schema:email>
+				<schema:email>cherault@ot-cergypontoise.fr</schema:email>
+				<schema:email>cpagnoux@ot-cergypontoise.fr</schema:email>
+				<schema:email>cpratte@ot-cergypontoise.fr</schema:email>
+				<schema:email>mroux@ot-cergypontoise.fr</schema:email>
+				<schema:email>vvergneaux@ot-cergypontoise.fr</schema:email>
+				<schema:legalName>Office de Tourisme de Cergy-Pontoise - Porte du Vexin</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-25</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-23T06:27:02.695Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>

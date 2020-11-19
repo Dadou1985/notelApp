@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns="https://www.datatourisme.gouv.fr/ontology/core#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:align="https://www.datatourisme.gouv.fr/ontology/alignment#"
+	xmlns:olo="http://purl.org/ontology/olo/core#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:kb="https://www.datatourisme.gouv.fr/resource/core#"
+	xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/13/911ee57b-5951-3167-b393-e5183949a4d5">
+		<dc:identifier>4845360</dc:identifier>
+		<rdf:type rdf:resource="http://schema.org/FoodEstablishment" />
+		<rdf:type rdf:resource="http://schema.org/Hotel" />
+		<rdf:type rdf:resource="http://schema.org/LodgingBusiness" />
+		<rdf:type rdf:resource="http://schema.org/Restaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Accommodation" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#FoodEstablishment" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Hotel" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelRestaurant" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#HotelTrade" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PlaceOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PointOfInterest" />
+		<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Restaurant" />
+		<rdfs:comment xml:lang="fr">Le Crowne Plaza Paris - Charles de Gaulle est un établissement 4 étoiles idéalement situé à proximité de Chantilly, de l’aéroport Paris-Charles de Gaulle et des parcs d’activités de Villepinte et du Bourget.</rdfs:comment>
+		<rdfs:comment xml:lang="en">The Crowne Plaza Paris - Charles de Gaulle, a 4-star hotel, is strategically
+located for an easy access to Chantilly, Paris CDG airport and Villepinte and Le
+Bourget Exhibition Centres.</rdfs:comment>
+		<rdfs:label xml:lang="de">Crowne Plaza Paris - Charles de Gaulle</rdfs:label>
+		<rdfs:label xml:lang="en">Crowne Plaza Paris - Charles de Gaulle</rdfs:label>
+		<rdfs:label xml:lang="es">Crowne Plaza Paris - Charles de Gaulle</rdfs:label>
+		<rdfs:label xml:lang="fr">Crowne Plaza Paris - Charles de Gaulle</rdfs:label>
+		<rdfs:label xml:lang="it">Crowne Plaza Paris - Charles de Gaulle</rdfs:label>
+		<rdfs:label xml:lang="nl">Crowne Plaza Paris - Charles de Gaulle</rdfs:label>
+		<rdfs:label xml:lang="ru">Crowne Plaza Paris - Charles de Gaulle</rdfs:label>
+		<rdfs:label xml:lang="zh">Crowne Plaza Paris - Charles de Gaulle</rdfs:label>
+		<COVID19InOperationConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19InOperationConfirmed>
+		<COVID19OpeningPeriodsConfirmed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</COVID19OpeningPeriodsConfirmed>
+		<hasBeenCreatedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/326aac4c-6341-3461-aeca-7d165344b7ec">
+				<schema:email>accueil-ot@ville-roissy95.fr</schema:email>
+				<schema:email>ecouen@grand-roissy-tourisme.com</schema:email>
+				<schema:email>luzarches@grand-roissy-tourisme.com</schema:email>
+				<schema:email>mlegris@ville-roissy95.fr</schema:email>
+				<schema:legalName>Office de Tourisme Grand Roissy</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</hasBeenCreatedBy>
+		<hasBeenPublishedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/8a9feb4b-2cbd-3d2c-b507-bd6c6776b23b">
+				<schema:legalName>Apidae Tourisme Scic SA - source : Apidae Tourisme</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.apidae-tourisme.com/</foaf:homepage>
+			</rdf:Description>
+		</hasBeenPublishedBy>
+		<hasContact>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/d031828e-0b34-3be2-8666-1924b7df847f">
+				<schema:email>paris.cdg@cppariscdg.com</schema:email>
+				<schema:telephone>+33 1 39 94 70 79</schema:telephone>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+				<foaf:homepage>https://www.ihg.com/crowneplaza/hotels/fr/fr/roissy-en-france/parca/hoteldetail?cm_mmc=GoogleMaps-_-CP-_-FR-_-PARCA</foaf:homepage>
+			</rdf:Description>
+		</hasContact>
+		<hasDescription>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/b47e3480-52b3-31e2-9c0c-6339730c2b02">
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Description" />
+				<shortDescription xml:lang="fr">Le Crowne Plaza Paris - Charles de Gaulle est un établissement 4 étoiles idéalement situé à proximité de Chantilly, de l’aéroport Paris-Charles de Gaulle et des parcs d’activités de Villepinte et du Bourget.</shortDescription>
+				<shortDescription xml:lang="en">The Crowne Plaza Paris - Charles de Gaulle, a 4-star hotel, is strategically
+located for an easy access to Chantilly, Paris CDG airport and Villepinte and Le
+Bourget Exhibition Centres.</shortDescription>
+			</rdf:Description>
+		</hasDescription>
+		<isLocatedAt>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/28aff665-8176-329b-b2a8-bd91286bb78e">
+				<schema:address>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/54f62192-ea60-3de7-89d7-ecfa54bd2040">
+						<schema:addressLocality>Roissy-en-France</schema:addressLocality>
+						<schema:postalCode>95700</schema:postalCode>
+						<schema:streetAddress>8 allée du Verger</schema:streetAddress>
+						<rdf:type rdf:resource="http://schema.org/PostalAddress" />
+						<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#PostalAddress" />
+						<hasAddressCity>
+							<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#95527">
+								<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#City" />
+								<rdfs:label xml:lang="en">Roissy-en-France</rdfs:label>
+								<rdfs:label xml:lang="fr">Roissy-en-France</rdfs:label>
+								<insee>95527</insee>
+								<isPartOfDepartment>
+									<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France1195">
+										<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Department" />
+										<rdfs:label xml:lang="en">Val-d'Oise</rdfs:label>
+										<rdfs:label xml:lang="fr">Val-d'Oise</rdfs:label>
+										<insee>95</insee>
+										<isPartOfRegion>
+											<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France11">
+												<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Region" />
+												<rdfs:label xml:lang="en">Île-de-France</rdfs:label>
+												<rdfs:label xml:lang="fr">Île-de-France</rdfs:label>
+												<insee>11</insee>
+												<isPartOfCountry>
+													<rdf:Description rdf:about="https://www.datatourisme.gouv.fr/resource/core#France">
+														<rdf:type rdf:resource="http://schema.org/Country" />
+														<rdfs:label xml:lang="en">France</rdfs:label>
+														<rdfs:label xml:lang="fr">France</rdfs:label>
+													</rdf:Description>
+												</isPartOfCountry>
+											</rdf:Description>
+										</isPartOfRegion>
+									</rdf:Description>
+								</isPartOfDepartment>
+							</rdf:Description>
+						</hasAddressCity>
+					</rdf:Description>
+				</schema:address>
+				<schema:geo>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/cb9b739b-bd7d-3323-99f2-adc66c73e5fa">
+						<schema:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.001</schema:latitude>
+						<schema:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.5187</schema:longitude>
+						<rdf:type rdf:resource="http://schema.org/GeoCoordinates" />
+					</rdf:Description>
+				</schema:geo>
+				<schema:openingHoursSpecification>
+					<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/f6c956b7-965c-3ae9-ab17-c481c2f87997">
+						<schema:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-01T00:00:00</schema:validFrom>
+						<schema:validThrough rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-31T23:59:59</schema:validThrough>
+						<rdf:type rdf:resource="http://schema.org/OpeningHoursSpecification" />
+					</rdf:Description>
+				</schema:openingHoursSpecification>
+				<rdf:type rdf:resource="http://schema.org/Place" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Place" />
+			</rdf:Description>
+		</isLocatedAt>
+		<isOwnedBy>
+			<rdf:Description rdf:about="https://data.datatourisme.gouv.fr/326aac4c-6341-3461-aeca-7d165344b7ec">
+				<schema:email>accueil-ot@ville-roissy95.fr</schema:email>
+				<schema:email>ecouen@grand-roissy-tourisme.com</schema:email>
+				<schema:email>luzarches@grand-roissy-tourisme.com</schema:email>
+				<schema:email>mlegris@ville-roissy95.fr</schema:email>
+				<schema:legalName>Office de Tourisme Grand Roissy</schema:legalName>
+				<rdf:type rdf:resource="http://schema.org/Organization" />
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
+				<rdf:type rdf:resource="https://www.datatourisme.gouv.fr/ontology/core#Agent" />
+			</rdf:Description>
+		</isOwnedBy>
+		<lastUpdate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-01</lastUpdate>
+		<lastUpdateDatatourisme rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-23T06:27:02.692Z</lastUpdateDatatourisme>
+	</rdf:Description>
+</rdf:RDF>
