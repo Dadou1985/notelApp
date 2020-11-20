@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Map, {Marker} from 'react-map-gl'
-import {Form, Button, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {Form, Button, Modal, OverlayTrigger, Tooltip, Dropdown, DropdownButton} from 'react-bootstrap'
 import MarkerImg from './markerImgAdvisor'
 import Team from '../../svg/team.svg'
 import Management from '../../svg/management.svg'
@@ -14,7 +14,7 @@ import Rating from '@material-ui/lab/Rating'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined'
-import axios from 'axios'
+import DepartementDetails from '../../../hotels/departementDetailsSheet.json'
 import HotelRegistrator from './hotelRegitrator'
 
 
@@ -24,17 +24,13 @@ export default function DeepMap2({user, firebase}) {
     const [selectedHotel, setselectedHotel] = useState(null)
     const [list, setList] = useState(false)
     const [region, setRegion] = useState("ILE-DE-FRANCE")
-    const [initialFilter, setInitialFilter] = useState("code_postal")
-    const [filter, setFilter] = useState("75015")
+    const [initialFilter, setInitialFilter] = useState("departement")
+    const [filter, setFilter] = useState(["YVELINES", "Tous les départements"])
     const [geo, setGeo] = useState({geo: []})
-    const [operator, setOperator] = useState("==")
     const [show, setShow] = useState(false)
     const [details, setDetails] = useState(false)
     const [comment, setComment] = useState(false)
-
-    const yes = "oui"
-    const no = "non"
-
+    const [zoom, setZoom] = useState(10)
 
     const [formValue, setformValue] = useState({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
 
@@ -83,14 +79,20 @@ export default function DeepMap2({user, firebase}) {
         longitude: 2.333333,
         width: "65%",
         height: "100%",
-        zoom: 10
+        zoom: zoom
     })
 
-    const handleZone = () => {
-        const dept = document.getElementById("zone")
-        const deptValue = dept.options[dept.selectedIndex].text
-        setFilter("code_postal")
-        setFilter(deptValue)
+    const handleDepartement = (departement, lat, lng) => {
+        
+        setInitialFilter("departement")
+        setFilter([departement, "Tous les départements"])
+        setviewPort({
+            latitude: lat,
+            longitude: lng,
+            width: "65%",
+            height: "100%",
+            zoom: zoom
+        })
     }
 
     const handleStars = () => {
@@ -123,7 +125,7 @@ export default function DeepMap2({user, firebase}) {
                     }
      },[region, filter, initialFilter])
 
-     console.log(info)
+     console.log(zoom)
 
     return (
         <div
@@ -446,6 +448,7 @@ export default function DeepMap2({user, firebase}) {
                                     setformValue({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
                                     firebase.addCommentOnHotel({
                                         hotelId: selectedHotel.id, 
+                                        region: selectedHotel.region,
                                         commentTitle: formValue.commentTitle,
                                         status: formValue.status,
                                         bestOf: formValue.bestOf,
@@ -469,12 +472,42 @@ export default function DeepMap2({user, firebase}) {
                     marginTop: "2%",
                     marginBottom: "2%"
                   }}>
-                <h3 className="text-center" style={{marginBottom: "5%"}}><b>Shift Advisor</b></h3>
+                <h3 className="text-center" style={{marginBottom: "3%"}}><b>Shift Advisor</b></h3>
+                <Form.Group style={{
+                    display: "flex",
+                    flexFlow: "column",
+                    alignItems: "center"
+                }}>
+                <Form.Label className="text-center" value={geo} style={{width: "12vw", marginBottom: "%"}}>Choisir une région</Form.Label>
+                <select className="selectpicker" id="region" style={{width: "14vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}} 
+                onChange={(e) => {
+                    setRegion({[e.target.name]: e.target.value})
+                }}>
+                    <option>ILE-DE-FRANCE</option>
+                    <option>AUVERGNE-RHONE-ALPES</option>
+                    <option>PROVENCE-ALPES-COTE D'AZUR</option>
+                    <option>OCCITANIE</option>
+                    <option>NOUVELLE-AQUITAINE</option>
+                    <option>GRAND EST</option>
+                    <option>BRETAGNE</option>
+                    <option>BOURGOGNE-FRANCHE-COMTE</option>
+                    <option>NORMANDIE</option>
+                    <option>PAYS DE LA LOIRE</option>
+                    <option>HAUTS-DE-FRANCE</option>
+                    <option>CENTRE VAL DE LOIRE</option>
+                    <option>CORSE</option>
+                    <option>LA REUNION</option>
+                    <option>GUADELOUPE</option>
+                    <option>MARTINIQUE</option>
+                    <option>GUYANE</option>
+                    <option>MAYOTTE</option>
+                </select>
+                </Form.Group>
                 
                 <h6 className="text-center"><b>Filtrer les recherches d'hôtels par :</b></h6>
                 <div style={{
                     display: "flex",
-                    flexFlow: "row",
+                    flexFlow: "row wrap",
                     justifyContent: "space-around"}}>
                 <Form.Row>
                 <Form.Group style={{
@@ -482,18 +515,12 @@ export default function DeepMap2({user, firebase}) {
                     flexFlow: "column",
                     alignItems: "center"
                 }}>
-                <Form.Label className="text-center" value={geo} style={{width: "12vw"}}>Département</Form.Label>
-                <select className="selectpicker" id="zone" style={{width: "14vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}}>
-                <option>Tous les départements</option>
-                <option>Paris</option>
-                <option>Hauts-de-Seine</option>
-                <option>Val d'Oise</option>
-                <option>Val de Marne</option>
-                <option>Seine St Denis</option>
-                <option>Seine et Marne</option>
-                <option>Yvelines</option>
-                </select>
-                <Button variant="dark" size="sm" style={{width: "7vw", marginTop: "5%"}} onClick={handleZone}>Filtrer</Button>
+                
+                <DropdownButton id="dropdown-basic-button" title="Départements">
+                {DepartementDetails.map(details => (
+                    <Dropdown.Item  onClick={()=>{handleDepartement(details.nom, details.coordinates[0], details.coordinates[1], setZoom(details.zoom))}}>{details.nom}</Dropdown.Item>
+                    ))}
+                </DropdownButton>
                 </Form.Group>
                     </Form.Row>
                     <Form.Row>
@@ -511,14 +538,27 @@ export default function DeepMap2({user, firebase}) {
                         <option>4 étoiles</option>
                         <option>5 étoiles</option>
                     </select>
-
-                    <Button variant="dark" size="sm" style={{width: "7vw", marginTop: "5%"}} onClick={handleStars}>Filtrer</Button>
                     </Form.Group>
                 </Form.Row>
+                <Form.Group style={{
+                    display: "flex",
+                    flexFlow: "column",
+                    alignItems: "center"
+                }}>
+                <Form.Label className="text-center" value={geo} style={{width: "12vw"}}>Département</Form.Label>
+                <select className="selectpicker" id="zone" style={{width: "14vw", filter: "drop-shadow(2px 2px 5px black)", padding: "1%"}}>
+                <option>Tous les départements</option>
+                <option>Paris</option>
+                <option>Hauts-de-Seine</option>
+                <option>Val d'Oise</option>
+                <option>Val de Marne</option>
+                <option>Seine St Denis</option>
+                <option>Seine et Marne</option>
+                <option>Yvelines</option>
+                </select>
+                </Form.Group>
                 </div>
             </div>
-            {!!firebase &&
-            <HotelRegistrator firebase={firebase} />}
         </div>
     )
 }

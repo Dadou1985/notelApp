@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import hotel from '../../../hotels/Ile-de-France/hotel_paris.json'
+import hotel from '../../../hotels/guyane.json'
 
 
 export default function HotelRegitrator({firebase}) {

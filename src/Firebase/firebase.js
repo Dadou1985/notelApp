@@ -221,6 +221,17 @@ class Firebase {
     .orderBy("markup", "asc")
   }
 
+  hotelDataOnAir({region, initialFilter, filter}){
+    return this.db.collection("IziLife")
+    .doc("FunSpace")
+    .collection("shiftAdvisor")
+    .doc("hotel")
+    .collection(region)
+    .where(initialFilter, "==", filter)
+  }
+
+  
+
 
 
   async deleteDocument({documentId, collection, document}) {
@@ -672,10 +683,12 @@ async addCommentKarenStories({storyId, author, comment, date}){
   })
 }
 
-async addCommentOnHotel({hotelId, commentTitle, status, bestOf, bullShift, team, management, customer, wage}){
+async addCommentOnHotel({hotelId, region, commentTitle, status, bestOf, bullShift, team, management, customer, wage}){
   await this.db.collection("IziLife")
   .doc("FunSpace")
   .collection("shiftAdvisor")
+  .doc("hotel")
+  .collection(region)
   .doc(hotelId)
   .collection("rating")
   .add({
@@ -689,6 +702,8 @@ async addCommentOnHotel({hotelId, commentTitle, status, bestOf, bullShift, team,
   return this.db.collection("IziLife")
   .doc("FunSpace")
   .collection("shiftAdvisor")
+  .doc("hotel")
+  .collection(region)
   .doc(hotelId)
   .collection("comment")
   .add({
@@ -724,15 +739,6 @@ async hotelRegistrator({hotelId, hotelName, classement, adresse, room, phone, ma
     lng: lng,
     markup: Date.now()
   })
-}
-
-hotelDataOnAir({region, initialFilter, filter}){
-  return this.db.collection("IziLife")
-  .doc("FunSpace")
-  .collection("shiftAdvisor")
-  .doc("hotel")
-  .collection(region)
-  .where(initialFilter, "==", filter)
 }
 
 }
