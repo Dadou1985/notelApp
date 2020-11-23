@@ -12,6 +12,7 @@
     "antd": "^4.6.5",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
+    "d3-ease": "^2.0.0",
     "date-fns": "^2.16.1",
     "firebase": "^7.23.0",
     "firebase-tools": "^8.11.1",
