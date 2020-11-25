@@ -1,14 +1,12 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import hotel from '../../../hotels/Ile-de-France/hotel_seine_et_marne.json'
-
+import hotel from '../../../hotels/Auvergne-Rhône-Alpes/savoie.json'
 
 export default function HotelRegitrator({firebase}) {
         
     return (
         <div>
-
-           {/* 
+            {/*
             {hotel.forEach( doc => (
                 firebase.hotelRegistrator({
                     hotelId: doc.recordid,
@@ -28,9 +26,7 @@ export default function HotelRegitrator({firebase}) {
 
                 
             ))}
-               
-           */}
-                
+                */}
         </div>
     )
 }

@@ -1,0 +1,27 @@
+[
+    {
+        "nom": "CALVADOS",
+        "coordinates": [49.0559, 0.2149],
+        "view": 9
+    },
+    {
+        "nom": "EURE",
+        "coordinates": [49.0649, 0.5946],
+        "view": 9
+    },
+    {
+        "nom": "MANCHE",
+        "coordinates": [49.0446, 1.1939],
+        "view": 9
+    },
+    {
+        "nom": "ORNE",
+        "coordinates": [48.3725, 0.0744],
+        "view": 9
+    },
+    {
+        "nom": "SEINE-MARITIME",
+        "coordinates": [49.3918, 1.0135],
+        "view": 9
+    }
+]

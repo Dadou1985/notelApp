@@ -14,7 +14,8 @@ import Rating from '@material-ui/lab/Rating'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined'
-import DepartementDetails from '../../../hotels/departementDetailsSheet/idfDetailsSheet.json'
+import DepartementDetails from '../../../hotels/departementDetailsSheet/ile_de_france.json'
+import { ile_de_france, auvergne_rhone_alpes, bourgogne_franche_comte, bretagne, centre_val_de_loire, corse, grand_est, hauts_de_france, normandie, nouvelle_aquitaine, occitanie, pays_de_la_loire,provence_alpes_cote_d_azur } from "../../../hotels"
 import RegionDetails from '../../../hotels/regionDetailsSheet.json'
 import HotelRegistrator from './hotelRegitrator'
 
@@ -28,13 +29,15 @@ export default function DeepMap2({user, firebase}) {
     const [initialFilter, setInitialFilter] = useState("region")
     const [departement, setDepartement] = useState("YVELINES")
     const [filter, setFilter] = useState(region)
-    const [geo, setGeo] = useState({geo: []})
     const [show, setShow] = useState(false)
     const [details, setDetails] = useState(false)
     const [comment, setComment] = useState(false)
+    const [number, setNumber] = useState(0)
     const [zoom, setZoom] = useState(9)
 
     const [formValue, setformValue] = useState({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
+
+    const deptDetails = [ile_de_france, auvergne_rhone_alpes, bourgogne_franche_comte, bretagne, centre_val_de_loire, corse, grand_est, hauts_de_france, normandie, nouvelle_aquitaine, occitanie, pays_de_la_loire,provence_alpes_cote_d_azur]
 
     const handleChange = (event) =>{
         event.persist()
@@ -287,7 +290,7 @@ export default function DeepMap2({user, firebase}) {
                                             alignItems: "center",
                                             width: "25%"
                                         }}>
-                                            <h5>Salaire</h5>
+                                            <h5>Avantages</h5>
                                             <img src={Wage} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
                                             <p style={{color: "green", fontSize: "2em"}}>4.5</p>
                                         </div>
@@ -402,7 +405,7 @@ export default function DeepMap2({user, firebase}) {
                                             </Form.Row>
                                             <Form.Row style={{width: "25%"}}>
                                                 <Form.Group controlId="description">
-                                                <Form.Label>Salaire</Form.Label>
+                                                <Form.Label>Avantages</Form.Label>
                                                 <Box component="fieldset" mb={3} borderColor="transparent">
                                                     <Typography component="legend"></Typography>
                                                     <Rating
@@ -494,6 +497,7 @@ export default function DeepMap2({user, firebase}) {
                     <Dropdown.Item  onClick={()=>{
                         console.log(details.view)
                         setZoom(details.view)
+                        setNumber(details.number)
                         handleRegion(details.region, details.coordinates[0], details.coordinates[1])}}>{details.region}</Dropdown.Item>
                     ))}
                 </DropdownButton>
@@ -512,10 +516,12 @@ export default function DeepMap2({user, firebase}) {
                 }}>
                 
                 <DropdownButton id="dropdown-basic-button" title="Départements" variant='info'>
-                {DepartementDetails.map(details => (
+                {deptDetails[number].map(details => (
                     <Dropdown.Item  onClick={()=>{
                         console.log(details.view)
                         setZoom(details.view)
+                        setInitialFilter("departement")
+                        setFilter(details.nom)
                         handleDepartement(details.nom, details.coordinates[0], details.coordinates[1])}}>{details.nom}</Dropdown.Item>
                     ))}
                 </DropdownButton>
@@ -551,8 +557,6 @@ export default function DeepMap2({user, firebase}) {
                 </Form.Group>
                 </div>
             </div>}
-            {!!firebase &&
-            <HotelRegistrator firebase={firebase} />}
         </div>
     )
 }
