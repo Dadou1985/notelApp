@@ -1,0 +1,33 @@
+[
+    {
+        "nom": "CHER",
+        "coordinates": [47.0353, 2.2928],
+        "view": 8
+    },
+    {
+        "nom": "EURE-ET-LOIR",
+        "coordinates": [48.2315, 1.2213],
+        "view": 8
+    },
+    {
+        "nom": "INDRE",
+        "coordinates": [46.4640, 1.3433],
+        "view": 8
+    },
+    {
+        "nom": "INDRE-ET-LOIRE",
+        "coordinates": [47.38809
+            , 5.4152],
+        "view": 8
+    },
+    {
+        "nom": "LOIR-ET-CHER",
+        "coordinates": [47.1529, 0.4129],
+        "view": 8
+    },
+    {
+        "nom": "LOIRET",
+        "coordinates": [47.5443, 2.2039],
+        "view": 8
+    }
+]

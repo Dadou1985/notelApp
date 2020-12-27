@@ -1,0 +1,72 @@
+[
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.8632276, 2.3360987298899625],
+        "view": 12
+    },
+    {
+        "nom": "2ème arrondissement",
+        "coordinates": [48.9, 2.2],
+        "view": 11
+    },
+    {
+        "nom": "3ème arrondissement",
+        "coordinates": [48.6, 2.4833],
+        "view": 9
+    },
+    {
+        "nom": "4ème arrondissement",
+        "coordinates": [48.8167, 3.0833],
+        "view": 9
+    },
+    {
+        "nom": "5ème arrondissement",
+        "coordinates": [49.0333, 2.0667],
+        "view": 9
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.7833, 2.4667],
+        "view": 11
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.8667, 2.4833],
+        "view": 11
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.8167, 1.95],
+        "view": 9
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.9, 2.2],
+        "view": 11
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.6, 2.4833],
+        "view": 9
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.8167, 3.0833],
+        "view": 9
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [49.0333, 2.0667],
+        "view": 9
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.7833, 2.4667],
+        "view": 11
+    },
+    {
+        "nom": "1er arrondissement",
+        "coordinates": [48.8667, 2.4833],
+        "view": 11
+    }
+]

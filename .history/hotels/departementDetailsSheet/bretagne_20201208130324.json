@@ -1,0 +1,22 @@
+[
+    {
+        "nom": "COTES-D'ARMOR",
+        "coordinates": [48.2628, 2.5151],
+        "view": 9
+    },
+    {
+        "nom": "FINISTERE",
+        "coordinates": [48.1540, 4.0332],
+        "view": 9
+    },
+    {
+        "nom": "ILLE-et-VILAINE",
+        "coordinates": [48.0916, 1.3819],
+        "view": 9
+    },
+    {
+        "nom": "MORBIHAN",
+        "coordinates": [47.5047, 2.4836],
+        "view": 9
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "nom": "LOIRE-ATLANTIQUE",
+        "coordinates": [47.2328907, 1.2546],
+        "view": 8
+    },
+    {
+        "nom": "MAINE-ET-LOIRE",
+        "coordinates": [47.2327, 0.3351],
+        "view": 8
+    },
+    {
+        "nom": "MAYENNE",
+        "coordinates": [48.0848, 0.3929],
+        "view": 8
+    },
+    {
+        "nom": "SARTHE",
+        "coordinates": [47.5940, 0.1320],
+        "view": 8
+    },
+    {
+        "nom": "VENDEE",
+        "coordinates": [46.4029, 1.1752],
+        "view": 8
+    }
+]

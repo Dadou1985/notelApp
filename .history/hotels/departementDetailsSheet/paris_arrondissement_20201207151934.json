@@ -1,0 +1,72 @@
+[
+    {
+        "nom": "YVELINES",
+        "coordinates": [48.8167, 1.95],
+        "view": 9
+    },
+    {
+        "nom": "HAUTS-DE-SEINE",
+        "coordinates": [48.9, 2.2],
+        "view": 11
+    },
+    {
+        "nom": "ESSONNE",
+        "coordinates": [48.6, 2.4833],
+        "view": 9
+    },
+    {
+        "nom": "SEINE-ET-MARNE",
+        "coordinates": [48.8167, 3.0833],
+        "view": 9
+    },
+    {
+        "nom": "VAL-D'OISE",
+        "coordinates": [49.0333, 2.0667],
+        "view": 9
+    },
+    {
+        "nom": "VAL-DE-MARNE",
+        "coordinates": [48.7833, 2.4667],
+        "view": 11
+    },
+    {
+        "nom": "SEINE-SAINT-DENIS",
+        "coordinates": [48.8667, 2.4833],
+        "view": 11
+    },
+    {
+        "nom": "YVELINES",
+        "coordinates": [48.8167, 1.95],
+        "view": 9
+    },
+    {
+        "nom": "HAUTS-DE-SEINE",
+        "coordinates": [48.9, 2.2],
+        "view": 11
+    },
+    {
+        "nom": "ESSONNE",
+        "coordinates": [48.6, 2.4833],
+        "view": 9
+    },
+    {
+        "nom": "SEINE-ET-MARNE",
+        "coordinates": [48.8167, 3.0833],
+        "view": 9
+    },
+    {
+        "nom": "VAL-D'OISE",
+        "coordinates": [49.0333, 2.0667],
+        "view": 9
+    },
+    {
+        "nom": "VAL-DE-MARNE",
+        "coordinates": [48.7833, 2.4667],
+        "view": 11
+    },
+    {
+        "nom": "SEINE-SAINT-DENIS",
+        "coordinates": [48.8667, 2.4833],
+        "view": 11
+    },
+]
