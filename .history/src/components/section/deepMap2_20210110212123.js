@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import ReactMapGL, {Marker} from 'react-map-gl'
+import ReactMapGL, {Marker, FlyToInterpolator} from 'react-map-gl'
 import {Form, Button, Modal, OverlayTrigger, Tooltip, Dropdown, DropdownButton} from 'react-bootstrap'
 import MarkerImg from './markerImgAdvisor'
 import Team from '../../svg/team.svg'
@@ -18,13 +18,11 @@ import DepartementDetails from '../../../hotels/departementDetailsSheet/ile_de_f
 import { paris_arrondissement, ile_de_france, auvergne_rhone_alpes, bourgogne_franche_comte, bretagne, centre_val_de_loire, corse, grand_est, hauts_de_france, normandie, nouvelle_aquitaine, occitanie, pays_de_la_loire,provence_alpes_cote_d_azur } from "../../../hotels"
 import RegionDetails from '../../../hotels/regionDetailsSheet.json'
 import HotelRegistrator from './hotelRegitrator'
-import moment from 'moment'
 
 
 export default function DeepMap2({user, firebase}) {
 
     const [info, setInfo] = useState([])
-    const [ratingData, setRatingData] = useState([])
     const [commentData, setCommentData] = useState([])
     const [hotelRef, setHotelRef] = useState(null)
     const [selectedHotel, setselectedHotel] = useState(null)
@@ -100,7 +98,9 @@ export default function DeepMap2({user, firebase}) {
             longitude: lng,
             width: "65%",
             height: "100%",
-            zoom: zoom
+            zoom: zoom,
+            transitionDuration: 5000,
+            transitionInterpolator: new FlyToInterpolator(),
         })
     }
 
@@ -112,7 +112,9 @@ export default function DeepMap2({user, firebase}) {
             longitude: lng,
             width: "65%",
             height: "100%",
-            zoom: zoom
+            zoom: zoom,
+            transitionDuration: 5000,
+      transitionInterpolator: new FlyToInterpolator(),
         })
     }
 
@@ -174,27 +176,6 @@ export default function DeepMap2({user, firebase}) {
               })        
             });
             console.log(snapInfo)
-            setRatingData(snapInfo)
-        });
-      
-                return () => {
-                    abortController.abort()
-                    }
-     },[region, departement, hotelRef])
-
-     useEffect(() => {
-        const abortController = new AbortController()
-        const signal = abortController.signal    
-
-        firebase.hotelCommentDataOnAir({region: region, departement: departement, hotelId: hotelRef, signal : signal}).onSnapshot(function(snapshot) {
-            const snapInfo = []
-          snapshot.forEach(function(doc) {          
-            snapInfo.push({
-                id: doc.id,
-                ...doc.data()
-              })        
-            });
-            console.log(snapInfo)
             setCommentData(snapInfo)
         });
       
@@ -205,14 +186,7 @@ export default function DeepMap2({user, firebase}) {
 
 
      console.log(info)
-     console.log(ratingData.map(rate => [rate.team, rate.management, rate.customer, rate.wage]))
-
-     const teamRate = ratingData.map(rate => rate.team)
-     const managementRate = ratingData.map(rate => rate.management)
-     const customerRate = ratingData.map(rate => rate.customer)
-     const wageRate = ratingData.map(rate => rate.wage)
-     
-     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+     console.log(commentData)
 
     return (
         <div
@@ -237,25 +211,23 @@ export default function DeepMap2({user, firebase}) {
                     longitude={hotel.lng}
                     > 
                      <OverlayTrigger
-                        onEnter={() => setHotelRef(hotel.id)}
                         placement="top"
                         overlay={
                         <Tooltip id="title">
                             <h5 style={{padding: "5%"}}>{hotel.hotelName}</h5>
-                                {ratingData.length > 0 ?
-                                    <Box component="fieldset" mb={3} borderColor="transparent">
+                            {hotel.id}
+                                <Box component="fieldset" mb={3} borderColor="transparent">
                                 <Typography component="legend"></Typography>
                                 <Rating
                                 name="management"
-                                value={teamRate.reduce(reducer)/teamRate.length}
+                                value={hotel.id}
                                 precision={0.5}
                                 icon={<SentimentSatisfiedAltIcon fontSize="inherit" />}
                                 readOnly
                                 />
-                            </Box> : "Notez-moi"}
+                            </Box> 
                             
                         </Tooltip>
-
                         }>
                             <button style={{background: "none", border: "none"}}
                             onClick={(event) => {
@@ -322,7 +294,7 @@ export default function DeepMap2({user, firebase}) {
                                     </div>
                             </ToggleDisplay>
                                 <Divider style={{height: "1vh", marginBottom: "4vh"}} />
-                                
+                                {commentData && commentData.map(rate => (
                                     <div style={{
                                     display: "flex",
                                     flexFlow: "column",
@@ -344,15 +316,7 @@ export default function DeepMap2({user, firebase}) {
                                         }}>
                                             <h5>Team</h5>
                                             <img src={Team} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
-                                            <p style={{color: "green", fontSize: "2em"}}>{teamRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
-                                                    <Typography component="legend"></Typography>
-                                                    <Rating
-                                                    name="team"
-                                                    value={teamRate.reduce(reducer)/teamRate.length}
-                                                    onChange={handleChange}
-                                                    precision={0.5}
-                                                    />
-                                                </Box> : "euh..."}</p>
+                                            <p style={{color: "green", fontSize: "2em"}}>{rate.team}</p>
                                         </div>
                                         <div style={{
                                             display: "flex",
@@ -362,15 +326,7 @@ export default function DeepMap2({user, firebase}) {
                                         }}>
                                             <h5>Management</h5>
                                             <img src={Management} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
-                                            <p style={{color: "green", fontSize: "2em"}}>{managementRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
-                                            <Typography component="legend"></Typography>
-                                                    <Rating
-                                                    name="team"
-                                                    value={managementRate.reduce(reducer)/managementRate.length}
-                                                    onChange={handleChange}
-                                                    precision={0.5}
-                                                    />
-                                                </Box> : "euh..."}</p>
+                                            <p style={{color: "green", fontSize: "2em"}}>{rate.management}</p>
                                         </div>
                                         <div style={{
                                             display: "flex",
@@ -380,15 +336,7 @@ export default function DeepMap2({user, firebase}) {
                                         }}>
                                             <h5>Clientèle</h5>
                                             <img src={Customer} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
-                                            <p style={{color: "green", fontSize: "2em"}}>{customerRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
-                                            <Typography component="legend"></Typography>
-                                                    <Rating
-                                                    name="team"
-                                                    value={customerRate.reduce(reducer)/customerRate.length}
-                                                    onChange={handleChange}
-                                                    precision={0.5}
-                                                    />
-                                                </Box> : "euh..."}</p>
+                                            <p style={{color: "green", fontSize: "2em"}}>{rate.customer}</p>
                                         </div>
                                         <div style={{
                                             display: "flex",
@@ -398,18 +346,12 @@ export default function DeepMap2({user, firebase}) {
                                         }}>
                                             <h5>Avantages</h5>
                                             <img src={Wage} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
-                                            <p style={{color: "green", fontSize: "2em"}}>{wageRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
-                                            <Typography component="legend"></Typography>
-                                                    <Rating
-                                                    name="team"
-                                                    value={wageRate.reduce(reducer)/wageRate.length }
-                                                    onChange={handleChange}
-                                                    precision={0.5}
-                                                    />
-                                                </Box>: "euh..."}</p>
+                                            <p style={{color: "green", fontSize: "2em"}}>{rate.wage}</p>
                                         </div>
                                     </div>
-                                </div>                                
+                                </div>
+                                ))}
+                                
                                 
                                 <div style={{display: "flex", flexFlow: "column", justifyContent: "center", marginBottom: "5vh"}}>
                                     <Divider style={{height: "1vh", marginBottom: "5vh"}} />
@@ -420,14 +362,13 @@ export default function DeepMap2({user, firebase}) {
                                         alignItems: "center"}}>
                                         <Button size="lg" style={{width: "88%"}} onClick={handleShow}>Ajouter un avis</Button>
                                         <span>
-                                           {commentData.length} avis
+                                           9 avis 
                                             <img src={Arrow} alt="arrow" style={{width: "1vw", cursor: "pointer", marginLeft: "1vw", transform: "rotate(0turn)"}} id="arrowBottom" onClick={handleShowComment} />
                                         </span>
                                     </div>
                                 </div>
                                 <ToggleDisplay show={comment}>
-                                    {commentData && commentData.map(commentData => (
-                                        <div style={{
+                                    <div style={{
                                             display: "flex",
                                             flexFlow: "column",
                                             padding: "2%", 
@@ -437,20 +378,19 @@ export default function DeepMap2({user, firebase}) {
                                         }}
                                         defaultChecked={comment}>
                                         <div>
-                                            <h4>{commentData.commentTitle}</h4>
-                                            <p>{commentData.status}</p>
+                                            <h4>"I'm in love with this hotel"</h4>
+                                            <p>Ancien employé</p>
                                         </div>
                                         <div>
                                             <h6>Le Best Of</h6>
-                                            <p>{commentData.bestOf}</p>
+                                            <p>DATAtourisme est un dispositif national de collecte et de diffusion en open data des données touristiques institutionnelles. Porté par l’Etat, il est né d’une coopération inédite avec les réseaux des offices de tourisme, des agences départementales et des comités régionaux du tourisme de l’ensemble du territoire national.</p>
                                         </div>
                                         <div>
                                             <h6>Les BullShift</h6>
-                                            <p>{commentData.bullShift}</p>
+                                            <p>DATAtourisme est un dispositif national de collecte et de diffusion en open data des données touristiques institutionnelles. Porté par l’Etat, il est né d’une coopération inédite avec les réseaux des offices de tourisme, des agences départementales et des comités régionaux du tourisme de l’ensemble du territoire national.</p>
                                         </div>
-                                        <div style={{textAlign: "right"}}>{moment(commentData.markup).fromNow()}</div>
+                                        <div style={{textAlign: "right"}}>Mardi 17 novembre 2020</div>
                                     </div>
-                                    ))}
                                 </ToggleDisplay>
                             </div>
                         </ToggleDisplay>

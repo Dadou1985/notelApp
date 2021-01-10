@@ -205,14 +205,7 @@ export default function DeepMap2({user, firebase}) {
 
 
      console.log(info)
-     console.log(ratingData.map(rate => [rate.team, rate.management, rate.customer, rate.wage]))
-
-     const teamRate = ratingData.map(rate => rate.team)
-     const managementRate = ratingData.map(rate => rate.management)
-     const customerRate = ratingData.map(rate => rate.customer)
-     const wageRate = ratingData.map(rate => rate.wage)
-     
-     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+     console.log(ratingData)
 
     return (
         <div
@@ -237,25 +230,23 @@ export default function DeepMap2({user, firebase}) {
                     longitude={hotel.lng}
                     > 
                      <OverlayTrigger
-                        onEnter={() => setHotelRef(hotel.id)}
                         placement="top"
                         overlay={
                         <Tooltip id="title">
                             <h5 style={{padding: "5%"}}>{hotel.hotelName}</h5>
-                                {ratingData.length > 0 ?
-                                    <Box component="fieldset" mb={3} borderColor="transparent">
+                            {hotel.id}
+                                <Box component="fieldset" mb={3} borderColor="transparent">
                                 <Typography component="legend"></Typography>
                                 <Rating
                                 name="management"
-                                value={teamRate.reduce(reducer)/teamRate.length}
+                                value={hotel.id}
                                 precision={0.5}
                                 icon={<SentimentSatisfiedAltIcon fontSize="inherit" />}
                                 readOnly
                                 />
-                            </Box> : "Notez-moi"}
+                            </Box> 
                             
                         </Tooltip>
-
                         }>
                             <button style={{background: "none", border: "none"}}
                             onClick={(event) => {
@@ -344,15 +335,7 @@ export default function DeepMap2({user, firebase}) {
                                         }}>
                                             <h5>Team</h5>
                                             <img src={Team} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
-                                            <p style={{color: "green", fontSize: "2em"}}>{teamRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
-                                                    <Typography component="legend"></Typography>
-                                                    <Rating
-                                                    name="team"
-                                                    value={teamRate.reduce(reducer)/teamRate.length}
-                                                    onChange={handleChange}
-                                                    precision={0.5}
-                                                    />
-                                                </Box> : "euh..."}</p>
+                                            <p style={{color: "green", fontSize: "2em"}}>{commentData.filter(rate === rate.team)}</p>
                                         </div>
                                         <div style={{
                                             display: "flex",
@@ -362,15 +345,7 @@ export default function DeepMap2({user, firebase}) {
                                         }}>
                                             <h5>Management</h5>
                                             <img src={Management} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
-                                            <p style={{color: "green", fontSize: "2em"}}>{managementRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
-                                            <Typography component="legend"></Typography>
-                                                    <Rating
-                                                    name="team"
-                                                    value={managementRate.reduce(reducer)/managementRate.length}
-                                                    onChange={handleChange}
-                                                    precision={0.5}
-                                                    />
-                                                </Box> : "euh..."}</p>
+                                            <p style={{color: "green", fontSize: "2em"}}>{}</p>
                                         </div>
                                         <div style={{
                                             display: "flex",
@@ -380,15 +355,7 @@ export default function DeepMap2({user, firebase}) {
                                         }}>
                                             <h5>Clientèle</h5>
                                             <img src={Customer} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
-                                            <p style={{color: "green", fontSize: "2em"}}>{customerRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
-                                            <Typography component="legend"></Typography>
-                                                    <Rating
-                                                    name="team"
-                                                    value={customerRate.reduce(reducer)/customerRate.length}
-                                                    onChange={handleChange}
-                                                    precision={0.5}
-                                                    />
-                                                </Box> : "euh..."}</p>
+                                            <p style={{color: "green", fontSize: "2em"}}>{}</p>
                                         </div>
                                         <div style={{
                                             display: "flex",
@@ -398,15 +365,7 @@ export default function DeepMap2({user, firebase}) {
                                         }}>
                                             <h5>Avantages</h5>
                                             <img src={Wage} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
-                                            <p style={{color: "green", fontSize: "2em"}}>{wageRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
-                                            <Typography component="legend"></Typography>
-                                                    <Rating
-                                                    name="team"
-                                                    value={wageRate.reduce(reducer)/wageRate.length }
-                                                    onChange={handleChange}
-                                                    precision={0.5}
-                                                    />
-                                                </Box>: "euh..."}</p>
+                                            <p style={{color: "green", fontSize: "2em"}}>{}</p>
                                         </div>
                                     </div>
                                 </div>                                
@@ -420,7 +379,7 @@ export default function DeepMap2({user, firebase}) {
                                         alignItems: "center"}}>
                                         <Button size="lg" style={{width: "88%"}} onClick={handleShow}>Ajouter un avis</Button>
                                         <span>
-                                           {commentData.length} avis
+                                           9 avis 
                                             <img src={Arrow} alt="arrow" style={{width: "1vw", cursor: "pointer", marginLeft: "1vw", transform: "rotate(0turn)"}} id="arrowBottom" onClick={handleShowComment} />
                                         </span>
                                     </div>
@@ -437,7 +396,7 @@ export default function DeepMap2({user, firebase}) {
                                         }}
                                         defaultChecked={comment}>
                                         <div>
-                                            <h4>{commentData.commentTitle}</h4>
+                                            <h4>{commentData.title}</h4>
                                             <p>{commentData.status}</p>
                                         </div>
                                         <div>
@@ -448,7 +407,7 @@ export default function DeepMap2({user, firebase}) {
                                             <h6>Les BullShift</h6>
                                             <p>{commentData.bullShift}</p>
                                         </div>
-                                        <div style={{textAlign: "right"}}>{moment(commentData.markup).fromNow()}</div>
+                                        <div style={{textAlign: "right"}}>{moment(commentData.title, "YYYYMMDD").fromNow()}</div>
                                     </div>
                                     ))}
                                 </ToggleDisplay>

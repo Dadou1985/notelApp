@@ -252,7 +252,7 @@ export default function DeepMap2({user, firebase}) {
                                 icon={<SentimentSatisfiedAltIcon fontSize="inherit" />}
                                 readOnly
                                 />
-                            </Box> : "Notez-moi"}
+                            </Box> : }
                             
                         </Tooltip>
 

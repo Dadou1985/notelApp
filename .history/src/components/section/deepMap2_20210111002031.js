@@ -211,7 +211,7 @@ export default function DeepMap2({user, firebase}) {
      const managementRate = ratingData.map(rate => rate.management)
      const customerRate = ratingData.map(rate => rate.customer)
      const wageRate = ratingData.map(rate => rate.wage)
-     
+     const hotelRate = [teamRate, managementRate, customerRate, wageRate]
      const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
     return (
@@ -242,8 +242,7 @@ export default function DeepMap2({user, firebase}) {
                         overlay={
                         <Tooltip id="title">
                             <h5 style={{padding: "5%"}}>{hotel.hotelName}</h5>
-                                {ratingData.length > 0 ?
-                                    <Box component="fieldset" mb={3} borderColor="transparent">
+                                <Box component="fieldset" mb={3} borderColor="transparent">
                                 <Typography component="legend"></Typography>
                                 <Rating
                                 name="management"
@@ -252,7 +251,7 @@ export default function DeepMap2({user, firebase}) {
                                 icon={<SentimentSatisfiedAltIcon fontSize="inherit" />}
                                 readOnly
                                 />
-                            </Box> : "Notez-moi"}
+                            </Box> 
                             
                         </Tooltip>
 

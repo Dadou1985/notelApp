@@ -242,7 +242,7 @@ export default function DeepMap2({user, firebase}) {
                         overlay={
                         <Tooltip id="title">
                             <h5 style={{padding: "5%"}}>{hotel.hotelName}</h5>
-                                {ratingData.length > 0 ?
+                                {ratingData.length > 0
                                     <Box component="fieldset" mb={3} borderColor="transparent">
                                 <Typography component="legend"></Typography>
                                 <Rating
@@ -252,7 +252,7 @@ export default function DeepMap2({user, firebase}) {
                                 icon={<SentimentSatisfiedAltIcon fontSize="inherit" />}
                                 readOnly
                                 />
-                            </Box> : "Notez-moi"}
+                            </Box> }
                             
                         </Tooltip>
 

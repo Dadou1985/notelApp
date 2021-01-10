@@ -205,13 +205,14 @@ export default function DeepMap2({user, firebase}) {
 
 
      console.log(info)
-     console.log(ratingData.map(rate => [rate.team, rate.management, rate.customer, rate.wage]))
+     console.log(ratingData.map(rate => <>
+     </>))
 
      const teamRate = ratingData.map(rate => rate.team)
      const managementRate = ratingData.map(rate => rate.management)
      const customerRate = ratingData.map(rate => rate.customer)
      const wageRate = ratingData.map(rate => rate.wage)
-     
+     const hotelRate = [teamRate, managementRate, customerRate, wageRate]
      const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
     return (
@@ -237,22 +238,21 @@ export default function DeepMap2({user, firebase}) {
                     longitude={hotel.lng}
                     > 
                      <OverlayTrigger
-                        onEnter={() => setHotelRef(hotel.id)}
                         placement="top"
                         overlay={
                         <Tooltip id="title">
                             <h5 style={{padding: "5%"}}>{hotel.hotelName}</h5>
-                                {ratingData.length > 0 ?
-                                    <Box component="fieldset" mb={3} borderColor="transparent">
+                            {hotel.id}
+                                <Box component="fieldset" mb={3} borderColor="transparent">
                                 <Typography component="legend"></Typography>
                                 <Rating
                                 name="management"
-                                value={teamRate.reduce(reducer)/teamRate.length}
+                                value={hotel.id}
                                 precision={0.5}
                                 icon={<SentimentSatisfiedAltIcon fontSize="inherit" />}
                                 readOnly
                                 />
-                            </Box> : "Notez-moi"}
+                            </Box> 
                             
                         </Tooltip>
 
