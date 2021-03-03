@@ -30,7 +30,8 @@ const Messenger = () =>{
     const [startDate, setStartDate] = useState(new Date());
     const { user, firebase } = useContext(FirebaseContext)
     const [showModal, setShowModal] = useState(false)
-    const [activate, setActivate] = useState(true)
+    const [activate, setActivate] = useState(false)
+    const [showCalendar, setShowCalendar] = useState(false)
     
     const handleChangeNote = event =>{
         setNote(event.currentTarget.value)
@@ -102,6 +103,7 @@ const Messenger = () =>{
             setShowModal(true)
         }else{
             setActivate(true)
+            hideCalendar()
         }
     }
 
@@ -147,9 +149,11 @@ const Messenger = () =>{
                         firebase.addNote({documentId: user.displayName, noteId: title, author: user.username, text: note, img: url, status: status, hour: null, markup: marker, userId: user.uid, date: date})
                         firebase.addNotification({documentId: user.displayName, notification: notif})
                         setStartDate(new Date)
+                        handleHideDrawer()
                        return setShowModal(false)
                     }else{
                         firebase.addNote({documentId: user.displayName, noteId: title, author: user.username, text: note, img: url, status: status, hour: time, markup: marker, userId: user.uid, date: date})
+                        handleHideDrawer()
                         setShowModal(false)
                     }
                     
@@ -168,15 +172,25 @@ const Messenger = () =>{
                 firebase.addNote({documentId: user.displayName, noteId: title, author: user.username, text: note, img: url, status: status, hour: null, markup: marker, userId: user.uid, date: date})
                 firebase.addNotification({documentId: user.displayName, notification: notif})
                 setStartDate(new Date)
+                handleHideDrawer()
                 return setShowModal(false)
             }else{
                 firebase.addNote({documentId: user.displayName, noteId: title, author: user.username, text: note, img: url, status: status, hour: time, markup: marker, userId: user.uid, date: date})
+                handleHideDrawer()
                 setShowModal(false)
             }
         }
         
     }
 
+    const changeDrawerHeight = () => {
+        setShowCalendar(true)
+    }
+
+    const hideCalendar = () => {
+        setShowCalendar(false)
+    }
+    
     return(
         <div className="messenger_container">
             <h5 className="font-weight-bolder messenger_title">Note Book</h5>
@@ -301,38 +315,43 @@ const Messenger = () =>{
             </Modal>
 
             <Drawer anchor="bottom" open={activate} onClose={handleHideDrawer}>
-                <div style={{
+                <div id="drawer-container" style={{
                     display: "flex",
                     flexFlow: "column", 
-                    justifyContent: "space-around",
+                    justifyContent: "flex-end",
                     padding: "5%", 
-                    height: "60vh"}}>
+                    maxHeight: "90vh"}}>
+                    
                     <div><Input type="text" name="title" placeholder="Titre de la note" className="modal-note-title" maxLength="60" onChange={handleChangeTitle} required /></div>
                     <div><Input type="text" placeholder="Rédiger une note..." value={note} className="modal-note-input" onChange={handleChangeNote} required /></div>
+                    <DatePicker
+                        id="calendar"
+                        className="react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input"
+                        inline={showCalendar}
+                        selected={startDate}
+                        value={startDate}
+                        onChange={changedDate => {
+                            setStartDate(changedDate)
+                            hideCalendar()
+                        }}
+                        placeholderText="Date du jour"
+                        locale="fr-FR"
+                        dateFormat="d MMMM yyyy"
+                    />
                     <div className="modal-note-button-container">
                         <span className="white-band"></span>
                         <input type="file" className="modal-note-file-input"
                           onChange={handleImgChange} />
                       <img src={Upload} className="modal-note-file-icon" alt="uploadIcon" />
-                         <DatePicker
-                            id="calendar"
-                            className="react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input"
-                            selected={startDate}
-                            value={startDate}
-                            onChange={changedDate => setStartDate(changedDate)}
-                            placeholderText="Date du jour"
-                            locale="fr-FR"
-                            dateFormat="d MMMM yyyy"
-                        />
                         {renderSwitch(status)}
-                        <img src={Calendar} alt="sendIcon" className="modal-note-calendar-icon" />
+                        <img src={Calendar} alt="sendIcon" className="modal-note-calendar-icon" onClick={changeDrawerHeight} />
                         <img src={Send} alt="sendIcon" className="modal-note-send-icon" onClick={handleSubmit} />
-                        <List component="nav" aria-label="main mailbox folders" className="modal-note-list" style={{
-                            position: "absolute",
+                    </div>
+                    <List component="nav" aria-label="main mailbox folders" className="modal-note-list" style={{
                             display: checked ? "flex" : "none",
-                            flexFlow: "column",
-                            justifyContent: "space-around",
-                            alignItems: "center"
+                            flexFlow: "row",
+                            alignItems: "center",
+                            marginTop: "2vh"
                         }}>
                             <ListItemIcon button>
                                 <ListItemIcon>
@@ -395,7 +414,6 @@ const Messenger = () =>{
                                 </ListItemIcon>
                             </ListItemIcon>
                         </List>
-                    </div>
                 </div>
             </Drawer>
             
