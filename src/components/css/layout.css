@@ -666,8 +666,7 @@ input[type=number] {
 }
 
 #drawer_icons2 {
-    font-size: 12vw;
-    width: 100%;
+    margin-top: 2vh;
 }
 
 @media screen and (max-width: 480px) {
@@ -1431,6 +1430,13 @@ input[type=number] {
     align-items: center;
 }
 
+.darkFeatures {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+}
+
 .dark_icon_container {
     display: flex;
     flex-flow: row;
@@ -1514,26 +1520,15 @@ input[type=number] {
         visibility: visible;
     }
 
-    .brand {
+    .darkBrand {
         left: 50vw;
     }
 
-    .brand p {
+    .darkBrand p {
         left: -7vw;
     }
 
-    .nav_icons {
-        visibility: hidden;
-    }
-
-    .username_title {
-        display: none;
-    }
-
-    .icon_container {
-        position: absolute;
-        right: 1vw;
-    }
+    .dark_nav_container {display: none;}
 
     .drawer {
         visibility: visible;
@@ -1544,7 +1539,7 @@ input[type=number] {
 /*DarkMessenger.js*/
 
 .dark_messenger_communizi_container {
-    display: "flex";
+    display: block;
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
@@ -1554,7 +1549,7 @@ input[type=number] {
 }
 
 .dark_messenger_karenStories_container {
-    display: "flex";
+    display: block;
     flex-flow: column;
     justify-content: flex-start;
     align-items: flex-end;
@@ -1564,7 +1559,7 @@ input[type=number] {
 }
 
 .dark_messenger_izinews_container {
-    display: "flex";
+    display: block;
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
@@ -1579,6 +1574,8 @@ input[type=number] {
     padding: 1%;
     width: 100%;
 }
+
+.communizi-container {width: 90%;}
 
 .communizi_notebox {
     max-height: 60vh;
@@ -1600,6 +1597,15 @@ input[type=number] {
     width: 85%;
     margin-bottom: 3vh;
 }
+
+.communizi-button-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 15%;
+}
+
+.karenStories-container {width: 100%;}
 
 .karenStories_notebox {
     max-height: 60vh;
@@ -1623,6 +1629,9 @@ input[type=number] {
     width: 85%;
     margin-bottom: 3vh;
 }
+
+.iziNews-container {width: 90%;}
+
 
 .news_notebox {
     max-height: 67vh;
@@ -1684,10 +1693,83 @@ input[type=number] {
     margin-left: 5vw;
 }
 
+.darkDrawer {
+    display: none;
+}
+
+.darkDrawer_list {
+    width: 250;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+}
+
+.darkDrawer_fullList{
+    width: 25vw;
+    background-color: black;
+    color: lightgrey;
+    height: 100%;
+    border: 1px solid black;
+
+}
+
+.darkDrawer_title {
+    text-align: center;
+}
+
+.darkDrawer_listIcons {
+    display: flex;
+    flex-flow: column;
+    height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.darkDrawer_listIcons2 {
+    display: flex;
+    flex-flow: column;
+    height: 30vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.darkDrawer_icons {
+    width: 8vw;
+}
+
+.fom-icon {filter: invert();
+}
+
+#darkDrawer_icons2 {
+    margin-top: 3vh;
+    font-size: 50px;
+    margin-left: 7vw;
+}
+
+
 
 @media screen and (max-width: 480px) {
-    .dark_messenger_container {
+    .dark_messenger_communizi_container {
+        display: block;
         width: 100vw;
+    }
+
+    .dark_messenger_izinews_container {
+        display: none;
+        width: 100vw;
+    }
+
+    .dark_messenger_karenStories_container {
+        display: none;
+        width: 100vw;
+    }
+
+    .communizi-container {
+        width: 100%;
+        height: 70vh
     }
 
     .communizi_notebox {
@@ -1703,9 +1785,22 @@ input[type=number] {
         margin-top: 2vh;
     }
 
+    
+
     .communizi_form_input_container {
+        width: 75%;
         margin-top: 1vh;
         position: sticky;
+    }
+
+    .communizi-button-container {
+        width: 25%;
+        justify-content: space-around;
+    }
+
+    .karenStories-container {
+        width: 100%;
+        height: 70vh
     }
 
     .karenStories_notebox {
@@ -1729,6 +1824,33 @@ input[type=number] {
     #dark_noteButton {
         width: 98vw;
         margin-bottom: 1vh;
+    }
+
+    .iziNews-container {
+        width: 100%;
+        height: 80vh
+    }
+
+    .menu{
+        visibility: visible;
+    }
+
+    .brand {
+        left: 50vw;
+    }
+
+    .brand p {
+        left: -7vw;
+    }
+
+    .nav_container {display: none;}
+
+    .darkDrawer {
+        display: block;
+        height: 10vh;
+        position: absolute;
+        top: 2%;
+        left: 2vw;
     }
     
 }
@@ -1883,4 +2005,5 @@ input[type=number] {
 .features:hover {
     filter: blur(3px);
 }
+
 

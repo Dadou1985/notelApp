@@ -23,7 +23,7 @@ export default function IziNews() {
     console.log(data)
 
     return (
-        <div style={{width: "90%"}}>
+        <div className="iziNews-container">
             <PerfectScrollbar>
             <div id="box" className="news_notebox">
                 {News.map((news, key) => (

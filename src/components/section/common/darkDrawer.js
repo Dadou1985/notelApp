@@ -3,19 +3,18 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import MenuSharpIcon from '@material-ui/icons/MenuSharp'
-import Lost from '../../../svg/lost-items.svg'
-import Cab from '../../../svg/taxi.svg'
-import Clock from '../../../svg/timer.svg'
-import Maid from '../../../svg/maid.svg'
-import Repair from '../../../svg/repair.svg'
-import CheckList from '../../../svg/todoList.svg'
+import IziChat from '../../../svg/community.svg'
+import IziNews from '../../../svg/chill.png'
+import KarenStories from '../../../svg/mask.svg'
+import ShiftAdvisor from '../../../svg/hotel.svg'
+import Store from '../../../svg/store.svg'
 import CallCenter from '../../../svg/call-center.svg'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 import { navigate } from 'gatsby'
 import Notifications from '../notifications'
 import Fom from '../../../svg/fom.svg'
 
-export default function TemporaryDrawer({firebase, user}) {
+export default function TemporaryDrawer({firebase, user, screen}) {
   const [state, setState] = React.useState({left: false,});
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -36,33 +35,32 @@ const handleCallCenter = () => {
 
   const list = (anchor) => (
     <div
-      className="drawer_listlist drawer_fullList"
+      className="darkDrawer_listlist darkDrawer_fullList"
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-        <h3 className="drawer_title">Menu</h3>
-        <Divider />
-      <List className="drawer_listIcons">
-        <img src={Lost} alt="Lost and found" className="drawer_icons" onClick={()=>{navigate("/lostAndFound")}} />
-        <img src={Cab} alt="Cab" className="drawer_icons" onClick={()=>{navigate("/cab")}} />
-        <img src={Clock} alt="Clock" className="drawer_icons" onClick={()=>{navigate("/clock")}} />
-        <img src={Maid} alt="Maid" className="drawer_icons" onClick={()=>{navigate("/maid")}} />
-        <img src={Repair} alt="epair" className="drawer_icons" onClick={()=>{navigate("/repair")}} />
+        <h3 className="darkDrawer_title">Menu</h3>
+        <Divider style={{filter: "drop-shadow(7px 7px)"}} />
+      <List className="darkDrawer_listIcons">
+        <img src={IziChat} alt="IziChat" className="darkDrawer_icons" onClick={()=> screen("chat")} />
+        <img src={IziNews} alt="IziNews" className="darkDrawer_icons" onClick={()=> screen("news")} />
+        <img src={KarenStories} alt="KarenStories" className="darkDrawer_icons" onClick={()=> screen("stories")} />
+        <img src={ShiftAdvisor} alt="shiftAdvisor" className="darkDrawer_icons" onClick={()=>{navigate("/shiftAdvisor")}} />
+        <img src={Store} alt="iziStore" className="darkDrawer_icons" onClick={()=>{navigate("/iziStore")}} />
       </List>
-      <Divider />
-      <List className="drawer_listIcons2">
-        <img src={CheckList} alt="Checklist" className="drawer_icons" onClick={()=>{navigate("/checkList")}} />
-        <img src={CallCenter} alt="Lost and found" className="drawer_icons" onClick={handleCallCenter} />
-        <img src={Fom} alt="user-portal" className="drawer_icons" onClick={()=>{navigate("/doorsStage")}} />
+      <Divider style={{filter: "drop-shadow(7px 7px)"}} />
+      <List className="darkDrawer_listIcons2">
+        <img src={CallCenter} alt="Lost and found" className="darkDrawer_icons" onClick={handleCallCenter} />
+        <img src={Fom} alt="user-portal" className="fom-icon" onClick={()=>{navigate("/doorsStage")}} />
       </List>
-      <Divider />
-      <PowerSettingsNewIcon id="drawer_icons2" onClick={handleLogout} />
+      <Divider style={{filter: "drop-shadow(7px 7px)"}} />
+      <PowerSettingsNewIcon id="darkDrawer_icons2" onClick={handleLogout} />
     </div>
   );
 
   return (
-    <div className="drawer">
+    <div className="darkDrawer">
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <MenuSharpIcon onClick={toggleDrawer(anchor, true)} />

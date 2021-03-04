@@ -125,7 +125,7 @@ export default function CommunIzi({firebase, user}) {
 
 
     return (
-        <div style={{width: "90%"}}>
+        <div className="communizi-container">
           
             <PerfectScrollbar>
             <div className="communizi_notebox">
@@ -137,7 +137,7 @@ export default function CommunIzi({firebase, user}) {
                       padding: "2%",
                       borderTopLeftRadius: "5px",
                       borderTopRightRadius: "5px",
-                      marginBottom: "1vh"
+                      marginTop: "1vh"
                       }}>
                         <AccordionItemButton style={{outline: "none"}}>
                           <Avatar 
@@ -150,7 +150,7 @@ export default function CommunIzi({firebase, user}) {
                             <i style={{color: "gray", float: "right", fontSize: "13px"}}>{moment(flow.markup).format('ll')}</i>
                         </AccordionItemButton>
                     </AccordionItemHeading>
-                    <AccordionItemPanel style={{backgroundColor: 'lightgray'}}>
+                    <AccordionItemPanel style={{backgroundColor: 'lightgray', marginBottom: "1vh"}}>
                       {!!firebase &&
                       <ChatRoom title={flow.id} firebase={firebase} />}
                     </AccordionItemPanel>
@@ -167,11 +167,7 @@ export default function CommunIzi({firebase, user}) {
                     onChange={handleChange}
                     id="dark_message_note" />
                 </FormGroup>
-                    <div style={{
-                        display: "flex",
-                        flexFlow: "row",
-                        justifyContent: "space-between",
-                        width: "15%"}}>
+                    <div className="communizi-button-container">
                      <OverlayTrigger
                         placement="top"
                         overlay={

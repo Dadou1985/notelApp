@@ -68,7 +68,7 @@ export default function KarenStories({firebase, user}) {
      },[firebase])
 
     return (
-            <div style={{width: "100%"}}>
+            <div className="karenStories-container">
             <PerfectScrollbar>
             <div id="box" className="karenStories_notebox">
                 {info.map(flow => (

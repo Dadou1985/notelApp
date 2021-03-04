@@ -5,8 +5,6 @@ import { Navbar, OverlayTrigger, Tooltip, Modal, Button } from 'react-bootstrap'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 import AdminBoard from './form/adminBoard'
 import FeedbackBox from './form/feedbackBox'
-import Avatar from 'react-avatar'
-import Drawer from './common/drawer'
 import Fom from '../../svg/fom.svg'
 import ShiftAdvisor from '../../svg/hotel.svg'
 import Store from '../../svg/store.svg'
@@ -40,8 +38,7 @@ const DarkNavigation = () =>{
                     color: "white",
                     backgroundColor: "black"
                 }}>
-                {!!firebase && !!user &&
-                <Drawer className="drawer" firebase={firebase} user={user} />}
+                
                 <Navbar.Brand className="darkBrand" style={{color: "orange"}}
                     onClick={handleMove}><p>Izi</p>Life</Navbar.Brand>
                     {/*{!!user &&
@@ -56,12 +53,7 @@ const DarkNavigation = () =>{
                     }}>{user.displayName}</div>}*/}
                     
                     <div className="dark_nav_container">
-                    <div style={{
-                        display: 'flex',
-                        flexFlow: 'row',
-                        justifyContent: "center",
-                        width: "100%"
-                      }}>
+                    <div className="darkFeatures">
                       <OverlayTrigger
                         placement="bottom"
                         overlay={

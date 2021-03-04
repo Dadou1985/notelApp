@@ -1,32 +1,29 @@
 import React, { Fragment } from "react"
 import Loader from "react-loader-spinner"
 import Mascott from '../../../svg/receptionist.svg'
+import '../../css/loader.css'
 
 const SmartLoader = ({hide}) => {
   return (
-    <div style={{
-        backgroundColor: "white",
-      display: hide,
-      flexFlow: "row",
-      justifyContent: "center",
-      overflow: "hidden",
-      zIndex: "10"}}>
-        <div style={{height: "100vh", opacity: '0.1', filter: 'drop-shadow(10px 10px 10px)'}}>
+    <div className="Loader-container" style={{display: hide}}>
+        <div className="Loader-box">
+          {window.innerWidth > 480 ?
           <Loader
+          type="Puff"
+          color="rgb(25,23,25)"
+          height={1000}
+          width={1000}
+          timeout={10000}
+        /> : 
+        <Loader
             type="Puff"
             color="rgb(25,23,25)"
-            height={1000}
-            width={1000}
+            height={700}
+            width={400}
             timeout={10000}
-          />
+          />}
         </div>
-        <img src={Mascott} style={{
-          position: "absolute", 
-          width: "30%", 
-          top: "20vh", 
-          left: "30vw", 
-          opacity: "0.2",
-          filter: "drop-shadow(10px 10px 10px)"}} />
+        <img src={Mascott} className="Loader-img" />
     </div>
   )
 }
