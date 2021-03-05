@@ -192,7 +192,7 @@ export default function CommunIzi({firebase, user}) {
                   justifyContent: "flex-end",
                   padding: "5%", 
                   maxHeight: "30vh"}}>
-                  <div><Input type="text" placeholder="Donnez un nom à la conversation..." value={room} style={{borderTop: "none", borderLeft: "none", borderRight: "none", marginBottom: "3vh"}} maxLength="60" onChange={handleChangeRoomName} /></div>
+                  <div><Input type="text" placeholder="Donnez un nom à la conversation..." value={room} style={{borderTop: "none", borderLeft: "none", borderRight: "none", marginBottom: "3vh"}} maxLength="35" onChange={handleChangeRoomName} /></div>
                   <div><Button variant="success" style={{width: "100%"}} onClick={handleRoomnameSubmit}>Créer</Button></div>
               </div>
             </Drawer>

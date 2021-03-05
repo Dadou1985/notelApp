@@ -19,7 +19,9 @@ import { paris_arrondissement, ile_de_france, auvergne_rhone_alpes, bourgogne_fr
 import RegionDetails from '../../../hotels/regionDetailsSheet.json'
 import HotelRegistrator from './hotelRegitrator'
 import moment from 'moment'
-
+import { navigate } from 'gatsby'
+import Home from '../../svg/home.svg'
+import Dialog from './common/fullScreenDialog'
 
 
 export default function DeepMap2({user, firebase}) {
@@ -40,6 +42,7 @@ export default function DeepMap2({user, firebase}) {
     const [number, setNumber] = useState(0)
     const [zoom, setZoom] = useState(5)
     const [scrollZoom, setScrollZoom] = useState(true)
+    const [showDialog, setShowDialog] = useState(false)
 
     const [formValue, setformValue] = useState({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
 
@@ -85,6 +88,10 @@ export default function DeepMap2({user, firebase}) {
 
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
+
+    const hideDialog = () => {
+        setShowDialog(false)
+    }
 
     const [viewPort, setviewPort] = useState({
         latitude: 47.2850,
@@ -287,58 +294,25 @@ export default function DeepMap2({user, firebase}) {
                 {selectedHotel ? (
                     <>
                         <ToggleDisplay show={details}>
-                            <div style={{
-                                display: "flex",
-                                flexFlow: "row",
-                                position: "relative",
-                                justifyContent: "flex-end",
-                                width: "100%",
-                                height: "100%",
-                                maxHeight: "auto",
-                                zIndex: "500",
-                            }}>
-                                <div style={{
-                                display: "flex",
-                                flexFlow: "column",
-                                justifyContent: "flex-start",
-                                width: "50%",
-                                height: "100%",
-                                maxHeight: "auto",
-                                backgroundColor: "lightgray",
-                                padding: "3%",
-                                opacity: "0.9",
-                                color: "black",
-                                overflow: "auto",
-                            }}
-                            defaultChecked={details}>
-                                <div style={{
-                                    display: "flex",
-                                    flexFlow: "row",
-                                    justifyContent: "space-between",
-                                    alignItems: "flex-start",
-                                    marginBottom: "4vh",
-                                    width: "100%" 
-                                }}>
-                                    <div style={{diplay: "flex", flexFlow: "row"}}>
+                            <div className="toggleDisplay-global-container">
+                                <div className="toggleDisplay-relative-container"
+                                    defaultChecked={details}>
+                                <div className="toggleDisplay-header-container">
+                                    <div>
                                         <h3>{selectedHotel.hotelName}</h3>
                                         <span>Etablissement {selectedHotel.classement[0]}</span>
-                                        <img src={Arrow} alt="arrow" style={{width: "1vw", cursor: "pointer", marginLeft: "1vw", transform: "rotate(0turn)"}} id="arrowTop" onClick={handleShowDetails} />
+                                        <img src={Arrow} alt="arrow" style={{width: "15px", cursor: "pointer", marginLeft: "2vw", transform: "rotate(0turn)"}} id="arrowTop" onClick={handleShowDetails} />
                                     </div>
-                                    <img src={Close}  alt="" style={{width:"2vw", cursor: "pointer"}} onClick={() => {
+                                    <img src={Close}  alt="" className="toggleDisplay-header-close-button" onClick={() => {
                                         setCommentData([])
                                         handleShowWindowDetails()
                                         setScrollZoom(true)}}
                                          />
                                 </div>
                             <ToggleDisplay show={show}>
-                                    <div style={{
-                                        display: "flex",
-                                        flexFlow: "column", 
-                                        width: "50%",
-                                        marginBottom: "4vh",
-                                    }}
-                                    defaultChecked={show}>
-                                <Divider style={{height: "1vh", marginBottom: "4vh"}} />
+                                    <div className="toggleDisplay-header-details"
+                                        defaultChecked={show}>
+                                <Divider style={{height: "1vh", marginBottom: "5vh"}} />
                                         <span><b style={{color: "gray"}}>Adresse: </b> {selectedHotel.adresse}, {selectedHotel.code_postal} {selectedHotel.city}</span>
                                         <span><b style={{color: "gray"}}>Nombre de chambres: </b> {selectedHotel.room}</span> 
                                         <span><b style={{color: "gray"}}>Téléphone: </b>{selectedHotel.phone}</span> 
@@ -346,28 +320,12 @@ export default function DeepMap2({user, firebase}) {
                                         <span><b style={{color: "gray"}}>Portail web: </b>{selectedHotel.website}</span>
                                     </div>
                             </ToggleDisplay>
-                                <Divider style={{height: "1vh", marginBottom: "4vh"}} />
+                                <Divider style={{height: "1vh", marginBottom: "5vh"}} />
                                 
-                                    <div style={{
-                                    display: "flex",
-                                    flexFlow: "column",
-                                    alignItems: "center",
-                                    marginBottom: "1vh",
-                                    width: "100%"
-                                }}>
+                                    <div className="toggleDisplay-body-container">
                                     <h3>Statistiques de l'établissement</h3>
-                                    <div style={{
-                                    display: "flex",
-                                    flexFlow: "row",
-                                    justifyContent: "space-around",
-                                    marginTop: "4vh"
-                                }}>
-                                        <div style={{
-                                            display: "flex",
-                                            flexFlow: "column",
-                                            alignItems: "center",
-                                            width: "25%"
-                                        }}>
+                                    <div className="toggleDisplay-body-stats-container">
+                                        <div className="toggleDisplay-body-stats-box">
                                             <h5>Team</h5>
                                             <img src={Team} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
                                             <p style={{color: "green", fontSize: "2em"}}>{teamRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
@@ -380,12 +338,7 @@ export default function DeepMap2({user, firebase}) {
                                                     readOnly/>
                                                 </Box> : "euh..."}</p>
                                         </div>
-                                        <div style={{
-                                            display: "flex",
-                                            flexFlow: "column",
-                                            alignItems: "center",
-                                            width: "25%"
-                                        }}>
+                                        <div className="toggleDisplay-body-stats-box">
                                             <h5>Management</h5>
                                             <img src={Management} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
                                             <p style={{color: "green", fontSize: "2em"}}>{managementRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
@@ -398,12 +351,7 @@ export default function DeepMap2({user, firebase}) {
                                                     readOnly/>
                                                 </Box> : "euh..."}</p>
                                         </div>
-                                        <div style={{
-                                            display: "flex",
-                                            flexFlow: "column",
-                                            alignItems: "center",
-                                            width: "25%"
-                                        }}>
+                                        <div className="toggleDisplay-body-stats-box">
                                             <h5>Clientèle</h5>
                                             <img src={Customer} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
                                             <p style={{color: "green", fontSize: "2em"}}>{customerRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
@@ -416,12 +364,7 @@ export default function DeepMap2({user, firebase}) {
                                                     readOnly/>
                                                 </Box> : "euh..."}</p>
                                         </div>
-                                        <div style={{
-                                            display: "flex",
-                                            flexFlow: "column",
-                                            alignItems: "center",
-                                            width: "25%"
-                                        }}>
+                                        <div className="toggleDisplay-body-stats-box">
                                             <h5>Avantages</h5>
                                             <img src={Wage} alt="" style={{width: "30%", borderRadius: "25px", marginBottom: "2vh"}} />
                                             <p style={{color: "green", fontSize: "2em"}}>{wageRate.length > 0 ? <Box component="fieldset" mb={3} borderColor="transparent">
@@ -447,7 +390,7 @@ export default function DeepMap2({user, firebase}) {
                                         <Button size="lg" style={{width: "78%"}} variant="secondary" onClick={handleShow}>Ajouter un avis</Button>
                                         <span>
                                            {commentData.length} avis
-                                            <img src={Arrow} alt="arrow" style={{width: "1vw", cursor: "pointer", marginLeft: "1vw", transform: "rotate(0turn)"}} id="arrowBottom" onClick={handleShowComment} />
+                                            <img src={Arrow} alt="arrow" style={{width: "15px", cursor: "pointer", marginLeft: "2vw", transform: "rotate(0turn)"}} id="arrowBottom" onClick={handleShowComment} />
                                         </span>
                                     </div>
                                 </div>
@@ -704,25 +647,13 @@ export default function DeepMap2({user, firebase}) {
                             <></>}
                             </Form.Group>
                             </Form.Row>
-                            {/*<Form.Group style={{
-                                display: "flex",
-                                flexFlow: "column",
-                                alignItems: "center"
-                            }}>
-                            <DropdownButton id="dropdown-basic-button" title="Réputation" variant='success'>
-                                <Dropdown.Item onClick={()=>{handleStars("1 étoile")}}>1 smile</Dropdown.Item>
-                                <Dropdown.Item onClick={()=>{handleStars("2 étoiles")}}>2 smiles</Dropdown.Item>
-                                <Dropdown.Item onClick={()=>{handleStars("3 étoiles")}}>3 smiles</Dropdown.Item>
-                                <Dropdown.Item onClick={()=>{handleStars("4 étoiles")}}>4 smiles</Dropdown.Item>
-                                <Dropdown.Item onClick={()=>{handleStars("5 étoiles")}}>5 smiles</Dropdown.Item>
-                            </DropdownButton>
-                            </Form.Group>*/}
                             </div>
                         </div>
                     <div style={{position: 'absolute', right: 0}}>
                         <NavigationControl />
                     </div>
             </ReactMapGL>
+            <img src={Home} alt="home page" className="home-icon" onClick={() => navigate("/izilife")} />
             {!!firebase &&
             <HotelRegistrator firebase={firebase} />}
         </div>

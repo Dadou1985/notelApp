@@ -2,25 +2,31 @@ import React, {useState, useContext, useEffect } from 'react'
 import Fom from '../../svg/fom.svg'
 import { navigate } from 'gatsby'
 import { sha256, sha224 } from 'js-sha256';
-import { Form, Button, Table, Tabs, Tab, OverlayTrigger, Modal } from 'react-bootstrap'
+import { Form, Button, Tabs, Tab, Modal, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { Input } from 'reactstrap'
 import Tips from '../../svg/coin.svg'
+import DefaultProfile from "../../svg/profile.png"
 import ToggleDisplay from 'react-toggle-display'
 import Arrow from '../../svg/arrowDown.svg'
 import Dialog from './common/fullScreenDialog'
 import Divider from '@material-ui/core/Divider'
+import AddPhotoURL from '../../svg/camera.svg'
 
 
 const Dilema = ({user, firebase}) => {
 
     const [showModal, setShowModal] = useState(false)
     const [showDetails, setShowDetails] = useState(false)
+    const [confModal, setConfModal] = useState(true)
     const [createRefSpace, setCreateRefSpace] = useState("")
     const [joinRefSpace, setJoinRefSpace] = useState("")
     const [info, setInfo] = useState([])
     const [list, setList] = useState(false)
     const [showDialog, setShowDialog] = useState(false)
     const [formValue, setFormValue] = useState({hotelName: "", job: "", level: "", mood: ""})
+    const [img, setImg] = useState(null)
+    const [url, setUrl] = useState("")
+
 
     const handleWorkspace = () => {
         if(!user.displayName) {
@@ -36,16 +42,45 @@ const Dilema = ({user, firebase}) => {
 
     const handleShowDetails = () =>{
         let arrowTop = document.getElementById("arrowTop")
+        const sentence = document.getElementById('dilema-sentence')
       if(arrowTop.style.transform === "rotate(0turn)"){
         setShowDetails(!showDetails)
+        sentence.style.display = "none"
           return arrowTop.style.transform = "rotate(0.5turn)"
       }
       if(arrowTop.style.transform === "rotate(0.5turn)"){
         setShowDetails(!showDetails)
+        sentence.style.display = "block"
           return arrowTop.style.transform = "rotate(0turn)"
       }
       
   }  
+
+  const handleChangePhotoUrl = (event) => {
+    event.preventDefault()
+    const uploadTask = firebase.storage.ref(`photo-user/${img.name}`).put(img)
+    uploadTask.on(
+      "state_changed",
+      snapshot => {},
+      error => {console.log(error)},
+      () => {
+        firebase.storage
+          .ref("photo-user")
+          .child(img.name)
+          .getDownloadURL()
+          .then(url => {
+            const uploadTask = () => {
+                setConfModal(false)
+                firebase.addPhotoProfileUser({ img: url })
+                setTimeout(
+                    () => window.location.reload(),
+                    1000
+                );
+            }
+              return setUrl(url, uploadTask())})
+      }
+    )
+  } 
   
 
     const handleChange = (event) =>{
@@ -62,6 +97,12 @@ const Dilema = ({user, firebase}) => {
 
     const handleChangeJoin = event =>{
         setJoinRefSpace(event.currentTarget.value)
+    }
+
+    const handleImgChange = (event) => {
+        if (event.target.files[0]){
+            setImg(event.target.files[0])
+        }
     }
 
 
@@ -118,10 +159,10 @@ const Dilema = ({user, firebase}) => {
         info.map(flow => (
 
         <div className="global-container"
-        style={{ backgroundImage: `url(${"https://i.pinimg.com/originals/cb/59/ff/cb59ffb54f7bcca4dbbc1517a65c1f01.jpg"})` }}>
+        style={{ backgroundImage: user.photoURL ? `url(${user.photoURL})` : `url(${DefaultProfile})` }}>
                 <div className="profile-container">
                     <h1>
-                        <b>{flow.id}</b>
+                        <div style={{color: "#5bc0de", fontWeight: "bold"}}>{flow.id}</div>
                         <div className="header-profile">
                             <img src={Tips} alt="tips" className="tips" /> 
                             {flow.tips} tips 
@@ -132,16 +173,16 @@ const Dilema = ({user, firebase}) => {
                         <div>
                         <div className="header-toggle-container">
                             <div>
-                                hotel<p className="profile-details">{flow.hotelName}</p>
+                                <b>hotel</b><p className="profile-details">{flow.hotelName}</p>
                             </div>
                             <div>
-                                poste<p className="profile-details">{flow.job}</p>
+                                <b>poste</b><p className="profile-details">{flow.job}</p>
                             </div>
                             <div>
-                                level<p className="profile-details">{flow.category}</p>
+                                <b>level</b><p className="profile-details">{flow.category}</p>
                             </div>
                         </div>
-                        <Button variant="outline-secondary" className="update-profile-button" onClick={handleShowUpdate}>Actualiser votre profil</Button>
+                        <Button variant="secondary" className="update-profile-button" onClick={handleShowUpdate}>Actualiser votre profil</Button>
                         </div>
                     </ToggleDisplay>
                 </div>
@@ -162,7 +203,7 @@ const Dilema = ({user, firebase}) => {
                     <img src={Fom} alt="Fom" className="black-fom-icon" />
                 </div>
             </div>
-            <h2 className="dilema-sentence">Choisissez votre espace</h2>
+            <h2 id="dilema-sentence" className="dilema-sentence">Choisissez votre espace</h2>
         </div>
         <Modal show={showModal}
                     size="lg"
@@ -291,7 +332,60 @@ const Dilema = ({user, firebase}) => {
             </div>
 
         </Dialog>
+        <img src={AddPhotoURL} alt="add photoURL" 
+        style={{
+            width: "4%", 
+            position: "absolute", 
+            filter: "invert()", 
+            left: "45vw", 
+            bottom: "5vh"}} />
+        
+        <OverlayTrigger
+            placement="top"
+            overlay={
+                <Tooltip id="title">
+                    Ajouter/Changer la photo de votre profil
+                </Tooltip>
+            }>
+        <input type="file" style={{
+            position: "absolute", 
+            width: "4vw", 
+            height: "8vh", 
+            zIndex: "2",
+            left: "45%", 
+            bottom: "5vh", 
+            opacity: "0", 
+            cursor: "pointer"}}
+            onChange={handleImgChange} />
+        </OverlayTrigger>
+        <div style={{
+            width: "11%", 
+            height: "4vh", 
+            position: "absolute", 
+            backgroundColor: "gray", 
+            left: "49vw", 
+            bottom: "9vh", 
+            zIndex: "10", 
+            opacity: "0"}}>
         </div>
+        {img && 
+        <Modal show={confModal}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        onHide={handleCloseUpdate}
+        >
+        <Modal.Body>
+            <p style={{textAlign: "center"}}>Etes-vous sûr.e de vouloir ajouter ou changer votre photo de profil ?</p>
+        </Modal.Body>
+        <Modal.Footer>
+            <div>
+                <Button size="sm" variant="success" style={{marginRight: "1vw"}} onClick={handleChangePhotoUrl}>Oui</Button>
+                <Button size="sm" variant="danger" onClick={() => setConfModal(false)}>Non</Button>
+            </div>
+        </Modal.Footer>
+    </Modal>}
+    </div>
     ))
     )
 }

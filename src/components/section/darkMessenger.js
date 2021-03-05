@@ -4,7 +4,6 @@ import CommunIzi from "./communIzi"
 import KarenStories from './karenStories'
 import IziNews from './iziNews'
 import Drawer from './common/darkDrawer'
-import { navigate } from 'gatsby'
 
 
 const DarkMessenger = () =>{

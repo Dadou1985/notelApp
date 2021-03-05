@@ -79,7 +79,7 @@ const DarkNavigation = () =>{
                     <img src={Fom} alt="Fom" style={{width: "2%", marginLeft: "1vw", marginRight: "1vw", filter: "invert()"}} onClick={()=>navigate('/doorsStage')} />
                     </OverlayTrigger>
                     {!!user && !!user.email &&
-                    <div className="username_title">{user.username || user.email}</div>}
+                    <div className="dark-username_title">{user.username || user.email}</div>}
                     <OverlayTrigger
                         placement="bottom"
                         overlay={

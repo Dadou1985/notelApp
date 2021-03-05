@@ -322,7 +322,7 @@ const Messenger = () =>{
                     padding: "5%", 
                     maxHeight: "90vh"}}>
                     
-                    <div><Input type="text" name="title" placeholder="Titre de la note" className="modal-note-title" maxLength="60" onChange={handleChangeTitle} required /></div>
+                    <div><Input type="text" name="title" placeholder="Titre de la note" className="modal-note-title" maxLength="35" onChange={handleChangeTitle} required /></div>
                     <div><Input type="text" placeholder="Rédiger une note..." value={note} className="modal-note-input" onChange={handleChangeNote} required /></div>
                     <DatePicker
                         id="calendar"

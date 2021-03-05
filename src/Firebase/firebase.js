@@ -100,6 +100,16 @@ class Firebase {
     await this.auth.signOut();
   }
 
+  addPhotoProfileUser({img}) {
+    return this.auth.currentUser.updateProfile({
+      photoURL: img
+    }).then(function() {
+      console.log("update photo profil success")
+    }).catch(function(error) {
+      console.log("update photo profil faillure")
+    });
+  }
+
 
 
   noteOnAir({documentId, date}){
