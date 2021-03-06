@@ -22,6 +22,7 @@ import moment from 'moment'
 import { navigate } from 'gatsby'
 import Home from '../../svg/home.svg'
 import Dialog from './common/fullScreenDialog'
+import Filter from '../../svg/filter.svg'
 
 
 export default function DeepMap2({user, firebase}) {
@@ -259,7 +260,7 @@ export default function DeepMap2({user, firebase}) {
                         onEnter={() => setHotelRef(hotel.id)}
                         placement="top"
                         overlay={
-                        <Tooltip id="title">
+                        <Tooltip id="title" className="popup-hotel-info">
                             <h5 style={{padding: "5%"}}>{hotel.hotelName}</h5>
                                 {ratingData.length > 0 ?
                                     <Box component="fieldset" mb={3} borderColor="transparent">
@@ -298,10 +299,24 @@ export default function DeepMap2({user, firebase}) {
                                 <div className="toggleDisplay-relative-container"
                                     defaultChecked={details}>
                                 <div className="toggleDisplay-header-container">
-                                    <div>
-                                        <h3>{selectedHotel.hotelName}</h3>
-                                        <span>Etablissement {selectedHotel.classement[0]}</span>
-                                        <img src={Arrow} alt="arrow" style={{width: "15px", cursor: "pointer", marginLeft: "2vw", transform: "rotate(0turn)"}} id="arrowTop" onClick={handleShowDetails} />
+                                    <div className="toggleDisplay-header-text">
+                                        <h3>{selectedHotel.hotelName} 
+                                            <div className="toggleDisplay-header-rating-box">
+                                            {ratingData.length > 0 ?
+                                                <Box component="fieldset" mb={3} borderColor="transparent">
+                                                    <Typography component="legend"></Typography>
+                                                        <Rating
+                                                        name="management"
+                                                        value={globalRate.reduce(reducer)/globalRate.length}
+                                                        precision={0.5}
+                                                        icon={<SentimentSatisfiedAltIcon fontSize="inherit" />}
+                                                        readOnly
+                                                        style={{color: "green"}}
+                                                        />
+                                                </Box> : "Notez-le"}
+                                            </div>
+                                        </h3>
+                                        <span>Etablissement {selectedHotel.classement[0]}<img src={Arrow} alt="arrow" style={{width: "15px", cursor: "pointer", marginLeft: "2vw", transform: "rotate(0turn)"}} id="arrowTop" onClick={handleShowDetails} /></span>
                                     </div>
                                     <img src={Close}  alt="" className="toggleDisplay-header-close-button" onClick={() => {
                                         setCommentData([])
@@ -399,7 +414,7 @@ export default function DeepMap2({user, firebase}) {
                                         <div style={{
                                             display: "flex",
                                             flexFlow: "column",
-                                            padding: "2%", 
+                                            padding: "5%", 
                                             backgroundColor: "rgb(230, 232, 237)",
                                             borderRadius: "15px",
                                             marginBottom: "5vh",
@@ -409,6 +424,7 @@ export default function DeepMap2({user, firebase}) {
                                             <h4>{commentData.commentTitle}</h4>
                                             <p>{commentData.status}</p>
                                         </div>
+                                        <Divider style={{marginBottom: "2vh"}} />
                                         <div>
                                             <h6>Le Best Of</h6>
                                             <p>{commentData.bestOf}</p>
@@ -559,31 +575,19 @@ export default function DeepMap2({user, firebase}) {
                                     setselectedHotel(null)
                                 }}>Envoyer</Button>
                                 </Modal.Footer>
-                            </Modal>                    
+                            </Modal> :
+                            <Dialog showDialog={showDialog} hideShow={hideDialog} style={{display: "none"}}>
+                            </Dialog>
                             </>) : null}
-                            <div style={{
-                                display: "flex",
-                                flexFlow: "column",
-                                justifyContent: "space-around",
-                                minHeight: "30vh",
-                                marginTop: "4vh",
-                                marginLeft: "2vw",
-                                borderRadius: "5px",
-                                backgroundColor: "rgb(33, 35, 39)",
-                                opacity: "0.8",
-                                position: "absolute",
-                                padding: "1%",
-                                zIndex: "600"
-                            }}>
+                            
+                            
+                            
+                            <div className="filter-global-container">
                             <h3 style={{textAlign: "center"}}><b>Shift Advisor</b></h3>
                             <Divider style={{height: "1vh"}} />
                             
                             <h6><b>Filtrer les hôtels par :</b></h6>
-                            <div style={{
-                                display: "flex",
-                                flexFlow: "column",
-                                justifyContent: "space-around",
-                                alignItems: "start"}}>
+                            <div className="filter-button-container">
                             <Form.Row>
                             <Form.Group style={{
                                 display: "flex",

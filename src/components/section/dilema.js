@@ -11,6 +11,7 @@ import Arrow from '../../svg/arrowDown.svg'
 import Dialog from './common/fullScreenDialog'
 import Divider from '@material-ui/core/Divider'
 import AddPhotoURL from '../../svg/camera.svg'
+import Avatar from '@material-ui/core/Avatar';
 
 
 const Dilema = ({user, firebase}) => {
@@ -191,15 +192,15 @@ const Dilema = ({user, firebase}) => {
                 <div className="softSkin space-card"
                     onClick={handleWorkspace}>
                 <h2>Work Space</h2>
-                <h4 style={{color: "darkgoldenrod"}}>Hello, Karen !</h4>
+                <h4 style={{color: "darkgoldenrod"}}>Hello, Karen</h4>
                 <img src={Fom} alt="Fom" className="white-fom-icon" />
                 </div>
             </div>
-            <div className="space-box">
-                <div className="boomSkakalaka space-card"
+            <div className="space-box-shadow">
+                <div className="boomSkakalaka space-card-shadow"
                 onClick={()=>navigate('/izilife')}>
                     <h2>World Space</h2>
-                    <h4 style={{color: "darkred"}}>Hell no, Karen !</h4>
+                    <h4 style={{color: "darkred"}}>Hell no, Karen</h4>
                     <img src={Fom} alt="Fom" className="black-fom-icon" />
                 </div>
             </div>
@@ -332,13 +333,23 @@ const Dilema = ({user, firebase}) => {
             </div>
 
         </Dialog>
-        <img src={AddPhotoURL} alt="add photoURL" 
+       
+        <Avatar alt="user-profile-photo" 
+        src={user.photoURL ? user.photoURL : DefaultProfile}
         style={{
-            width: "4%", 
-            position: "absolute", 
-            filter: "invert()", 
-            left: "45vw", 
-            bottom: "5vh"}} />
+            display: typeof window && window.innerWidth > 480 ? "none" : "flex",
+            position: "absolute",
+            top: "37vh",
+            left: "28vw",
+            width: "45%",
+            height: "25%",
+            filter: "grayscale(90%) drop-shadow(1px 1px 1px)",
+            zIndex: "10"
+        }}
+        onClick={() => navigate("/userPage")} />
+       
+        <img src={AddPhotoURL} alt="add photoURL" 
+        className="dilema-add-photo-icon" />
         
         <OverlayTrigger
             placement="top"
@@ -347,26 +358,11 @@ const Dilema = ({user, firebase}) => {
                     Ajouter/Changer la photo de votre profil
                 </Tooltip>
             }>
-        <input type="file" style={{
-            position: "absolute", 
-            width: "4vw", 
-            height: "8vh", 
-            zIndex: "2",
-            left: "45%", 
-            bottom: "5vh", 
-            opacity: "0", 
-            cursor: "pointer"}}
+        <input type="file" 
+            className="dilema-add-photo-input"
             onChange={handleImgChange} />
         </OverlayTrigger>
-        <div style={{
-            width: "11%", 
-            height: "4vh", 
-            position: "absolute", 
-            backgroundColor: "gray", 
-            left: "49vw", 
-            bottom: "9vh", 
-            zIndex: "10", 
-            opacity: "0"}}>
+        <div className="dilema-add-photo-input-mask">
         </div>
         {img && 
         <Modal show={confModal}

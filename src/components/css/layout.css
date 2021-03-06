@@ -1243,6 +1243,23 @@ input[type=number] {
     cursor: pointer;
 }
 
+.space-card-shadow {
+    filter: drop-shadow(-5px 5px 5px);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 40vh;
+    border: 1px solid lightgrey;
+    border-bottom-left-radius: 2%;
+    border-top-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    border-top-right-radius: 2%;
+    color: gray;
+    cursor: pointer;
+}
+
 .white-fom-icon{
     width: 10vw;
     filter: invert() drop-shadow(1px 1px 1px);
@@ -1342,6 +1359,35 @@ input[type=number] {
     padding-left: 1vw;
 }
 
+.dilema-add-photo-input {
+    position: absolute;
+    width: 4vw;
+    height: 8vh; 
+    z-index: 2;
+    left: 45%; 
+    bottom: "5vh";
+    opacity: 0;
+    cursor: pointer;
+}
+
+.dilema-add-photo-icon {
+    width: 4%;
+    position: absolute;
+    filter: invert();
+    left: 45vw;
+    bottom: 5vh;
+}
+
+.dilema-add-photo-input-mask {
+    width: 11%;
+    height: 4vh; 
+    position: absolute;
+    background-color: gray;
+    left: 49vw; 
+    bottom: 9vh;
+    z-index: 10; 
+    opacity: 0;
+}
 
 @media screen and (max-width: 480px) {
     .space-container {
@@ -1357,13 +1403,43 @@ input[type=number] {
     }
 
     .space-card {
+        flex-flow: column;
+        justify-content: space-between;
+        width: 100vw;
+        height: 50vh;
+        color: gray;
+        padding: 5%;
+        border: none;
+    }
+
+    .space-card-shadow {
         flex-flow: column-reverse;
         justify-content: space-between;
         width: 100vw;
         height: 50vh;
         color: gray;
-        padding: 10%;
+        padding: 5%;
         border: none;
+    }
+
+    .space-box img {margin-top: 4vh;}
+
+    .space-box h4 {display: none;}
+
+    .space-card h2 {
+        color: black;
+        filter: drop-shadow(1px 1px 1px) contrast(80%);
+        font-weight: bolder;
+        opacity: 0.1;
+    }
+
+    .space-box-shadow h4 {display: none;}
+
+    .space-card-shadow h2 {
+        color: white;
+        filter: drop-shadow(1px 1px 1px) contrast(80%);
+        font-weight: bolder;
+        opacity: 0.1;
     }
 
     .dilema-sentence {
@@ -1398,6 +1474,13 @@ input[type=number] {
     }
 
     .profile-container {display: none;}
+
+    .dilema-add-photo-input {display: none;}
+    
+    .dilema-add-photo-icon {display: none;}
+    
+    .dilema-add-photo-input-mask {display: none;}
+
 }
 
 
@@ -2054,6 +2137,8 @@ input[type=number] {
     width: 100%;
 }
 
+.toggleDisplay-header-rating-box {margin-top: 1vh;}
+
 #arrowTop {
     width: 4vw;
     cursor: pointer;
@@ -2100,6 +2185,28 @@ input[type=number] {
     width: 25%;
 }
 
+.filter-global-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    min-height: 30vh;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    border-radius: 5px;
+    background-color: rgb(33, 35, 39);
+    opacity: 0.8;
+    position: absolute;
+    padding: 1%;
+    z-index: 600;
+}
+
+.filter-button-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: start;
+}
+
 
 .home-icon {display: none;}
 
@@ -2111,7 +2218,37 @@ input[type=number] {
         width: 100%;
     }
 
-    .toggleDisplay-header-container h3 {font-size: 20px;}
+    .toggleDisplay-header-container {
+        flex-flow: column-reverse;
+        align-items: flex-end;
+    }
+
+    #title {display: none;}
+
+    .toggleDisplay-header-rating-box {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+    }
+
+    .toggleDisplay-header-container h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .toggleDisplay-header-text {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .toggleDisplay-header-container span {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        width: 100%;
+    }
 
     .toggleDisplay-header-arrow {
         width: 4vw;
@@ -2130,10 +2267,15 @@ input[type=number] {
     .toggleDisplay-header-details {width: 100%;}
 
     .toggleDisplay-body-stats-container {
-        flex-flow: column;
+        flex-flow: row wrap;
     }
 
-    .toggleDisplay-body-stats-box {width: 100%}
+    .toggleDisplay-body-stats-box {width: 50%}
+
+    .filter-global-container {
+        top: 0px;
+    }
+
 
     .home-icon {
         display: block;
@@ -2143,4 +2285,115 @@ input[type=number] {
         filter: invert();
         width: 5%
     }
+}
+
+
+
+/*darkStore*/
+
+.store-global-container {
+    display: flex;
+    flex-flow: column;
+    height: 90vh;
+    padding: 2%;
+}
+
+.store-title {
+    text-align: center;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+}
+
+.store-body {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1%;
+    justify-content: center;
+}
+
+.store-feature-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    width: 80%;
+    margin-bottom: 30vh;
+    border-bottom: 1px solid rgb(33, 35, 39);
+}
+
+.store-feature-container-reverse {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    width: 80%;
+    margin-bottom: 30vh;
+    border-bottom: 1px solid rgb(33, 35, 39);
+}
+
+
+
+.store-feature-img {
+    width: 50%;
+    border-radius: 5px; 
+    border: 5px solid rgb(33, 35, 39);
+}
+
+.store-feature-text {
+    display: flex;
+    flex-flow: column;
+    width: 40%;
+}
+
+
+@media screen and (max-width: 480px) {
+    
+    .store-title {font-size: 30px;}
+
+    .store-feature-container  {
+        flex-flow: column;
+        margin-bottom: 15vh;
+    }
+
+    .store-feature-container-reverse {
+        flex-flow: column-reverse;
+        margin-bottom: 15vh;
+    }
+
+    .store-feature-img {width: 100%}
+
+    .store-feature-text {
+        width: 100%;
+        margin-top: 2vh;
+    }
+
+    .store-feature-text h2 {
+        font-size: 20px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    .store-feature-text p {
+        text-align: center;
+        font-size: 14px;}
+
+    .store-feature-text h5 {
+        font-size: 17px;
+        text-align: center;
+    }
+}
+
+
+/*userProfile*/
+
+@media screen and (max-width: 480px) {
+    
+    .header-toggle-container {
+        justify-content: space-around;
+        margin-top: 5vh;
+    }
+    
+    .tips {width: 6vw}
 }
