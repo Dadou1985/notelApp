@@ -647,6 +647,9 @@ export default function DeepMap2({user, firebase}) {
                                     <Dropdown.Item onClick={()=>{handleStars("3 étoiles")}}>3 étoiles</Dropdown.Item>
                                     <Dropdown.Item onClick={()=>{handleStars("4 étoiles")}}>4 étoiles</Dropdown.Item>
                                     <Dropdown.Item onClick={()=>{handleStars("5 étoiles")}}>5 étoiles</Dropdown.Item>
+                                    <Dropdown.Item onClick={()=>{
+                                        if(initialFilter = )
+                                        }}>Retirer le filtre</Dropdown.Item>
                                 </DropdownButton>
                                 :
                                 <></>}

@@ -43,7 +43,6 @@ export default function DeepMap2({user, firebase}) {
     const [number, setNumber] = useState(0)
     const [zoom, setZoom] = useState(5)
     const [scrollZoom, setScrollZoom] = useState(true)
-    const [showDialog, setShowDialog] = useState(false)
 
     const [formValue, setformValue] = useState({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
 
@@ -90,9 +89,6 @@ export default function DeepMap2({user, firebase}) {
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
 
-    const hideDialog = () => {
-        setShowDialog(false)
-    }
 
     const [viewPort, setviewPort] = useState({
         latitude: 47.2850,
@@ -137,8 +133,8 @@ export default function DeepMap2({user, firebase}) {
         setFilter([classement, "Toutes les étoiles"])
     }
     
-    const getLocation = () => {
-        if(navigator.geolocation){
+    //const getLocation = () => {
+      //  if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(position){
                 setviewPort({
                     latitude: position.coords.latitude,
@@ -560,7 +556,6 @@ export default function DeepMap2({user, firebase}) {
                                 onClick={(event) => {
                                     event.preventDefault()
                                     setformValue({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
-                                    setselectedHotel(null)
                                     firebase.addCommentOnHotel({
                                         hotelId: selectedHotel.id, 
                                         region: region === "PARIS" ? selectedHotel.departement : selectedHotel.region,
@@ -573,11 +568,10 @@ export default function DeepMap2({user, firebase}) {
                                         management: parseInt(formValue.management),
                                         customer: parseInt(formValue.customer),
                                         wage: parseInt(formValue.wage)})
-                                    .then(handleClose)
+                                        .then(handleClose)
                                 }}>Envoyer</Button>
                                 </Modal.Footer>
-                            </Modal> 
-                            
+                            </Modal>
                             </>) : null}
                             
                             

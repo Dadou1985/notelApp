@@ -35,6 +35,7 @@ export default function DeepMap2({user, firebase}) {
     const [list, setList] = useState(false)
     const [region, setRegion] = useState("Région")
     const [initialFilter, setInitialFilter] = useState("region")
+    const [operator, setOperator] = useState("==")
     const [departement, setDepartement] = useState("Département")
     const [filter, setFilter] = useState(region)
     const [show, setShow] = useState(false)
@@ -105,6 +106,7 @@ export default function DeepMap2({user, firebase}) {
     const handleRegion = (newRegion, lat, lng, zoom) => {
         
         setRegion(newRegion)
+        setOperator("==")
         setviewPort({
             latitude: lat,
             longitude: lng,
@@ -120,6 +122,8 @@ export default function DeepMap2({user, firebase}) {
     const handleDepartement = (departement, lat, lng, zoom) => {
         
         setDepartement(departement)
+        setOperator("==")
+
         setviewPort({
             latitude: lat,
             longitude: lng,
@@ -134,6 +138,7 @@ export default function DeepMap2({user, firebase}) {
 
     const handleStars = (classement) => {
         setInitialFilter("classement")
+        setOperator("in")
         setFilter([classement, "Toutes les étoiles"])
     }
     
@@ -647,6 +652,7 @@ export default function DeepMap2({user, firebase}) {
                                     <Dropdown.Item onClick={()=>{handleStars("3 étoiles")}}>3 étoiles</Dropdown.Item>
                                     <Dropdown.Item onClick={()=>{handleStars("4 étoiles")}}>4 étoiles</Dropdown.Item>
                                     <Dropdown.Item onClick={()=>{handleStars("5 étoiles")}}>5 étoiles</Dropdown.Item>
+                                    <Dropdown.Item onClick={()=>{handleStars("")}}>Retirer le filtre</Dropdown.Item>
                                 </DropdownButton>
                                 :
                                 <></>}

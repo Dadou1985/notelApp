@@ -21,8 +21,6 @@ import HotelRegistrator from './hotelRegitrator'
 import moment from 'moment'
 import { navigate } from 'gatsby'
 import Home from '../../svg/home.svg'
-import Dialog from './common/fullScreenDialog'
-import Filter from '../../svg/filter.svg'
 
 
 export default function DeepMap2({user, firebase}) {
@@ -43,7 +41,6 @@ export default function DeepMap2({user, firebase}) {
     const [number, setNumber] = useState(0)
     const [zoom, setZoom] = useState(5)
     const [scrollZoom, setScrollZoom] = useState(true)
-    const [showDialog, setShowDialog] = useState(false)
 
     const [formValue, setformValue] = useState({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
 
@@ -90,9 +87,6 @@ export default function DeepMap2({user, firebase}) {
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
 
-    const hideDialog = () => {
-        setShowDialog(false)
-    }
 
     const [viewPort, setviewPort] = useState({
         latitude: 47.2850,
@@ -137,21 +131,21 @@ export default function DeepMap2({user, firebase}) {
         setFilter([classement, "Toutes les étoiles"])
     }
     
-    const getLocation = () => {
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(function(position){
-                setviewPort({
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude,
-                    width: "65%",
-                    height: "100%",
-                    zoom: zoom
-                })
-            })
-        }else{
-            alert("Geolocation is not supported by this browser")
-        }
-    }
+    //const getLocation = () => {
+      //  if(navigator.geolocation){
+        //    navigator.geolocation.getCurrentPosition(function(position){
+          //      setviewPort({
+            //        latitude: position.coords.latitude,
+              //      longitude: position.coords.longitude,
+                //    width: "65%",
+                  //  height: "100%",
+                    //zoom: zoom
+                //})
+            //})
+        //}else{
+          //  alert("Geolocation is not supported by this browser")
+        //}
+    //}
 
     useEffect(() => {
         const abortController = new AbortController()
@@ -172,7 +166,7 @@ export default function DeepMap2({user, firebase}) {
                 return () => {
                     abortController.abort()
                     }
-     },[region, departement, filter, initialFilter])
+     },[setRegion, setDepartement, setFilter, setInitialFilter])
 
      useEffect(() => {
         const abortController = new AbortController()
@@ -316,7 +310,7 @@ export default function DeepMap2({user, firebase}) {
                                                 </Box> :  <p style={{fontSize: "15px"}}>Soyez le premier à noter cet hôtel</p>}
                                             </div>
                                         </h3>
-                                        <span>Etablissement {selectedHotel.classement[0]}<img src={Arrow} alt="arrow" style={{width: "15px", cursor: "pointer", marginLeft: "2vw", transform: "rotate(0turn)"}} id="arrowTop" onClick={handleShowDetails} /></span>
+                                        <span>Etablissement {selectedHotel.classement[0]}<img src={Arrow} alt="arrow" style={{width: "15px", cursor: "pointer", marginLeft: "4vw", transform: "rotate(0turn)"}} id="arrowTop" onClick={handleShowDetails} /></span>
                                     </div>
                                     <img src={Close}  alt="" className="toggleDisplay-header-close-button" onClick={() => {
                                         setCommentData([])
@@ -446,7 +440,7 @@ export default function DeepMap2({user, firebase}) {
                             <Modal show={list}
                                 size="lg"
                                 aria-labelledby="contained-modal-title-vcenter"
-                                tpp
+                                centered
                                 onHide={handleClose}>
                                 <Modal.Header closeButton className="bg-light">
                                     <Modal.Title id="contained-modal-title-vcenter" style={{textAlign: "center"}}>
@@ -455,7 +449,7 @@ export default function DeepMap2({user, firebase}) {
                                 </Modal.Header>
                                 <Modal.Body style={{height: "65vh", overflow: "auto"}}>
                                 <div style={{textAlign: "center"}}><h4 style={{marginTop: "2vh"}}>Faites-nous part de votre expérience</h4></div>
-                                <div id="overbookingForm" style={{
+                                <div style={{
                                     display: "flex",
                                     flexFlow: "row wrap",
                                     width: "100%",
@@ -557,10 +551,8 @@ export default function DeepMap2({user, firebase}) {
                                 <Modal.Footer>
                                 <Button variant="success" 
                                 style={{width: "20%"}} 
-                                onClick={(event) => {
-                                    event.preventDefault()
+                                onClick={() => {
                                     setformValue({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
-                                    setselectedHotel(null)
                                     firebase.addCommentOnHotel({
                                         hotelId: selectedHotel.id, 
                                         region: region === "PARIS" ? selectedHotel.departement : selectedHotel.region,
@@ -573,11 +565,9 @@ export default function DeepMap2({user, firebase}) {
                                         management: parseInt(formValue.management),
                                         customer: parseInt(formValue.customer),
                                         wage: parseInt(formValue.wage)})
-                                    .then(handleClose)
                                 }}>Envoyer</Button>
                                 </Modal.Footer>
-                            </Modal> 
-                            
+                            </Modal>
                             </>) : null}
                             
                             

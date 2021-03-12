@@ -90,10 +90,6 @@ export default function DeepMap2({user, firebase}) {
     const handleClose = () => setList(false)
     const handleShow = () => setList(true)
 
-    const hideDialog = () => {
-        setShowDialog(false)
-    }
-
     const [viewPort, setviewPort] = useState({
         latitude: 47.2850,
         longitude: 1.4107,
@@ -560,7 +556,6 @@ export default function DeepMap2({user, firebase}) {
                                 onClick={(event) => {
                                     event.preventDefault()
                                     setformValue({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
-                                    setselectedHotel(null)
                                     firebase.addCommentOnHotel({
                                         hotelId: selectedHotel.id, 
                                         region: region === "PARIS" ? selectedHotel.departement : selectedHotel.region,
@@ -573,11 +568,10 @@ export default function DeepMap2({user, firebase}) {
                                         management: parseInt(formValue.management),
                                         customer: parseInt(formValue.customer),
                                         wage: parseInt(formValue.wage)})
-                                    .then(handleClose)
+                                        .then(handleClose)
                                 }}>Envoyer</Button>
                                 </Modal.Footer>
-                            </Modal> 
-                            
+                            </Modal>
                             </>) : null}
                             
                             

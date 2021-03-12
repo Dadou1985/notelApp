@@ -573,8 +573,8 @@ export default function DeepMap2({user, firebase}) {
                                         management: parseInt(formValue.management),
                                         customer: parseInt(formValue.customer),
                                         wage: parseInt(formValue.wage)})
-                                    .then(handleClose)
-                                }}>Envoyer</Button>
+
+}}>Envoyer</Button>
                                 </Modal.Footer>
                             </Modal> 
                             

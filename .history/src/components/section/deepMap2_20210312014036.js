@@ -560,7 +560,7 @@ export default function DeepMap2({user, firebase}) {
                                 onClick={(event) => {
                                     event.preventDefault()
                                     setformValue({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
-                                    setselectedHotel(null)
+                                   
                                     firebase.addCommentOnHotel({
                                         hotelId: selectedHotel.id, 
                                         region: region === "PARIS" ? selectedHotel.departement : selectedHotel.region,
@@ -573,7 +573,7 @@ export default function DeepMap2({user, firebase}) {
                                         management: parseInt(formValue.management),
                                         customer: parseInt(formValue.customer),
                                         wage: parseInt(formValue.wage)})
-                                    .then(handleClose)
+                                        setDetails(false)
                                 }}>Envoyer</Button>
                                 </Modal.Footer>
                             </Modal> 
