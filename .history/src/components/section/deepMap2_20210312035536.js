@@ -561,7 +561,7 @@ export default function DeepMap2({user, firebase}) {
                                     event.preventDefault()
                                     setformValue({commentTitle: "", status: "", bestOf: "", bullShift: "", team: 0, management: 0, customer: 0, wage: 0})
                                     setselectedHotel(null)
-                                    setDetails(false)
+                                    setD
                                     firebase.addCommentOnHotel({
                                         hotelId: selectedHotel.id, 
                                         region: region === "PARIS" ? selectedHotel.departement : selectedHotel.region,
