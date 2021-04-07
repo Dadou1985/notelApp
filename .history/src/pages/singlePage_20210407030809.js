@@ -1,0 +1,39 @@
+import React, { useEffect, useState, Fragment } from "react"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Loader from '../components/section/common/loader'
+import Layout from "../components/layout"
+import ToolBar from "../components/section/toolbar"
+import Messenger from '../components/section/messenger'
+import Memo from '../components/section/memo'
+import Navigation from '../components/section/navigation'
+import {FirebaseContext, db, auth} from '../Firebase'
+import SEO from '../components/seo'
+import { navigate } from 'gatsby'
+const SinglePage = () => {
+
+  const [hide, setHide] = useState("flex")
+
+  useEffect(() => {
+    setTimeout(() => {
+      setHide("none")
+    }, 1000)
+  }, [])
+  
+  return (
+    <Fragment>
+      <div style={{position: "absolute", zIndex: "9", width: "100%"}}> 
+        <Loader hide={hide} />
+      </div>
+      <Navigation />
+        <div style={{
+          display: "flex",
+      }}>
+          <ToolBar />
+          <Messenger />
+          <Memo />
+        </div>
+    </Fragment>
+  )
+}
+
+export default SinglePage

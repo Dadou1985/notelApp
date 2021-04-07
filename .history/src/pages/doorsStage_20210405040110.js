@@ -1,0 +1,15 @@
+import React from 'react'
+import Layout from "../components/layout"
+import Dilema from '../components/section/dilema'
+import {FirebaseContext, useAuth} from '../Firebase'
+
+
+export default function DoorsStage() {
+
+    return (
+        <FirebaseContext.Provider value={{ user, firebase, loading }}>
+            {!!firebase && !!user &&
+            <Dilema firebase={firebase} user={user} />}
+        </FirebaseContext.Provider>
+    )
+}
